@@ -140,7 +140,23 @@ export const translations = {
     footer_copyright: '© 2025 EconWeb. All rights reserved. Created by fangxin.',
     
     // Resource count text
-    resources_count: 'resources'
+    resources_count: 'resources',
+    
+    // Category Titles
+    category_organizations: 'Organizations & Institutions',
+    category_organizations_desc: 'International organizations, government agencies, central banks and regulatory departments',
+    category_data_sources: 'Data Sources',
+    category_data_sources_desc: 'Macroeconomic databases, microeconomic surveys, and statistical resources',
+    category_policy_analysis: 'Policy Analysis',
+    category_policy_analysis_desc: 'Policy interpretation, regulatory documents and government reports',
+    category_academic_research: 'Academic Research',
+    category_academic_research_desc: 'Academic papers, research platforms and scholarly resources',
+    category_market_observation: 'Market Observation',
+    category_market_observation_desc: 'Industry analysis, investment tools and market research',
+    category_learning_resources: 'Learning Resources',
+    category_learning_resources_desc: 'Economics online courses, textbooks and educational materials',
+    category_practical_tools: 'Practical Tools',
+    category_practical_tools_desc: 'Economic analysis software, calculators and reference tools'
   },
   
   zh: {
@@ -274,7 +290,23 @@ export const translations = {
     footer_copyright: '© 2025 EconWeb. 版权所有。由方馨创建。',
     
     // Resource count text
-    resources_count: '个资源'
+    resources_count: '个资源',
+    
+    // Category Titles
+    category_organizations: '组织机构',
+    category_organizations_desc: '国际组织、政府机构、央行和监管部门',
+    category_data_sources: '数据获取',
+    category_data_sources_desc: '宏观经济数据库、微观调查和统计资源',
+    category_policy_analysis: '政策研读',
+    category_policy_analysis_desc: '政策解读、监管文件和政府报告',
+    category_academic_research: '学术研究',
+    category_academic_research_desc: '学术论文、研究平台和学术资源',
+    category_market_observation: '市场观察',
+    category_market_observation_desc: '行业分析、投资工具和市场研究',
+    category_learning_resources: '学习资源',
+    category_learning_resources_desc: '经济学在线课程、教材和教育资料',
+    category_practical_tools: '实用工具',
+    category_practical_tools_desc: '经济分析软件、计算器和参考工具'
   },
   
   ko: {
@@ -408,7 +440,23 @@ export const translations = {
     footer_copyright: '© 2025 EconWeb. 모든 권리 보유. 방신(fangxin)이 제작.',
     
     // Resource count text
-    resources_count: '리소스'
+    resources_count: '리소스',
+    
+    // Category Titles
+    category_organizations: '조직 & 기관',
+    category_organizations_desc: '국제기구, 정부기관, 중앙은행 및 규제부서',
+    category_data_sources: '데이터 소스',
+    category_data_sources_desc: '거시경제 데이터베이스, 미시조사 및 통계자원',
+    category_policy_analysis: '정책 분석',
+    category_policy_analysis_desc: '정책 해석, 규제 문서 및 정부 보고서',
+    category_academic_research: '학술 연구',
+    category_academic_research_desc: '학술 논문, 연구 플랫폼 및 학술 자원',
+    category_market_observation: '시장 관찰',
+    category_market_observation_desc: '산업 분석, 투자 도구 및 시장 연구',
+    category_learning_resources: '학습 자원',
+    category_learning_resources_desc: '경제학 온라인 코스, 교과서 및 교육 자료',
+    category_practical_tools: '실용 도구',
+    category_practical_tools_desc: '경제 분석 소프트웨어, 계산기 및 참고 도구'
   },
   
   ja: {
@@ -542,7 +590,23 @@ export const translations = {
     footer_copyright: '© 2025 EconWeb. 全著作権所有。方馨(fangxin)によって作成。',
     
     // Resource count text
-    resources_count: 'リソース'
+    resources_count: 'リソース',
+    
+    // Category Titles
+    category_organizations: '組織＆機関',
+    category_organizations_desc: '国際機関、政府機関、中央銀行および規制部門',
+    category_data_sources: 'データソース',
+    category_data_sources_desc: 'マクロ経済データベース、ミクロ調査、統計資源',
+    category_policy_analysis: '政策分析',
+    category_policy_analysis_desc: '政策解釈、規制文書および政府報告書',
+    category_academic_research: '学術研究',
+    category_academic_research_desc: '学術論文、研究プラットフォームおよび学術資源',
+    category_market_observation: '市場観察',
+    category_market_observation_desc: '業界分析、投資ツールおよび市場研究',
+    category_learning_resources: '学習リソース',
+    category_learning_resources_desc: '経済学オンラインコース、教科書および教育資料',
+    category_practical_tools: '実用ツール',
+    category_practical_tools_desc: '経済分析ソフトウェア、計算機および参考ツール'
   },
 
   de: {
@@ -676,9 +740,44 @@ export const translations = {
     footer_copyright: '© 2025 EconWeb. Alle Rechte vorbehalten. Erstellt von fangxin.',
     
     // Resource count text
-    resources_count: 'Ressourcen'
+    resources_count: 'Ressourcen',
+    
+    // Category Titles
+    category_organizations: 'Organisationen & Institutionen',
+    category_organizations_desc: 'Internationale Organisationen, Regierungsbehörden, Zentralbanken und Regulierungsbehörden',
+    category_data_sources: 'Datenquellen',
+    category_data_sources_desc: 'Makroökonomische Datenbanken, mikroökonomische Umfragen und statistische Ressourcen',
+    category_policy_analysis: 'Politikanalyse',
+    category_policy_analysis_desc: 'Politikinterpretation, regulatorische Dokumente und Regierungsberichte',
+    category_academic_research: 'Akademische Forschung',
+    category_academic_research_desc: 'Akademische Arbeiten, Forschungsplattformen und wissenschaftliche Ressourcen',
+    category_market_observation: 'Marktbeobachtung',
+    category_market_observation_desc: 'Branchenanalyse, Investitionstools und Marktforschung',
+    category_learning_resources: 'Lernressourcen',
+    category_learning_resources_desc: 'Wirtschafts-Online-Kurse, Lehrbücher und Bildungsmaterialien',
+    category_practical_tools: 'Praktische Tools',
+    category_practical_tools_desc: 'Wirtschaftsanalysesoftware, Rechner und Referenztools'
   }
 };
+
+// Category key mapping from Chinese to translation keys
+const categoryKeyMap: Record<string, string> = {
+  "组织机构": "organizations",
+  "数据获取": "data_sources", 
+  "政策研读": "policy_analysis",
+  "学术研究": "academic_research",
+  "市场观察": "market_observation",
+  "学习资源": "learning_resources",
+  "实用工具": "practical_tools"
+};
+
+export function getCategoryTranslation(lang: Language, categoryKey: string, type: 'title' | 'desc'): string {
+  const translationKey = categoryKeyMap[categoryKey];
+  if (!translationKey) return categoryKey;
+  
+  const key = type === 'title' ? `category_${translationKey}` : `category_${translationKey}_desc`;
+  return getTranslation(lang, key);
+}
 
 export function getTranslation(lang: Language, key: string): string {
   const keys = key.split('.');

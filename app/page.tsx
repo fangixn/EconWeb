@@ -11,6 +11,7 @@ import { economicsCategories, germanEconomicsResources } from '@/lib/data';
 import { useLanguage } from '@/lib/LanguageContext';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { getResourceTranslation } from '@/lib/resourcesI18n';
+import { getCategoryTranslation } from '@/lib/i18n';
 
 // Icon mapping
 const iconMap = {
@@ -374,7 +375,7 @@ export default function Home() {
                       </div>
                       <div>
                         <CardTitle className="text-xl font-semibold">
-                          {category.title}
+                          {getCategoryTranslation(currentLanguage, key, 'title')}
                         </CardTitle>
                         <CardDescription className="text-sm text-gray-500">
                           {filteredResources.length} {t('resources_count')}
@@ -384,7 +385,7 @@ export default function Home() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-600 mb-6 leading-relaxed">
-                      {category.description}
+                      {getCategoryTranslation(currentLanguage, key, 'desc')}
                     </p>
                     
                     <div className="space-y-4">
