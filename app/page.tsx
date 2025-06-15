@@ -11,6 +11,7 @@ import LanguageSwitcher from '@/components/LanguageSwitcher';
 import ImprovedNavigation from '@/components/ImprovedNavigation';
 import AntiBot from '@/components/AntiBot';
 import { Language, getTranslation } from '@/lib/i18n';
+import { getResourceTranslation, getResourceDescription } from '@/lib/resourcesI18n';
 
 // 整合的数据结构 - 完整导入 econ_resources.json 数据
 const functionalCategories = {
@@ -124,67 +125,7 @@ const functionalCategories = {
       ]
     }
   },
-  "做研究": {
-    title: "学术研究",
-    description: "学术论文、研究工具和智库资源",
-    icon: BookOpen,
-    subcategories: {
-      "学术平台": [
-        {
-          name: "IDEAS",
-          url: "https://ideas.repec.org",
-          description: "RePEc 门户，可查找作者与论文",
-          tags: ["论文", "索引"]
-        },
-        {
-          name: "SSRN Economics",
-          url: "https://www.ssrn.com",
-          description: "各类社会科学领域工作论文下载",
-          tags: ["论文", "免费"]
-        },
-        {
-          name: "经济学研究网(EconStor)",
-          url: "https://www.econstor.eu",
-          description: "德国经济工作论文库",
-          tags: ["德国", "开放获取"]
-        },
-        {
-          name: "NBER",
-          url: "https://www.nber.org",
-          description: "美国国家经济研究局，实证研究与政策评估",
-          tags: ["美国", "实证"]
-        }
-      ],
-      "研究工具": [
-        {
-          name: "计量经济学学术网(CEAN)",
-          url: "http://cean.xmu.edu.cn",
-          description: "计量代码与教材资源",
-          tags: ["中国", "教学"]
-        },
-        {
-          name: "哈佛数据复现库",
-          url: "https://dataverse.harvard.edu",
-          description: "AER/QJE等顶刊论文原始数据",
-          tags: ["复现", "英文"]
-        }
-      ],
-      "德国智库": [
-        {
-          name: "DIW柏林研究所",
-          url: "https://www.diw.de",
-          description: "住房危机与移民经济研究",
-          tags: ["德国", "独立"]
-        },
-        {
-          name: "墨卡托中国研究中心",
-          url: "https://www.merics.org",
-          description: "德国企业对华投资风险评估",
-          tags: ["中德", "地缘"]
-        }
-      ]
-    }
-  },
+
   "看市场": {
     title: "市场分析",
     description: "行业分析、投资工具和公司数据",
@@ -234,141 +175,7 @@ const functionalCategories = {
       ]
     }
   },
-  "看资讯": {
-    title: "经济资讯",
-    description: "获取最新经济新闻、观点和趋势分析",
-    icon: Globe,
-    subcategories: {
-      "国际主流媒体": [
-        {
-          name: "The Economist",
-          url: "https://www.economist.com",
-          description: "英国老牌周刊，深入报道全球政治、经济、商业、科技趋势",
-          tags: ["英国", "权威"]
-        },
-        {
-          name: "Financial Times",
-          url: "https://www.ft.com",
-          description: "聚焦全球金融市场与宏观政策",
-          tags: ["金融", "全球"]
-        },
-        {
-          name: "Bloomberg",
-          url: "https://www.bloomberg.com",
-          description: "全球领先财经资讯，提供市场数据与宏观分析",
-          tags: ["财经", "数据"]
-        },
-        {
-          name: "Wall Street Journal",
-          url: "https://www.wsj.com",
-          description: "美国财经与商业新闻权威",
-          tags: ["美国", "商业"]
-        },
-        {
-          name: "Project Syndicate",
-          url: "https://www.project-syndicate.org",
-          description: "全球知名经济学家专栏，涵盖全球性议题",
-          tags: ["专栏", "全球"]
-        },
-        {
-          name: "VoxEU (CEPR)",
-          url: "https://cepr.org/voxeu",
-          description: "欧洲经济政策研究中心专家观点平台",
-          tags: ["欧洲", "政策"]
-        }
-      ],
-      "中文主流财经平台": [
-        {
-          name: "财新网",
-          url: "https://www.caixin.com",
-          description: "深度调查与政策金融报道",
-          tags: ["中国", "深度"]
-        },
-        {
-          name: "第一财经",
-          url: "https://www.yicai.com",
-          description: "实时经济新闻与数据解读",
-          tags: ["中国", "实时"]
-        },
-        {
-          name: "澎湃新闻·财经频道",
-          url: "https://www.thepaper.cn/list_25435",
-          description: "关注宏观经济与政策落地",
-          tags: ["中国", "宏观"]
-        },
-        {
-          name: "21世纪经济报道",
-          url: "https://www.21jingji.com",
-          description: "老牌财经媒体，关注实务与政策",
-          tags: ["中国", "政策"]
-        },
-        {
-          name: "界面新闻财经",
-          url: "https://www.jiemian.com/lists/6.html",
-          description: "科技、新经济方向的财经新闻",
-          tags: ["中国", "科技"]
-        },
-        {
-          name: "网易数读",
-          url: "https://data.163.com",
-          description: "数据可视化与趋势洞察",
-          tags: ["中国", "数据"]
-        }
-      ],
-      "学术观点与智库媒体": [
-        {
-          name: "NBER Digest",
-          url: "https://www.nber.org/digest",
-          description: "美国国家经济研究局摘要刊物",
-          tags: ["美国", "学术"]
-        },
-        {
-          name: "Brookings Institution",
-          url: "https://www.brookings.edu/topic/economy",
-          description: "美国布鲁金斯学会经济研究频道",
-          tags: ["美国", "智库"]
-        },
-        {
-          name: "Peterson Institute",
-          url: "https://www.piie.com",
-          description: "专注国际经济政策研究的智库",
-          tags: ["国际", "政策"]
-        },
-        {
-          name: "清华五道口金融评论",
-          url: "https://www.pbcsf.tsinghua.edu.cn",
-          description: "融合学术与业界的金融评论平台",
-          tags: ["中国", "金融"]
-        }
-      ],
-      "轻量入门与新媒体": [
-        {
-          name: "得到 App",
-          url: "https://www.dedao.cn",
-          description: "以知识服务为核心，含经济学课程与栏目",
-          tags: ["中国", "知识"]
-        },
-        {
-          name: "吴晓波频道",
-          url: "https://www.woshipm.com/author/wuxiaobo",
-          description: "主打企业经济史与商业观察",
-          tags: ["中国", "商业"]
-        },
-        {
-          name: "混沌学园",
-          url: "https://www.hundun.cn",
-          description: "研究创新商业与底层经济逻辑",
-          tags: ["中国", "创新"]
-        },
-        {
-          name: "知乎经济学话题",
-          url: "https://www.zhihu.com/topic/19550517/hot",
-          description: "大众讨论经济问题的平台",
-          tags: ["中国", "讨论"]
-        }
-      ]
-    }
-  }
+
 };
 
 const resourceTypeCategories = {
@@ -741,7 +548,7 @@ export default function Home() {
                 <a href="#home" className="text-slate-700 hover:text-blue-600 transition-colors">{t('nav_home')}</a>
                 <a href="#functional" className="text-slate-700 hover:text-blue-600 transition-colors">{t('nav_functional')}</a>
                 <a href="#resources" className="text-slate-700 hover:text-blue-600 transition-colors">{t('nav_resources')}</a>
-                <a href="#news" className="text-slate-700 hover:text-blue-600 transition-colors">{t('nav_news')}</a>
+
                 <a href="#german" className="text-slate-700 hover:text-blue-600 transition-colors">{t('nav_german')}</a>
                 <a href="#faq" className="text-slate-700 hover:text-blue-600 transition-colors">{t('nav_faq')}</a>
               </nav>
@@ -766,7 +573,7 @@ export default function Home() {
                 <a href="#home" className="block px-3 py-2 text-slate-700 hover:text-blue-600">{t('nav_home')}</a>
                 <a href="#functional" className="block px-3 py-2 text-slate-700 hover:text-blue-600">{t('nav_functional')}</a>
                 <a href="#resources" className="block px-3 py-2 text-slate-700 hover:text-blue-600">{t('nav_resources')}</a>
-                <a href="#news" className="block px-3 py-2 text-slate-700 hover:text-blue-600">{t('nav_news')}</a>
+
                 <a href="#german" className="block px-3 py-2 text-slate-700 hover:text-blue-600">{t('nav_german')}</a>
                 <a href="#faq" className="block px-3 py-2 text-slate-700 hover:text-blue-600">{t('nav_faq')}</a>
               </div>
@@ -786,25 +593,7 @@ export default function Home() {
             {t('hero_subtitle')}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button 
-              size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
-              onClick={() => document.getElementById('functional')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <Database className="w-5 h-5 mr-2" />
-              {t('btn_find_data')}
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-slate-300 text-slate-700 hover:bg-slate-50 px-8 py-3"
-              onClick={() => document.getElementById('resources')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <BookOpen className="w-5 h-5 mr-2" />
-              {t('btn_learn')}
-            </Button>
-          </div>
+
 
           <div className="relative max-w-2xl mx-auto">
             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
@@ -891,10 +680,10 @@ export default function Home() {
                     </div>
                     <div className="flex-1">
                       <CardTitle className="text-xl font-semibold text-slate-900">
-                        {category.title}
+                        {getResourceTranslation(currentLanguage, 'categories', key)}
                       </CardTitle>
                       <CardDescription className="text-slate-600 mt-1">
-                        {category.description}
+                        {getResourceDescription(currentLanguage, 'categories', key)}
                       </CardDescription>
                     </div>
                   </div>
@@ -906,7 +695,7 @@ export default function Home() {
                       <div key={subKey}>
                         <h3 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
                           <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                          {subKey}
+                          {getResourceTranslation(currentLanguage, 'categories', key, subKey)}
                           <Badge variant="secondary" className="ml-2 text-xs">
                             {resources.length}
                           </Badge>
@@ -920,10 +709,10 @@ export default function Home() {
                             >
                               <div className="flex-1">
                                 <h4 className="font-semibold text-slate-900 mb-1 hover:text-blue-600 transition-colors">
-                                  {resource.name}
+                                  {getResourceTranslation(currentLanguage, 'resources', resource.name, 'name') || resource.name}
                                 </h4>
                                 <p className="text-sm text-slate-600 mb-2">
-                                  {resource.description}
+                                  {getResourceTranslation(currentLanguage, 'resources', resource.name, 'description') || resource.description}
                                 </p>
                                 <div className="flex flex-wrap gap-1">
                                   {resource.tags.map((tag, tagIndex) => (
@@ -932,7 +721,7 @@ export default function Home() {
                                       variant="outline" 
                                       className="text-xs"
                                     >
-                                      {tag}
+                                      {getResourceTranslation(currentLanguage, 'tags', tag)}
                                     </Badge>
                                   ))}
                                 </div>
@@ -978,9 +767,9 @@ export default function Home() {
                     <div className="bg-gradient-to-br from-green-500 to-blue-500 rounded-lg p-3 group-hover:scale-110 transition-transform">
                       <category.icon className="h-6 w-6 text-white" />
                     </div>
-                    <CardTitle className="text-lg font-semibold text-slate-900">{category.title}</CardTitle>
+                    <CardTitle className="text-lg font-semibold text-slate-900">{getResourceTranslation(currentLanguage, 'resourceTypes', key)}</CardTitle>
                   </div>
-                  <CardDescription className="text-slate-600">{category.description}</CardDescription>
+                  <CardDescription className="text-slate-600">{getResourceDescription(currentLanguage, 'resourceTypes', key)}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
@@ -992,15 +781,15 @@ export default function Home() {
                       >
                         <div className="flex-1">
                           <h4 className="font-semibold text-slate-900 mb-1 hover:text-blue-600 transition-colors">
-                            {resource.name}
+                            {getResourceTranslation(currentLanguage, 'resources', resource.name, 'name') || resource.name}
                           </h4>
                           <p className="text-sm text-slate-600 mb-2">
-                            {resource.description}
+                            {getResourceTranslation(currentLanguage, 'resources', resource.name, 'description') || resource.description}
                           </p>
                           <div className="flex flex-wrap gap-1">
                             {resource.tags.map((tag, tagIndex) => (
                               <Badge key={tagIndex} variant="outline" className="text-xs">
-                                {tag}
+                                {getResourceTranslation(currentLanguage, 'tags', tag)}
                               </Badge>
                             ))}
                           </div>
@@ -1016,64 +805,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* News and Media Section */}
-      <section id="news" className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Globe className="h-8 w-8 text-purple-600" />
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-                {t('news_title')}
-              </h2>
-            </div>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              {t('news_subtitle')}
-            </p>
-          </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {Object.entries(functionalCategories["看资讯"].subcategories).map(([key, resources]) => (
-              <Card key={key} className="bg-white/80 backdrop-blur-sm border-purple-200 hover:shadow-xl transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="text-xl font-semibold text-slate-900 flex items-center gap-2">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
-                    {key}
-                    <Badge variant="secondary" className="ml-2 text-xs">
-                      {resources.length}
-                    </Badge>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    {resources.map((resource, index) => (
-                      <div 
-                        key={index}
-                        className="flex items-center justify-between p-4 rounded-lg bg-white border border-purple-100 hover:border-purple-200 transition-colors cursor-pointer hover:bg-purple-50"
-                        onClick={() => window.open(resource.url, '_blank')}
-                      >
-                        <div className="flex-1">
-                          <h4 className="font-semibold text-slate-900 mb-1 hover:text-purple-600 transition-colors">
-                            {resource.name}
-                          </h4>
-                          <p className="text-sm text-slate-600 mb-2">{resource.description}</p>
-                          <div className="flex flex-wrap gap-1">
-                            {resource.tags.map((tag, tagIndex) => (
-                              <Badge key={tagIndex} variant="outline" className="text-xs border-purple-200 text-purple-700">
-                                {tag}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
-                        <ArrowRight className="w-5 h-5 text-purple-400 hover:text-purple-600 transition-colors ml-4" />
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* German Special Section */}
       <section id="german" className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
@@ -1109,13 +841,13 @@ export default function Home() {
                       >
                         <div className="flex-1">
                           <h4 className="font-semibold text-slate-900 mb-1 hover:text-orange-600 transition-colors">
-                            {resource.name}
+                            {getResourceTranslation(currentLanguage, 'resources', resource.name, 'name') || resource.name}
                           </h4>
-                          <p className="text-sm text-slate-600 mb-2">{resource.description}</p>
+                          <p className="text-sm text-slate-600 mb-2">{getResourceTranslation(currentLanguage, 'resources', resource.name, 'description') || resource.description}</p>
                           <div className="flex flex-wrap gap-1">
                             {resource.tags.map((tag, tagIndex) => (
                               <Badge key={tagIndex} variant="outline" className="text-xs border-orange-200 text-orange-700">
-                                {tag}
+                                {getResourceTranslation(currentLanguage, 'tags', tag)}
                               </Badge>
                             ))}
                           </div>
@@ -1193,7 +925,7 @@ export default function Home() {
               <ul className="space-y-2 text-slate-300">
                 <li><a href="#functional" className="hover:text-blue-400 transition-colors" onClick={() => setActiveView('functional')}>{t('find_data')}</a></li>
                 <li><a href="#functional" className="hover:text-blue-400 transition-colors" onClick={() => setActiveView('functional')}>{t('read_policy')}</a></li>
-                <li><a href="#functional" className="hover:text-blue-400 transition-colors" onClick={() => setActiveView('functional')}>{t('do_research')}</a></li>
+
                 <li><a href="#functional" className="hover:text-blue-400 transition-colors" onClick={() => setActiveView('functional')}>{t('watch_market')}</a></li>
               </ul>
             </div>
