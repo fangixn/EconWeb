@@ -117,7 +117,11 @@ export const translations = {
     btn_start_exploring: 'Start Exploring',
     btn_view_resources: 'View Resources',
     btn_get_started: 'Get Started',
-    btn_show_less: 'Show Less'
+    btn_show_less: 'Show Less',
+    
+    // Additional UI text
+    visit_resource: 'Visit Resource',
+    german_focus: 'German Focus'
   },
   
   zh: {
@@ -228,7 +232,11 @@ export const translations = {
     btn_start_exploring: '开始探索',
     btn_view_resources: '查看资源',
     btn_get_started: '立即开始',
-    btn_show_less: '收起'
+    btn_show_less: '收起',
+    
+    // Additional UI text
+    visit_resource: '访问资源',
+    german_focus: '德国专题'
   },
   
   ko: {
@@ -339,7 +347,11 @@ export const translations = {
     btn_start_exploring: '탐색 시작',
     btn_view_resources: '리소스 보기',
     btn_get_started: '시작하기',
-    btn_show_less: '접기'
+    btn_show_less: '접기',
+    
+    // Additional UI text
+    visit_resource: '리소스 방문',
+    german_focus: '독일 집중'
   },
   
   ja: {
@@ -450,7 +462,11 @@ export const translations = {
     btn_start_exploring: '探索を開始',
     btn_view_resources: 'リソースを表示',
     btn_get_started: '始める',
-    btn_show_less: '折りたたむ'
+    btn_show_less: '折りたたむ',
+    
+    // Additional UI text
+    visit_resource: 'リソースを訪問',
+    german_focus: 'ドイツ特集'
   },
 
   de: {
@@ -561,7 +577,11 @@ export const translations = {
     btn_start_exploring: 'Entdeckung beginnen',
     btn_view_resources: 'Ressourcen anzeigen',
     btn_get_started: 'Loslegen',
-    btn_show_less: 'Weniger anzeigen'
+    btn_show_less: 'Weniger anzeigen',
+    
+    // Additional UI text
+    visit_resource: 'Ressource besuchen',
+    german_focus: 'Deutschland-Fokus'
   }
 };
 

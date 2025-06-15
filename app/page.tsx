@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { economicsCategories, germanEconomicsResources } from '@/lib/data';
 import { useLanguage } from '@/lib/LanguageContext';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { getResourceTranslation } from '@/lib/resourcesI18n';
 
 // Icon mapping
 const iconMap = {
@@ -25,7 +26,7 @@ const iconMap = {
 };
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -58,6 +59,23 @@ export default function Home() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setIsMenuOpen(false);
+  };
+
+  const startExploring = () => {
+    // 根据当前语言设置热门搜索词
+    const searchKeywords = {
+      'zh': '数据',
+      'en': 'data', 
+      'ko': '데이터',
+      'ja': 'データ',
+      'de': 'Daten'
+    };
+    
+    const keyword = searchKeywords[currentLanguage] || 'data';
+    setSearchTerm(keyword);
+    
+    // 滚动到资源区域
+    scrollToSection('resources');
   };
 
   const toggleCategoryExpansion = (categoryKey: string) => {
@@ -260,7 +278,7 @@ export default function Home() {
                     }`}
                     onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
                   >
-                    {tag}
+                    {getResourceTranslation(currentLanguage, 'tags', tag) || tag}
                     {selectedTag === tag && (
                       <X className="ml-2 w-3 h-3" />
                     )}
@@ -272,7 +290,7 @@ export default function Home() {
                   <p className="text-sm text-gray-500">
                     {searchTerm && `${t('searching_for') || 'Searching for'}: "${searchTerm}"`}
                     {searchTerm && selectedTag && ' • '}
-                    {selectedTag && `${t('filtered_by') || 'Filtered by'}: ${selectedTag}`}
+                    {selectedTag && `${t('filtered_by') || 'Filtered by'}: ${getResourceTranslation(currentLanguage, 'tags', selectedTag) || selectedTag}`}
                   </p>
                 </div>
               )}
@@ -283,7 +301,7 @@ export default function Home() {
               <Button 
                 size="lg" 
                 className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg rounded-2xl"
-                onClick={() => scrollToSection('resources')}
+                onClick={startExploring}
               >
                 {t('btn_start_exploring')}
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -384,7 +402,7 @@ export default function Home() {
                               rel="noopener noreferrer"
                               className="text-sm font-medium text-blue-600 hover:text-blue-800 line-clamp-1"
                             >
-                              {resource.name}
+                              {getResourceTranslation(currentLanguage, 'resources', resource.name) || resource.name}
                             </a>
                             <p className="text-xs text-gray-500 mt-1 line-clamp-2">
                               {resource.description}
@@ -392,7 +410,7 @@ export default function Home() {
                             <div className="flex flex-wrap gap-1 mt-2">
                               {resource.tags.slice(0, 2).map((tag: string) => (
                                 <Badge key={tag} variant="secondary" className="text-xs px-2 py-0.5">
-                                  {tag}
+                                  {getResourceTranslation(currentLanguage, 'tags', tag) || tag}
                                 </Badge>
                               ))}
                             </div>
@@ -445,7 +463,7 @@ export default function Home() {
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <CardTitle className="text-lg font-semibold text-gray-900 mb-2">
-                        {resource.name}
+                        {getResourceTranslation(currentLanguage, 'resources', resource.name) || resource.name}
                       </CardTitle>
                       <CardDescription className="text-sm text-gray-600 leading-relaxed">
                         {resource.description}
@@ -460,7 +478,7 @@ export default function Home() {
                   <div className="flex flex-wrap gap-2 mb-4">
                     {resource.tags.map((tag: string) => (
                       <Badge key={tag} variant="secondary" className="text-xs px-2 py-1 bg-orange-100 text-orange-800">
-                        {tag}
+                        {getResourceTranslation(currentLanguage, 'tags', tag) || tag}
                       </Badge>
                     ))}
                   </div>

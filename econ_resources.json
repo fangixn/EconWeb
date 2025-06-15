@@ -1,0 +1,257 @@
+{
+    "首页资源清单": {
+      "报告发布机构": [
+        {
+          "name": "IMF（国际货币基金组织）",
+          "description": "全球宏观经济分析、地区展望、金融稳定报告",
+          "url": "https://www.imf.org"
+        },
+        {
+          "name": "世界银行（World Bank）",
+          "description": "发展经济研究、数据分析与发展报告",
+          "url": "https://www.worldbank.org"
+        },
+        {
+          "name": "OECD（经济合作与发展组织）",
+          "description": "经济政策分析与统计",
+          "url": "https://www.oecd.org"
+        },
+        {
+          "name": "中国国家统计局",
+          "description": "中国官方统计数据发布平台",
+          "url": "https://www.stats.gov.cn"
+        },
+        {
+          "name": "欧洲央行（ECB）",
+          "description": "欧元区货币政策与经济研究",
+          "url": "https://www.ecb.europa.eu"
+        }
+      ],
+      "论文与学术资源": [
+        {
+          "name": "SSRN",
+          "description": "各类社会科学领域工作论文下载",
+          "url": "https://www.ssrn.com"
+        },
+        {
+          "name": "RePEc",
+          "description": "全球经济学论文索引数据库",
+          "url": "https://repec.org"
+        },
+        {
+          "name": "IDEAS",
+          "description": "RePEc 门户，可查找作者与论文",
+          "url": "https://ideas.repec.org"
+        },
+        {
+          "name": "arXiv Economics",
+          "description": "预印本论文平台（含金融/经济）",
+          "url": "https://arxiv.org/archive/q-fin"
+        },
+        {
+          "name": "NBER",
+          "description": "美国国家经济研究局，实证研究与政策评估",
+          "url": "https://www.nber.org"
+        }
+      ],
+      "数据与统计资源": [
+        {
+          "name": "FRED",
+          "description": "美国及全球宏观经济指标数据库",
+          "url": "https://fred.stlouisfed.org"
+        },
+        {
+          "name": "IMF Data",
+          "description": "各国经济指标（外汇、财政等）",
+          "url": "https://data.imf.org"
+        },
+        {
+          "name": "World Bank Data",
+          "description": "各国社会、经济发展指标",
+          "url": "https://data.worldbank.org"
+        },
+        {
+          "name": "OECD.Stat",
+          "description": "OECD 成员国结构化数据平台",
+          "url": "https://stats.oecd.org"
+        },
+        {
+          "name": "中国人民银行",
+          "description": "发布利率、汇率、货币供应等信息",
+          "url": "http://www.pbc.gov.cn"
+        }
+      ],
+      "公开课与学习资源": [
+        {
+          "name": "MIT OCW - Economics",
+          "description": "麻省理工经济学课程公开页",
+          "url": "https://ocw.mit.edu/courses/economics"
+        },
+        {
+          "name": "Harvard Kennedy School",
+          "description": "公共政策与经济学课程资料",
+          "url": "https://www.hks.harvard.edu"
+        },
+        {
+          "name": "Khan Academy - Economics",
+          "description": "免费入门经济学视频课程",
+          "url": "https://www.khanacademy.org/economics-finance-domain"
+        },
+        {
+          "name": "Coursera - Economics",
+          "description": "大学主讲的在线课程聚合平台",
+          "url": "https://www.coursera.org"
+        },
+        {
+          "name": "Marginal Revolution University",
+          "description": "经济学家创办的在线视频课程网站",
+          "url": "https://mru.org"
+        }
+      ],
+      "实用工具与推荐书单": [
+        {
+          "name": "通货膨胀计算器（US）",
+          "description": "基于历史 CPI 计算真实购买力",
+          "url": "https://www.usinflationcalculator.com"
+        },
+        {
+          "name": "Our World in Data",
+          "description": "数据驱动的全球发展趋势可视化平台",
+          "url": "https://ourworldindata.org"
+        },
+        {
+          "name": "Zotero",
+          "description": "学术参考文献管理工具",
+          "url": "https://www.zotero.org"
+        },
+        {
+          "name": "Econlib",
+          "description": "自由市场经济思想资源与书籍",
+          "url": "https://www.econlib.org"
+        }
+      ]
+    }
+  }
+{
+    "经济资讯一览": {
+      "国际主流媒体": [
+        {
+          "name": "The Economist",
+          "url": "https://www.economist.com",
+          "description": "英国老牌周刊，深入报道全球政治、经济、商业、科技趋势"
+        },
+        {
+          "name": "Financial Times",
+          "url": "https://www.ft.com",
+          "description": "聚焦全球金融市场与宏观政策"
+        },
+        {
+          "name": "Bloomberg",
+          "url": "https://www.bloomberg.com",
+          "description": "全球领先财经资讯，提供市场数据与宏观分析"
+        },
+        {
+          "name": "Wall Street Journal",
+          "url": "https://www.wsj.com",
+          "description": "美国财经与商业新闻权威"
+        },
+        {
+          "name": "Project Syndicate",
+          "url": "https://www.project-syndicate.org",
+          "description": "全球知名经济学家专栏，涵盖全球性议题"
+        },
+        {
+          "name": "VoxEU (CEPR)",
+          "url": "https://cepr.org/voxeu",
+          "description": "欧洲经济政策研究中心专家观点平台"
+        }
+      ],
+      "中文主流财经平台": [
+        {
+          "name": "财新网",
+          "url": "https://www.caixin.com",
+          "description": "深度调查与政策金融报道"
+        },
+        {
+          "name": "第一财经",
+          "url": "https://www.yicai.com",
+          "description": "实时经济新闻与数据解读"
+        },
+        {
+          "name": "澎湃新闻·财经频道",
+          "url": "https://www.thepaper.cn/list_25435",
+          "description": "关注宏观经济与政策落地"
+        },
+        {
+          "name": "21世纪经济报道",
+          "url": "https://www.21jingji.com",
+          "description": "老牌财经媒体，关注实务与政策"
+        },
+        {
+          "name": "界面新闻财经",
+          "url": "https://www.jiemian.com/lists/6.html",
+          "description": "科技、新经济方向的财经新闻"
+        },
+        {
+          "name": "网易数读 / DT 财经",
+          "url": "https://dtcj.com",
+          "description": "数据可视化与趋势洞察"
+        }
+      ],
+      "学术观点与智库媒体": [
+        {
+          "name": "经济学家圈",
+          "url": "https://mp.weixin.qq.com", 
+          "description": "微信公众号平台，聚集学界经济学人"
+        },
+        {
+          "name": "Macro研习社",
+          "url": "https://mp.weixin.qq.com",
+          "description": "宏观研究员深度解读平台"
+        },
+        {
+          "name": "NBER Digest",
+          "url": "https://www.nber.org/digest",
+          "description": "美国国家经济研究局摘要刊物"
+        },
+        {
+          "name": "Brookings Institution",
+          "url": "https://www.brookings.edu/topic/economy",
+          "description": "美国布鲁金斯学会经济研究频道"
+        },
+        {
+          "name": "Peterson Institute for International Economics",
+          "url": "https://www.piie.com",
+          "description": "专注国际经济政策研究的智库"
+        },
+        {
+          "name": "清华五道口金融评论",
+          "url": "https://www.pbcsf.tsinghua.edu.cn",
+          "description": "融合学术与业界的金融评论平台"
+        }
+      ],
+      "轻量入门与新媒体": [
+        {
+          "name": "得到 App",
+          "url": "https://www.dedao.cn",
+          "description": "以知识服务为核心，含经济学课程与栏目"
+        },
+        {
+          "name": "吴晓波频道",
+          "url": "https://www.woshipm.com/author/wuxiaobo",
+          "description": "主打企业经济史与商业观察"
+        },
+        {
+          "name": "混沌学园 / 混沌研究院",
+          "url": "https://www.hundun.cn",
+          "description": "研究创新商业与底层经济逻辑"
+        },
+        {
+          "name": "知乎经济学话题",
+          "url": "https://www.zhihu.com/topic/19550517/hot",
+          "description": "大众讨论经济问题的平台"
+        }
+      ]
+    }
+  }
+  
