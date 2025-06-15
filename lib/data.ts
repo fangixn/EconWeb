@@ -490,7 +490,9 @@ export const faqData = [
   }
 ];
 
-// 顶级学术期刊专题资源
+// 顶级学术期刊专题资源 - 按影响因子排序
+// 1. QJE (35.995), 2. AER (25.102), 3. JF (22.836), 4. Econometrica (21.091), 5. REStud (19.166)
+// 6. JFE (17.669), 7. JPE (17.087), 8. RFS (16.546), 9. AEJ:Macro (13.528), 10. JM (13.394)
 export const topJournalsResources = [
   {
     name: "Quarterly Journal of Economics (QJE)",
@@ -499,16 +501,22 @@ export const topJournalsResources = [
     tags: ["Top Tier", "General Economics", "High Impact"]
   },
   {
-    name: "Econometrica",
-    url: "https://www.econometricsociety.org/publications/econometrica",
-    description: "Premier journal of the Econometric Society, focusing on theoretical and applied econometrics",
-    tags: ["Top Tier", "Econometrics", "Theory"]
+    name: "American Economic Review",
+    url: "https://www.aeaweb.org/journals/aer",
+    description: "The flagship journal of the American Economic Association, publishing high-quality research across all fields of economics",
+    tags: ["Top Tier", "General Economics", "AEA"]
   },
   {
     name: "Journal of Finance (JF)",
     url: "https://afajof.org/journal-of-finance/",
     description: "Leading journal of the American Finance Association, covering all major fields of finance",
     tags: ["Top Tier", "Finance", "High Impact"]
+  },
+  {
+    name: "Econometrica",
+    url: "https://www.econometricsociety.org/publications/econometrica",
+    description: "Premier journal of the Econometric Society, focusing on theoretical and applied econometrics",
+    tags: ["Top Tier", "Econometrics", "Theory"]
   },
   {
     name: "Review of Economic Studies (REStud)",
@@ -541,15 +549,9 @@ export const topJournalsResources = [
     tags: ["Top Tier", "Macroeconomics", "AEA"]
   },
   {
-    name: "Journal of Monetary Economics",
+    name: "Journal of Marketing",
     url: "https://journals.sagepub.com/home/jmx",
-    description: "Premier journal for monetary economics, central banking, and macroeconomic policy research",
-    tags: ["Top Tier", "Monetary Economics", "Central Banking"]
-  },
-  {
-    name: "AEA Journals Collection",
-    url: "https://www.aeaweb.org/journals",
-    description: "Complete collection of American Economic Association journals including AER, JEL, JEP and specialized journals",
-    tags: ["Top Tier", "AEA", "Journal Collection"]
+    description: "Premier journal in marketing research, publishing cutting-edge studies on consumer behavior and marketing strategy",
+    tags: ["Top Tier", "Marketing", "Consumer Behavior"]
   }
 ]; 

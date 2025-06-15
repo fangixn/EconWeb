@@ -15,8 +15,16 @@ export const journalTranslations: Record<string, JournalTranslation> = {
     en: "Quarterly Journal of Economics (QJE)",
     zh: "经济学季刊",
     ko: "Quarterly Journal of Economics (QJE) (경제학 계간지)",
-    ja: "Quarterly Journal of Economics (QJE) (経済学季刊)",
+    ja: "Quarterly Journal of Economics (QJE) (经济学季刊)",
     de: "Quarterly Journal of Economics (QJE) (Vierteljahresschrift für Wirtschaftswissenschaften)"
+  },
+  
+  "American Economic Review": {
+    en: "American Economic Review",
+    zh: "美国经济评论",
+    ko: "American Economic Review (미국경제리뷰)",
+    ja: "American Economic Review (アメリカ経済レビュー)",
+    de: "American Economic Review (Amerikanische Wirtschaftsübersicht)"
   },
   
   "Econometrica": {
@@ -75,20 +83,12 @@ export const journalTranslations: Record<string, JournalTranslation> = {
     de: "American Economic Journal: Macroeconomics (Amerikanische Wirtschaftszeitschrift: Makroökonomie)"
   },
   
-  "Journal of Monetary Economics": {
-    en: "Journal of Monetary Economics",
-    zh: "货币经济学杂志",
-    ko: "Journal of Monetary Economics (화폐경제학저널)",
-    ja: "Journal of Monetary Economics (貨幣経済学ジャーナル)",
-    de: "Journal of Monetary Economics (Zeitschrift für Geldwirtschaft)"
-  },
-  
-  "AEA Journals Collection": {
-    en: "AEA Journals Collection",
-    zh: "美国经济学会期刊合集",
-    ko: "AEA Journals Collection (미국경제학회 저널 컬렉션)",
-    ja: "AEA Journals Collection (アメリカ経済学会ジャーナル集)",
-    de: "AEA Journals Collection (Sammlung der amerikanischen Wirtschaftsvereinigung)"
+  "Journal of Marketing": {
+    en: "Journal of Marketing",
+    zh: "营销学杂志",
+    ko: "Journal of Marketing (마케팅저널)",
+    ja: "Journal of Marketing (マーケティング・ジャーナル)",
+    de: "Journal of Marketing (Marketing-Zeitschrift)"
   }
 };
 

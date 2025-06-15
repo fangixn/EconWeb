@@ -116,9 +116,27 @@ export default function Home() {
     }
 
     const results = resources.map((resource: any) => {
-      const matchesSearch = searchTerm === '' || 
-        resource.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        resource.description.toLowerCase().includes(searchTerm.toLowerCase());
+      // 多语言搜索逻辑
+      const searchLower = searchTerm.toLowerCase();
+      
+      // 1. 搜索原始英文内容
+      const matchesOriginal = searchTerm === '' || 
+        resource.name.toLowerCase().includes(searchLower) ||
+        resource.description.toLowerCase().includes(searchLower) ||
+        resource.tags.some((tag: string) => tag.toLowerCase().includes(searchLower));
+      
+      // 2. 搜索翻译后的资源名称
+      const translatedName = getResourceTranslation(currentLanguage, 'resources', resource.name);
+      const matchesTranslatedName = translatedName.toLowerCase().includes(searchLower);
+      
+      // 3. 搜索翻译后的标签
+      const matchesTranslatedTags = resource.tags.some((tag: string) => {
+        const translatedTag = getResourceTranslation(currentLanguage, 'tags', tag);
+        return translatedTag.toLowerCase().includes(searchLower);
+      });
+      
+      // 组合所有搜索结果
+      const matchesSearch = searchTerm === '' || matchesOriginal || matchesTranslatedName || matchesTranslatedTags;
       
       const matchesTag = selectedTag === null || resource.tags.includes(selectedTag);
       
@@ -357,7 +375,11 @@ export default function Home() {
                         ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-md' 
                         : 'bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-700'
                     }`}
-                    onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
+                    onClick={() => {
+                      setSelectedTag(selectedTag === tag ? null : tag);
+                      // 自动滚动到资源区域以显示筛选结果
+                      setTimeout(() => scrollToSection('resources'), 100);
+                    }}
                   >
                     {getResourceTranslation(currentLanguage, 'tags', tag) || tag}
                     {selectedTag === tag && (
@@ -448,12 +470,52 @@ export default function Home() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               {t('resource_subtitle')}
             </p>
+            
+            {/* 筛选结果统计 */}
+            {(searchTerm || selectedTag) && (
+              <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-4 max-w-2xl mx-auto">
+                <div className="flex items-center justify-center space-x-2">
+                  <Search className="w-5 h-5 text-blue-600" />
+                  <span className="text-blue-800 font-medium">
+                    {(() => {
+                      const totalResults = Object.values(economicsCategories).reduce((total, category) => 
+                        total + filterResources(category.resources).length, 0
+                      );
+                      const totalResources = Object.values(economicsCategories).reduce((total, category) => 
+                        total + category.resources.length, 0
+                      );
+                      return `找到 ${totalResults} 个资源 (共 ${totalResources} 个)`;
+                    })()}
+                  </span>
+                </div>
+                {searchTerm && selectedTag && (
+                  <p className="text-sm text-blue-600 mt-2">
+                    搜索 "{searchTerm}" + 筛选 "{getResourceTranslation(currentLanguage, 'tags', selectedTag) || selectedTag}"
+                  </p>
+                )}
+                {searchTerm && !selectedTag && (
+                  <p className="text-sm text-blue-600 mt-2">
+                    搜索 "{searchTerm}"
+                  </p>
+                )}
+                {!searchTerm && selectedTag && (
+                  <p className="text-sm text-blue-600 mt-2">
+                    筛选 "{getResourceTranslation(currentLanguage, 'tags', selectedTag) || selectedTag}"
+                  </p>
+                )}
+              </div>
+            )}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Object.entries(economicsCategories).map(([key, category]) => {
               const IconComponent = iconMap[category.icon as keyof typeof iconMap];
               const filteredResources = filterResources(category.resources);
+              
+              // 如果筛选后没有资源，则隐藏该分类
+              if (filteredResources.length === 0 && (searchTerm || selectedTag)) {
+                return null;
+              }
               
               return (
                 <Card key={key} id={`category-${key}`} className="hover:shadow-xl transition-all duration-300 group border-0 shadow-md">
@@ -466,8 +528,17 @@ export default function Home() {
                         <CardTitle className="text-xl font-semibold">
                           {getCategoryTranslation(currentLanguage, key, 'title')}
                         </CardTitle>
-                        <CardDescription className="text-sm text-gray-500">
+                        <CardDescription className={`text-sm ${
+                          filteredResources.length !== category.resources.length 
+                            ? 'text-blue-600 font-medium' 
+                            : 'text-gray-500'
+                        }`}>
                           {filteredResources.length} {t('resources_count')}
+                          {filteredResources.length !== category.resources.length && (
+                            <span className="text-xs text-gray-400 ml-1">
+                              / {category.resources.length}
+                            </span>
+                          )}
                         </CardDescription>
                       </div>
                     </div>
