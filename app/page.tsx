@@ -192,65 +192,100 @@ export default function Home() {
             'rfs': ['review of financial studies', 'financial studies']
           };
           
-                     // 多语言概念映射
-           const conceptMappings: Record<string, string[]> = {
-             // 中文
-             '数据': ['data', 'database', 'statistics', 'statistical'],
-             '宏观': ['macro', 'macroeconomic', 'fred', 'imf', 'world bank', 'economic indicators'],
-             '微观': ['micro', 'microdata', 'survey', 'household', 'firm'],
-             '央行': ['central bank', 'monetary', 'pboc', 'federal reserve', 'ecb'],
-             '货币': ['monetary', 'currency', 'central bank'],
-             '政策zh': ['policy', 'government', 'regulation', 'official', 'report'],
-             '期刊': ['journal', 'review', 'quarterly', 'economic'],
-             '顶级': ['top tier', 'premier', 'leading', 'flagship'],
-             '课程': ['course', 'learning', 'education', 'university', 'academy'],
-             '学习': ['learning', 'course', 'education', 'study'],
-             '入门': ['beginner', 'introduction', 'basic', 'khan'],
-             '高级': ['advanced', 'graduate', 'phd', 'mit', 'harvard'],
-             '实时': ['real-time', 'live', 'current', 'updated'],
-             '中国': ['china', 'chinese', 'pboc', 'stats.gov.cn', 'beijing'],
-             '德国': ['germany', 'german', 'bundesbank', 'destatis', 'berlin'],
+                     // 多语言概念映射 - 根据当前语言动态获取
+           const getConceptMappings = () => {
+             const baseMappings: Record<string, string[]> = {
+               // 通用英文基础概念
+               'data': ['database', 'statistics', 'statistical'],
+               'macro': ['macroeconomic', 'fred', 'imf', 'world bank', 'economic indicators'],
+               'micro': ['microdata', 'survey', 'household', 'firm'],
+               'monetary': ['central bank', 'currency'],
+               'policy': ['government', 'regulation', 'official', 'report'],
+               'journal': ['review', 'quarterly', 'economic'],
+               'top': ['top tier', 'premier', 'leading', 'flagship'],
+               'learning': ['course', 'education', 'study', 'university', 'academy'],
+               'beginner': ['introduction', 'basic', 'khan'],
+               'advanced': ['graduate', 'phd', 'mit', 'harvard'],
+               'realtime': ['real-time', 'live', 'current', 'updated'],
+               'china': ['chinese', 'pboc', 'stats.gov.cn', 'beijing'],
+               'germany': ['german', 'bundesbank', 'destatis', 'berlin']
+             };
+
+             // 根据当前语言添加特定映射
+             const languageSpecificMappings: Record<string, string[]> = {};
              
-             // 英文
-             'data': ['database', 'statistics', 'statistical', '数据'],
-             'macro': ['macroeconomic', 'fred', 'imf', 'world bank', '宏观'],
-             'micro': ['microdata', 'survey', 'household', 'firm', '微观'],
-             'monetary': ['central bank', 'currency', '货币', '央行'],
-             'policy': ['government', 'regulation', 'official'],
-             'journal_en': ['review', 'quarterly', 'economic', '期刊'],
-             'learning': ['course', 'education', 'study', '学习'],
-             'beginner': ['introduction', 'basic', 'khan', '入门'],
-             'advanced': ['graduate', 'phd', 'mit', 'harvard', '高级'],
-             'china': ['chinese', 'pboc', '中国'],
-             'germany': ['german', 'bundesbank', '德国'],
-             
-             // 韩文
-             '데이터': ['data', 'database', 'statistics'],
-             '거시': ['macro', 'macroeconomic'],
-             '미시': ['micro', 'microdata'],
-             '화폐': ['monetary', 'currency'],
-             '정책': ['policy', 'government'],
-             '저널': ['journal', 'review'],
-             '학습': ['learning', 'course'],
-             
-             // 日文
-             'データ': ['data', 'database', 'statistics'],
-             'マクロ': ['macro', 'macroeconomic'],
-             'ミクロ': ['micro', 'microdata'],
-             '金融': ['finance', 'monetary'],
-             '政策ja': ['policy', 'government'],
-             'ジャーナル': ['journal', 'review'],
-             '学習': ['learning', 'course'],
-             
-             // 德文
-             'daten': ['data', 'database', 'statistics'],
-             'makro': ['macro', 'macroeconomic'],
-             'mikro': ['micro', 'microdata'],
-             'währung': ['monetary', 'currency'],
-             'politik': ['policy', 'government'],
-             'journal_de': ['review', 'zeitschrift'],
-             'lernen': ['learning', 'course']
+             switch (currentLanguage) {
+               case 'zh':
+                 Object.assign(languageSpecificMappings, {
+                   '数据': ['data', 'database', 'statistics', 'statistical'],
+                   '宏观': ['macro', 'macroeconomic', 'fred', 'imf', 'world bank', 'economic indicators'],
+                   '微观': ['micro', 'microdata', 'survey', 'household', 'firm'],
+                   '央行': ['central bank', 'monetary', 'pboc', 'federal reserve', 'ecb'],
+                   '货币': ['monetary', 'currency', 'central bank'],
+                   '政策': ['policy', 'government', 'regulation', 'official', 'report'],
+                   '期刊': ['journal', 'review', 'quarterly', 'economic'],
+                   '顶级': ['top tier', 'premier', 'leading', 'flagship'],
+                   '顶刊': ['top tier', 'premier', 'leading', 'flagship', 'journal', 'review', 'quarterly', 'economic', 'aer', 'qje', 'jpe', 'restud'],
+                   '课程': ['course', 'learning', 'education', 'university', 'academy'],
+                   '学习': ['learning', 'course', 'education', 'study'],
+                   '入门': ['beginner', 'introduction', 'basic', 'khan'],
+                   '高级': ['advanced', 'graduate', 'phd', 'mit', 'harvard'],
+                   '实时': ['real-time', 'live', 'current', 'updated'],
+                   '中国': ['china', 'chinese', 'pboc', 'stats.gov.cn', 'beijing'],
+                   '德国': ['germany', 'german', 'bundesbank', 'destatis', 'berlin']
+                 });
+                 break;
+               case 'ko':
+                 Object.assign(languageSpecificMappings, {
+                   '데이터': ['data', 'database', 'statistics', 'statistical'],
+                   '거시': ['macro', 'macroeconomic', 'fred', 'imf', 'world bank'],
+                   '미시': ['micro', 'microdata', 'survey', 'household', 'firm'],
+                   '화폐': ['monetary', 'currency', 'central bank'],
+                   '정책': ['policy', 'government', 'regulation', 'official'],
+                   '저널': ['journal', 'review', 'quarterly', 'economic'],
+                   '최고급': ['top tier', 'premier', 'leading', 'flagship'],
+                   '톱저널': ['top tier', 'premier', 'leading', 'flagship', 'journal', 'review', 'aer', 'qje', 'jpe'],
+                   '학습': ['learning', 'course', 'education', 'study'],
+                   '중국': ['china', 'chinese', 'pboc'],
+                   '독일': ['germany', 'german', 'bundesbank', 'destatis']
+                 });
+                 break;
+               case 'ja':
+                 Object.assign(languageSpecificMappings, {
+                   'データ': ['data', 'database', 'statistics', 'statistical'],
+                   'マクロ': ['macro', 'macroeconomic', 'fred', 'imf', 'world bank'],
+                   'ミクロ': ['micro', 'microdata', 'survey', 'household', 'firm'],
+                   '金融': ['finance', 'monetary', 'currency', 'central bank'],
+                   '政策': ['policy', 'government', 'regulation', 'official'],
+                   'ジャーナル': ['journal', 'review', 'quarterly', 'economic'],
+                   '最高級': ['top tier', 'premier', 'leading', 'flagship'],
+                   'トップジャーナル': ['top tier', 'premier', 'leading', 'flagship', 'journal', 'review', 'aer', 'qje', 'jpe'],
+                   '学習': ['learning', 'course', 'education', 'study'],
+                   '中国': ['china', 'chinese', 'pboc'],
+                   'ドイツ': ['germany', 'german', 'bundesbank', 'destatis']
+                 });
+                 break;
+               case 'de':
+                 Object.assign(languageSpecificMappings, {
+                   'daten': ['data', 'database', 'statistics', 'statistical'],
+                   'makro': ['macro', 'macroeconomic', 'fred', 'imf', 'world bank'],
+                   'mikro': ['micro', 'microdata', 'survey', 'household', 'firm'],
+                   'währung': ['monetary', 'currency', 'central bank'],
+                   'politik': ['policy', 'government', 'regulation', 'official'],
+                   'zeitschrift': ['journal', 'review', 'quarterly', 'economic'],
+                   'spitzen': ['top tier', 'premier', 'leading', 'flagship'],
+                   'spitzenzeitschrift': ['top tier', 'premier', 'leading', 'flagship', 'journal', 'review', 'aer', 'qje', 'jpe'],
+                   'lernen': ['learning', 'course', 'education', 'study'],
+                   'china': ['chinese', 'pboc'],
+                   'deutschland': ['german', 'bundesbank', 'destatis']
+                 });
+                 break;
+             }
+
+             return { ...baseMappings, ...languageSpecificMappings };
            };
+
+           const conceptMappings = getConceptMappings();
           
           // 检查概念映射
           for (const [concept, expansions] of Object.entries(conceptMappings)) {
@@ -308,6 +343,47 @@ export default function Home() {
   const calculateRelevanceScore = (resource: any, searchLower: string) => {
     let score = 0;
     
+    // 特殊关键词处理 - 给特定资源类型更高权重（多语言支持）
+    const specialKeywordBonus = (() => {
+      // 顶级期刊相关搜索 - 根据当前语言检测关键词
+      const topJournalKeywords = {
+        'zh': ['顶刊', '顶级期刊', '期刊', '学术期刊'],
+        'en': ['top journal', 'premier journal', 'leading journal', 'flagship journal', 'academic journal'],
+        'ko': ['톱저널', '최고급저널', '학술저널', '저널'],
+        'ja': ['トップジャーナル', '最高級ジャーナル', '学術誌', 'ジャーナル'],
+        'de': ['spitzenzeitschrift', 'führende zeitschrift', 'akademische zeitschrift', 'zeitschrift']
+      };
+      
+      // 德国相关搜索 - 根据当前语言检测关键词
+      const germanKeywords = {
+        'zh': ['德国', '德国经济', '德意志'],
+        'en': ['germany', 'german', 'deutschland'],
+        'ko': ['독일', '독일경제', '도이칠란트'],
+        'ja': ['ドイツ', 'ドイツ経済', 'ゲルマン'],
+        'de': ['deutschland', 'deutsch', 'germanisch', 'bundesrepublik']
+      };
+      
+      // 检查顶级期刊关键词
+      const currentTopJournalKeywords = topJournalKeywords[currentLanguage] || topJournalKeywords['en'];
+      if (currentTopJournalKeywords.some(keyword => searchLower.includes(keyword.toLowerCase()))) {
+        if (resource.source === 'journals') {
+          return 15; // 顶级期刊资源获得最高得分
+        }
+      }
+      
+      // 检查德国相关关键词
+      const currentGermanKeywords = germanKeywords[currentLanguage] || germanKeywords['en'];
+      if (currentGermanKeywords.some(keyword => searchLower.includes(keyword.toLowerCase()))) {
+        if (resource.source === 'german') {
+          return 12; // 德国资源获得高得分
+        }
+      }
+      
+      return 0;
+    })();
+    
+    score += specialKeywordBonus;
+    
     // 名称完全匹配得分最高
     if (resource.name.toLowerCase().includes(searchLower)) {
       score += resource.name.toLowerCase() === searchLower ? 10 : 5;
@@ -330,6 +406,122 @@ export default function Home() {
     if (translatedName.toLowerCase().includes(searchLower)) {
       score += translatedName.toLowerCase() === searchLower ? 10 : 4;
     }
+    
+    // 智能关键词扩展匹配 - 使用多语言概念映射
+    const getSmartKeywords = (searchTerm: string): string[] => {
+      const keywords: string[] = [searchTerm];
+      
+      // 使用与搜索过滤相同的概念映射逻辑
+      const getConceptMappings = () => {
+        const baseMappings: Record<string, string[]> = {
+          'data': ['database', 'statistics', 'statistical'],
+          'macro': ['macroeconomic', 'fred', 'imf', 'world bank', 'economic indicators'],
+          'micro': ['microdata', 'survey', 'household', 'firm'],
+          'monetary': ['central bank', 'currency'],
+          'policy': ['government', 'regulation', 'official', 'report'],
+          'journal': ['review', 'quarterly', 'economic'],
+          'top': ['top tier', 'premier', 'leading', 'flagship'],
+          'learning': ['course', 'education', 'study', 'university', 'academy'],
+          'china': ['chinese', 'pboc', 'stats.gov.cn', 'beijing'],
+          'germany': ['german', 'bundesbank', 'destatis', 'berlin']
+        };
+
+        const languageSpecificMappings: Record<string, string[]> = {};
+        
+        switch (currentLanguage) {
+          case 'zh':
+            Object.assign(languageSpecificMappings, {
+              '数据': ['data', 'database', 'statistics', 'statistical'],
+              '宏观': ['macro', 'macroeconomic', 'fred', 'imf', 'world bank'],
+              '微观': ['micro', 'microdata', 'survey', 'household', 'firm'],
+              '央行': ['central bank', 'monetary', 'pboc', 'federal reserve', 'ecb'],
+              '货币': ['monetary', 'currency', 'central bank'],
+              '政策': ['policy', 'government', 'regulation', 'official', 'report'],
+              '期刊': ['journal', 'review', 'quarterly', 'economic'],
+              '顶级': ['top tier', 'premier', 'leading', 'flagship'],
+              '顶刊': ['top tier', 'premier', 'leading', 'flagship', 'journal', 'review', 'quarterly', 'economic', 'aer', 'qje', 'jpe', 'restud'],
+              '学习': ['learning', 'course', 'education', 'study'],
+              '中国': ['china', 'chinese', 'pboc', 'stats.gov.cn', 'beijing'],
+              '德国': ['germany', 'german', 'bundesbank', 'destatis', 'berlin']
+            });
+            break;
+          case 'ko':
+            Object.assign(languageSpecificMappings, {
+              '데이터': ['data', 'database', 'statistics', 'statistical'],
+              '거시': ['macro', 'macroeconomic', 'fred', 'imf', 'world bank'],
+              '미시': ['micro', 'microdata', 'survey', 'household', 'firm'],
+              '화폐': ['monetary', 'currency', 'central bank'],
+              '정책': ['policy', 'government', 'regulation', 'official'],
+              '저널': ['journal', 'review', 'quarterly', 'economic'],
+              '최고급': ['top tier', 'premier', 'leading', 'flagship'],
+              '톱저널': ['top tier', 'premier', 'leading', 'flagship', 'journal', 'review', 'aer', 'qje', 'jpe'],
+              '학습': ['learning', 'course', 'education', 'study'],
+              '중국': ['china', 'chinese', 'pboc'],
+              '독일': ['germany', 'german', 'bundesbank', 'destatis']
+            });
+            break;
+          case 'ja':
+            Object.assign(languageSpecificMappings, {
+              'データ': ['data', 'database', 'statistics', 'statistical'],
+              'マクロ': ['macro', 'macroeconomic', 'fred', 'imf', 'world bank'],
+              'ミクロ': ['micro', 'microdata', 'survey', 'household', 'firm'],
+              '金融': ['finance', 'monetary', 'currency', 'central bank'],
+              '政策': ['policy', 'government', 'regulation', 'official'],
+              'ジャーナル': ['journal', 'review', 'quarterly', 'economic'],
+              '最高級': ['top tier', 'premier', 'leading', 'flagship'],
+              'トップジャーナル': ['top tier', 'premier', 'leading', 'flagship', 'journal', 'review', 'aer', 'qje', 'jpe'],
+              '学習': ['learning', 'course', 'education', 'study'],
+              '中国': ['china', 'chinese', 'pboc'],
+              'ドイツ': ['germany', 'german', 'bundesbank', 'destatis']
+            });
+            break;
+          case 'de':
+            Object.assign(languageSpecificMappings, {
+              'daten': ['data', 'database', 'statistics', 'statistical'],
+              'makro': ['macro', 'macroeconomic', 'fred', 'imf', 'world bank'],
+              'mikro': ['micro', 'microdata', 'survey', 'household', 'firm'],
+              'währung': ['monetary', 'currency', 'central bank'],
+              'politik': ['policy', 'government', 'regulation', 'official'],
+              'zeitschrift': ['journal', 'review', 'quarterly', 'economic'],
+              'spitzen': ['top tier', 'premier', 'leading', 'flagship'],
+              'spitzenzeitschrift': ['top tier', 'premier', 'leading', 'flagship', 'journal', 'review', 'aer', 'qje', 'jpe'],
+              'lernen': ['learning', 'course', 'education', 'study'],
+              'china': ['chinese', 'pboc'],
+              'deutschland': ['german', 'bundesbank', 'destatis']
+            });
+            break;
+        }
+
+        return { ...baseMappings, ...languageSpecificMappings };
+      };
+
+      const conceptMappings = getConceptMappings();
+      
+      for (const [concept, expansions] of Object.entries(conceptMappings)) {
+        if (searchTerm.toLowerCase().includes(concept.toLowerCase())) {
+          keywords.push(...expansions);
+        }
+      }
+      
+      return Array.from(new Set(keywords));
+    };
+    
+    const smartKeywords = getSmartKeywords(searchLower);
+    smartKeywords.forEach(keyword => {
+      if (keyword !== searchLower) { // 避免重复计分
+        if (resource.name.toLowerCase().includes(keyword.toLowerCase())) {
+          score += 2;
+        }
+        if (resource.description.toLowerCase().includes(keyword.toLowerCase())) {
+          score += 1;
+        }
+        resource.tags.forEach((tag: string) => {
+          if (tag.toLowerCase().includes(keyword.toLowerCase())) {
+            score += 1;
+          }
+        });
+      }
+    });
     
     return score;
   };
@@ -527,24 +719,22 @@ export default function Home() {
 
             {/* Search Tips */}
             <div className="mb-12 max-w-4xl mx-auto">
-              <div className="flex items-center justify-center space-x-4 mb-4">
-                <p className="text-sm text-gray-500">💡 {t('search_tips_title')}</p>
-                {(searchTerm || selectedTag) && (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={clearSearch}
-                    className="text-xs text-gray-400 hover:text-gray-600"
-                  >
-                    {t('clear_filters') || 'Clear all'}
-                  </Button>
-                )}
-              </div>
-              
               <div className="p-6 bg-gray-50 rounded-xl border border-gray-100">
-                <div className="flex items-center space-x-2 mb-4">
-                  <span className="text-lg">🔍</span>
-                  <span className="text-base font-medium text-gray-700">{t('search_tips_title')}</span>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-2">
+                    <span className="text-lg">🔍</span>
+                    <span className="text-base font-medium text-gray-700">{t('search_tips_title')}</span>
+                  </div>
+                  {(searchTerm || selectedTag) && (
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={clearSearch}
+                      className="text-xs text-gray-400 hover:text-gray-600"
+                    >
+                      {t('clear_filters') || 'Clear all'}
+                    </Button>
+                  )}
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
                   <div>

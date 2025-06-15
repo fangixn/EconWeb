@@ -15,13 +15,20 @@ A modern, elegant economics resource navigation platform built with Next.js 14, 
 - **Smart Search & Filtering**: Advanced search with tag-based filtering
 - **Multiple Categories**: Organized by both function and resource type
 - **German Economics Focus**: Special section for German economic institutions
+- **Top Journal Collection**: Including premier economics journals like AER, QJE, JPE
 
-### User Experience
+### Optimized User Experience
 - **Intuitive Navigation**: Clean header with smooth scrolling
 - **Hero Section**: Compelling introduction with search functionality
-- **Usage Guide**: Interactive guidance on how to navigate the platform
-- **Features Showcase**: Highlight platform capabilities
+- **Search Tips Optimization**: Unified search guidance interface, eliminating redundant information
+- **Usage Guide**: Interactive platform navigation guidance
+- **Features Showcase**: Highlighting platform core capabilities
 - **Professional Footer**: Contact information and quick links
+
+### Multi-language Support
+- **5 Languages**: Chinese, English, Korean, Japanese, German
+- **Complete Localization**: All UI elements and content fully translated
+- **Smart Language Switching**: Seamless language switching experience
 
 ## 🚀 Tech Stack
 
@@ -30,12 +37,13 @@ A modern, elegant economics resource navigation platform built with Next.js 14, 
 - **UI Components**: Shadcn/ui component library
 - **Icons**: Lucide React icons
 - **TypeScript**: Full type safety
+- **Internationalization**: Custom-built i18n solution
 - **Deployment**: Optimized for Vercel
 
 ## 📦 Quick Start
 
 ### Prerequisites
-- Node.js 18.0 or later
+- Node.js 18.0 or higher
 - npm or yarn package manager
 
 ### Installation
@@ -66,18 +74,20 @@ A modern, elegant economics resource navigation platform built with Next.js 14, 
 ```
 EconWeb/
 ├── app/                      # Next.js app directory
-│   ├── page.tsx             # Main homepage
+│   ├── page.tsx             # Main page
 │   ├── layout.tsx           # Root layout
 │   ├── globals.css          # Global styles
-│   └── admin/               # Admin section
+│   └── admin/               # Admin backend
 ├── components/              # Reusable components
 │   ├── ui/                  # Shadcn/ui components
 │   ├── Header.tsx           # Site header
-│   ├── HeroSection.tsx      # Hero component
+│   ├── HeroSection.tsx      # Hero section component
 │   └── LanguageSwitcher.tsx # Language selector
 ├── lib/                     # Utility functions
 │   ├── data.ts              # Resource data
-│   └── i18n.ts              # Internationalization
+│   ├── i18n.ts              # Internationalization config
+│   ├── journalsI18n.ts      # Journal translations
+│   └── resourcesI18n.ts     # Resource translations
 ├── public/                  # Static assets
 └── hooks/                   # Custom React hooks
 ```
@@ -91,15 +101,19 @@ EconWeb/
 - **Watch Market**: Market analysis and industry reports
 
 ### Resource Types
-- **Authorities**: Official reports from institutions
+- **Authorities**: Official institutional reports
 - **Academic Papers**: Research publications and journals
 - **Data & Statistics**: Economic databases
 - **Online Learning**: Educational resources and courses
 - **Practical Tools**: Analysis tools and calculators
 
+### Special Sections
+- **Top Journals**: Premier economics journals including AER, QJE, JPE, REStud
+- **German Focus**: Specialized collection of German economic institutions and data resources
+
 ## 🧭 Usage Guide
 
-The platform includes an interactive Usage Guide section that helps users choose the optimal navigation method:
+The platform includes an interactive usage guide to help users choose the optimal navigation method:
 
 ### Guide Cards
 - **Functional Navigation**: For users who know exactly what they want to do
@@ -116,7 +130,20 @@ The platform includes an interactive Usage Guide section that helps users choose
 - Tag-based filtering for quick categorization
 - Bookmark recommendations for frequent access
 
-Each guide card is interactive and provides context-specific navigation to help users efficiently find relevant economics resources.
+Each guide card is interactive and provides contextual navigation to help users efficiently find relevant economics resources.
+
+## 🔍 Search Functionality
+
+### Intelligent Search
+- **Multi-language Search**: Support for Chinese, English, and other language keywords
+- **Journal Abbreviation Recognition**: Automatic recognition of journal abbreviations like AER, QJE, JPE
+- **Concept Expansion**: Smart keyword expansion (e.g., searching "macro" automatically matches "macroeconomics")
+- **Regional Search**: Support for filtering resources by country and region
+
+### Search Tips Optimization
+- **Unified Interface**: Consolidated duplicate search tips into a single guidance interface
+- **Smart Sorting**: Prioritize results matching multiple criteria
+- **Real-time Filtering**: Support for dynamic clearing of search conditions and tag filters
 
 ## 🎨 Design Philosophy
 
@@ -125,13 +152,25 @@ Each guide card is interactive and provides context-specific navigation to help 
 - **Typography**: Carefully selected fonts with proper hierarchy
 - **Color Palette**: Professional blue and indigo gradients
 - **Spacing**: Generous whitespace for better readability
-- **Icons**: Consistent iconography throughout
+- **Icons**: Consistent iconography throughout the platform
 
 ### User Experience
 - **Progressive Disclosure**: Information revealed as needed
 - **Intuitive Navigation**: Clear pathways to resources
 - **Search-First Approach**: Prominent search functionality
 - **Mobile Optimization**: Touch-friendly interactions
+
+## 🌐 Internationalization
+
+The platform supports complete multi-language localization:
+
+- **Chinese** (default)
+- **English**
+- **한국어** (Korean)
+- **日本語** (Japanese)
+- **Deutsch** (German)
+
+All UI elements, including the new Usage Guide section, are fully translated. Language switching is handled via the `LanguageSwitcher` component with translations stored in `lib/i18n.ts`.
 
 ## 🚀 Deployment
 
@@ -149,7 +188,7 @@ Each guide card is interactive and provides context-specific navigation to help 
    - Install Command: `npm install`
 
 3. **Environment Variables**
-   - None required for basic functionality
+   - No additional configuration required for basic functionality
 
 ### Manual Deployment
 
@@ -177,36 +216,12 @@ Each guide card is interactive and provides context-specific navigation to help 
 
 2. **Update categories**
    - Add new resource objects with required fields
-   - Include proper tags for filtering
+   - Include appropriate tags for filtering
    - Ensure all URLs are valid
 
 ### Customizing Content
-
-
 - **Features**: Modify `features` array in `page.tsx`
 - **Hero Content**: Edit hero section text directly in component
-
-## 🌐 Internationalization
-
-The platform supports multiple languages with full localization:
-
-- **English** (default)
-- **Chinese** (中文)
-- **Korean** (한국어)
-- **Japanese** (日本語)
-- **German** (Deutsch)
-
-All UI elements, including the new Usage Guide section, are fully translated. Language switching is handled via the `LanguageSwitcher` component with translations stored in `lib/i18n.ts`.
-
-## 📧 Contact & Support
-
-- **Owner**: fangxin
-- **Email**: [fangin1230@gmail.com](mailto:fangin1230@gmail.com)
-- **Year**: 2025
-
-## 📄 License
-
-© 2025 EconWeb. All rights reserved. Created by fangxin.
 
 ## 🔧 Development
 
@@ -225,6 +240,16 @@ All UI elements, including the new Usage Guide section, are fully translated. La
 4. Test thoroughly
 5. Submit a pull request
 
+## 📧 Contact & Support
+
+- **Owner**: fangxin
+- **Email**: [fangin1230@gmail.com](mailto:fangin1230@gmail.com)
+- **Year**: 2025
+
+## 📄 License
+
+© 2025 EconWeb. All rights reserved. Created by fangxin.
+
 ## 🎯 Roadmap
 
 - [ ] Advanced search filters
@@ -232,6 +257,20 @@ All UI elements, including the new Usage Guide section, are fully translated. La
 - [ ] Resource submission system
 - [ ] Newsletter integration
 - [ ] Mobile app companion
+
+## 📋 Changelog
+
+### v1.1.0 (2025-06)
+- ✨ Optimized search tips interface, removed duplicate content
+- 🎨 Improved search box user experience
+- 🐛 Fixed interface redundancy issues
+- 📝 Updated documentation and usage guide
+
+### v1.0.0 (2025-06)
+- 🎉 Initial release
+- ✨ Complete resource navigation platform
+- 🌐 Multi-language support
+- 📱 Responsive design
 
 ---
 
