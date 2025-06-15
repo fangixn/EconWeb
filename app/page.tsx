@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 import { economicsCategories, germanEconomicsResources } from '@/lib/data';
-import { useLanguage } from '@/lib/useLanguage';
+import { useLanguage } from '@/lib/LanguageContext';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 // Icon mapping
@@ -33,6 +33,23 @@ export default function Home() {
 
   const handleSearch = (term: string) => {
     setSearchTerm(term);
+  };
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // 搜索提交时滚动到资源部分
+    scrollToSection('resources');
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      scrollToSection('resources');
+    }
+  };
+
+  const clearSearch = () => {
+    setSearchTerm('');
+    setSelectedTag(null);
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -184,32 +201,81 @@ export default function Home() {
             
             {/* Search Bar */}
             <div className="max-w-2xl mx-auto mb-12">
-              <div className="relative">
+              <form onSubmit={handleSearchSubmit} className="relative">
                 <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <Input
                   placeholder={t('search_placeholder')}
                   value={searchTerm}
                   onChange={(e) => handleSearch(e.target.value)}
-                  className="pl-14 pr-6 py-6 text-lg border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:ring-0 bg-white shadow-sm"
+                  onKeyPress={handleKeyPress}
+                  className="pl-14 pr-32 py-6 text-lg border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:ring-0 bg-white shadow-sm"
                 />
-              </div>
+                <div className="absolute right-2 top-1/2 transform -translate-y-1/2 flex items-center space-x-2">
+                  {searchTerm && (
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={clearSearch}
+                      className="h-8 w-8 p-0 hover:bg-gray-100 rounded-full"
+                    >
+                      <X className="w-4 h-4 text-gray-400" />
+                    </Button>
+                  )}
+                  <Button
+                    type="submit"
+                    size="sm"
+                    className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-xl"
+                  >
+                    {t('search_btn') || 'Search'}
+                  </Button>
+                </div>
+              </form>
             </div>
 
             {/* Popular Tags */}
             <div className="mb-12">
-              <p className="text-sm text-gray-500 mb-4">{t('popular_tags')}</p>
+              <div className="flex items-center justify-center space-x-4 mb-4">
+                <p className="text-sm text-gray-500">{t('popular_tags')}</p>
+                {(searchTerm || selectedTag) && (
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={clearSearch}
+                    className="text-xs text-gray-400 hover:text-gray-600"
+                  >
+                    {t('clear_filters') || 'Clear all'}
+                  </Button>
+                )}
+              </div>
               <div className="flex flex-wrap justify-center gap-3">
-                {getAllTags().slice(0, 6).map((tag: string) => (
+                {getAllTags().slice(0, 8).map((tag: string) => (
                   <Badge
                     key={tag}
                     variant={selectedTag === tag ? "default" : "secondary"}
-                    className="px-4 py-2 cursor-pointer hover:bg-blue-100 transition-colors"
+                    className={`px-4 py-2 cursor-pointer transition-all duration-200 ${
+                      selectedTag === tag 
+                        ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-md' 
+                        : 'bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-700'
+                    }`}
                     onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
                   >
                     {tag}
+                    {selectedTag === tag && (
+                      <X className="ml-2 w-3 h-3" />
+                    )}
                   </Badge>
                 ))}
               </div>
+              {(searchTerm || selectedTag) && (
+                <div className="mt-4 text-center">
+                  <p className="text-sm text-gray-500">
+                    {searchTerm && `${t('searching_for') || 'Searching for'}: "${searchTerm}"`}
+                    {searchTerm && selectedTag && ' • '}
+                    {selectedTag && `${t('filtered_by') || 'Filtered by'}: ${selectedTag}`}
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* CTA Buttons */}
@@ -352,6 +418,64 @@ export default function Home() {
                 </Card>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* German Economics Special Section */}
+      <section className="py-20 bg-gradient-to-r from-orange-50 to-amber-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-3 bg-orange-100 px-6 py-3 rounded-full mb-6">
+              <MapPin className="w-5 h-5 text-orange-600" />
+              <span className="text-orange-800 font-medium">{t('german_focus')}</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              {t('german_title')}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {t('german_subtitle')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {germanEconomicsResources.map((resource, index) => (
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 group border-0 shadow-md bg-white">
+                <CardHeader className="pb-4">
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <CardTitle className="text-lg font-semibold text-gray-900 mb-2">
+                        {resource.name}
+                      </CardTitle>
+                      <CardDescription className="text-sm text-gray-600 leading-relaxed">
+                        {resource.description}
+                      </CardDescription>
+                    </div>
+                    <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl flex items-center justify-center ml-4 group-hover:scale-110 transition-transform duration-300">
+                      <Star className="w-5 h-5 text-white" />
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {resource.tags.map((tag: string) => (
+                      <Badge key={tag} variant="secondary" className="text-xs px-2 py-1 bg-orange-100 text-orange-800">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                  <a
+                    href={resource.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-orange-600 hover:text-orange-800 font-medium text-sm transition-colors"
+                  >
+                    {t('visit_resource')}
+                    <ExternalLink className="ml-2 w-4 h-4" />
+                  </a>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>

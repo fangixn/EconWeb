@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { ChevronDown, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { languages, Language } from '@/lib/i18n';
-import { useLanguage } from '@/lib/useLanguage';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export function LanguageSwitcher() {
   const { currentLanguage, changeLanguage } = useLanguage();

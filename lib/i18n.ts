@@ -28,6 +28,10 @@ export const translations = {
     btn_learn: 'Learn',
     search_placeholder: 'Search economics resources...',
     popular_tags: 'Popular Tags:',
+    search_btn: 'Search',
+    clear_filters: 'Clear all',
+    searching_for: 'Searching for',
+    filtered_by: 'Filtered by',
     
     // Navigation Toggle
     toggle_functional: 'By Function',
@@ -135,6 +139,10 @@ export const translations = {
     btn_learn: '我要学习',
     search_placeholder: '搜索经济学资源...',
     popular_tags: '热门标签：',
+    search_btn: '搜索',
+    clear_filters: '清除所有',
+    searching_for: '搜索',
+    filtered_by: '筛选',
     
     // Navigation Toggle
     toggle_functional: '功能导向',
@@ -242,6 +250,10 @@ export const translations = {
     btn_learn: '학습하기',
     search_placeholder: '경제학 리소스 검색...',
     popular_tags: '인기 태그:',
+    search_btn: '검색',
+    clear_filters: '모두 지우기',
+    searching_for: '검색',
+    filtered_by: '필터',
     
     // Navigation Toggle
     toggle_functional: '기능별',
@@ -349,6 +361,10 @@ export const translations = {
     btn_learn: '学習する',
     search_placeholder: '経済学リソースを検索...',
     popular_tags: '人気のタグ：',
+    search_btn: '検索',
+    clear_filters: 'すべてクリア',
+    searching_for: '検索',
+    filtered_by: 'フィルター',
     
     // Navigation Toggle
     toggle_functional: '機能別',
@@ -456,6 +472,10 @@ export const translations = {
     btn_learn: 'Lernen',
     search_placeholder: 'Wirtschaftsressourcen suchen...',
     popular_tags: 'Beliebte Tags:',
+    search_btn: 'Suchen',
+    clear_filters: 'Alle löschen',
+    searching_for: 'Suche nach',
+    filtered_by: 'Gefiltert nach',
     
     // Navigation Toggle
     toggle_functional: 'Nach Funktion',
