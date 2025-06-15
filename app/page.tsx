@@ -314,152 +314,158 @@ export default function Home() {
       </section>
 
       {/* Functional Navigation */}
-      {activeView === 'functional' && (
-        <section id="functional" className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                {t('functional_title')}
-              </h2>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                {t('functional_subtitle')}
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {Object.entries(functionalCategories).map(([key, category]) => (
-                <Card key={key} className="group hover:shadow-xl transition-all duration-300 border-slate-200">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <div className="bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg p-3 group-hover:scale-110 transition-transform">
-                        <category.icon className="h-6 w-6 text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <CardTitle className="text-xl font-semibold text-slate-900">
-                          {category.title}
-                        </CardTitle>
-                        <CardDescription className="text-slate-600 mt-1">
-                          {category.description}
-                        </CardDescription>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  
-                  <CardContent>
-                    <Accordion type="single" collapsible className="w-full">
-                      {Object.entries(category.subcategories).map(([subKey, resources]) => (
-                        <AccordionItem key={subKey} value={subKey} className="border-slate-200">
-                          <AccordionTrigger className="text-left hover:no-underline">
-                            <div className="flex items-center justify-between w-full">
-                              <span className="font-medium text-slate-900">{subKey}</span>
-                              <Badge variant="secondary" className="ml-2">
-                                {resources.length}
-                              </Badge>
-                            </div>
-                          </AccordionTrigger>
-                          <AccordionContent>
-                            <div className="space-y-3 pt-2">
-                              {resources.map((resource, index) => (
-                                <div 
-                                  key={index} 
-                                  className="p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors group/item cursor-pointer"
-                                  onClick={() => window.open(resource.url, '_blank')}
-                                >
-                                  <div className="flex items-start justify-between">
-                                    <div className="flex-1">
-                                      <h4 className="font-semibold text-slate-900 mb-1 group-hover/item:text-blue-600">
-                                        {resource.name}
-                                      </h4>
-                                      <p className="text-sm text-slate-600 mb-2">
-                                        {resource.description}
-                                      </p>
-                                      <div className="flex flex-wrap gap-1">
-                                        {resource.tags.map((tag, tagIndex) => (
-                                          <Badge 
-                                            key={tagIndex} 
-                                            variant="outline" 
-                                            className="text-xs"
-                                          >
-                                            {tag}
-                                          </Badge>
-                                        ))}
-                                      </div>
-                                    </div>
-                                    <ExternalLink className="w-4 h-4 ml-4 opacity-0 group-hover/item:opacity-100 transition-opacity text-slate-400" />
-                                  </div>
-                                </div>
-                              ))}
-                            </div>
-                          </AccordionContent>
-                        </AccordionItem>
-                      ))}
-                    </Accordion>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+      <section id="functional" className={`py-20 ${activeView === 'functional' ? 'bg-white' : 'bg-slate-50'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              {t('functional_title')}
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              {t('functional_subtitle')}
+            </p>
+            {activeView !== 'functional' && (
+              <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <p className="text-sm text-blue-700">
+                  {t('switch_to_functional_view')}
+                </p>
+              </div>
+            )}
           </div>
-        </section>
-      )}
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {Object.entries(functionalCategories).map(([key, category]) => (
+              <Card key={key} className={`group hover:shadow-xl transition-all duration-300 border-slate-200 ${activeView !== 'functional' ? 'opacity-75' : ''}`}>
+                <CardHeader className="pb-4">
+                  <div className="flex items-center space-x-3 mb-2">
+                    <div className="bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg p-3 group-hover:scale-110 transition-transform">
+                      <category.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <CardTitle className="text-xl font-semibold text-slate-900">
+                        {category.title}
+                      </CardTitle>
+                      <CardDescription className="text-slate-600 mt-1">
+                        {category.description}
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+                
+                <CardContent>
+                  <div className="space-y-4">
+                    {Object.entries(category.subcategories).map(([subKey, resources]) => (
+                      <div key={subKey}>
+                        <h3 className="font-semibold text-slate-900 mb-3 flex items-center gap-2">
+                          <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                          {subKey}
+                          <Badge variant="secondary" className="ml-2 text-xs">
+                            {resources.length}
+                          </Badge>
+                        </h3>
+                        <div className="space-y-3">
+                          {resources.map((resource, index) => (
+                            <div 
+                              key={index} 
+                              className="flex items-center justify-between p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors cursor-pointer border border-slate-100 hover:border-slate-200"
+                              onClick={() => window.open(resource.url, '_blank')}
+                            >
+                              <div className="flex-1">
+                                <h4 className="font-semibold text-slate-900 mb-1 hover:text-blue-600 transition-colors">
+                                  {resource.name}
+                                </h4>
+                                <p className="text-sm text-slate-600 mb-2">
+                                  {resource.description}
+                                </p>
+                                <div className="flex flex-wrap gap-1">
+                                  {resource.tags.map((tag, tagIndex) => (
+                                    <Badge 
+                                      key={tagIndex} 
+                                      variant="outline" 
+                                      className="text-xs"
+                                    >
+                                      {tag}
+                                    </Badge>
+                                  ))}
+                                </div>
+                              </div>
+                              <ArrowRight className="w-5 h-5 text-slate-400 hover:text-blue-600 transition-colors ml-4" />
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Resource Type Navigation */}
-      {activeView === 'resource' && (
-        <section id="resources" className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                {t('resource_title')}
-              </h2>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                {t('resource_subtitle')}
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {Object.entries(resourceTypeCategories).map(([key, category]) => (
-                <Card key={key} className="group hover:shadow-xl transition-all duration-300 border-slate-200">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <div className="bg-gradient-to-br from-green-500 to-blue-500 rounded-lg p-3 group-hover:scale-110 transition-transform">
-                        <category.icon className="h-6 w-6 text-white" />
-                      </div>
-                      <CardTitle className="text-lg font-semibold text-slate-900">{category.title}</CardTitle>
-                    </div>
-                    <CardDescription className="text-slate-600">{category.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      {category.resources.slice(0, 3).map((resource, index) => (
-                        <div 
-                          key={index} 
-                          className="flex items-center justify-between p-3 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors cursor-pointer"
-                          onClick={() => window.open(resource.url, '_blank')}
-                        >
-                          <div className="flex-1">
-                            <p className="font-medium text-slate-900 text-sm">{resource.name}</p>
-                            <p className="text-xs text-slate-600 mt-1">{resource.description}</p>
-                            <div className="flex flex-wrap gap-1 mt-2">
-                              {resource.tags.slice(0, 3).map((tag, tagIndex) => (
-                                <Badge key={tagIndex} variant="outline" className="text-xs">
-                                  {tag}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
-                          <ExternalLink className="h-4 w-4 text-slate-400 hover:text-blue-600 transition-colors" />
-                        </div>
-                      ))}
-                      <Button variant="outline" className="w-full mt-4 text-blue-600 border-blue-200 hover:bg-blue-50">
-                        {t('view_all')} {category.resources.length} {t('resources')}
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+      <section id="resources" className={`py-20 ${activeView === 'resource' ? 'bg-white' : 'bg-slate-50'}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              {t('resource_title')}
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              {t('resource_subtitle')}
+            </p>
+            {activeView !== 'resource' && (
+              <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
+                <p className="text-sm text-green-700">
+                  {t('switch_to_resource_view')}
+                </p>
+              </div>
+            )}
           </div>
-        </section>
-      )}
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {Object.entries(resourceTypeCategories).map(([key, category]) => (
+              <Card key={key} className={`group hover:shadow-xl transition-all duration-300 border-slate-200 ${activeView !== 'resource' ? 'opacity-75' : ''}`}>
+                <CardHeader className="pb-4">
+                  <div className="flex items-center space-x-3 mb-2">
+                    <div className="bg-gradient-to-br from-green-500 to-blue-500 rounded-lg p-3 group-hover:scale-110 transition-transform">
+                      <category.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <CardTitle className="text-lg font-semibold text-slate-900">{category.title}</CardTitle>
+                  </div>
+                  <CardDescription className="text-slate-600">{category.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {category.resources.map((resource, index) => (
+                      <div 
+                        key={index} 
+                        className="flex items-center justify-between p-4 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors cursor-pointer border border-slate-100 hover:border-slate-200"
+                        onClick={() => window.open(resource.url, '_blank')}
+                      >
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-slate-900 mb-1 hover:text-blue-600 transition-colors">
+                            {resource.name}
+                          </h4>
+                          <p className="text-sm text-slate-600 mb-2">
+                            {resource.description}
+                          </p>
+                          <div className="flex flex-wrap gap-1">
+                            {resource.tags.map((tag, tagIndex) => (
+                              <Badge key={tagIndex} variant="outline" className="text-xs">
+                                {tag}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                        <ArrowRight className="w-5 h-5 text-slate-400 hover:text-blue-600 transition-colors ml-4" />
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* German Special Section */}
       <section id="german" className="py-20 bg-gradient-to-br from-orange-50 to-red-50">
@@ -490,25 +496,23 @@ export default function Home() {
                     {resources.map((resource, index) => (
                       <div 
                         key={index}
-                        className="p-4 rounded-lg bg-white border border-orange-100 hover:border-orange-200 transition-colors cursor-pointer"
+                        className="flex items-center justify-between p-4 rounded-lg bg-white border border-orange-100 hover:border-orange-200 transition-colors cursor-pointer hover:bg-orange-50"
                         onClick={() => window.open(resource.url, '_blank')}
                       >
-                        <div className="flex items-start justify-between">
-                          <div className="flex-1">
-                            <h4 className="font-semibold text-slate-900 mb-1 hover:text-orange-600 transition-colors">
-                              {resource.name}
-                            </h4>
-                            <p className="text-sm text-slate-600 mb-2">{resource.description}</p>
-                            <div className="flex flex-wrap gap-1">
-                              {resource.tags.map((tag, tagIndex) => (
-                                <Badge key={tagIndex} variant="outline" className="text-xs border-orange-200 text-orange-700">
-                                  {tag}
-                                </Badge>
-                              ))}
-                            </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold text-slate-900 mb-1 hover:text-orange-600 transition-colors">
+                            {resource.name}
+                          </h4>
+                          <p className="text-sm text-slate-600 mb-2">{resource.description}</p>
+                          <div className="flex flex-wrap gap-1">
+                            {resource.tags.map((tag, tagIndex) => (
+                              <Badge key={tagIndex} variant="outline" className="text-xs border-orange-200 text-orange-700">
+                                {tag}
+                              </Badge>
+                            ))}
                           </div>
-                          <ExternalLink className="w-4 h-4 text-orange-400 hover:text-orange-600 transition-colors" />
                         </div>
+                        <ArrowRight className="w-5 h-5 text-orange-400 hover:text-orange-600 transition-colors ml-4" />
                       </div>
                     ))}
                   </div>

@@ -84,7 +84,11 @@ export const translations = {
     faq_q2: 'How to use the tag filtering function?',
     faq_a2: 'Each resource has detailed tags (such as free/paid, region, language, etc.). You can click on tags or use the search function to quickly filter resources that meet your needs.',
     faq_q3: 'Where should beginners start?',
-    faq_a3: 'We recommend beginners start with "Online Learning" resources, then gradually access "Data & Statistics" and "Authorities" reports, and finally delve into "Academic Papers" and professional tools.'
+    faq_a3: 'We recommend beginners start with "Online Learning" resources, then gradually access "Data & Statistics" and "Authorities" reports, and finally delve into "Academic Papers" and professional tools.',
+    
+    // Switch view messages
+    switch_to_functional_view: 'Switch to "By Function" view to interact with this section',
+    switch_to_resource_view: 'Switch to "By Type" view to interact with this section'
   },
   
   zh: {
@@ -163,7 +167,11 @@ export const translations = {
     faq_q2: '如何使用标签筛选功能？',
     faq_a2: '每个资源都有详细标签（如免费/付费、地区、语言等），您可以点击标签或使用搜索功能快速筛选符合需求的资源。',
     faq_q3: '新手应该从哪里开始？',
-    faq_a3: '建议新手从"在线学习"资源开始，然后逐步接触"数据统计"和"权威机构"报告，最后深入"学术论文"和专业工具。'
+    faq_a3: '建议新手从"在线学习"资源开始，然后逐步接触"数据统计"和"权威机构"报告，最后深入"学术论文"和专业工具。',
+    
+    // Switch view messages
+    switch_to_functional_view: '切换到"功能导向"视图以与此部分交互',
+    switch_to_resource_view: '切换到"资源分类"视图以与此部分交互'
   },
   
   ko: {
@@ -242,7 +250,11 @@ export const translations = {
     faq_q2: '태그 필터링 기능을 어떻게 사용하나요?',
     faq_a2: '각 리소스에는 상세한 태그(무료/유료, 지역, 언어 등)가 있습니다. 태그를 클릭하거나 검색 기능을 사용하여 요구사항에 맞는 리소스를 빠르게 필터링할 수 있습니다.',
     faq_q3: '초보자는 어디서부터 시작해야 하나요?',
-    faq_a3: '초보자는 "온라인 학습" 리소스부터 시작하여 점차 "데이터 & 통계" 및 "권위 기관" 보고서에 접근하고, 마지막으로 "학술 논문" 및 전문 도구를 깊이 파는 것을 권장합니다.'
+    faq_a3: '초보자는 "온라인 학습" 리소스부터 시작하여 점차 "데이터 & 통계" 및 "권위 기관" 보고서에 접근하고, 마지막으로 "학술 논문" 및 전문 도구를 깊이 파는 것을 권장합니다.',
+    
+    // Switch view messages
+    switch_to_functional_view: '"기능별" 보기로 전환하여 이 섹션과 상호작용하세요',
+    switch_to_resource_view: '"유형별" 보기로 전환하여 이 섹션과 상호작용하세요'
   },
   
   ja: {
@@ -321,7 +333,11 @@ export const translations = {
     faq_q2: 'タグフィルタリング機能の使い方は？',
     faq_a2: '各リソースには詳細なタグ（無料/有料、地域、言語など）があります。タグをクリックするか検索機能を使用して、ニーズに合うリソースを迅速にフィルタリングできます。',
     faq_q3: '初心者はどこから始めるべきですか？',
-    faq_a3: '初心者は「オンライン学習」リソースから始めて、徐々に「データ＆統計」および「権威機関」レポートにアクセスし、最後に「学術論文」および専門ツールを深く掘り下げることをお勧めします。'
+    faq_a3: '初心者は「オンライン学習」リソースから始めて、徐々に「データ＆統計」および「権威機関」レポートにアクセスし、最後に「学術論文」および専門ツールを深く掘り下げることをお勧めします。',
+    
+    // Switch view messages
+    switch_to_functional_view: '「機能別」ビューに切り替えて、このセクションとやり取りしてください',
+    switch_to_resource_view: '「タイプ別」ビューに切り替えて、このセクションとやり取りしてください'
   }
 };
 
