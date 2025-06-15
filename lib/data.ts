@@ -13,460 +13,466 @@ export interface Category {
   resources: Resource[];
 }
 
-// 按9个专业维度重新组织的经济学资源
+// 基于econ_resources.json重新整合的经济学资源
 export const economicsCategories = {
   "组织机构": {
-    title: "组织机构",
-    description: "国际组织、政府机构、央行和监管部门",
+    title: "Organizations & Institutions",
+    description: "International organizations, government agencies, central banks and regulatory departments",
     icon: "Building",
     resources: [
       {
-        name: "IMF（国际货币基金组织）",
+        name: "IMF (International Monetary Fund)",
         url: "https://www.imf.org",
-        description: "全球宏观经济分析、地区展望、金融稳定报告",
-        tags: ["国际", "权威", "多语言"]
+        description: "Global macroeconomic analysis, regional outlooks, financial stability reports",
+        tags: ["International", "Authoritative", "Multilingual"]
       },
       {
-        name: "世界银行（World Bank）",
+        name: "World Bank",
         url: "https://www.worldbank.org",
-        description: "发展经济研究、数据分析与发展报告",
-        tags: ["国际", "发展", "免费"]
+        description: "Development economics research, data analysis and development reports",
+        tags: ["International", "Development", "Free"]
       },
       {
-        name: "OECD（经济合作与发展组织）",
+        name: "OECD (Organisation for Economic Co-operation and Development)",
         url: "https://www.oecd.org",
-        description: "经济政策建议、统计数据与发展趋势分析",
-        tags: ["国际", "政策", "统计"]
+        description: "Economic policy analysis and statistics",
+        tags: ["International", "Policy", "Statistics"]
       },
       {
-        name: "中国人民银行",
+        name: "People's Bank of China",
         url: "http://www.pbc.gov.cn",
-        description: "货币政策报告、金融市场运行分析",
-        tags: ["中国", "央行", "官方"]
+        description: "Interest rates, exchange rates, money supply information",
+        tags: ["China", "Central Bank", "Official"]
       },
       {
-        name: "德国联邦银行",
-        url: "https://www.bundesbank.de",
-        description: "德国货币政策、金融稳定与经济分析",
-        tags: ["德国", "央行", "欧元区"]
+        name: "China National Bureau of Statistics",
+        url: "https://www.stats.gov.cn",
+        description: "China's official statistical data release platform",
+        tags: ["China", "Official", "Statistics"]
       },
       {
-        name: "美联储（Federal Reserve）",
-        url: "https://www.federalreserve.gov",
-        description: "美国货币政策、经济展望和金融监管",
-        tags: ["美国", "央行", "英文"]
-      },
-      {
-        name: "欧洲央行（ECB）",
+        name: "European Central Bank (ECB)",
         url: "https://www.ecb.europa.eu",
-        description: "欧元区货币政策和金融稳定报告",
-        tags: ["欧洲", "央行", "多语言"]
+        description: "Eurozone monetary policy and economic research",
+        tags: ["Europe", "Central Bank", "Eurozone"]
       },
       {
-        name: "联邦统计局（Destatis）",
+        name: "Federal Statistical Office (Destatis)",
         url: "https://www.destatis.de",
-        description: "德国官方统计数据、经济指标和人口普查",
-        tags: ["德国", "官方", "统计"]
-      }
-    ]
-  },
-  
-  "政策研读": {
-    title: "政策研读",
-    description: "政策解读、法规文件和政府报告",
-    icon: "FileText",
-    resources: [
-      {
-        name: "国务院政策解读专栏",
-        url: "https://www.gov.cn/zwhd/zcjd_gwy.htm",
-        description: "中央一号文件、经济改革等权威解读",
-        tags: ["中国", "官方", "实时"]
+        description: "GDP/CPI/trade data, provides Excel/CSV downloads",
+        tags: ["Germany", "Official", "Data"]
       },
       {
-        name: "五贤人年度评估报告",
-        url: "https://www.sachverstaendigenrat.de",
-        description: "德国经济顾问委员会权威分析",
-        tags: ["德国", "年度", "权威"]
-      },
-      {
-        name: "联邦经济事务和气候行动部",
-        url: "https://www.bmwk.de",
-        description: "德国工业政策与能源转型路线图",
-        tags: ["德国", "政策文件", "环保"]
-      },
-      {
-        name: "IMF政策追踪",
-        url: "https://www.imf.org/en/Publications/Policy-Papers",
-        description: "全球财政货币政策分析",
-        tags: ["国际", "英文", "权威"]
-      },
-      {
-        name: "OECD经济展望",
-        url: "https://www.oecd.org/economic-outlook",
-        description: "38成员国经济预测与结构改革建议",
-        tags: ["国际", "多国", "预测"]
-      },
-      {
-        name: "中国政府网",
-        url: "https://www.gov.cn",
-        description: "最新政策法规、国务院文件和政策解读",
-        tags: ["中国", "官方", "权威"]
-      }
-    ]
-  },
-
-  "市场分析": {
-    title: "市场分析",
-    description: "行业分析、投资研究和市场动态",
-    icon: "TrendingUp",
-    resources: [
-      {
-        name: "前瞻经济学人",
-        url: "https://www.qianzhan.com/analyst",
-        description: "AI、新能源等细分产业报告",
-        tags: ["中国", "日更", "产业"]
-      },  
-      {
-        name: "德国汽车工业协会（VDA）",
-        url: "https://www.vda.de",
-        description: "电动汽车转型与供应链白皮书",
-        tags: ["德国", "汽车", "行业"]
-      },
-      {
-        name: "MacroMicro产业图谱",
-        url: "https://sc.macromicro.me/collections",
-        description: "产业链数据可视化工具",
-        tags: ["全球", "交互", "可视化"]
-      },
-      {
-        name: "德国DAX指数分析",
-        url: "https://sc.macromicro.me/collections/3450",
-        description: "IFO指数与股市关联仪表盘",
-        tags: ["德国", "实时", "股市"]
-      },
-      {
-        name: "巨潮信息网",
-        url: "http://www.cninfo.com.cn",
-        description: "中国上市公司法定披露平台",
-        tags: ["中国", "财报", "官方"]
-      },
-      {
-        name: "德国企业信用库",
-        url: "https://www.bundesbank.de/statistik-karte",
-        description: "企业信贷风险交互地图",
-        tags: ["德国", "金融", "风险"]
-      }
-    ]
-  },
-
-  "财经媒体": {
-    title: "财经媒体",
-    description: "财经新闻、市场资讯和经济评论",
-    icon: "Globe",
-    resources: [
-      {
-        name: "新浪财经",
-        url: "https://finance.sina.com.cn",
-        description: "国内外财经新闻、股市行情和宏观数据",
-        tags: ["中国", "新闻", "实时"]
-      },
-      {
-        name: "华尔街见闻",
-        url: "https://wallstreetcn.com",
-        description: "全球市场资讯和宏观经济分析",
-        tags: ["全球", "专业", "付费"]
-      },
-      {
-        name: "Financial Times",
-        url: "https://www.ft.com",
-        description: "国际金融新闻和深度经济分析",
-        tags: ["国际", "英文", "权威"]
-      },
-      {
-        name: "Handelsblatt",
-        url: "https://www.handelsblatt.com",
-        description: "德国最具影响力的财经日报",
-        tags: ["德国", "德语", "权威"]
-      },
-      {
-        name: "Manager Magazin",
-        url: "https://www.manager-magazin.de",
-        description: "德国商业管理与经济杂志",
-        tags: ["德国", "商业", "管理"]
-      },
-      {
-        name: "Bloomberg",
-        url: "https://www.bloomberg.com",
-        description: "全球金融市场和经济新闻",
-        tags: ["全球", "英文", "实时"]
-      }
-    ]
-  },
-
-  "智库研究": {
-    title: "智库研究",
-    description: "经济政策研究和前瞻性分析",
-    icon: "Users",
-    resources: [
-      {
-        name: "中国社科院经济研究所",
-        url: "http://ie.cass.cn",
-        description: "中国经济理论与政策研究",
-        tags: ["中国", "学术", "权威"]
-      },
-      {
-        name: "DIW柏林研究所",
-        url: "https://www.diw.de",
-        description: "德国独立经济研究机构，专注住房和移民经济",
-        tags: ["德国", "独立", "智库"]
-      },
-      {
-        name: "墨卡托中国研究中心（MERICS）",
-        url: "https://www.merics.org",
-        description: "德国对华投资风险评估和中国经济分析",
-        tags: ["德国", "中德", "地缘"]
-      },
-      {
-        name: "IFO经济研究所",
-        url: "https://www.ifo.de",
-        description: "德国权威经济研究机构，发布商业景气指数",
-        tags: ["德国", "预测", "权威"]
-      },
-      {
-        name: "ZEW经济研究中心",
-        url: "https://www.zew.de",
-        description: "欧洲经济研究中心，专注金融市场分析",
-        tags: ["德国", "金融", "欧洲"]
-      },
-      {
-        name: "Peterson Institute",
-        url: "https://www.piie.com",
-        description: "国际经济政策研究所",
-        tags: ["美国", "国际", "政策"]
-      },
-      {
-        name: "Brookings Institution",
-        url: "https://www.brookings.edu",
-        description: "美国权威公共政策研究机构",
-        tags: ["美国", "政策", "权威"]
+        name: "FRED Economic Data",
+        url: "https://fred.stlouisfed.org",
+        description: "Federal Reserve economic database with 500,000+ time series",
+        tags: ["USA", "API", "Free"]
       }
     ]
   },
 
   "数据获取": {
-    title: "数据获取",
-    description: "宏观数据、微观调查和统计资源",
+    title: "Data Sources",
+    description: "Macroeconomic databases, microeconomic surveys, and statistical resources",
     icon: "Database",
     resources: [
       {
-        name: "国家统计局数据库",
-        url: "http://www.stats.gov.cn",
-        description: "覆盖3881个统计指标，含月度/季度/年度及普查数据",
-        tags: ["中国", "免费", "官方"]
-      },
-      {
-        name: "世界银行Open Data",
-        url: "https://data.worldbank.org",
-        description: "免费全球发展数据平台，涵盖经济、社会、环境等领域",
-        tags: ["国际", "免费", "多语言"]
-      },
-      {
-        name: "FRED经济数据",
-        url: "https://fred.stlouisfed.org",
-        description: "美联储经济数据库，含50万+时间序列",
-        tags: ["美国", "API", "实时"]
-      },
-      {
-        name: "中国家庭金融调查（CHFS）",
+        name: "China Household Finance Survey (CHFS)",
         url: "http://chfs.swufe.edu.cn",
-        description: "家庭资产/负债微观数据（2011-2023）",
-        tags: ["中国", "微观", "需申请"]
+        description: "Household assets/liabilities microdata (2011-2023)",
+        tags: ["China", "Microdata", "Application Required"]
       },
       {
-        name: "德国社会经济面板（SOEP）",
+        name: "German Socio-Economic Panel (SOEP)",
         url: "https://www.diw.de/soep",
-        description: "3万德国家庭长期追踪数据",
-        tags: ["德国", "学术", "微观"]
+        description: "Long-term tracking data of 30,000 German households",
+        tags: ["Germany", "Academic", "Panel Data"]
       },
       {
-        name: "Wind万得",
-        url: "https://www.wind.com.cn",
-        description: "中国金融数据终端",
-        tags: ["中国", "金融", "付费"]
+        name: "IMF Data",
+        url: "https://data.imf.org",
+        description: "Economic indicators by country (foreign exchange, fiscal, etc.)",
+        tags: ["International", "Free", "API"]
       },
       {
-        name: "CEIC全球经济数据库",
-        url: "https://www.ceicdata.com",
-        description: "全球宏观经济时间序列数据",
-        tags: ["全球", "宏观", "付费"]
+        name: "World Bank Data",
+        url: "https://data.worldbank.org",
+        description: "Social and economic development indicators by country",
+        tags: ["International", "Development", "Free"]
+      },
+      {
+        name: "OECD.Stat",
+        url: "https://stats.oecd.org",
+        description: "OECD member countries structured data platform",
+        tags: ["OECD", "Statistics", "Free"]
       }
     ]
   },
 
-  "学术论文": {
-    title: "学术论文",
-    description: "经济学研究论文和学术资源",
+  "政策研读": {
+    title: "Policy Analysis",
+    description: "Policy interpretation, regulatory documents and government reports",
+    icon: "FileText",
+    resources: [
+      {
+        name: "State Council Policy Interpretation Column",
+        url: "https://www.gov.cn/zwhd/zcjd_gwy.htm",
+        description: "Authoritative interpretation of Central Document No. 1, economic reforms, etc.",
+        tags: ["China", "Official", "Real-time"]
+      },
+      {
+        name: "PBOC Monetary Policy Report",
+        url: "http://www.pbc.gov.cn",
+        description: "Quarterly monetary policy implementation reports and policy tool explanations",
+        tags: ["China", "Financial", "PDF"]
+      },
+      {
+        name: "Five Sages Annual Assessment Report",
+        url: "https://www.sachverstaendigenrat.de",
+        description: "Authoritative analysis by German Economic Advisory Council",
+        tags: ["Germany", "Annual", "Authoritative"]
+      },
+      {
+        name: "Federal Ministry for Economic Affairs and Climate Action",
+        url: "https://www.bmwk.de",
+        description: "Industrial policy and energy transition roadmap",
+        tags: ["Germany", "Policy Documents", "Climate"]
+      },
+      {
+        name: "IMF Policy Tracker",
+        url: "https://www.imf.org/en/Publications/Policy-Papers",
+        description: "Global fiscal and monetary policy analysis",
+        tags: ["International", "English", "Policy"]
+      },
+      {
+        name: "OECD Economic Outlook",
+        url: "https://www.oecd.org/economic-outlook",
+        description: "Economic forecasts and structural reform recommendations for 38 member countries",
+        tags: ["International", "Multi-country", "Forecasts"]
+      }
+    ]
+  },
+
+  "学术研究": {
+    title: "Academic Research",
+    description: "Academic papers, research platforms and scholarly resources",
     icon: "BookOpen",
     resources: [
       {
-        name: "SSRN Economics",
+        name: "SSRN",
         url: "https://www.ssrn.com",
-        description: "社会科学研究网络 - 经济学论文库",
-        tags: ["论文", "免费", "全球"]
+        description: "Social science working papers download platform",
+        tags: ["Academic", "Free", "Global"]
       },
       {
-        name: "NBER Working Papers",
-        url: "https://www.nber.org",
-        description: "美国国家经济研究局工作论文",
-        tags: ["美国", "实证", "权威"]
-      },
-      {
-        name: "经济学研究网（EconStor）",
+        name: "EconStor",
         url: "https://www.econstor.eu",
-        description: "德国经济工作论文库",
-        tags: ["德国", "开放获取", "论文"]
+        description: "German economics working paper repository",
+        tags: ["Germany", "Open Access", "Academic"]
       },
       {
-        name: "中国知网（CNKI）",
-        url: "https://www.cnki.net",
-        description: "中国学术论文数据库",
-        tags: ["中国", "学术", "付费"]
+        name: "NBER",
+        url: "https://www.nber.org",
+        description: "National Bureau of Economic Research, empirical research and policy evaluation",
+        tags: ["USA", "Research", "Authoritative"]
       },
       {
-        name: "万方数据库",
-        url: "https://www.wanfangdata.com.cn",
-        description: "中国学位论文和期刊论文",
-        tags: ["中国", "学术", "付费"]
+        name: "arXiv Economics",
+        url: "https://arxiv.org/archive/q-fin",
+        description: "Preprint paper platform (including finance/economics)",
+        tags: ["Preprints", "Free", "Global"]
       },
       {
-        name: "Google Scholar",
-        url: "https://scholar.google.com",
-        description: "学术文献搜索引擎",
-        tags: ["全球", "免费", "搜索"]
+        name: "Econometric Academic Network (CEAN)",
+        url: "http://cean.xmu.edu.cn",
+        description: "Econometric code and textbook resources",
+        tags: ["China", "Teaching", "Code"]
+      },
+      {
+        name: "Harvard Dataverse",
+        url: "https://dataverse.harvard.edu",
+        description: "Original data from top journals like AER/QJE",
+        tags: ["Replication", "English", "Data"]
+      }
+    ]
+  },
+
+  "市场观察": {
+    title: "Market Analysis",
+    description: "Industry analysis, investment tools and company data",
+    icon: "TrendingUp",
+    resources: [
+      {
+        name: "Qianzhan Industry Research",
+        url: "https://www.qianzhan.com/analyst",
+        description: "AI, new energy and other subdivision industry reports",
+        tags: ["China", "Daily Updates", "Industry"]
+      },
+      {
+        name: "German Association of the Automotive Industry (VDA)",
+        url: "https://www.vda.de",
+        description: "Electric vehicle transformation and supply chain white papers",
+        tags: ["Germany", "Automotive", "Industry"]
+      },
+      {
+        name: "MacroMicro Industry Map",
+        url: "https://sc.macromicro.me/collections",
+        description: "Industrial chain data visualization tool",
+        tags: ["Global", "Interactive", "Visualization"]
+      },
+      {
+        name: "German DAX Index Analysis",
+        url: "https://sc.macromicro.me/collections/3450",
+        description: "IFO index and stock market correlation dashboard",
+        tags: ["Germany", "Real-time", "Stock Market"]
+      },
+      {
+        name: "CNINFO",
+        url: "http://www.cninfo.com.cn",
+        description: "China listed companies legal disclosure platform",
+        tags: ["China", "Financial Reports", "Official"]
+      },
+      {
+        name: "German Corporate Credit Database",
+        url: "https://www.bundesbank.de/statistik-karte",
+        description: "Corporate credit risk interactive map",
+        tags: ["Germany", "Financial", "Risk"]
+      }
+    ]
+  },
+
+  "财经资讯": {
+    title: "Financial News",
+    description: "Financial news, market information and economic commentary",
+    icon: "Globe",
+    resources: [
+      {
+        name: "The Economist",
+        url: "https://www.economist.com",
+        description: "British weekly magazine with in-depth coverage of global politics, economics, business, and technology trends",
+        tags: ["International", "English", "Weekly"]
+      },
+      {
+        name: "Financial Times",
+        url: "https://www.ft.com",
+        description: "Focus on global financial markets and macroeconomic policy",
+        tags: ["International", "English", "Financial"]
+      },
+      {
+        name: "Bloomberg",
+        url: "https://www.bloomberg.com",
+        description: "Global leading financial information, providing market data and macroeconomic analysis",
+        tags: ["Global", "English", "Real-time"]
+      },
+      {
+        name: "Wall Street Journal",
+        url: "https://www.wsj.com",
+        description: "US financial and business news authority",
+        tags: ["USA", "English", "Business"]
+      },
+      {
+        name: "Project Syndicate",
+        url: "https://www.project-syndicate.org",
+        description: "Global renowned economists' columns covering global issues",
+        tags: ["Global", "Economists", "Opinion"]
+      },
+      {
+        name: "VoxEU (CEPR)",
+        url: "https://cepr.org/voxeu",
+        description: "Centre for Economic Policy Research expert opinion platform",
+        tags: ["Europe", "Research", "Policy"]
+      },
+      {
+        name: "Caixin",
+        url: "https://www.caixin.com",
+        description: "In-depth investigation and policy financial reporting",
+        tags: ["China", "Investigation", "Policy"]
+      },
+      {
+        name: "Yicai",
+        url: "https://www.yicai.com",
+        description: "Real-time economic news and data interpretation",
+        tags: ["China", "Real-time", "Economics"]
+      },
+      {
+        name: "The Paper - Finance",
+        url: "https://www.thepaper.cn/list_25435",
+        description: "Focus on macroeconomics and policy implementation",
+        tags: ["China", "Macroeconomics", "Policy"]
+      },
+      {
+        name: "21st Century Business Herald",
+        url: "https://www.21jingji.com",
+        description: "Veteran financial media focusing on practice and policy",
+        tags: ["China", "Business", "Policy"]
+      },
+      {
+        name: "Jiemian Finance",
+        url: "https://www.jiemian.com/lists/6.html",
+        description: "Financial news in technology and new economy direction",
+        tags: ["China", "Technology", "New Economy"]
+      },
+      {
+        name: "NetEase DataRead / DT Finance",
+        url: "https://dtcj.com",
+        description: "Data visualization and trend insights",
+        tags: ["China", "Data Visualization", "Trends"]
+      }
+    ]
+  },
+
+  "智库观点": {
+    title: "Think Tank Insights",
+    description: "Academic viewpoints and think tank media",
+    icon: "Users",
+    resources: [
+      {
+        name: "NBER Digest",
+        url: "https://www.nber.org/digest",
+        description: "National Bureau of Economic Research digest publication",
+        tags: ["USA", "Research", "Digest"]
+      },
+      {
+        name: "Brookings Institution",
+        url: "https://www.brookings.edu/topic/economy",
+        description: "Brookings Institution economic research channel",
+        tags: ["USA", "Think Tank", "Policy"]
+      },
+      {
+        name: "Peterson Institute for International Economics",
+        url: "https://www.piie.com",
+        description: "Think tank focusing on international economic policy research",
+        tags: ["International", "Policy", "Economics"]
+      },
+      {
+        name: "Tsinghua PBC School of Finance Review",
+        url: "https://www.pbcsf.tsinghua.edu.cn",
+        description: "Financial review platform integrating academia and industry",
+        tags: ["China", "Finance", "Academic"]
+      },
+      {
+        name: "DIW Berlin Institute",
+        url: "https://www.diw.de",
+        description: "Housing crisis and migration economics research",
+        tags: ["Germany", "Independent", "Research"]
+      },
+      {
+        name: "Mercator Institute for China Studies",
+        url: "https://www.merics.org",
+        description: "German enterprises' investment risk assessment in China",
+        tags: ["Germany", "China-Germany", "Geopolitics"]
       }
     ]
   },
 
   "在线学习": {
-    title: "在线学习",
-    description: "经济学课程、教材和学习资源",
+    title: "Online Learning",
+    description: "Economics courses and learning resources",
     icon: "GraduationCap",
     resources: [
       {
-        name: "中国大学MOOC（经济学）",
-        url: "https://www.icourse163.org",
-        description: "国内顶级高校经济学课程",
-        tags: ["中国", "免费", "高校"]
+        name: "MIT OCW - Economics",
+        url: "https://ocw.mit.edu/courses/economics",
+        description: "MIT economics course open pages",
+        tags: ["MIT", "Free", "Courses"]
       },
       {
-        name: "Coursera Economics",
-        url: "https://www.coursera.org/browse/social-sciences/economics",
-        description: "全球知名大学经济学课程",
-        tags: ["国际", "英文", "认证"]
+        name: "Harvard Kennedy School",
+        url: "https://www.hks.harvard.edu",
+        description: "Public policy and economics course materials",
+        tags: ["Harvard", "Policy", "Economics"]
       },
       {
-        name: "edX Economics",
-        url: "https://www.edx.org/learn/economics",
-        description: "MIT、哈佛等名校经济学课程",
-        tags: ["国际", "名校", "免费"]
-      },
-      {
-        name: "网易公开课",
-        url: "https://open.163.com/ted/economics",
-        description: "TED经济学演讲和公开课",
-        tags: ["中国", "免费", "科普"]
-      },
-      {
-        name: "经济学人",
-        url: "https://www.economist.com",
-        description: "全球经济分析和深度报道",
-        tags: ["国际", "英文", "付费"]
-      },
-      {
-        name: "Khan Academy Economics",
+        name: "Khan Academy - Economics",
         url: "https://www.khanacademy.org/economics-finance-domain",
-        description: "经济学基础教程",
-        tags: ["国际", "免费", "基础"]
+        description: "Free introductory economics video courses",
+        tags: ["Free", "Basic", "Video"]
+      },
+      {
+        name: "Coursera - Economics",
+        url: "https://www.coursera.org",
+        description: "University-taught online course aggregation platform",
+        tags: ["University", "Online", "Certification"]
+      },
+      {
+        name: "Marginal Revolution University",
+        url: "https://mru.org",
+        description: "Online video course website founded by economists",
+        tags: ["Economics", "Video", "Free"]
       }
     ]
   },
 
-  "工具获取": {
-    title: "工具获取",
-    description: "计量软件、编程工具和研究辅助",
+  "实用工具": {
+    title: "Practical Tools",
+    description: "Analysis tools and reference resources",
     icon: "Wrench",
     resources: [
       {
-        name: "计量经济学学术网（CEAN）",
-        url: "http://cean.xmu.edu.cn",
-        description: "计量代码与教材资源",
-        tags: ["中国", "教学", "代码"]
+        name: "US Inflation Calculator",
+        url: "https://www.usinflationcalculator.com",
+        description: "Calculate real purchasing power based on historical CPI",
+        tags: ["USA", "Inflation", "Calculator"]
       },
       {
-        name: "哈佛数据复现库",
-        url: "https://dataverse.harvard.edu",
-        description: "AER/QJE等顶刊论文原始数据",
-        tags: ["复现", "英文", "权威"]
+        name: "Our World in Data",
+        url: "https://ourworldindata.org",
+        description: "Data-driven global development trend visualization platform",
+        tags: ["Global", "Data", "Visualization"]
       },
       {
-        name: "Stata官方网站",
-        url: "https://www.stata.com",
-        description: "统计分析软件和教程",
-        tags: ["软件", "计量", "付费"]
+        name: "Zotero",
+        url: "https://www.zotero.org",
+        description: "Academic reference management tool",
+        tags: ["Academic", "References", "Free"]
       },
       {
-        name: "R Project",
-        url: "https://www.r-project.org",
-        description: "开源统计计算和图形软件",
-        tags: ["开源", "免费", "统计"]
-      },
-      {
-        name: "Python for Data Science",
-        url: "https://pandas.pydata.org",
-        description: "Python数据分析库",
-        tags: ["编程", "免费", "数据分析"]
-      },
-      {
-        name: "EViews",
-        url: "http://www.eviews.com",
-        description: "计量经济学和统计分析软件",
-        tags: ["软件", "计量", "付费"]
-      },
-      {
-        name: "MATLAB Econometrics Toolbox",
-        url: "https://www.mathworks.com/products/econometrics.html",
-        description: "MATLAB计量经济学工具箱",
-        tags: ["软件", "计量", "付费"]
+        name: "Econlib",
+        url: "https://www.econlib.org",
+        description: "Free market economics thought resources and books",
+        tags: ["Free Market", "Resources", "Books"]
       }
     ]
   }
 };
 
-// 德国经济学资源特别推荐
+// 德国经济学专题资源
 export const germanEconomicsResources = [
   {
-    name: "五贤人委员会年度报告",
-    url: "https://www.sachverstaendigenrat.de",
-    description: "德国最权威的经济政策评估",
-    tags: ["德国", "权威", "年度"]
+    name: "German Central Bank",
+    url: "https://www.bundesbank.de",
+    description: "Monetary policy reports and financial stability data",
+    tags: ["Central Bank", "Authoritative"]
   },
   {
-    name: "IFO商业景气指数",
+    name: "Fraunhofer Institute",
+    url: "https://www.fraunhofer.de",
+    description: "Industry 4.0 and hydrogen energy technology reports",
+    tags: ["Technology", "Innovation"]
+  },
+  {
+    name: "GENESIS Regional Database",
+    url: "https://www-genesis.destatis.de",
+    description: "German state economic comparison tool",
+    tags: ["Regional", "Customizable"]
+  },
+  {
+    name: "Energy Transition Monitoring",
+    url: "https://www.agora-energiewende.de",
+    description: "Green hydrogen strategy and carbon pricing mechanism",
+    tags: ["Energy", "Policy"]
+  },
+  {
+    name: "IFO Business Climate Index",
     url: "https://www.ifo.de",
-    description: "欧洲最重要的经济先行指标",
-    tags: ["德国", "预测", "实时"]
+    description: "Manufacturing/service industry survey based on 9,000 German companies",
+    tags: ["Business Climate", "Survey"]
   },
   {
-    name: "DIW周报（DIW Wochenbericht）",
-    url: "https://www.diw.de/sixcms/detail.php?id=diw_02.c.222618.de",
-    description: "德国经济政策深度分析",
-    tags: ["德国", "政策", "周报"]
-  },
-  {
-    name: "墨卡托中国研究中心",
-    url: "https://www.merics.org",
-    description: "中德经济关系专业分析",
-    tags: ["中德", "地缘", "智库"]
+    name: "ZEW Economic Sentiment Index",
+    url: "https://www.zew.de",
+    description: "Financial experts' expectations index for Germany and Eurozone",
+    tags: ["Economic Sentiment", "Financial"]
   }
 ];
 

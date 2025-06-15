@@ -1,17 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { Search, Building, FileText, TrendingUp, Globe, Users, Database, BookOpen, GraduationCap, Wrench, ExternalLink, Filter, Mail, ArrowRight, MapPin } from 'lucide-react';
+import { Search, Building, FileText, TrendingUp, Globe, Users, Database, BookOpen, GraduationCap, Wrench, ExternalLink, Filter, Mail, ArrowRight, MapPin, Star, ChevronDown, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
-import { Language, getTranslation } from '@/lib/i18n';
-import { economicsCategories, germanEconomicsResources, faqData } from '@/lib/data';
+import { economicsCategories, germanEconomicsResources } from '@/lib/data';
 
-// 图标映射
+// Icon mapping
 const iconMap = {
   Building,
   FileText,
@@ -25,17 +23,15 @@ const iconMap = {
 };
 
 export default function Home() {
-  const [currentLanguage, setCurrentLanguage] = useState<Language>('en');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-
-  const t = (key: string) => getTranslation(currentLanguage, key);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleSearch = (term: string) => {
     setSearchTerm(term);
   };
 
-  // 获取所有标签
+  // Get all tags
   const getAllTags = () => {
     const tags = new Set<string>();
     Object.values(economicsCategories).forEach(category => {
@@ -46,7 +42,7 @@ export default function Home() {
     return Array.from(tags);
   };
 
-  // 过滤资源
+  // Filter resources
   const filterResources = (resources: any[]) => {
     return resources.filter((resource: any) => {
       const matchesSearch = searchTerm === '' || 
@@ -59,283 +55,360 @@ export default function Home() {
     });
   };
 
+  const features = [
+    {
+      icon: Search,
+      title: "Smart Discovery",
+      description: "Advanced search and filtering to help you find exactly what you need from thousands of economics resources."
+    },
+    {
+      icon: TrendingUp,
+      title: "Real-time Updates",
+      description: "Stay current with the latest economic data, research, and policy developments as they happen."
+    },
+    {
+      icon: Globe,
+      title: "Global Coverage",
+      description: "Access resources from leading institutions worldwide, with special focus on German economics."
+    },
+    {
+      icon: Database,
+      title: "Comprehensive Database",
+      description: "Curated collection of high-quality resources across all major economics disciplines and specializations."
+    }
+  ];
+
+  const faqItems = [
+    {
+      question: "What makes EconNav different from other economics resources?",
+      answer: "EconNav is specifically designed for economics professionals and students. We curate only the highest quality resources from reputable institutions, organize them by both function and type, and provide advanced filtering to help you find exactly what you need quickly."
+    },
+    {
+      question: "How often is the resource database updated?",
+      answer: "Our team continuously monitors and updates the database. New resources are added weekly, and existing resources are reviewed monthly to ensure all links are active and information is current."
+    },
+    {
+      question: "Is EconNav free to use?",
+      answer: "Yes, EconNav is completely free to use. We believe that access to quality economics resources should be open to all researchers, students, and professionals worldwide."
+    },
+    {
+      question: "How can I suggest new resources to be included?",
+      answer: "We welcome suggestions from our community. You can contact us at fangin1230@gmail.com with your resource recommendations. We review all submissions and add high-quality resources that meet our standards."
+    },
+    {
+      question: "What is the German Economics Focus section?",
+      answer: "This section highlights resources specifically relevant to German economics, including German institutions, data sources, and research centers. It's particularly useful for researchers studying the German economy or European economics more broadly."
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
-      {/* 固定头部 */}
-      <header className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-gray-200 z-50">
-        <div className="container mx-auto px-4 py-4">
+    <div className="min-h-screen bg-white">
+      {/* Header */}
+      <header className="fixed top-0 w-full bg-white/80 backdrop-blur-xl border-b border-gray-100 z-50">
+        <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-white" />
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center">
+                <TrendingUp className="w-6 h-6 text-white" />
               </div>
-              <h1 className="text-xl font-bold text-gray-900">
-                {t('siteTitle') || 'EconWeb - 经济学资源导航'}
-              </h1>
+              <div>
+                <h1 className="text-xl font-semibold text-gray-900">EconNav</h1>
+                <p className="text-xs text-gray-500">Economics Navigation</p>
+              </div>
             </div>
-            <LanguageSwitcher 
-              currentLanguage={currentLanguage} 
-              onLanguageChange={setCurrentLanguage} 
-            />
+            
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-8">
+              <a href="#home" className="text-gray-600 hover:text-gray-900 transition-colors">Home</a>
+              <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
+              <a href="#resources" className="text-gray-600 hover:text-gray-900 transition-colors">Resources</a>
+              <a href="#faq" className="text-gray-600 hover:text-gray-900 transition-colors">FAQ</a>
+              <Button variant="outline" size="sm">Get Started</Button>
+            </nav>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden p-2"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
+
+          {/* Mobile Navigation */}
+          {isMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 border-t border-gray-100">
+              <nav className="flex flex-col space-y-4 pt-4">
+                <a href="#home" className="text-gray-600 hover:text-gray-900 transition-colors">Home</a>
+                <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
+                <a href="#resources" className="text-gray-600 hover:text-gray-900 transition-colors">Resources</a>
+                <a href="#faq" className="text-gray-600 hover:text-gray-900 transition-colors">FAQ</a>
+                <Button variant="outline" size="sm" className="w-fit">Get Started</Button>
+              </nav>
+            </div>
+          )}
         </div>
       </header>
 
-      {/* 主要内容 */}
-      <main className="pt-20">
-        {/* Hero 区域 */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              {t('heroTitle') || 'EconWeb 经济学导航'}
+      {/* Hero Section */}
+      <section id="home" className="pt-24 pb-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+              Your Gateway to
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                Economics Excellence
+              </span>
             </h2>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
-              {t('heroSubtitle') || '发现涵盖9个专业维度的全面经济学资源'}
-            </p>
-            <p className="text-lg mb-12 max-w-4xl mx-auto opacity-80">
-              {t('heroDescription') || '从组织机构到政策研读，从数据获取到学术研究——您的经济学资源一站式目的地'}
+            <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed">
+              Discover the most comprehensive collection of economics resources. From cutting-edge research to real-time data, find everything you need to stay ahead in the world of economics.
             </p>
             
-            {/* 搜索框 */}
-            <div className="max-w-2xl mx-auto mb-8">
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto mb-12">
               <div className="relative">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <Input
-                  placeholder={t('searchPlaceholder') || '搜索经济学资源...'}
+                  placeholder="Search economics resources..."
                   value={searchTerm}
                   onChange={(e) => handleSearch(e.target.value)}
-                  className="pl-12 pr-4 py-4 text-lg bg-white/10 border-white/20 text-white placeholder-white/70 rounded-xl"
+                  className="pl-14 pr-6 py-6 text-lg border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:ring-0 bg-white shadow-sm"
                 />
               </div>
             </div>
 
-            {/* 标签过滤 */}
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
-              <Button
-                variant={selectedTag === null ? "secondary" : "outline"}
-                onClick={() => setSelectedTag(null)}
-                className="bg-white/10 border-white/20 text-white hover:bg-white/20"
-              >
-                {t('allCategories') || '所有分类'}
-              </Button>
-                              {getAllTags().slice(0, 8).map((tag: string) => (
-                  <Button
+            {/* Popular Tags */}
+            <div className="mb-12">
+              <p className="text-sm text-gray-500 mb-4">Popular Tags:</p>
+              <div className="flex flex-wrap justify-center gap-3">
+                {getAllTags().slice(0, 6).map((tag: string) => (
+                  <Badge
                     key={tag}
-                    variant={selectedTag === tag ? "secondary" : "outline"}
-                    onClick={() => setSelectedTag(tag)}
-                    className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+                    variant={selectedTag === tag ? "default" : "secondary"}
+                    className="px-4 py-2 cursor-pointer hover:bg-blue-100 transition-colors"
+                    onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
                   >
                     {tag}
-                  </Button>
+                  </Badge>
                 ))}
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100">
-                {t('getStarted') || '开始探索'}
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                {t('learnMore') || '了解更多'}
-              </Button>
-            </div>
-          </div>
-        </section>
-
-        {/* 主要分类展示 */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                经济学资源分类导航
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                按照9个专业维度组织的经济学资源，为您提供全面的研究和学习支持
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {Object.entries(economicsCategories).map(([key, category]) => {
-                const IconComponent = iconMap[category.icon as keyof typeof iconMap];
-                const filteredResources = filterResources(category.resources);
-                
-                return (
-                  <Card key={key} className="hover:shadow-lg transition-shadow duration-300 group">
-                    <CardHeader>
-                      <div className="flex items-center space-x-3">
-                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                          <IconComponent className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                          <CardTitle className="text-xl">
-                            {t(`categorySections.${key}`) || category.title}
-                          </CardTitle>
-                          <CardDescription className="text-sm text-gray-500">
-                            {filteredResources.length} 个资源
-                          </CardDescription>
-                        </div>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-gray-600 mb-6">
-                        {t(`categoryDescriptions.${key}`) || category.description}
-                      </p>
-                      
-                      <div className="space-y-4">
-                        {filteredResources.slice(0, 3).map((resource, index) => (
-                          <div key={index} className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                            <ExternalLink className="w-4 h-4 text-gray-400 mt-1 flex-shrink-0" />
-                            <div className="flex-1 min-w-0">
-                              <a
-                                href={resource.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-sm font-medium text-blue-600 hover:text-blue-800 line-clamp-1"
-                              >
-                                {resource.name}
-                              </a>
-                              <p className="text-xs text-gray-500 mt-1 line-clamp-2">
-                                {resource.description}
-                              </p>
-                              <div className="flex flex-wrap gap-1 mt-2">
-                                {resource.tags.slice(0, 3).map((tag: string) => (
-                                  <Badge key={tag} variant="secondary" className="text-xs">
-                                    {tag}
-                                  </Badge>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                      
-                      {filteredResources.length > 3 && (
-                        <Button variant="outline" className="w-full mt-4" size="sm">
-                          查看全部 ({filteredResources.length - 3} 个更多)
-                        </Button>
-                      )}
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* 德国经济专题 */}
-        <section className="py-20 bg-gradient-to-r from-orange-50 to-red-50">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <div className="flex items-center justify-center mb-4">
-                <MapPin className="w-8 h-8 text-orange-600 mr-3" />
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                  {t('germanSection.title') || '德国经济专题'}
-                </h2>
               </div>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                {t('germanSection.description') || '精选德国权威经济机构和研究资源集合'}
-              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {germanEconomicsResources.map((resource, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-orange-200">
-                  <CardHeader>
-                    <CardTitle className="text-lg flex items-center">
-                      <ExternalLink className="w-5 h-5 text-orange-600 mr-2" />
-                      <a
-                        href={resource.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-orange-600 hover:text-orange-800"
-                      >
-                        {resource.name}
-                      </a>
-                    </CardTitle>
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg rounded-2xl">
+                Start Exploring
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button size="lg" variant="outline" className="px-8 py-4 text-lg rounded-2xl border-2">
+                View Resources
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Why Choose EconNav?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Built specifically for economics professionals, researchers, and students who demand the best resources.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
+                <div key={index} className="text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <IconComponent className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Resources Section */}
+      <section id="resources" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Comprehensive Resource Collection
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Organized by function and type, our curated collection covers every aspect of economics research and learning.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {Object.entries(economicsCategories).map(([key, category]) => {
+              const IconComponent = iconMap[category.icon as keyof typeof iconMap];
+              const filteredResources = filterResources(category.resources);
+              
+              return (
+                <Card key={key} className="hover:shadow-xl transition-all duration-300 group border-0 shadow-md">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-14 h-14 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <IconComponent className="w-7 h-7 text-white" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-xl font-semibold">
+                          {category.title}
+                        </CardTitle>
+                        <CardDescription className="text-sm text-gray-500">
+                          {filteredResources.length} resources
+                        </CardDescription>
+                      </div>
+                    </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 mb-4">{resource.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {resource.tags.map((tag: string) => (
-                        <Badge key={tag} variant="secondary" className="bg-orange-100 text-orange-800">
-                          {tag}
-                        </Badge>
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      {category.description}
+                    </p>
+                    
+                    <div className="space-y-3">
+                      {filteredResources.slice(0, 3).map((resource, index) => (
+                        <div key={index} className="flex items-start space-x-3 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
+                          <ExternalLink className="w-4 h-4 text-gray-400 mt-1 flex-shrink-0" />
+                          <div className="flex-1 min-w-0">
+                            <a
+                              href={resource.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-sm font-medium text-blue-600 hover:text-blue-800 line-clamp-1"
+                            >
+                              {resource.name}
+                            </a>
+                            <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                              {resource.description}
+                            </p>
+                            <div className="flex flex-wrap gap-1 mt-2">
+                              {resource.tags.slice(0, 2).map((tag: string) => (
+                                <Badge key={tag} variant="secondary" className="text-xs px-2 py-0.5">
+                                  {tag}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
                       ))}
                     </div>
+                    
+                    {filteredResources.length > 3 && (
+                      <Button variant="ghost" className="w-full mt-4 text-blue-600 hover:text-blue-800">
+                        View All {filteredResources.length} Resources
+                        <ArrowRight className="ml-2 w-4 h-4" />
+                      </Button>
+                    )}
                   </CardContent>
                 </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Get answers to common questions about our economics navigation platform.
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqItems.map((item, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`}
+                  className="border border-gray-200 rounded-2xl px-6 data-[state=open]:bg-gray-50"
+                >
+                  <AccordionTrigger className="text-left font-semibold text-gray-900 hover:no-underline py-6">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-600 pb-6 leading-relaxed">
+                    {item.answer}
+                  </AccordionContent>
+                </AccordionItem>
               ))}
-            </div>
+            </Accordion>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* FAQ 区域 */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {t('faqTitle') || '常见问题'}
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                {t('faqSubtitle') || '关于获取经济学资源的常见问题'}
-              </p>
-            </div>
-
-            <div className="max-w-4xl mx-auto">
-              <Accordion type="single" collapsible>
-                {faqData.map((faq, index) => (
-                  <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="text-left">
-                      {faq.question}
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      {faq.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      {/* 页脚 */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center">
-                  <TrendingUp className="w-5 h-5 text-white" />
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-16">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="col-span-1 md:col-span-2">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center">
+                  <TrendingUp className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold">{t('footerTitle') || 'EconWeb'}</h3>
+                <div>
+                  <h3 className="text-xl font-semibold">EconNav</h3>
+                  <p className="text-sm text-gray-400">Economics Navigation</p>
+                </div>
               </div>
-              <p className="text-gray-400 mb-4">{t('footerDescription') || '您的综合经济学资源导航平台'}</p>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-semibold mb-4">主要分类</h4>
-              <ul className="space-y-2 text-gray-400">
-                {Object.entries(economicsCategories).slice(0, 4).map(([key, category]) => (
-                  <li key={key}>
-                    <a href="#" className="hover:text-white transition-colors">
-                      {t(`categorySections.${key}`) || category.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-semibold mb-4">联系我们</h4>
-              <div className="flex items-center space-x-2 text-gray-400">
+              <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
+                Your comprehensive guide to economics resources. Discover the best data sources, research papers, and tools to advance your understanding of economics.
+              </p>
+              <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <Mail className="w-4 h-4" />
-                <span>info@econweb.com</span>
+                <a href="mailto:fangin1230@gmail.com" className="hover:text-white transition-colors">
+                  fangin1230@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+              <div className="space-y-3">
+                <a href="#home" className="block text-gray-400 hover:text-white transition-colors">Home</a>
+                <a href="#features" className="block text-gray-400 hover:text-white transition-colors">Features</a>
+                <a href="#resources" className="block text-gray-400 hover:text-white transition-colors">Resources</a>
+                <a href="#faq" className="block text-gray-400 hover:text-white transition-colors">FAQ</a>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-6">Categories</h4>
+              <div className="space-y-3">
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Data Sources</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Research Papers</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Policy Reports</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Learning Resources</a>
               </div>
             </div>
           </div>
-          
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 EconWeb. {t('footerRights') || '版权所有。'}</p>
+
+          <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm">
+              © 2025 EconNav. All rights reserved. Created by fangxin.
+            </p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+            </div>
           </div>
         </div>
       </footer>

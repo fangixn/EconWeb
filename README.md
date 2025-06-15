@@ -1,95 +1,216 @@
-# 经济学导航网站 / Economics Navigation Website
+# EconNav - Economics Navigation Platform
 
-这是一个现代化的经济学资源导航网站，整合了经济学研究的各类工具和资源。
+A modern, elegant economics resource navigation platform built with Next.js 14, featuring a clean iPhone-inspired design and comprehensive resource curation.
 
-## 功能特性
+## 🌟 Features
 
-- 🌐 **多语言支持**：英语、中文、韩语、日语
-- 🔍 **智能搜索**：快速找到需要的资源
-- 📊 **双重导航**：功能导向 + 资源分类
-- 🎯 **德国专题**：专门的德国经济学资源板块
-- 📱 **响应式设计**：适配各种设备
+### Modern Design
+- **iPhone-inspired UI**: Clean, minimal, and elegant design language
+- **Responsive Design**: Optimized for all screen sizes and devices
+- **Smooth Animations**: Micro-interactions and transitions for enhanced UX
+- **Dark Mode Ready**: Built-in support for light/dark themes
 
-## 技术栈
+### Comprehensive Resource Collection
+- **Curated Economics Resources**: Hand-selected high-quality resources
+- **Smart Search & Filtering**: Advanced search with tag-based filtering
+- **Multiple Categories**: Organized by both function and resource type
+- **German Economics Focus**: Special section for German economic institutions
 
-- **框架**: Next.js 13 (App Router)
-- **样式**: Tailwind CSS + shadcn/ui
-- **语言**: TypeScript
-- **部署**: Vercel
+### User Experience
+- **Intuitive Navigation**: Clean header with smooth scrolling
+- **Hero Section**: Compelling introduction with search functionality
+- **Features Showcase**: Highlight platform capabilities
+- **FAQ Section**: Comprehensive answers to common questions
+- **Professional Footer**: Contact information and quick links
 
-## 快速开始
+## 🚀 Tech Stack
 
-```bash
-# 安装依赖
-npm install
+- **Framework**: Next.js 14 with App Router
+- **Styling**: Tailwind CSS with modern design tokens
+- **UI Components**: Shadcn/ui component library
+- **Icons**: Lucide React icons
+- **TypeScript**: Full type safety
+- **Deployment**: Optimized for Vercel
 
-# 启动开发服务器
-npm run dev
+## 📦 Quick Start
 
-# 构建生产版本
-npm run build
+### Prerequisites
+- Node.js 18.0 or later
+- npm or yarn package manager
 
-# 启动生产服务器
-npm start
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone [your-repo-url]
+   cd EconWeb
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser**
+   ```
+   http://localhost:3000
+   ```
+
+## 🏗️ Project Structure
+
+```
+EconWeb/
+├── app/                      # Next.js app directory
+│   ├── page.tsx             # Main homepage
+│   ├── layout.tsx           # Root layout
+│   ├── globals.css          # Global styles
+│   └── admin/               # Admin section
+├── components/              # Reusable components
+│   ├── ui/                  # Shadcn/ui components
+│   ├── Header.tsx           # Site header
+│   ├── HeroSection.tsx      # Hero component
+│   └── LanguageSwitcher.tsx # Language selector
+├── lib/                     # Utility functions
+│   ├── data.ts              # Resource data
+│   └── i18n.ts              # Internationalization
+├── public/                  # Static assets
+└── hooks/                   # Custom React hooks
 ```
 
-## 部署到 Vercel
+## 📊 Resource Categories
 
-### 方法一：GitHub 集成（推荐）
+### Functional Navigation
+- **Find Data**: Economic databases and statistical resources
+- **Read Policy**: Policy papers and government reports
+- **Do Research**: Academic papers and research tools
+- **Watch Market**: Market analysis and industry reports
 
-1. 将代码推送到 GitHub 仓库
-2. 在 [Vercel](https://vercel.com) 创建账户
-3. 连接 GitHub 仓库
-4. 自动部署完成
+### Resource Types
+- **Authorities**: Official reports from institutions
+- **Academic Papers**: Research publications and journals
+- **Data & Statistics**: Economic databases
+- **Online Learning**: Educational resources and courses
+- **Practical Tools**: Analysis tools and calculators
 
-### 方法二：CLI 部署
+## 🎨 Design Philosophy
 
-```bash
-# 安装 Vercel CLI
-npm i -g vercel
+### Visual Design
+- **Minimalist Aesthetic**: Clean, uncluttered interface
+- **Typography**: Carefully selected fonts with proper hierarchy
+- **Color Palette**: Professional blue and indigo gradients
+- **Spacing**: Generous whitespace for better readability
+- **Icons**: Consistent iconography throughout
 
-# 登录 Vercel
-vercel login
+### User Experience
+- **Progressive Disclosure**: Information revealed as needed
+- **Intuitive Navigation**: Clear pathways to resources
+- **Search-First Approach**: Prominent search functionality
+- **Mobile Optimization**: Touch-friendly interactions
 
-# 部署项目
-vercel
+## 🚀 Deployment
 
-# 部署到生产环境
-vercel --prod
-```
+### Vercel (Recommended)
 
-## 项目结构
+1. **Connect to Vercel**
+   ```bash
+   npm i -g vercel
+   vercel
+   ```
 
-```
-├── app/                    # Next.js App Router 页面
-├── components/            # React 组件
-├── lib/                   # 工具函数和数据
-├── hooks/                 # 自定义 React Hooks
-├── econ_resources.json    # 经济学资源数据
-├── econ_nav_resources.json # 导航资源数据
-└── vercel.json           # Vercel 部署配置
-```
+2. **Configure Settings**
+   - Build Command: `npm run build`
+   - Output Directory: `.next`
+   - Install Command: `npm install`
 
-## 数据源
+3. **Environment Variables**
+   - None required for basic functionality
 
-项目整合了两个主要数据源：
-- `econ_resources.json`: 功能导向的资源分类
-- `econ_nav_resources.json`: 传统的资源类型分类
+### Manual Deployment
 
-## 贡献指南
+1. **Build the project**
+   ```bash
+   npm run build
+   ```
 
-欢迎贡献！请遵循以下步骤：
+2. **Start production server**
+   ```bash
+   npm start
+   ```
 
-1. Fork 本仓库
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 打开 Pull Request
+## 📝 Content Management
 
-## 许可证
+### Adding New Resources
 
-MIT License
+1. **Edit data file**
+   ```typescript
+   // lib/data.ts
+   export const economicsCategories = {
+     // Add your resources here
+   }
+   ```
 
-## 联系方式
+2. **Update categories**
+   - Add new resource objects with required fields
+   - Include proper tags for filtering
+   - Ensure all URLs are valid
 
-如有问题或建议，请通过 GitHub Issues 联系我们。 
+### Customizing Content
+
+- **FAQ Section**: Update `faqItems` array in `page.tsx`
+- **Features**: Modify `features` array in `page.tsx`
+- **Hero Content**: Edit hero section text directly in component
+
+## 🌐 Internationalization
+
+The platform supports multiple languages:
+
+- **English** (default)
+- **Chinese** (中文)
+- **Korean** (한국어)
+- **Japanese** (日本語)
+
+Language switching is handled via the `LanguageSwitcher` component.
+
+## 📧 Contact & Support
+
+- **Owner**: fangxin
+- **Email**: [fangin1230@gmail.com](mailto:fangin1230@gmail.com)
+- **Year**: 2025
+
+## 📄 License
+
+© 2025 EconNav. All rights reserved. Created by fangxin.
+
+## 🔧 Development
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+
+### Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## 🎯 Roadmap
+
+- [ ] Advanced search filters
+- [ ] User accounts and favorites
+- [ ] Resource submission system
+- [ ] Newsletter integration
+- [ ] Mobile app companion
+
+---
+
+Built with ❤️ for the economics community 
