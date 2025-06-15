@@ -9,9 +9,9 @@ export default function Header() {
     { name: '首页', href: '#home' },
     { name: '功能导航', href: '#functional' },
     { name: '资源分类', href: '#resources' },
+    { name: '顶刊专题', href: '#top-journals' },
     { name: '德国专题', href: '#german' },
-    { name: '学习路径', href: '#paths' },
-    { name: '常见问题', href: '#faq' }
+    { name: '使用指导', href: '#guide' },
   ];
 
   return (
@@ -32,6 +32,13 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className="text-slate-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const section = document.querySelector(item.href);
+                  if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
                 {item.name}
               </a>
@@ -64,7 +71,14 @@ export default function Header() {
                   key={item.name}
                   href={item.href}
                   className="block px-3 py-2 text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMenuOpen(false);
+                    const section = document.querySelector(item.href);
+                    if (section) {
+                      section.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                 >
                   {item.name}
                 </a>

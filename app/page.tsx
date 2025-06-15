@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Search, Building, FileText, TrendingUp, Globe, Users, Database, BookOpen, GraduationCap, Wrench, ExternalLink, Filter, Mail, MapPin, Star, ChevronDown, Menu, X, ArrowRight } from 'lucide-react';
+import { Search, Building, FileText, TrendingUp, Globe, Users, Database, BookOpen, GraduationCap, Wrench, ExternalLink, Filter, Mail, MapPin, Star, ChevronDown, Menu, X, ArrowRight, HelpCircle, Target, Grid3X3, Lightbulb, BookmarkIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -99,13 +99,17 @@ export default function Home() {
     return Array.from(tags);
   };
 
-  // Get curated popular tags (limited to 4)
+  // Get curated popular tags (limited to 8) - 选择更具区分度的标签
   const getPopularTags = () => {
     return [
-      'Academic',
-      'Data', 
-      'Financial',
-      'Teaching'
+      'Free',        // 免费资源
+      'Data',        // 数据相关
+      'Academic',    // 学术资源
+      'China',       // 中国相关
+      'Germany',     // 德国相关
+      'Policy',      // 政策相关
+      'API',         // 有API接口
+      'Real-time'    // 实时更新
     ];
   };
 
@@ -115,50 +119,81 @@ export default function Home() {
       return resources; // No filters applied
     }
 
-    const results = resources.map((resource: any) => {
-      // 多语言搜索逻辑
-      const searchLower = searchTerm.toLowerCase();
-      
-      // 1. 搜索原始英文内容
-      const matchesOriginal = searchTerm === '' || 
-        resource.name.toLowerCase().includes(searchLower) ||
-        resource.description.toLowerCase().includes(searchLower) ||
-        resource.tags.some((tag: string) => tag.toLowerCase().includes(searchLower));
-      
-      // 2. 搜索翻译后的资源名称
-      const translatedName = getResourceTranslation(currentLanguage, 'resources', resource.name);
-      const matchesTranslatedName = translatedName.toLowerCase().includes(searchLower);
-      
-      // 3. 搜索翻译后的标签
-      const matchesTranslatedTags = resource.tags.some((tag: string) => {
-        const translatedTag = getResourceTranslation(currentLanguage, 'tags', tag);
-        return translatedTag.toLowerCase().includes(searchLower);
-      });
-      
-      // 组合所有搜索结果
-      const matchesSearch = searchTerm === '' || matchesOriginal || matchesTranslatedName || matchesTranslatedTags;
-      
-      const matchesTag = selectedTag === null || resource.tags.includes(selectedTag);
-      
-      // Calculate relevance score
-      let score = 0;
-      if (matchesSearch && matchesTag) {
-        score = 3; // Perfect match - both search term and tag
-      } else if (matchesSearch && selectedTag) {
-        score = 2; // Matches search but not tag
-      } else if (matchesTag && searchTerm) {
-        score = 1; // Matches tag but not search
-      } else if (matchesSearch || matchesTag) {
-        score = 1; // Matches either search or tag (when only one filter is active)
+    const results = resources.filter((resource: any) => {
+      // 搜索逻辑：只有当搜索词不为空时才进行搜索匹配
+      let matchesSearch = true;
+      if (searchTerm && searchTerm.trim() !== '') {
+        const searchLower = searchTerm.toLowerCase().trim();
+        
+        // 1. 搜索原始英文内容
+        const matchesOriginal = 
+          resource.name.toLowerCase().includes(searchLower) ||
+          resource.description.toLowerCase().includes(searchLower) ||
+          resource.tags.some((tag: string) => tag.toLowerCase().includes(searchLower));
+        
+        // 2. 搜索翻译后的资源名称
+        const translatedName = getResourceTranslation(currentLanguage, 'resources', resource.name);
+        const matchesTranslatedName = translatedName.toLowerCase().includes(searchLower);
+        
+        // 3. 搜索翻译后的标签
+        const matchesTranslatedTags = resource.tags.some((tag: string) => {
+          const translatedTag = getResourceTranslation(currentLanguage, 'tags', tag);
+          return translatedTag.toLowerCase().includes(searchLower);
+        });
+        
+        // 只有匹配任一条件才通过搜索筛选
+        matchesSearch = matchesOriginal || matchesTranslatedName || matchesTranslatedTags;
       }
       
-      return { resource, score };
-    })
-    .filter(item => item.score > 0) // Only include resources with some relevance
-    .sort((a, b) => b.score - a.score) // Sort by relevance score (highest first)
-    .map(item => item.resource); // Extract the resource objects
+      // 标签筛选逻辑
+      const matchesTag = selectedTag === null || resource.tags.includes(selectedTag);
+      
+      // 必须同时满足搜索和标签条件
+      return matchesSearch && matchesTag;
+    });
+
+    // 按相关性排序
+    if (searchTerm && searchTerm.trim() !== '') {
+      const searchLower = searchTerm.toLowerCase().trim();
+      return results.sort((a, b) => {
+        // 计算相关性得分
+        const scoreA = calculateRelevanceScore(a, searchLower);
+        const scoreB = calculateRelevanceScore(b, searchLower);
+        return scoreB - scoreA;
+      });
+    }
 
     return results;
+  };
+
+  // 计算资源的相关性得分
+  const calculateRelevanceScore = (resource: any, searchLower: string) => {
+    let score = 0;
+    
+    // 名称完全匹配得分最高
+    if (resource.name.toLowerCase().includes(searchLower)) {
+      score += resource.name.toLowerCase() === searchLower ? 10 : 5;
+    }
+    
+    // 描述匹配
+    if (resource.description.toLowerCase().includes(searchLower)) {
+      score += 3;
+    }
+    
+    // 标签匹配
+    resource.tags.forEach((tag: string) => {
+      if (tag.toLowerCase().includes(searchLower)) {
+        score += tag.toLowerCase() === searchLower ? 8 : 2;
+      }
+    });
+    
+    // 翻译内容匹配
+    const translatedName = getResourceTranslation(currentLanguage, 'resources', resource.name);
+    if (translatedName.toLowerCase().includes(searchLower)) {
+      score += translatedName.toLowerCase() === searchLower ? 10 : 4;
+    }
+    
+    return score;
   };
 
   const features = [
@@ -350,10 +385,10 @@ export default function Home() {
               </form>
             </div>
 
-            {/* Popular Tags */}
+            {/* Search Examples */}
             <div className="mb-12">
               <div className="flex items-center justify-center space-x-4 mb-4">
-                <p className="text-sm text-gray-500">{t('popular_tags')}</p>
+                <p className="text-sm text-gray-500">💡 {t('search_examples_title')}</p>
                 {(searchTerm || selectedTag) && (
                   <Button
                     variant="ghost"
@@ -365,28 +400,85 @@ export default function Home() {
                   </Button>
                 )}
               </div>
-              <div className="flex flex-wrap justify-center gap-3">
-                {getPopularTags().map((tag: string) => (
-                  <Badge
-                    key={tag}
-                    variant={selectedTag === tag ? "default" : "secondary"}
-                    className={`px-4 py-2 cursor-pointer transition-all duration-200 ${
-                      selectedTag === tag 
-                        ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-md' 
-                        : 'bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-700'
-                    }`}
-                    onClick={() => {
-                      setSelectedTag(selectedTag === tag ? null : tag);
-                      // 自动滚动到资源区域以显示筛选结果
-                      setTimeout(() => scrollToSection('resources'), 100);
-                    }}
-                  >
-                    {getResourceTranslation(currentLanguage, 'tags', tag) || tag}
-                    {selectedTag === tag && (
-                      <X className="ml-2 w-3 h-3" />
-                    )}
-                  </Badge>
-                ))}
+              
+              {/* Search Examples */}
+              <div className="max-w-4xl mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+                  {[
+                    { queryKey: "example_free_data", descKey: "example_free_data_desc", icon: "💰" },
+                    { queryKey: "example_china_policy", descKey: "example_china_policy_desc", icon: "🇨🇳" },
+                    { queryKey: "example_top_journals", descKey: "example_top_journals_desc", icon: "⭐" },
+                    { queryKey: "example_online_learning", descKey: "example_online_learning_desc", icon: "🎓" }
+                  ].map((example) => {
+                    const query = t(example.queryKey);
+                    const desc = t(example.descKey);
+                    return (
+                      <button
+                        key={example.queryKey}
+                        onClick={() => {
+                          setSearchTerm(query);
+                          setTimeout(() => scrollToSection('resources'), 100);
+                        }}
+                        className="p-3 bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 border border-blue-100 rounded-xl transition-all duration-200 text-left group"
+                      >
+                        <div className="flex items-center space-x-2 mb-1">
+                          <span className="text-lg">{example.icon}</span>
+                          <span className="font-medium text-blue-700 group-hover:text-blue-800">"{query}"</span>
+                        </div>
+                        <p className="text-xs text-gray-600">{desc}</p>
+                      </button>
+                    );
+                  })}
+                </div>
+                
+                {/* Quick Tags */}
+                <div className="flex flex-wrap justify-center gap-2">
+                  <span className="text-xs text-gray-500 mr-2">{t('quick_tags_title')}</span>
+                  {['Free', 'China', 'Germany', 'API'].map((tag: string) => (
+                    <Badge
+                      key={tag}
+                      variant={selectedTag === tag ? "default" : "secondary"}
+                      className={`px-2 py-1 cursor-pointer transition-all duration-200 text-xs ${
+                        selectedTag === tag 
+                          ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                          : 'bg-gray-100 text-gray-600 hover:bg-blue-100 hover:text-blue-700'
+                      }`}
+                      onClick={() => {
+                        setSelectedTag(selectedTag === tag ? null : tag);
+                        setTimeout(() => scrollToSection('resources'), 100);
+                      }}
+                    >
+                      {getResourceTranslation(currentLanguage, 'tags', tag) || tag}
+                      {selectedTag === tag && <X className="ml-1 w-2 h-2" />}
+                    </Badge>
+                  ))}
+                </div>
+                
+                {/* Search Tips */}
+                <div className="mt-6 p-4 bg-gray-50 rounded-xl border border-gray-100">
+                  <div className="flex items-center space-x-2 mb-2">
+                    <span className="text-sm">🔍</span>
+                    <span className="text-sm font-medium text-gray-700">{t('search_tips_title')}</span>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-600">
+                    <div>
+                      <span className="font-medium">{t('search_by_function')}</span>
+                      <span className="ml-1">{t('search_by_function_keywords')}</span>
+                    </div>
+                    <div>
+                      <span className="font-medium">{t('search_by_academic')}</span>
+                      <span className="ml-1">{t('search_by_academic_keywords')}</span>
+                    </div>
+                    <div>
+                      <span className="font-medium">{t('search_by_learning')}</span>
+                      <span className="ml-1">{t('search_by_learning_keywords')}</span>
+                    </div>
+                    <div>
+                      <span className="font-medium">{t('search_by_data_type')}</span>
+                      <span className="ml-1">{t('search_by_data_type_keywords')}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
               {(searchTerm || selectedTag) && (
                 <div className="mt-4 text-center">
@@ -422,6 +514,118 @@ export default function Home() {
               >
                 {t('btn_view_resources')}
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Usage Guide Section */}
+      <section id="guide" className="py-16 bg-gradient-to-r from-slate-50 to-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center space-x-3 bg-slate-100 px-6 py-3 rounded-full mb-6">
+              <HelpCircle className="w-5 h-5 text-slate-600" />
+              <span className="text-slate-800 font-medium">{t('usage_guide')}</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              {t('usage_guide_title')}
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              {t('usage_guide_subtitle')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* 功能导航 */}
+            <div className="group cursor-pointer" onClick={() => scrollToSection('functional')}>
+              <div className="p-6 bg-white border border-blue-100 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group-hover:bg-blue-50/30">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Target className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('guide_functional_title')}</h3>
+                <p className="text-sm text-gray-600 mb-3">{t('guide_functional_desc')}</p>
+                <div className="space-y-1 text-xs text-gray-500">
+                  <div>{t('guide_functional_tip1')}</div>
+                  <div>{t('guide_functional_tip2')}</div>
+                  <div>{t('guide_functional_tip3')}</div>
+                  <div>{t('guide_functional_tip4')}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* 资源分类 */}
+            <div className="group cursor-pointer" onClick={() => scrollToSection('resources')}>
+              <div className="p-6 bg-white border border-green-100 rounded-2xl hover:border-green-200 hover:shadow-lg transition-all duration-300 group-hover:bg-green-50/30">
+                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Grid3X3 className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('guide_resources_title')}</h3>
+                <p className="text-sm text-gray-600 mb-3">{t('guide_resources_desc')}</p>
+                <div className="space-y-1 text-xs text-gray-500">
+                  <div>{t('guide_resources_tip1')}</div>
+                  <div>{t('guide_resources_tip2')}</div>
+                  <div>{t('guide_resources_tip3')}</div>
+                  <div>{t('guide_resources_tip4')}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* 顶刊专题 */}
+            <div className="group cursor-pointer" onClick={() => scrollToSection('top-journals')}>
+              <div className="p-6 bg-white border border-purple-100 rounded-2xl hover:border-purple-200 hover:shadow-lg transition-all duration-300 group-hover:bg-purple-50/30">
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Star className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('guide_journals_title')}</h3>
+                <p className="text-sm text-gray-600 mb-3">{t('guide_journals_desc')}</p>
+                <div className="space-y-1 text-xs text-gray-500">
+                  <div>{t('guide_journals_tip1')}</div>
+                  <div>{t('guide_journals_tip2')}</div>
+                  <div>{t('guide_journals_tip3')}</div>
+                  <div>{t('guide_journals_tip4')}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* 德国专题 */}
+            <div className="group cursor-pointer" onClick={() => scrollToSection('german')}>
+              <div className="p-6 bg-white border border-orange-100 rounded-2xl hover:border-orange-200 hover:shadow-lg transition-all duration-300 group-hover:bg-orange-50/30">
+                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <MapPin className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('guide_german_title')}</h3>
+                <p className="text-sm text-gray-600 mb-3">{t('guide_german_desc')}</p>
+                <div className="space-y-1 text-xs text-gray-500">
+                  <div>{t('guide_german_tip1')}</div>
+                  <div>{t('guide_german_tip2')}</div>
+                  <div>{t('guide_german_tip3')}</div>
+                  <div>{t('guide_german_tip4')}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 快速提示 */}
+          <div className="mt-12 bg-white/70 backdrop-blur-sm border border-gray-200 rounded-2xl p-6">
+            <div className="flex items-center space-x-3 mb-4">
+              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center">
+                <Lightbulb className="w-4 h-4 text-white" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900">{t('quick_tips_title')}</h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600">
+              <div className="flex items-center space-x-2">
+                <Search className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                <span>{t('quick_tip_search')}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Filter className="w-4 h-4 text-green-500 flex-shrink-0" />
+                <span>{t('quick_tip_filter')}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <BookmarkIcon className="w-4 h-4 text-purple-500 flex-shrink-0" />
+                <span>{t('quick_tip_bookmark')}</span>
+              </div>
             </div>
           </div>
         </div>
@@ -659,7 +863,7 @@ export default function Home() {
       </section>
 
       {/* German Economics Special Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-50 to-amber-50">
+      <section id="german" className="py-20 bg-gradient-to-r from-orange-50 to-amber-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center space-x-3 bg-orange-100 px-6 py-3 rounded-full mb-6">

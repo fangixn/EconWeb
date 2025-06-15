@@ -19,8 +19,8 @@ A modern, elegant economics resource navigation platform built with Next.js 14, 
 ### User Experience
 - **Intuitive Navigation**: Clean header with smooth scrolling
 - **Hero Section**: Compelling introduction with search functionality
+- **Usage Guide**: Interactive guidance on how to navigate the platform
 - **Features Showcase**: Highlight platform capabilities
-- **FAQ Section**: Comprehensive answers to common questions
 - **Professional Footer**: Contact information and quick links
 
 ## 🚀 Tech Stack
@@ -97,6 +97,27 @@ EconWeb/
 - **Online Learning**: Educational resources and courses
 - **Practical Tools**: Analysis tools and calculators
 
+## 🧭 Usage Guide
+
+The platform includes an interactive Usage Guide section that helps users choose the optimal navigation method:
+
+### Guide Cards
+- **Functional Navigation**: For users who know exactly what they want to do
+  - Scenario-based guidance (need data → data sources, read policy → policy analysis)
+- **Resource Categories**: For systematic browsing and exploration
+  - Ideal for beginners and comprehensive learning paths
+- **Top Journals**: For accessing high-quality academic resources
+  - Direct access to prestigious economics journals
+- **German Focus**: For specialized German economics research
+  - Targeted resources for German economic institutions and data
+
+### Quick Tips
+- Search functionality for specific resource discovery
+- Tag-based filtering for quick categorization
+- Bookmark recommendations for frequent access
+
+Each guide card is interactive and provides context-specific navigation to help users efficiently find relevant economics resources.
+
 ## 🎨 Design Philosophy
 
 ### Visual Design
@@ -161,20 +182,21 @@ EconWeb/
 
 ### Customizing Content
 
-- **FAQ Section**: Update `faqItems` array in `page.tsx`
+
 - **Features**: Modify `features` array in `page.tsx`
 - **Hero Content**: Edit hero section text directly in component
 
 ## 🌐 Internationalization
 
-The platform supports multiple languages:
+The platform supports multiple languages with full localization:
 
 - **English** (default)
 - **Chinese** (中文)
 - **Korean** (한국어)
 - **Japanese** (日本語)
+- **German** (Deutsch)
 
-Language switching is handled via the `LanguageSwitcher` component.
+All UI elements, including the new Usage Guide section, are fully translated. Language switching is handled via the `LanguageSwitcher` component with translations stored in `lib/i18n.ts`.
 
 ## 📧 Contact & Support
 

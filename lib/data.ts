@@ -24,49 +24,49 @@ export const economicsCategories = {
         name: "IMF (International Monetary Fund)",
         url: "https://www.imf.org",
         description: "Global macroeconomic analysis, regional outlooks, financial stability reports",
-        tags: ["International", "Authoritative", "Multilingual"]
+        tags: ["International", "Authoritative", "Policy", "Macroeconomics", "Data"]
       },
       {
         name: "World Bank",
         url: "https://www.worldbank.org",
         description: "Development economics research, data analysis and development reports",
-        tags: ["International", "Development", "Free"]
+        tags: ["International", "Development", "Free", "Data", "Research"]
       },
       {
         name: "OECD (Organisation for Economic Co-operation and Development)",
         url: "https://www.oecd.org",
         description: "Economic policy analysis and statistics",
-        tags: ["International", "Policy", "Statistics"]
+        tags: ["International", "Policy", "Statistics", "Data", "Research"]
       },
       {
         name: "People's Bank of China",
         url: "http://www.pbc.gov.cn",
         description: "Interest rates, exchange rates, money supply information",
-        tags: ["China", "Central Bank", "Official"]
+        tags: ["China", "Central Bank", "Official", "Financial", "Real-time"]
       },
       {
         name: "China National Bureau of Statistics",
         url: "https://www.stats.gov.cn",
         description: "China's official statistical data release platform",
-        tags: ["China", "Official", "Statistics"]
+        tags: ["China", "Official", "Statistics", "Data", "Free"]
       },
       {
         name: "European Central Bank (ECB)",
         url: "https://www.ecb.europa.eu",
         description: "Eurozone monetary policy and economic research",
-        tags: ["Europe", "Central Bank", "Eurozone"]
+        tags: ["Europe", "Central Bank", "Eurozone", "Policy", "Financial"]
       },
       {
         name: "Federal Statistical Office (Destatis)",
         url: "https://www.destatis.de",
         description: "GDP/CPI/trade data, provides Excel/CSV downloads",
-        tags: ["Germany", "Official", "Data"]
+        tags: ["Germany", "Official", "Data", "Statistics", "Free"]
       },
       {
         name: "FRED Economic Data",
         url: "https://fred.stlouisfed.org",
         description: "Federal Reserve economic database with 500,000+ time series",
-        tags: ["USA", "API", "Free"]
+        tags: ["USA", "API", "Free", "Data", "Real-time"]
       }
     ]
   },
@@ -470,25 +470,7 @@ export const germanEconomicsResources = [
   }
 ];
 
-// 常见问题数据
-export const faqData = [
-  {
-    question: "如何获取最新的中国宏观经济数据？",
-    answer: "推荐使用国家统计局数据库和中国人民银行官网。国家统计局提供GDP、CPI、工业增加值等核心指标的月度、季度和年度数据。央行网站则提供货币供应量、社会融资规模等金融数据。"
-  },
-  {
-    question: "德国经济研究有哪些权威机构？",
-    answer: "主要包括：五贤人委员会（提供年度经济评估）、IFO经济研究所（发布商业景气指数）、DIW柏林研究所（独立经济研究）、ZEW经济研究中心（金融市场分析）等。这些机构的报告具有很高的学术价值和政策影响力。"
-  },
-  {
-    question: "如何获取免费的学术论文资源？",
-    answer: "建议使用SSRN、Google Scholar、经济学研究网（EconStor）等平台。SSRN提供大量免费的经济学工作论文，Google Scholar可以搜索全球学术文献，EconStor专门收录德语地区的经济学研究。"
-  },
-  {
-    question: "有哪些好用的经济数据可视化工具？",
-    answer: "推荐MacroMicro（宏观经济数据可视化）、FRED（美联储经济数据图表）、世界银行开放数据平台等。这些工具不仅提供数据，还支持交互式图表制作和数据分析。"
-  }
-];
+
 
 // 顶级学术期刊专题资源 - 按影响因子排序
 // 1. QJE (35.995), 2. AER (25.102), 3. JF (22.836), 4. Econometrica (21.091), 5. REStud (19.166)

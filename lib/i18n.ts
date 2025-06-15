@@ -18,7 +18,6 @@ export const translations = {
     nav_resources: 'By Type',
     nav_news: 'News',
     nav_german: 'German Focus',
-    nav_faq: 'FAQ',
     
     // Hero Section
     hero_title: 'Your Gateway to',
@@ -75,22 +74,14 @@ export const translations = {
     view_all: 'View All',
     resources: 'Resources',
     
-    // FAQ
-    faq_title: 'Frequently Asked Questions',
-    faq_subtitle: 'Get answers to common questions about our EconNavigator platform',
+
     
     // Footer
     footer_description: 'Your comprehensive guide to economics resources. Discover the best data sources, research papers, and tools to advance your understanding of economics.',
     quick_links: 'Quick Links',
-    main_categories: 'Categories',
+    main_categories: 'Resource Categories',
     
-    // FAQ Questions
-    faq_q1: 'What makes this EconNavigator site different?',
-    faq_a1: 'We integrate both functional and resource-type navigation methods, suitable for both professional researchers to quickly locate tools and beginners to learn systematically. We especially highlight German economic resources, reflecting professional characteristics.',
-    faq_q2: 'How to use the tag filtering function?',
-    faq_a2: 'Each resource has detailed tags (such as free/paid, region, language, etc.). You can click on tags or use the search function to quickly filter resources that meet your needs.',
-    faq_q3: 'Where should beginners start?',
-    faq_a3: 'We recommend beginners start with "Online Learning" resources, then gradually access "Data & Statistics" and "Authorities" reports, and finally delve into "Academic Papers" and professional tools.',
+
     
     // Switch view messages
     switch_to_functional_view: 'Switch to "By Function" view to interact with this section',
@@ -166,7 +157,74 @@ export const translations = {
     // Top Journals Section
     top_journals_focus: 'Top Journals',
     top_journals_title: 'Premier Academic Journals',
-    top_journals_subtitle: 'The most authoritative academic publishing platforms in economics, featuring cutting-edge research from leading scholars worldwide'
+    top_journals_subtitle: 'The most authoritative academic publishing platforms in economics, featuring cutting-edge research from leading scholars worldwide',
+
+    // Search Examples Section
+    search_examples_title: 'Search Examples',
+    search_tips_title: 'Search Tips',
+    
+    // Search Examples
+    example_free_data: 'Free Data',
+    example_free_data_desc: 'Find free data resources',
+    example_china_policy: 'China Policy', 
+    example_china_policy_desc: 'China-related policy documents',
+    example_top_journals: 'Top Journals',
+    example_top_journals_desc: 'Leading economics journals',
+    example_online_learning: 'Online Learning',
+    example_online_learning_desc: 'Courses and learning resources',
+    
+    // Search Tips
+    search_by_function: 'By Function:',
+    search_by_function_keywords: '"API", "Free", "Real-time"',
+    search_by_academic: 'By Academic Level:',
+    search_by_academic_keywords: '"Top Journals", "Working Papers", "Preprints"',
+    search_by_learning: 'By Learning Stage:',
+    search_by_learning_keywords: '"Beginner", "Advanced", "Online Learning"',
+    search_by_data_type: 'By Data Type:',
+    search_by_data_type_keywords: '"Macro Data", "Micro Data", "Panel Data"',
+    
+    // Quick Tags
+    quick_tags_title: 'Quick Filter:',
+    
+    // Usage Guide Section
+    usage_guide: 'Usage Guide',
+    usage_guide_title: 'How to Use EconWeb?',
+    usage_guide_subtitle: 'Choose the most suitable navigation method based on your needs',
+    
+    // Guide Cards
+    guide_functional_title: 'Functional Navigation',
+    guide_functional_desc: 'When you know exactly what you want to do',
+    guide_functional_tip1: '• Need data → Data Sources',
+    guide_functional_tip2: '• Read policy → Policy Analysis', 
+    guide_functional_tip3: '• Do research → Academic Research',
+    guide_functional_tip4: '• Watch market → Market Observation',
+    
+    guide_resources_title: 'Resource Categories',
+    guide_resources_desc: 'When you want to browse systematically',
+    guide_resources_tip1: '• Categorized by resource type',
+    guide_resources_tip2: '• Suitable for beginners to explore',
+    guide_resources_tip3: '• Systematic learning path',
+    guide_resources_tip4: '• Comprehensive understanding of all fields',
+    
+    guide_journals_title: 'Top Journals',
+    guide_journals_desc: 'When you need high-quality academic resources',
+    guide_journals_tip1: '• Top economics journals',
+    guide_journals_tip2: '• Authoritative academic publishing platforms',
+    guide_journals_tip3: '• Cutting-edge research papers',
+    guide_journals_tip4: '• Essential for academic research',
+    
+    guide_german_title: 'German Focus',
+    guide_german_desc: 'When you specifically study German economy',
+    guide_german_tip1: '• German central bank data',
+    guide_german_tip2: '• German economic institutions',
+    guide_german_tip3: '• German policy reports',
+    guide_german_tip4: '• European economic research',
+    
+    // Quick Tips
+    quick_tips_title: 'Quick Tips',
+    quick_tip_search: 'Use search bar to quickly find specific resources',
+    quick_tip_filter: 'Click tags for quick filtering',
+    quick_tip_bookmark: 'Bookmark frequently used resources for easy access'
   },
   
   zh: {
@@ -178,7 +236,6 @@ export const translations = {
     nav_resources: '资源分类',
     nav_news: '经济资讯',
     nav_german: '德国专题',
-    nav_faq: '常见问题',
     
     // Hero Section
     hero_title: '经济学资源',
@@ -235,22 +292,14 @@ export const translations = {
     view_all: '查看全部',
     resources: '个资源',
     
-    // FAQ
-    faq_title: '常见问题',
-    faq_subtitle: '关于EconNavigator平台的常见问题解答',
+
     
     // Footer
     footer_description: '您的经济学资源综合指南。发现最好的数据源、研究论文和工具，提升您对经济学的理解。',
     quick_links: '快速链接',
-    main_categories: '主要分类',
+    main_categories: '资源分类',
     
-    // FAQ Questions
-    faq_q1: '这个导航站有什么特色？',
-    faq_a1: '我们整合了功能导向和资源类型两种导航方式，既适合专业研究人员快速定位工具，也适合初学者系统学习。特别突出了德国经济资源，体现专业特色。',
-    faq_q2: '如何使用标签筛选功能？',
-    faq_a2: '每个资源都有详细标签（如免费/付费、地区、语言等），您可以点击标签或使用搜索功能快速筛选符合需求的资源。',
-    faq_q3: '新手应该从哪里开始？',
-    faq_a3: '建议新手从"在线学习"资源开始，然后逐步接触"数据统计"和"权威机构"报告，最后深入"学术论文"和专业工具。',
+
     
     // Switch view messages
     switch_to_functional_view: '切换到"功能导向"视图以与此部分交互',
@@ -326,7 +375,74 @@ export const translations = {
     // Top Journals Section
     top_journals_focus: '顶级期刊',
     top_journals_title: '顶级学术期刊',
-    top_journals_subtitle: '经济学领域最权威的学术出版平台，收录全球顶尖学者前沿研究成果'
+    top_journals_subtitle: '经济学领域最权威的学术出版平台，收录全球顶尖学者前沿研究成果',
+
+    // Search Examples Section
+    search_examples_title: '搜索示例',
+    search_tips_title: '搜索技巧',
+    
+    // Search Examples
+    example_free_data: '免费数据',
+    example_free_data_desc: '寻找免费的数据资源',
+    example_china_policy: '中国政策', 
+    example_china_policy_desc: '中国相关政策文件',
+    example_top_journals: '顶级期刊',
+    example_top_journals_desc: '经济学顶级学术期刊',
+    example_online_learning: '在线学习',
+    example_online_learning_desc: '课程和学习资源',
+    
+    // Search Tips
+    search_by_function: '按功能搜索：',
+    search_by_function_keywords: '"API", "免费", "实时数据"',
+    search_by_academic: '按学术等级：',
+    search_by_academic_keywords: '"顶级期刊", "工作论文", "预印本"',
+    search_by_learning: '按学习阶段：',
+    search_by_learning_keywords: '"入门课程", "高级教程", "在线学习"',
+    search_by_data_type: '按数据类型：',
+    search_by_data_type_keywords: '"宏观数据", "微观数据", "面板数据"',
+    
+    // Quick Tags
+    quick_tags_title: '快速筛选：',
+    
+    // Usage Guide Section
+    usage_guide: '使用指导',
+    usage_guide_title: '如何使用 EconWeb？',
+    usage_guide_subtitle: '根据你的需求，选择最适合的导航方式',
+    
+    // Guide Cards
+    guide_functional_title: '功能导航',
+    guide_functional_desc: '当你明确知道要做什么时',
+    guide_functional_tip1: '• 需要找数据 → 数据获取',
+    guide_functional_tip2: '• 要读政策 → 政策研读', 
+    guide_functional_tip3: '• 做研究 → 学术研究',
+    guide_functional_tip4: '• 看市场 → 市场观察',
+    
+    guide_resources_title: '资源分类',
+    guide_resources_desc: '当你想系统性浏览时',
+    guide_resources_tip1: '• 按资源类型分类',
+    guide_resources_tip2: '• 适合初学者探索',
+    guide_resources_tip3: '• 系统性学习路径',
+    guide_resources_tip4: '• 全面了解各领域',
+    
+    guide_journals_title: '顶刊专题',
+    guide_journals_desc: '当你需要高质量学术资源时',
+    guide_journals_tip1: '• 顶级经济学期刊',
+    guide_journals_tip2: '• 权威学术发表平台',
+    guide_journals_tip3: '• 前沿研究论文',
+    guide_journals_tip4: '• 学术研究必备',
+    
+    guide_german_title: '德国专题',
+    guide_german_desc: '当你专门研究德国经济时',
+    guide_german_tip1: '• 德国央行数据',
+    guide_german_tip2: '• 德国经济机构',
+    guide_german_tip3: '• 德国政策报告',
+    guide_german_tip4: '• 欧洲经济研究',
+    
+    // Quick Tips
+    quick_tips_title: '快速提示',
+    quick_tip_search: '使用搜索栏快速找到特定资源',
+    quick_tip_filter: '点击标签进行快速筛选',
+    quick_tip_bookmark: '收藏常用资源便于后续访问'
   },
   
   ko: {
@@ -338,7 +454,6 @@ export const translations = {
     nav_resources: '유형별',
     nav_news: '경제 뉴스',
     nav_german: '독일 특집',
-    nav_faq: 'FAQ',
     
     // Hero Section
     hero_title: '경제학 리소스',
@@ -395,22 +510,14 @@ export const translations = {
     view_all: '모두 보기',
     resources: '리소스',
     
-    // FAQ
-    faq_title: '자주 묻는 질문',
-    faq_subtitle: 'EconNavigator 플랫폼에 대한 일반적인 질문에 대한 답변',
+
     
     // Footer
     footer_description: '경제학 리소스에 대한 종합 가이드입니다. 최고의 데이터 소스, 연구 논문 및 도구를 발견하여 경제학 이해를 향상시키세요.',
     quick_links: '빠른 링크',
-    main_categories: '카테고리',
+    main_categories: '리소스 카테고리',
     
-    // FAQ Questions
-    faq_q1: '이 경제학 내비게이션 사이트의 차별점은 무엇인가요?',
-    faq_a1: '기능별 및 리소스 유형별 내비게이션 방법을 통합하여 전문 연구자들이 도구를 빠르게 찾고 초보자들이 체계적으로 학습할 수 있도록 합니다. 특히 독일 경제 리소스를 강조하여 전문성을 반영합니다.',
-    faq_q2: '태그 필터링 기능을 어떻게 사용하나요?',
-    faq_a2: '각 리소스에는 상세한 태그(무료/유료, 지역, 언어 등)가 있습니다. 태그를 클릭하거나 검색 기능을 사용하여 요구사항에 맞는 리소스를 빠르게 필터링할 수 있습니다.',
-    faq_q3: '초보자는 어디서부터 시작해야 하나요?',
-    faq_a3: '초보자는 "온라인 학습" 리소스부터 시작하여 점차 "데이터 & 통계" 및 "권위 기관" 보고서에 접근하고, 마지막으로 "학술 논문" 및 전문 도구를 깊이 파는 것을 권장합니다.',
+
     
     // Switch view messages
     switch_to_functional_view: '"기능별" 보기로 전환하여 이 섹션과 상호작용하세요',
@@ -484,9 +591,76 @@ export const translations = {
     category_practical_tools_desc: '경제 분석 소프트웨어, 계산기 및 참고 도구',
 
     // Top Journals Section
-    top_journals_focus: 'Top Journals',
-    top_journals_title: 'Premier Academic Journals',
-    top_journals_subtitle: 'The most authoritative academic publishing platforms in economics, featuring cutting-edge research from leading scholars worldwide'
+    top_journals_focus: '탑 저널',
+    top_journals_title: '최고급 학술 저널',
+    top_journals_subtitle: '경제학 분야에서 가장 권위 있는 학술 출판 플랫폼으로, 전 세계 선도적인 학자들의 최첨단 연구를 수록합니다',
+
+    // Search Examples Section
+    search_examples_title: '검색 예시',
+    search_tips_title: '검색 팁',
+    
+    // Search Examples
+    example_free_data: '무료 데이터',
+    example_free_data_desc: '무료 데이터 리소스 찾기',
+    example_china_policy: '중국 정책', 
+    example_china_policy_desc: '중국 관련 정책 문서',
+    example_top_journals: '탑 저널',
+    example_top_journals_desc: '경제학 최고급 저널',
+    example_online_learning: '온라인 학습',
+    example_online_learning_desc: '코스 및 학습 리소스',
+    
+    // Search Tips
+    search_by_function: '기능별 검색:',
+    search_by_function_keywords: '"API", "무료", "실시간"',
+    search_by_academic: '학술 수준별:',
+    search_by_academic_keywords: '"탑 저널", "워킹 페이퍼", "프리프린트"',
+    search_by_learning: '학습 단계별:',
+    search_by_learning_keywords: '"초급", "고급", "온라인 학습"',
+    search_by_data_type: '데이터 유형별:',
+    search_by_data_type_keywords: '"거시 데이터", "미시 데이터", "패널 데이터"',
+    
+    // Quick Tags
+    quick_tags_title: '빠른 필터:',
+    
+    // Usage Guide Section
+    usage_guide: '사용 가이드',
+    usage_guide_title: 'EconWeb 사용법',
+    usage_guide_subtitle: '귀하의 필요에 따라 가장 적합한 네비게이션 방법을 선택하세요',
+    
+    // Guide Cards
+    guide_functional_title: '기능별 네비게이션',
+    guide_functional_desc: '무엇을 할지 정확히 알고 있을 때',
+    guide_functional_tip1: '• 데이터 필요 → 데이터 소스',
+    guide_functional_tip2: '• 정책 읽기 → 정책 분석', 
+    guide_functional_tip3: '• 연구하기 → 학술 연구',
+    guide_functional_tip4: '• 시장 보기 → 시장 관찰',
+    
+    guide_resources_title: '리소스 카테고리',
+    guide_resources_desc: '체계적으로 탐색하고 싶을 때',
+    guide_resources_tip1: '• 리소스 유형별 분류',
+    guide_resources_tip2: '• 초보자 탐색에 적합',
+    guide_resources_tip3: '• 체계적 학습 경로',
+    guide_resources_tip4: '• 모든 분야의 포괄적 이해',
+    
+    guide_journals_title: '탑 저널',
+    guide_journals_desc: '고품질 학술 자원이 필요할 때',
+    guide_journals_tip1: '• 최고 경제학 저널',
+    guide_journals_tip2: '• 권위있는 학술 출판 플랫폼',
+    guide_journals_tip3: '• 최첨단 연구 논문',
+    guide_journals_tip4: '• 학술 연구 필수',
+    
+    guide_german_title: '독일 특집',
+    guide_german_desc: '독일 경제를 전문적으로 연구할 때',
+    guide_german_tip1: '• 독일 중앙은행 데이터',
+    guide_german_tip2: '• 독일 경제 기관',
+    guide_german_tip3: '• 독일 정책 보고서',
+    guide_german_tip4: '• 유럽 경제 연구',
+    
+    // Quick Tips
+    quick_tips_title: '빠른 팁',
+    quick_tip_search: '검색창을 사용하여 특정 리소스를 빠르게 찾으세요',
+    quick_tip_filter: '태그를 클릭하여 빠른 필터링',
+    quick_tip_bookmark: '자주 사용하는 리소스를 북마크하여 쉽게 접근'
   },
   
   ja: {
@@ -498,7 +672,6 @@ export const translations = {
     nav_resources: 'タイプ別',
     nav_news: '経済ニュース',
     nav_german: 'ドイツ特集',
-    nav_faq: 'FAQ',
     
     // Hero Section
     hero_title: '経済学リソース',
@@ -555,22 +728,14 @@ export const translations = {
     view_all: 'すべて表示',
     resources: 'リソース',
     
-    // FAQ
-    faq_title: 'よくある質問',
-    faq_subtitle: 'EconNavigatorプラットフォームに関する一般的な質問への回答',
+
     
     // Footer
     footer_description: '経済学リソースの包括的なガイドです。最高のデータソース、研究論文、ツールを発見して、経済学の理解を向上させてください。',
     quick_links: 'クイックリンク',
-    main_categories: 'カテゴリ',
+    main_categories: 'リソースカテゴリ',
     
-    // FAQ Questions
-    faq_q1: 'この経済学ナビゲーションサイトの違いは何ですか？',
-    faq_a1: '機能別とリソースタイプ別のナビゲーション方法を統合し、専門研究者がツールを迅速に見つけ、初心者が体系的に学習できるようにします。特にドイツの経済リソースを強調し、専門性を反映します。',
-    faq_q2: 'タグフィルタリング機能の使い方は？',
-    faq_a2: '各リソースには詳細なタグ（無料/有料、地域、言語など）があります。タグをクリックするか検索機能を使用して、ニーズに合うリソースを迅速にフィルタリングできます。',
-    faq_q3: '初心者はどこから始めるべきですか？',
-    faq_a3: '初心者は「オンライン学習」リソースから始めて、徐々に「データ＆統計」および「権威機関」レポートにアクセスし、最後に「学術論文」および専門ツールを深く掘り下げることをお勧めします。',
+
     
     // Switch view messages
     switch_to_functional_view: '「機能別」ビューに切り替えて、このセクションとやり取りしてください',
@@ -644,9 +809,76 @@ export const translations = {
     category_practical_tools_desc: '経済分析ソフトウェア、計算機および参考ツール',
 
     // Top Journals Section
-    top_journals_focus: 'Top Journals',
-    top_journals_title: 'Premier Academic Journals',
-    top_journals_subtitle: 'The most authoritative academic publishing platforms in economics, featuring cutting-edge research from leading scholars worldwide'
+    top_journals_focus: 'トップジャーナル',
+    top_journals_title: '最高級学術誌',
+    top_journals_subtitle: '経済学分野で最も権威ある学術出版プラットフォームで、世界の主要学者による最先端研究を収録',
+
+    // Search Examples Section
+    search_examples_title: '検索例',
+    search_tips_title: '検索のコツ',
+    
+    // Search Examples
+    example_free_data: '無料データ',
+    example_free_data_desc: '無料データリソースを見つける',
+    example_china_policy: '中国政策', 
+    example_china_policy_desc: '中国関連政策文書',
+    example_top_journals: 'トップジャーナル',
+    example_top_journals_desc: '経済学最高級ジャーナル',
+    example_online_learning: 'オンライン学習',
+    example_online_learning_desc: 'コースと学習リソース',
+    
+    // Search Tips
+    search_by_function: '機能別検索：',
+    search_by_function_keywords: '"API", "無料", "リアルタイム"',
+    search_by_academic: '学術レベル別：',
+    search_by_academic_keywords: '"トップジャーナル", "ワーキングペーパー", "プレプリント"',
+    search_by_learning: '学習段階別：',
+    search_by_learning_keywords: '"初級", "上級", "オンライン学習"',
+    search_by_data_type: 'データタイプ別：',
+    search_by_data_type_keywords: '"マクロデータ", "ミクロデータ", "パネルデータ"',
+    
+    // Quick Tags
+    quick_tags_title: 'クイックフィルター：',
+    
+    // Usage Guide Section
+    usage_guide: '使用ガイド',
+    usage_guide_title: 'EconWebの使い方',
+    usage_guide_subtitle: 'ニーズに応じて最適なナビゲーション方法を選択してください',
+    
+    // Guide Cards
+    guide_functional_title: '機能別ナビゲーション',
+    guide_functional_desc: '何をしたいかが明確な場合',
+    guide_functional_tip1: '• データが必要 → データソース',
+    guide_functional_tip2: '• 政策を読む → 政策分析', 
+    guide_functional_tip3: '• 研究する → 学術研究',
+    guide_functional_tip4: '• 市場を見る → 市場観察',
+    
+    guide_resources_title: 'リソースカテゴリ',
+    guide_resources_desc: '体系的に閲覧したい場合',
+    guide_resources_tip1: '• リソースタイプ別分類',
+    guide_resources_tip2: '• 初心者の探索に適している',
+    guide_resources_tip3: '• 体系的な学習パス',
+    guide_resources_tip4: '• 全分野の包括的理解',
+    
+    guide_journals_title: 'トップジャーナル',
+    guide_journals_desc: '高品質な学術リソースが必要な場合',
+    guide_journals_tip1: '• トップ経済学ジャーナル',
+    guide_journals_tip2: '• 権威ある学術出版プラットフォーム',
+    guide_journals_tip3: '• 最先端研究論文',
+    guide_journals_tip4: '• 学術研究に必須',
+    
+    guide_german_title: 'ドイツ特集',
+    guide_german_desc: 'ドイツ経済を専門的に研究する場合',
+    guide_german_tip1: '• ドイツ中央銀行データ',
+    guide_german_tip2: '• ドイツ経済機関',
+    guide_german_tip3: '• ドイツ政策報告書',
+    guide_german_tip4: '• ヨーロッパ経済研究',
+    
+    // Quick Tips
+    quick_tips_title: 'クイックヒント',
+    quick_tip_search: '検索バーを使用して特定のリソースをすばやく見つける',
+    quick_tip_filter: 'タグをクリックしてクイックフィルタリング',
+    quick_tip_bookmark: 'よく使用するリソースをブックマークして簡単にアクセス'
   },
 
   de: {
@@ -658,7 +890,6 @@ export const translations = {
     nav_resources: 'Nach Typ',
     nav_news: 'Wirtschaftsnews',
     nav_german: 'Deutschland-Fokus',
-    nav_faq: 'FAQ',
     
     // Hero Section
     hero_title: 'Ihr Tor zu',
@@ -715,22 +946,14 @@ export const translations = {
     view_all: 'Alle anzeigen',
     resources: 'Ressourcen',
     
-    // FAQ
-    faq_title: 'Häufig gestellte Fragen',
-    faq_subtitle: 'Antworten auf häufige Fragen zu unserer EconNavigator-Plattform',
+
     
     // Footer
     footer_description: 'Ihr umfassender Leitfaden für Wirtschaftsressourcen. Entdecken Sie die besten Datenquellen, Forschungsarbeiten und Tools, um Ihr Verständnis der Wirtschaft zu verbessern.',
     quick_links: 'Schnelllinks',
-    main_categories: 'Kategorien',
+    main_categories: 'Ressourcenkategorien',
     
-    // FAQ Questions
-    faq_q1: 'Was macht diese Wirtschaftsnavigationsseite anders?',
-    faq_a1: 'Wir integrieren sowohl funktionale als auch ressourcentyp-basierte Navigationsmethoden, geeignet für professionelle Forscher, um Tools schnell zu finden, und für Anfänger, um systematisch zu lernen. Wir heben besonders deutsche Wirtschaftsressourcen hervor und spiegeln professionelle Eigenschaften wider.',
-    faq_q2: 'Wie verwende ich die Tag-Filterfunktion?',
-    faq_a2: 'Jede Ressource hat detaillierte Tags (wie kostenlos/kostenpflichtig, Region, Sprache usw.). Sie können auf Tags klicken oder die Suchfunktion verwenden, um Ressourcen, die Ihren Bedürfnissen entsprechen, schnell zu filtern.',
-    faq_q3: 'Wo sollten Anfänger beginnen?',
-    faq_a3: 'Wir empfehlen Anfängern, mit "Online-Lernen"-Ressourcen zu beginnen, dann schrittweise auf "Daten & Statistiken" und "Behörden"-Berichte zuzugreifen und schließlich in "Akademische Arbeiten" und professionelle Tools einzutauchen.',
+
     
     // Switch view messages
     switch_to_functional_view: 'Wechseln Sie zur "Nach Funktion"-Ansicht, um mit diesem Abschnitt zu interagieren',
@@ -805,8 +1028,75 @@ export const translations = {
 
     // Top Journals Section
     top_journals_focus: 'Top Journals',
-    top_journals_title: 'Premier Academic Journals',
-    top_journals_subtitle: 'The most authoritative academic publishing platforms in economics, featuring cutting-edge research from leading scholars worldwide'
+    top_journals_title: 'Führende Akademische Zeitschriften',
+    top_journals_subtitle: 'Die autoritativsten akademischen Publikationsplattformen in der Wirtschaftswissenschaft mit wegweisender Forschung von führenden Wissenschaftlern weltweit',
+
+    // Search Examples Section
+    search_examples_title: 'Suchbeispiele',
+    search_tips_title: 'Suchtipps',
+    
+    // Search Examples
+    example_free_data: 'Kostenlose Daten',
+    example_free_data_desc: 'Kostenlose Datenressourcen finden',
+    example_china_policy: 'China Politik', 
+    example_china_policy_desc: 'China-bezogene Politikdokumente',
+    example_top_journals: 'Top Journals',
+    example_top_journals_desc: 'Führende Wirtschaftszeitschriften',
+    example_online_learning: 'Online Lernen',
+    example_online_learning_desc: 'Kurse und Lernressourcen',
+    
+    // Search Tips
+    search_by_function: 'Nach Funktion suchen:',
+    search_by_function_keywords: '"API", "Kostenlos", "Echtzeit"',
+    search_by_academic: 'Nach akademischem Level:',
+    search_by_academic_keywords: '"Top Journals", "Working Papers", "Preprints"',
+    search_by_learning: 'Nach Lernstufe:',
+    search_by_learning_keywords: '"Anfänger", "Fortgeschritten", "Online Lernen"',
+    search_by_data_type: 'Nach Datentyp:',
+    search_by_data_type_keywords: '"Makrodaten", "Mikrodaten", "Paneldaten"',
+    
+    // Quick Tags
+    quick_tags_title: 'Schnellfilter:',
+    
+    // Usage Guide Section
+    usage_guide: 'Nutzungsanleitung',
+    usage_guide_title: 'Wie nutzt man EconWeb?',
+    usage_guide_subtitle: 'Wählen Sie die für Ihre Bedürfnisse am besten geeignete Navigationsmethode',
+    
+    // Guide Cards
+    guide_functional_title: 'Funktionale Navigation',
+    guide_functional_desc: 'Wenn Sie genau wissen, was Sie tun möchten',
+    guide_functional_tip1: '• Daten benötigt → Datenquellen',
+    guide_functional_tip2: '• Politik lesen → Politikanalyse', 
+    guide_functional_tip3: '• Forschen → Akademische Forschung',
+    guide_functional_tip4: '• Markt beobachten → Marktbeobachtung',
+    
+    guide_resources_title: 'Ressourcenkategorien',
+    guide_resources_desc: 'Wenn Sie systematisch durchsuchen möchten',
+    guide_resources_tip1: '• Nach Ressourcentyp kategorisiert',
+    guide_resources_tip2: '• Geeignet für Anfänger zum Erkunden',
+    guide_resources_tip3: '• Systematischer Lernpfad',
+    guide_resources_tip4: '• Umfassendes Verständnis aller Bereiche',
+    
+    guide_journals_title: 'Top Journals',
+    guide_journals_desc: 'Wenn Sie hochwertige akademische Ressourcen benötigen',
+    guide_journals_tip1: '• Top-Wirtschaftszeitschriften',
+    guide_journals_tip2: '• Autoritative akademische Publikationsplattformen',
+    guide_journals_tip3: '• Spitzenforschungsarbeiten',
+    guide_journals_tip4: '• Unerlässlich für akademische Forschung',
+    
+    guide_german_title: 'Deutschland-Fokus',
+    guide_german_desc: 'Wenn Sie die deutsche Wirtschaft speziell studieren',
+    guide_german_tip1: '• Deutsche Zentralbankdaten',
+    guide_german_tip2: '• Deutsche Wirtschaftsinstitutionen',
+    guide_german_tip3: '• Deutsche Politikberichte',
+    guide_german_tip4: '• Europäische Wirtschaftsforschung',
+    
+    // Quick Tips
+    quick_tips_title: 'Schnelle Tipps',
+    quick_tip_search: 'Verwenden Sie die Suchleiste, um bestimmte Ressourcen schnell zu finden',
+    quick_tip_filter: 'Klicken Sie auf Tags für schnelle Filterung',
+    quick_tip_bookmark: 'Häufig verwendete Ressourcen als Lesezeichen speichern für einfachen Zugriff'
   }
 };
 
