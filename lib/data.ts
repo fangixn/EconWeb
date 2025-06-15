@@ -187,12 +187,6 @@ export const economicsCategories = {
         url: "http://cean.xmu.edu.cn",
         description: "Econometric code and textbook resources",
         tags: ["China", "Teaching", "Code"]
-      },
-      {
-        name: "Harvard Dataverse",
-        url: "https://dataverse.harvard.edu",
-        description: "Original data from top journals like AER/QJE",
-        tags: ["Replication", "English", "Data"]
       }
     ]
   },
@@ -493,5 +487,69 @@ export const faqData = [
   {
     question: "有哪些好用的经济数据可视化工具？",
     answer: "推荐MacroMicro（宏观经济数据可视化）、FRED（美联储经济数据图表）、世界银行开放数据平台等。这些工具不仅提供数据，还支持交互式图表制作和数据分析。"
+  }
+];
+
+// 顶级学术期刊专题资源
+export const topJournalsResources = [
+  {
+    name: "Quarterly Journal of Economics (QJE)",
+    url: "https://academic.oup.com/qje?login=false",
+    description: "One of the oldest and most prestigious economics journals, publishing groundbreaking theoretical and empirical research",
+    tags: ["Top Tier", "General Economics", "High Impact"]
+  },
+  {
+    name: "Econometrica",
+    url: "https://www.econometricsociety.org/publications/econometrica",
+    description: "Premier journal of the Econometric Society, focusing on theoretical and applied econometrics",
+    tags: ["Top Tier", "Econometrics", "Theory"]
+  },
+  {
+    name: "Journal of Finance (JF)",
+    url: "https://afajof.org/journal-of-finance/",
+    description: "Leading journal of the American Finance Association, covering all major fields of finance",
+    tags: ["Top Tier", "Finance", "High Impact"]
+  },
+  {
+    name: "Review of Economic Studies (REStud)",
+    url: "https://www.restud.com/",
+    description: "European premier economics journal, publishing innovative theoretical and empirical research",
+    tags: ["Top Tier", "General Economics", "European"]
+  },
+  {
+    name: "Journal of Financial Economics (JFE)",
+    url: "https://www.jfinec.com/",
+    description: "Top-tier journal focusing on financial economics and corporate finance research",
+    tags: ["Top Tier", "Financial Economics", "Corporate Finance"]
+  },
+  {
+    name: "Journal of Political Economy (JPE)",
+    url: "https://www.journals.uchicago.edu/toc/jpe/current",
+    description: "University of Chicago's flagship economics journal, known for rigorous theoretical and empirical work",
+    tags: ["Top Tier", "Political Economy", "Chicago School"]
+  },
+  {
+    name: "Review of Financial Studies (RFS)",
+    url: "https://academic.oup.com/rfs",
+    description: "Leading academic journal in financial research, published by Oxford University Press",
+    tags: ["Top Tier", "Financial Studies", "Research"]
+  },
+  {
+    name: "American Economic Journal: Macroeconomics",
+    url: "https://www.aeaweb.org/journals/mac",
+    description: "AEA's specialized journal focusing on macroeconomic theory and policy analysis",
+    tags: ["Top Tier", "Macroeconomics", "AEA"]
+  },
+  {
+    name: "Journal of Monetary Economics",
+    url: "https://journals.sagepub.com/home/jmx",
+    description: "Premier journal for monetary economics, central banking, and macroeconomic policy research",
+    tags: ["Top Tier", "Monetary Economics", "Central Banking"]
+  },
+  {
+    name: "AEA Journals Collection",
+    url: "https://www.aeaweb.org/journals",
+    description: "Complete collection of American Economic Association journals including AER, JEL, JEP and specialized journals",
+    tags: ["Top Tier", "AEA", "Journal Collection"]
   }
 ]; 

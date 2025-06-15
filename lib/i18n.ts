@@ -137,6 +137,7 @@ export const translations = {
     footer_learning_resources: 'Learning Resources',
     footer_privacy: 'Privacy Policy',
     footer_terms: 'Terms of Service',
+    footer_top_journals: 'Top Journals',
     footer_copyright: '© 2025 EconWeb. All rights reserved. Created by fangxin.',
     
     // Resource count text
@@ -160,7 +161,12 @@ export const translations = {
     category_learning_resources: 'Online Learning',
     category_learning_resources_desc: 'Economics courses and learning resources',
     category_practical_tools: 'Practical Tools',
-    category_practical_tools_desc: 'Analysis tools and reference resources'
+    category_practical_tools_desc: 'Analysis tools and reference resources',
+
+    // Top Journals Section
+    top_journals_focus: 'Top Journals',
+    top_journals_title: 'Premier Academic Journals',
+    top_journals_subtitle: 'The most authoritative academic publishing platforms in economics, featuring cutting-edge research from leading scholars worldwide'
   },
   
   zh: {
@@ -291,6 +297,7 @@ export const translations = {
     footer_learning_resources: '学习资源',
     footer_privacy: '隐私政策',
     footer_terms: '服务条款',
+    footer_top_journals: '顶级期刊',
     footer_copyright: '© 2025 EconWeb. 版权所有。由方馨创建。',
     
     // Resource count text
@@ -314,7 +321,12 @@ export const translations = {
     category_learning_resources: '在线学习',
     category_learning_resources_desc: '经济学在线课程、教材和教育资料',
     category_practical_tools: '实用工具',
-    category_practical_tools_desc: '经济分析软件、计算器和参考工具'
+    category_practical_tools_desc: '经济分析软件、计算器和参考工具',
+
+    // Top Journals Section
+    top_journals_focus: '顶级期刊',
+    top_journals_title: '顶级学术期刊',
+    top_journals_subtitle: '经济学领域最权威的学术出版平台，收录全球顶尖学者前沿研究成果'
   },
   
   ko: {
@@ -445,6 +457,7 @@ export const translations = {
     footer_learning_resources: '학습 리소스',
     footer_privacy: '개인정보 보호정책',
     footer_terms: '서비스 약관',
+    footer_top_journals: 'Top Journals',
     footer_copyright: '© 2025 EconWeb. 모든 권리 보유. 방신(fangxin)이 제작.',
     
     // Resource count text
@@ -468,7 +481,12 @@ export const translations = {
     category_learning_resources: '학습 자원',
     category_learning_resources_desc: '경제학 온라인 코스, 교과서 및 교육 자료',
     category_practical_tools: '실용 도구',
-    category_practical_tools_desc: '경제 분석 소프트웨어, 계산기 및 참고 도구'
+    category_practical_tools_desc: '경제 분석 소프트웨어, 계산기 및 참고 도구',
+
+    // Top Journals Section
+    top_journals_focus: 'Top Journals',
+    top_journals_title: 'Premier Academic Journals',
+    top_journals_subtitle: 'The most authoritative academic publishing platforms in economics, featuring cutting-edge research from leading scholars worldwide'
   },
   
   ja: {
@@ -599,6 +617,7 @@ export const translations = {
     footer_learning_resources: '学習リソース',
     footer_privacy: 'プライバシーポリシー',
     footer_terms: '利用規約',
+    footer_top_journals: 'Top Journals',
     footer_copyright: '© 2025 EconWeb. 全著作権所有。方馨(fangxin)によって作成。',
     
     // Resource count text
@@ -622,7 +641,12 @@ export const translations = {
     category_learning_resources: 'オンライン学習',
     category_learning_resources_desc: '経済学オンラインコース、教科書および教育資料',
     category_practical_tools: '実用ツール',
-    category_practical_tools_desc: '経済分析ソフトウェア、計算機および参考ツール'
+    category_practical_tools_desc: '経済分析ソフトウェア、計算機および参考ツール',
+
+    // Top Journals Section
+    top_journals_focus: 'Top Journals',
+    top_journals_title: 'Premier Academic Journals',
+    top_journals_subtitle: 'The most authoritative academic publishing platforms in economics, featuring cutting-edge research from leading scholars worldwide'
   },
 
   de: {
@@ -753,6 +777,7 @@ export const translations = {
     footer_learning_resources: 'Lernressourcen',
     footer_privacy: 'Datenschutzrichtlinie',
     footer_terms: 'Nutzungsbedingungen',
+    footer_top_journals: 'Top Journals',
     footer_copyright: '© 2025 EconWeb. Alle Rechte vorbehalten. Erstellt von fangxin.',
     
     // Resource count text
@@ -776,7 +801,12 @@ export const translations = {
     category_learning_resources: 'Online Learning',
     category_learning_resources_desc: 'Wirtschafts-Online-Kurse und Lernressourcen',
     category_practical_tools: 'Praktische Tools',
-    category_practical_tools_desc: 'Wirtschaftsanalysesoftware, Rechner und Referenztools'
+    category_practical_tools_desc: 'Wirtschaftsanalysesoftware, Rechner und Referenztools',
+
+    // Top Journals Section
+    top_journals_focus: 'Top Journals',
+    top_journals_title: 'Premier Academic Journals',
+    top_journals_subtitle: 'The most authoritative academic publishing platforms in economics, featuring cutting-edge research from leading scholars worldwide'
   }
 };
 

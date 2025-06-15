@@ -7,9 +7,10 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 import { Badge } from '@/components/ui/badge';
-import { economicsCategories, germanEconomicsResources } from '@/lib/data';
+import { economicsCategories, germanEconomicsResources, topJournalsResources } from '@/lib/data';
 import { useLanguage } from '@/lib/LanguageContext';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { getJournalTranslation } from '@/lib/journalsI18n';
 import { getResourceTranslation } from '@/lib/resourcesI18n';
 import { getCategoryTranslation } from '@/lib/i18n';
 
@@ -96,6 +97,16 @@ export default function Home() {
       });
     });
     return Array.from(tags);
+  };
+
+  // Get curated popular tags (limited to 4)
+  const getPopularTags = () => {
+    return [
+      'Academic',
+      'Data', 
+      'Financial',
+      'Teaching'
+    ];
   };
 
   // Filter resources with intelligent search logic
@@ -337,7 +348,7 @@ export default function Home() {
                 )}
               </div>
               <div className="flex flex-wrap justify-center gap-3">
-                {getAllTags().slice(0, 8).map((tag: string) => (
+                {getPopularTags().map((tag: string) => (
                   <Badge
                     key={tag}
                     variant={selectedTag === tag ? "default" : "secondary"}
@@ -517,6 +528,65 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Top Journals Special Section */}
+      <section id="top-journals" className="py-20 bg-gradient-to-r from-purple-50 to-indigo-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-3 bg-purple-100 px-6 py-3 rounded-full mb-6">
+              <BookOpen className="w-5 h-5 text-purple-600" />
+              <span className="text-purple-800 font-medium">{t('top_journals_focus') || '顶级期刊'}</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              {t('top_journals_title') || '顶级学术期刊'}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {t('top_journals_subtitle') || '经济学领域最权威的学术发表平台，汇集全球顶尖经济学研究成果'}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {topJournalsResources.map((journal, index) => (
+              <div key={index} className="group cursor-pointer">
+                <a
+                  href={journal.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-8 bg-white border border-purple-100 rounded-3xl hover:border-purple-200 hover:shadow-xl transition-all duration-300 group-hover:bg-purple-50/30"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-3 mb-3">
+                        <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <Star className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="inline-flex items-center space-x-2 bg-purple-100 px-3 py-1 rounded-full">
+                          <BookOpen className="w-4 h-4 text-purple-600" />
+                          <span className="text-purple-800 font-medium text-sm">Top Tier</span>
+                        </div>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 group-hover:text-purple-700 transition-colors leading-tight mb-3">
+                        {getJournalTranslation(currentLanguage, journal.name)}
+                      </h4>
+                      <p className="text-gray-600 leading-relaxed mb-4">
+                        {journal.description}
+                      </p>
+                    </div>
+                    <ArrowRight className="w-6 h-6 text-gray-400 group-hover:text-purple-600 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 ml-4" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {journal.tags.map((tag: string) => (
+                      <Badge key={tag} variant="secondary" className="text-sm px-4 py-2 bg-purple-100 text-purple-800 border-0 group-hover:bg-purple-200 transition-colors">
+                        {getResourceTranslation(currentLanguage, 'tags', tag) || tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* German Economics Special Section */}
       <section className="py-20 bg-gradient-to-r from-orange-50 to-amber-50">
         <div className="container mx-auto px-6">
@@ -607,6 +677,7 @@ export default function Home() {
                 <button onClick={() => scrollToSection('home')} className="block text-gray-400 hover:text-white transition-colors text-left">{t('footer_home')}</button>
                 <button onClick={() => scrollToSection('features')} className="block text-gray-400 hover:text-white transition-colors text-left">{t('footer_features')}</button>
                 <button onClick={() => scrollToSection('resources')} className="block text-gray-400 hover:text-white transition-colors text-left">{t('footer_resources')}</button>
+                <button onClick={() => scrollToSection('top-journals')} className="block text-gray-400 hover:text-white transition-colors text-left">{t('footer_top_journals') || '顶级期刊'}</button>
               </div>
             </div>
 
