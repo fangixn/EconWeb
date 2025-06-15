@@ -21,7 +21,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Globe className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-slate-900">EconNav</span>
+            <span className="text-xl font-bold text-slate-900">EconWeb</span>
             <span className="text-sm text-slate-500 hidden sm:inline">经济学导航</span>
           </div>
 

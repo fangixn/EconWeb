@@ -8,6 +8,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 import { economicsCategories, germanEconomicsResources } from '@/lib/data';
+import { useLanguage } from '@/lib/useLanguage';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 // Icon mapping
 const iconMap = {
@@ -23,12 +25,32 @@ const iconMap = {
 };
 
 export default function Home() {
+  const { t } = useLanguage();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
 
   const handleSearch = (term: string) => {
     setSearchTerm(term);
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
+  const toggleCategoryExpansion = (categoryKey: string) => {
+    const newExpanded = new Set(expandedCategories);
+    if (newExpanded.has(categoryKey)) {
+      newExpanded.delete(categoryKey);
+    } else {
+      newExpanded.add(categoryKey);
+    }
+    setExpandedCategories(newExpanded);
   };
 
   // Get all tags
@@ -58,46 +80,38 @@ export default function Home() {
   const features = [
     {
       icon: Search,
-      title: "Smart Discovery",
-      description: "Advanced search and filtering to help you find exactly what you need from thousands of economics resources."
+      title: t('feature_smart_title') || "Smart Discovery",
+      description: t('feature_smart_desc') || "Advanced search and filtering to help you find exactly what you need from thousands of economics resources."
     },
     {
       icon: TrendingUp,
-      title: "Real-time Updates",
-      description: "Stay current with the latest economic data, research, and policy developments as they happen."
+      title: t('feature_updates_title') || "Real-time Updates",
+      description: t('feature_updates_desc') || "Stay current with the latest economic data, research, and policy developments as they happen."
     },
     {
       icon: Globe,
-      title: "Global Coverage",
-      description: "Access resources from leading institutions worldwide, with special focus on German economics."
+      title: t('feature_global_title') || "Global Coverage",
+      description: t('feature_global_desc') || "Access resources from leading institutions worldwide, with special focus on German economics."
     },
     {
       icon: Database,
-      title: "Comprehensive Database",
-      description: "Curated collection of high-quality resources across all major economics disciplines and specializations."
+      title: t('feature_database_title') || "Comprehensive Database",
+      description: t('feature_database_desc') || "Curated collection of high-quality resources across all major economics disciplines and specializations."
     }
   ];
 
   const faqItems = [
     {
-      question: "What makes EconNav different from other economics resources?",
-      answer: "EconNav is specifically designed for economics professionals and students. We curate only the highest quality resources from reputable institutions, organize them by both function and type, and provide advanced filtering to help you find exactly what you need quickly."
+      question: t('faq_q1'),
+      answer: t('faq_a1')
     },
     {
-      question: "How often is the resource database updated?",
-      answer: "Our team continuously monitors and updates the database. New resources are added weekly, and existing resources are reviewed monthly to ensure all links are active and information is current."
+      question: t('faq_q2'),
+      answer: t('faq_a2')
     },
     {
-      question: "Is EconNav free to use?",
-      answer: "Yes, EconNav is completely free to use. We believe that access to quality economics resources should be open to all researchers, students, and professionals worldwide."
-    },
-    {
-      question: "How can I suggest new resources to be included?",
-      answer: "We welcome suggestions from our community. You can contact us at fangin1230@gmail.com with your resource recommendations. We review all submissions and add high-quality resources that meet our standards."
-    },
-    {
-      question: "What is the German Economics Focus section?",
-      answer: "This section highlights resources specifically relevant to German economics, including German institutions, data sources, and research centers. It's particularly useful for researchers studying the German economy or European economics more broadly."
+      question: t('faq_q3'),
+      answer: t('faq_a3')
     }
   ];
 
@@ -112,18 +126,19 @@ export default function Home() {
                 <TrendingUp className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-semibold text-gray-900">EconNav</h1>
-                <p className="text-xs text-gray-500">Economics Navigation</p>
+                <h1 className="text-xl font-semibold text-gray-900">{t('site_name')}</h1>
+                <p className="text-xs text-gray-500">{t('site_subtitle')}</p>
               </div>
             </div>
             
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-gray-600 hover:text-gray-900 transition-colors">Home</a>
-              <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
-              <a href="#resources" className="text-gray-600 hover:text-gray-900 transition-colors">Resources</a>
-              <a href="#faq" className="text-gray-600 hover:text-gray-900 transition-colors">FAQ</a>
-              <Button variant="outline" size="sm">Get Started</Button>
+            <nav className="hidden md:flex items-center space-x-6">
+              <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-gray-900 transition-colors">{t('nav_home')}</button>
+              <button onClick={() => scrollToSection('features')} className="text-gray-600 hover:text-gray-900 transition-colors">Features</button>
+              <button onClick={() => scrollToSection('resources')} className="text-gray-600 hover:text-gray-900 transition-colors">Resources</button>
+              <button onClick={() => scrollToSection('faq')} className="text-gray-600 hover:text-gray-900 transition-colors">{t('nav_faq')}</button>
+              <LanguageSwitcher />
+              <Button variant="outline" size="sm" onClick={() => scrollToSection('resources')}>{t('btn_get_started')}</Button>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -139,11 +154,14 @@ export default function Home() {
           {isMenuOpen && (
             <div className="md:hidden mt-4 pb-4 border-t border-gray-100">
               <nav className="flex flex-col space-y-4 pt-4">
-                <a href="#home" className="text-gray-600 hover:text-gray-900 transition-colors">Home</a>
-                <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
-                <a href="#resources" className="text-gray-600 hover:text-gray-900 transition-colors">Resources</a>
-                <a href="#faq" className="text-gray-600 hover:text-gray-900 transition-colors">FAQ</a>
-                <Button variant="outline" size="sm" className="w-fit">Get Started</Button>
+                <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">{t('nav_home')}</button>
+                <button onClick={() => scrollToSection('features')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">Features</button>
+                <button onClick={() => scrollToSection('resources')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">Resources</button>
+                <button onClick={() => scrollToSection('faq')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">{t('nav_faq')}</button>
+                <div className="pt-2">
+                  <LanguageSwitcher />
+                </div>
+                <Button variant="outline" size="sm" className="w-fit" onClick={() => scrollToSection('resources')}>{t('btn_get_started')}</Button>
               </nav>
             </div>
           )}
@@ -155,13 +173,13 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-              Your Gateway to
+              {t('hero_title')}
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                Economics Excellence
+                {t('hero_title_highlight')}
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-600 mb-12 leading-relaxed">
-              Discover the most comprehensive collection of economics resources. From cutting-edge research to real-time data, find everything you need to stay ahead in the world of economics.
+              {t('hero_subtitle')}
             </p>
             
             {/* Search Bar */}
@@ -169,7 +187,7 @@ export default function Home() {
               <div className="relative">
                 <Search className="absolute left-6 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <Input
-                  placeholder="Search economics resources..."
+                  placeholder={t('search_placeholder')}
                   value={searchTerm}
                   onChange={(e) => handleSearch(e.target.value)}
                   className="pl-14 pr-6 py-6 text-lg border-2 border-gray-200 rounded-2xl focus:border-blue-500 focus:ring-0 bg-white shadow-sm"
@@ -179,7 +197,7 @@ export default function Home() {
 
             {/* Popular Tags */}
             <div className="mb-12">
-              <p className="text-sm text-gray-500 mb-4">Popular Tags:</p>
+              <p className="text-sm text-gray-500 mb-4">{t('popular_tags')}</p>
               <div className="flex flex-wrap justify-center gap-3">
                 {getAllTags().slice(0, 6).map((tag: string) => (
                   <Badge
@@ -196,12 +214,21 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg rounded-2xl">
-                Start Exploring
+              <Button 
+                size="lg" 
+                className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg rounded-2xl"
+                onClick={() => scrollToSection('resources')}
+              >
+                {t('btn_start_exploring')}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button size="lg" variant="outline" className="px-8 py-4 text-lg rounded-2xl border-2">
-                View Resources
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="px-8 py-4 text-lg rounded-2xl border-2"
+                onClick={() => scrollToSection('resources')}
+              >
+                {t('btn_view_resources')}
               </Button>
             </div>
           </div>
@@ -213,10 +240,10 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Why Choose EconNav?
+              {t('features_title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Built specifically for economics professionals, researchers, and students who demand the best resources.
+              {t('features_subtitle')}
             </p>
           </div>
 
@@ -246,10 +273,10 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Comprehensive Resource Collection
+              {t('resource_title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Organized by function and type, our curated collection covers every aspect of economics research and learning.
+              {t('resource_subtitle')}
             </p>
           </div>
 
@@ -281,7 +308,7 @@ export default function Home() {
                     </p>
                     
                     <div className="space-y-3">
-                      {filteredResources.slice(0, 3).map((resource, index) => (
+                      {(expandedCategories.has(key) ? filteredResources : filteredResources.slice(0, 3)).map((resource, index) => (
                         <div key={index} className="flex items-start space-x-3 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
                           <ExternalLink className="w-4 h-4 text-gray-400 mt-1 flex-shrink-0" />
                           <div className="flex-1 min-w-0">
@@ -309,9 +336,16 @@ export default function Home() {
                     </div>
                     
                     {filteredResources.length > 3 && (
-                      <Button variant="ghost" className="w-full mt-4 text-blue-600 hover:text-blue-800">
-                        View All {filteredResources.length} Resources
-                        <ArrowRight className="ml-2 w-4 h-4" />
+                      <Button 
+                        variant="ghost" 
+                        className="w-full mt-4 text-blue-600 hover:text-blue-800"
+                        onClick={() => toggleCategoryExpansion(key)}
+                      >
+                        {expandedCategories.has(key) 
+                          ? t('btn_show_less')
+                          : `${t('view_all')} ${filteredResources.length} ${t('resources')}`
+                        }
+                        <ArrowRight className={`ml-2 w-4 h-4 transition-transform ${expandedCategories.has(key) ? 'rotate-90' : ''}`} />
                       </Button>
                     )}
                   </CardContent>
@@ -327,10 +361,10 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Frequently Asked Questions
+              {t('faq_title')}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Get answers to common questions about our economics navigation platform.
+              {t('faq_subtitle')}
             </p>
           </div>
 
@@ -365,12 +399,12 @@ export default function Home() {
                   <TrendingUp className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold">EconNav</h3>
-                  <p className="text-sm text-gray-400">Economics Navigation</p>
+                  <h3 className="text-xl font-semibold">EconWeb</h3>
+                                      <p className="text-sm text-gray-400">EconNavigator by EconomicsWeb</p>
                 </div>
               </div>
               <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
-                Your comprehensive guide to economics resources. Discover the best data sources, research papers, and tools to advance your understanding of economics.
+                {t('footer_description')}
               </p>
               <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <Mail className="w-4 h-4" />
@@ -381,17 +415,17 @@ export default function Home() {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+              <h4 className="text-lg font-semibold mb-6">{t('quick_links')}</h4>
               <div className="space-y-3">
-                <a href="#home" className="block text-gray-400 hover:text-white transition-colors">Home</a>
-                <a href="#features" className="block text-gray-400 hover:text-white transition-colors">Features</a>
-                <a href="#resources" className="block text-gray-400 hover:text-white transition-colors">Resources</a>
-                <a href="#faq" className="block text-gray-400 hover:text-white transition-colors">FAQ</a>
+                <button onClick={() => scrollToSection('home')} className="block text-gray-400 hover:text-white transition-colors text-left">Home</button>
+                <button onClick={() => scrollToSection('features')} className="block text-gray-400 hover:text-white transition-colors text-left">Features</button>
+                <button onClick={() => scrollToSection('resources')} className="block text-gray-400 hover:text-white transition-colors text-left">Resources</button>
+                <button onClick={() => scrollToSection('faq')} className="block text-gray-400 hover:text-white transition-colors text-left">FAQ</button>
               </div>
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-6">Categories</h4>
+              <h4 className="text-lg font-semibold mb-6">{t('main_categories')}</h4>
               <div className="space-y-3">
                 <a href="#" className="block text-gray-400 hover:text-white transition-colors">Data Sources</a>
                 <a href="#" className="block text-gray-400 hover:text-white transition-colors">Research Papers</a>
@@ -403,7 +437,7 @@ export default function Home() {
 
           <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2025 EconNav. All rights reserved. Created by fangxin.
+              © 2025 EconWeb. All rights reserved. Created by fangxin.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>

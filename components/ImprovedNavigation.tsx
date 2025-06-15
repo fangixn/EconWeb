@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 import { Language } from '@/lib/i18n';
 
@@ -138,7 +138,7 @@ export default function ImprovedNavigation({
             
             <div className="flex items-center space-x-2">
               <Globe className="h-8 w-8 text-blue-600" />
-              <span className="text-xl font-bold text-slate-900">EconNav</span>
+              <span className="text-xl font-bold text-slate-900">EconWeb</span>
             </div>
           </div>
 
@@ -159,10 +159,7 @@ export default function ImprovedNavigation({
           </div>
 
           {/* 语言切换 */}
-          <LanguageSwitcher 
-            currentLanguage={currentLanguage}
-            onLanguageChange={onLanguageChange}
-          />
+          <LanguageSwitcher />
         </div>
       </header>
 

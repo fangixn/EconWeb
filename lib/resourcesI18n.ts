@@ -411,6 +411,51 @@ export const resourceTranslations = {
     },
     resources: {},
     tags: {}
+  },
+
+  de: {
+    // German translations
+    categories: {
+      "找数据": {
+        title: "Datenzugang",
+        description: "Zugang zu Makrodaten, Mikroumfragen und Wirtschaftsindikatoren",
+        subcategories: {
+          "宏观数据库": "Makrodatenbank",
+          "微观调查库": "Mikroumfragedaten",
+          "景气指数": "Konjunkturindex"
+        }
+      },
+      "读政策": {
+        title: "Politikanalyse",
+        description: "Neueste Politikdokumente, Zentralbankberichte und Analysen",
+        subcategories: {
+          "中国政策": "China-Politik",
+          "德国政策": "Deutschland-Politik",
+          "国际组织": "Internationale Organisationen"
+        }
+      },
+      "看市场": {
+        title: "Marktanalyse",
+        description: "Branchenanalyse, Investitionstools und Unternehmensdaten",
+        subcategories: {
+          "行业分析": "Branchenanalyse",
+          "投资工具": "Investitionstools",
+          "公司数据": "Unternehmensdaten"
+        }
+      }
+    },
+    resourceTypes: {
+      "报告发布机构": { title: "Behörden", description: "Offizielle Berichte von internationalen Organisationen und Regierungsbehörden" },
+      "论文与学术资源": { title: "Akademische Arbeiten", description: "Wirtschaftsjournale und akademische Ressourcenplattformen" },
+      "数据与统计资源": { title: "Daten & Statistiken", description: "Wirtschaftsdatenbanken und Statistikplattformen" },
+      "智库与研究机构": { title: "Think Tanks", description: "Unabhängige Think Tanks und Forschungsinstitute" },
+      "公开课与学习资源": { title: "Online-Lernen", description: "Wirtschafts-Online-Kurse und Bildungsressourcen" },
+      "实用工具与推荐书单": { title: "Praktische Tools", description: "Wirtschaftsforschungs- und Lerntools" },
+      "媒体与资讯平台": { title: "Medien & News", description: "Autoritative Finanzmedien und Nachrichtenplattformen" },
+      "新媒体与知识平台": { title: "Wissensservice", description: "Neue Medien und Wissensservice-Plattformen" }
+    },
+    resources: {},
+    tags: {}
   }
 };
 

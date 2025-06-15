@@ -1,5 +1,5 @@
 # 经济学导航网站 - 反爬虫配置
-# EconNav Anti-Crawler Configuration
+# EconWeb Anti-Crawler Configuration
 
 # 允许主要搜索引擎的正常索引
 User-agent: Googlebot

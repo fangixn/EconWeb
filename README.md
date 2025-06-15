@@ -1,4 +1,4 @@
-# EconNav - Economics Navigation Platform
+# EconWeb - EconNavigator by EconomicsWeb
 
 A modern, elegant economics resource navigation platform built with Next.js 14, featuring a clean iPhone-inspired design and comprehensive resource curation.
 
@@ -184,7 +184,7 @@ Language switching is handled via the `LanguageSwitcher` component.
 
 ## 📄 License
 
-© 2025 EconNav. All rights reserved. Created by fangxin.
+© 2025 EconWeb. All rights reserved. Created by fangxin.
 
 ## 🔧 Development
 
