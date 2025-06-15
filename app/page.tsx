@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Search, Building, FileText, TrendingUp, Globe, Users, Database, BookOpen, GraduationCap, Wrench, ExternalLink, Filter, Mail, MapPin, Star, ChevronDown, Menu, X, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -31,7 +31,21 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isResourcesDropdownOpen, setIsResourcesDropdownOpen] = useState(false);
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(new Set());
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest('.resources-dropdown')) {
+        setIsResourcesDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleSearch = (term: string) => {
     setSearchTerm(term);
@@ -60,9 +74,8 @@ export default function Home() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
     setIsMenuOpen(false);
+    setIsResourcesDropdownOpen(false);
   };
-
-
 
   const toggleCategoryExpansion = (categoryKey: string) => {
     const newExpanded = new Set(expandedCategories);
@@ -142,8 +155,6 @@ export default function Home() {
     }
   ];
 
-
-
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -164,7 +175,43 @@ export default function Home() {
             <nav className="hidden md:flex items-center space-x-6">
               <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-gray-900 transition-colors">{t('nav_home')}</button>
               <button onClick={() => scrollToSection('features')} className="text-gray-600 hover:text-gray-900 transition-colors">{t('menu_features')}</button>
-              <button onClick={() => scrollToSection('resources')} className="text-gray-600 hover:text-gray-900 transition-colors">{t('menu_resources')}</button>
+              
+              {/* Resources Dropdown */}
+              <div className="relative resources-dropdown">
+                <button 
+                  onClick={() => setIsResourcesDropdownOpen(!isResourcesDropdownOpen)}
+                  className="flex items-center space-x-1 text-gray-600 hover:text-gray-900 transition-colors"
+                >
+                  <span>{t('menu_resources')}</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isResourcesDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isResourcesDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50">
+                    <div className="px-4 py-2 text-xs font-medium text-gray-500 border-b border-gray-100">
+                      {t('main_categories')}
+                    </div>
+                    {Object.entries(economicsCategories).map(([key, category]) => (
+                      <button
+                        key={key}
+                        onClick={() => scrollToSection(`category-${key}`)}
+                        className="w-full text-left px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                      >
+                        {getCategoryTranslation(currentLanguage, key, 'title')}
+                      </button>
+                    ))}
+                    <div className="border-t border-gray-100 mt-2 pt-2">
+                      <button
+                        onClick={() => scrollToSection('resources')}
+                        className="w-full text-left px-4 py-3 text-sm font-medium text-blue-600 hover:bg-blue-50 transition-colors"
+                      >
+                        {t('view_all')} {t('menu_resources')}
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
+              
               <LanguageSwitcher />
               <Button variant="outline" size="sm" onClick={() => scrollToSection('resources')}>{t('btn_get_started')}</Button>
             </nav>
@@ -184,7 +231,38 @@ export default function Home() {
               <nav className="flex flex-col space-y-4 pt-4">
                 <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">{t('nav_home')}</button>
                 <button onClick={() => scrollToSection('features')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">{t('menu_features')}</button>
-                <button onClick={() => scrollToSection('resources')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">{t('menu_resources')}</button>
+                
+                {/* Mobile Resources Dropdown */}
+                <div className="resources-dropdown">
+                  <button 
+                    onClick={() => setIsResourcesDropdownOpen(!isResourcesDropdownOpen)}
+                    className="flex items-center justify-between w-full text-gray-600 hover:text-gray-900 transition-colors text-left"
+                  >
+                    <span>{t('menu_resources')}</span>
+                    <ChevronDown className={`w-4 h-4 transition-transform ${isResourcesDropdownOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  
+                  {isResourcesDropdownOpen && (
+                    <div className="mt-2 pl-4 space-y-2">
+                      {Object.entries(economicsCategories).map(([key, category]) => (
+                        <button
+                          key={key}
+                          onClick={() => scrollToSection(`category-${key}`)}
+                          className="block w-full text-left text-sm text-gray-500 hover:text-blue-600 transition-colors py-1"
+                        >
+                          {getCategoryTranslation(currentLanguage, key, 'title')}
+                        </button>
+                      ))}
+                      <button
+                        onClick={() => scrollToSection('resources')}
+                        className="block w-full text-left text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors py-1 border-t border-gray-100 pt-2"
+                      >
+                        {t('view_all')} {t('menu_resources')}
+                      </button>
+                    </div>
+                  )}
+                </div>
+                
                 <div className="pt-2">
                   <LanguageSwitcher />
                 </div>
@@ -367,7 +445,7 @@ export default function Home() {
               const filteredResources = filterResources(category.resources);
               
               return (
-                <Card key={key} className="hover:shadow-xl transition-all duration-300 group border-0 shadow-md">
+                <Card key={key} id={`category-${key}`} className="hover:shadow-xl transition-all duration-300 group border-0 shadow-md">
                   <CardHeader className="pb-4">
                     <div className="flex items-center space-x-4">
                       <div className="w-14 h-14 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -498,8 +576,6 @@ export default function Home() {
         </div>
       </section>
 
-
-
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="container mx-auto px-6">
@@ -536,11 +612,16 @@ export default function Home() {
 
             <div>
               <h4 className="text-lg font-semibold mb-6">{t('main_categories')}</h4>
-              <div className="space-y-3">
-                <a href="#" className="block text-gray-400 hover:text-white transition-colors">{t('footer_data_sources')}</a>
-                <a href="#" className="block text-gray-400 hover:text-white transition-colors">{t('footer_research_papers')}</a>
-                <a href="#" className="block text-gray-400 hover:text-white transition-colors">{t('footer_policy_reports')}</a>
-                <a href="#" className="block text-gray-400 hover:text-white transition-colors">{t('footer_learning_resources')}</a>
+              <div className="grid grid-cols-2 gap-y-3 gap-x-4">
+                <button onClick={() => scrollToSection('category-数据获取')} className="text-gray-400 hover:text-white transition-colors text-left">{t('footer_data_sources')}</button>
+                <button onClick={() => scrollToSection('category-学术研究')} className="text-gray-400 hover:text-white transition-colors text-left">{t('footer_research_papers')}</button>
+                <button onClick={() => scrollToSection('category-政策研读')} className="text-gray-400 hover:text-white transition-colors text-left">{t('footer_policy_reports')}</button>
+                <button onClick={() => scrollToSection('category-在线学习')} className="text-gray-400 hover:text-white transition-colors text-left">{t('footer_learning_resources')}</button>
+                <button onClick={() => scrollToSection('category-组织机构')} className="text-gray-400 hover:text-white transition-colors text-left">{getCategoryTranslation(currentLanguage, '组织机构', 'title')}</button>
+                <button onClick={() => scrollToSection('category-市场观察')} className="text-gray-400 hover:text-white transition-colors text-left">{getCategoryTranslation(currentLanguage, '市场观察', 'title')}</button>
+                <button onClick={() => scrollToSection('category-财经资讯')} className="text-gray-400 hover:text-white transition-colors text-left">{getCategoryTranslation(currentLanguage, '财经资讯', 'title')}</button>
+                <button onClick={() => scrollToSection('category-智库观点')} className="text-gray-400 hover:text-white transition-colors text-left">{getCategoryTranslation(currentLanguage, '智库观点', 'title')}</button>
+                <button onClick={() => scrollToSection('category-实用工具')} className="text-gray-400 hover:text-white transition-colors text-left">{getCategoryTranslation(currentLanguage, '实用工具', 'title')}</button>
               </div>
             </div>
           </div>

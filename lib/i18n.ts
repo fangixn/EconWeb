@@ -151,12 +151,16 @@ export const translations = {
     category_policy_analysis_desc: 'Policy interpretation, regulatory documents and government reports',
     category_academic_research: 'Academic Research',
     category_academic_research_desc: 'Academic papers, research platforms and scholarly resources',
-    category_market_observation: 'Market Observation',
-    category_market_observation_desc: 'Industry analysis, investment tools and market research',
-    category_learning_resources: 'Learning Resources',
-    category_learning_resources_desc: 'Economics online courses, textbooks and educational materials',
+    category_market_observation: 'Market Analysis',
+    category_market_observation_desc: 'Industry analysis, investment tools and company data',
+    category_financial_news: 'Financial News',
+    category_financial_news_desc: 'Financial news, market information and economic commentary',
+    category_think_tanks: 'Think Tank Insights',
+    category_think_tanks_desc: 'Academic viewpoints and think tank media',
+    category_learning_resources: 'Online Learning',
+    category_learning_resources_desc: 'Economics courses and learning resources',
     category_practical_tools: 'Practical Tools',
-    category_practical_tools_desc: 'Economic analysis software, calculators and reference tools'
+    category_practical_tools_desc: 'Analysis tools and reference resources'
   },
   
   zh: {
@@ -303,7 +307,11 @@ export const translations = {
     category_academic_research_desc: '学术论文、研究平台和学术资源',
     category_market_observation: '市场观察',
     category_market_observation_desc: '行业分析、投资工具和市场研究',
-    category_learning_resources: '学习资源',
+    category_financial_news: '财经资讯',
+    category_financial_news_desc: '财经新闻、市场信息和经济评论',
+    category_think_tanks: '智库观点',
+    category_think_tanks_desc: '学术观点和智库媒体',
+    category_learning_resources: '在线学习',
     category_learning_resources_desc: '经济学在线课程、教材和教育资料',
     category_practical_tools: '实用工具',
     category_practical_tools_desc: '经济分析软件、计算器和参考工具'
@@ -453,6 +461,10 @@ export const translations = {
     category_academic_research_desc: '학술 논문, 연구 플랫폼 및 학술 자원',
     category_market_observation: '시장 관찰',
     category_market_observation_desc: '산업 분석, 투자 도구 및 시장 연구',
+    category_financial_news: '경제 뉴스',
+    category_financial_news_desc: '경제 뉴스, 시장 정보 및 경제 분석',
+    category_think_tanks: '지형 탱크 인사이트',
+    category_think_tanks_desc: '학술적 시각과 지형 탱크 미디어',
     category_learning_resources: '학습 자원',
     category_learning_resources_desc: '경제학 온라인 코스, 교과서 및 교육 자료',
     category_practical_tools: '실용 도구',
@@ -603,7 +615,11 @@ export const translations = {
     category_academic_research_desc: '学術論文、研究プラットフォームおよび学術資源',
     category_market_observation: '市場観察',
     category_market_observation_desc: '業界分析、投資ツールおよび市場研究',
-    category_learning_resources: '学習リソース',
+    category_financial_news: '財経ニュース',
+    category_financial_news_desc: '財経ニュース、市場情報および経済コメント',
+    category_think_tanks: '経済フォーカスインサイト',
+    category_think_tanks_desc: '学術的視点と経済フォーカスメディア',
+    category_learning_resources: 'オンライン学習',
     category_learning_resources_desc: '経済学オンラインコース、教科書および教育資料',
     category_practical_tools: '実用ツール',
     category_practical_tools_desc: '経済分析ソフトウェア、計算機および参考ツール'
@@ -753,8 +769,12 @@ export const translations = {
     category_academic_research_desc: 'Akademische Arbeiten, Forschungsplattformen und wissenschaftliche Ressourcen',
     category_market_observation: 'Marktbeobachtung',
     category_market_observation_desc: 'Branchenanalyse, Investitionstools und Marktforschung',
-    category_learning_resources: 'Lernressourcen',
-    category_learning_resources_desc: 'Wirtschafts-Online-Kurse, Lehrbücher und Bildungsmaterialien',
+    category_financial_news: 'Wirtschaftsnews',
+    category_financial_news_desc: 'Wirtschaftsnews, Marktinformationen und wirtschaftliche Kommentare',
+    category_think_tanks: 'Think Tank Insights',
+    category_think_tanks_desc: 'Akademische Perspektiven und Think Tank-Medien',
+    category_learning_resources: 'Online Learning',
+    category_learning_resources_desc: 'Wirtschafts-Online-Kurse und Lernressourcen',
     category_practical_tools: 'Praktische Tools',
     category_practical_tools_desc: 'Wirtschaftsanalysesoftware, Rechner und Referenztools'
   }
@@ -767,7 +787,9 @@ const categoryKeyMap: Record<string, string> = {
   "政策研读": "policy_analysis",
   "学术研究": "academic_research",
   "市场观察": "market_observation",
-  "学习资源": "learning_resources",
+  "财经资讯": "financial_news",
+  "智库观点": "think_tanks",
+  "在线学习": "learning_resources",
   "实用工具": "practical_tools"
 };
 
