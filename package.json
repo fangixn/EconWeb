@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:security": "node scripts/test-security.js",
+    "security:check": "npm run test:security"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

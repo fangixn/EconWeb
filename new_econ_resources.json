@@ -1,0 +1,123 @@
+{
+    "经济资讯一览": {
+      "国际主流媒体": [
+        {
+          "name": "The Economist",
+          "url": "https://www.economist.com",
+          "description": "英国老牌周刊，深入报道全球政治、经济、商业、科技趋势"
+        },
+        {
+          "name": "Financial Times",
+          "url": "https://www.ft.com",
+          "description": "聚焦全球金融市场与宏观政策"
+        },
+        {
+          "name": "Bloomberg",
+          "url": "https://www.bloomberg.com",
+          "description": "全球领先财经资讯，提供市场数据与宏观分析"
+        },
+        {
+          "name": "Wall Street Journal",
+          "url": "https://www.wsj.com",
+          "description": "美国财经与商业新闻权威"
+        },
+        {
+          "name": "Project Syndicate",
+          "url": "https://www.project-syndicate.org",
+          "description": "全球知名经济学家专栏，涵盖全球性议题"
+        },
+        {
+          "name": "VoxEU (CEPR)",
+          "url": "https://cepr.org/voxeu",
+          "description": "欧洲经济政策研究中心专家观点平台"
+        }
+      ],
+      "中文主流财经平台": [
+        {
+          "name": "财新网",
+          "url": "https://www.caixin.com",
+          "description": "深度调查与政策金融报道"
+        },
+        {
+          "name": "第一财经",
+          "url": "https://www.yicai.com",
+          "description": "实时经济新闻与数据解读"
+        },
+        {
+          "name": "澎湃新闻·财经频道",
+          "url": "https://www.thepaper.cn/list_25435",
+          "description": "关注宏观经济与政策落地"
+        },
+        {
+          "name": "21世纪经济报道",
+          "url": "https://www.21jingji.com",
+          "description": "老牌财经媒体，关注实务与政策"
+        },
+        {
+          "name": "界面新闻财经",
+          "url": "https://www.jiemian.com/lists/6.html",
+          "description": "科技、新经济方向的财经新闻"
+        },
+        {
+          "name": "网易数读 / DT 财经",
+          "url": "https://dtcj.com",
+          "description": "数据可视化与趋势洞察"
+        }
+      ],
+      "学术观点与智库媒体": [
+        {
+          "name": "经济学家圈",
+          "url": "https://mp.weixin.qq.com", 
+          "description": "微信公众号平台，聚集学界经济学人"
+        },
+        {
+          "name": "Macro研习社",
+          "url": "https://mp.weixin.qq.com",
+          "description": "宏观研究员深度解读平台"
+        },
+        {
+          "name": "NBER Digest",
+          "url": "https://www.nber.org/digest",
+          "description": "美国国家经济研究局摘要刊物"
+        },
+        {
+          "name": "Brookings Institution",
+          "url": "https://www.brookings.edu/topic/economy",
+          "description": "美国布鲁金斯学会经济研究频道"
+        },
+        {
+          "name": "Peterson Institute for International Economics",
+          "url": "https://www.piie.com",
+          "description": "专注国际经济政策研究的智库"
+        },
+        {
+          "name": "清华五道口金融评论",
+          "url": "https://www.pbcsf.tsinghua.edu.cn",
+          "description": "融合学术与业界的金融评论平台"
+        }
+      ],
+      "轻量入门与新媒体": [
+        {
+          "name": "得到 App",
+          "url": "https://www.dedao.cn",
+          "description": "以知识服务为核心，含经济学课程与栏目"
+        },
+        {
+          "name": "吴晓波频道",
+          "url": "https://www.woshipm.com/author/wuxiaobo",
+          "description": "主打企业经济史与商业观察"
+        },
+        {
+          "name": "混沌学园 / 混沌研究院",
+          "url": "https://www.hundun.cn",
+          "description": "研究创新商业与底层经济逻辑"
+        },
+        {
+          "name": "知乎经济学话题",
+          "url": "https://www.zhihu.com/topic/19550517/hot",
+          "description": "大众讨论经济问题的平台"
+        }
+      ]
+    }
+  }
+  

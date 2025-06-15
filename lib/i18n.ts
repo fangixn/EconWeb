@@ -15,6 +15,7 @@ export const translations = {
     nav_home: 'Home',
     nav_functional: 'By Function',
     nav_resources: 'By Type',
+    nav_news: 'News',
     nav_german: 'German Focus',
     nav_faq: 'FAQ',
     
@@ -88,7 +89,12 @@ export const translations = {
     
     // Switch view messages
     switch_to_functional_view: 'Switch to "By Function" view to interact with this section',
-    switch_to_resource_view: 'Switch to "By Type" view to interact with this section'
+    switch_to_resource_view: 'Switch to "By Type" view to interact with this section',
+    
+    // News Section
+    news_title: 'Economic News Overview',
+    news_subtitle: 'Get the latest economic news, expert opinions and trend analysis to stay informed about global economic dynamics',
+    view_news: 'View News'
   },
   
   zh: {
@@ -98,6 +104,7 @@ export const translations = {
     nav_home: '首页',
     nav_functional: '功能导航',
     nav_resources: '资源分类',
+    nav_news: '经济资讯',
     nav_german: '德国专题',
     nav_faq: '常见问题',
     
@@ -171,7 +178,12 @@ export const translations = {
     
     // Switch view messages
     switch_to_functional_view: '切换到"功能导向"视图以与此部分交互',
-    switch_to_resource_view: '切换到"资源分类"视图以与此部分交互'
+    switch_to_resource_view: '切换到"资源分类"视图以与此部分交互',
+    
+    // News Section
+    news_title: '经济资讯一览',
+    news_subtitle: '获取最新经济新闻、专家观点和趋势分析，掌握全球经济动态',
+    view_news: '看资讯'
   },
   
   ko: {
@@ -181,6 +193,7 @@ export const translations = {
     nav_home: '홈',
     nav_functional: '기능별',
     nav_resources: '유형별',
+    nav_news: '경제 뉴스',
     nav_german: '독일 특집',
     nav_faq: 'FAQ',
     
@@ -254,7 +267,12 @@ export const translations = {
     
     // Switch view messages
     switch_to_functional_view: '"기능별" 보기로 전환하여 이 섹션과 상호작용하세요',
-    switch_to_resource_view: '"유형별" 보기로 전환하여 이 섹션과 상호작용하세요'
+    switch_to_resource_view: '"유형별" 보기로 전환하여 이 섹션과 상호작용하세요',
+    
+    // News Section
+    news_title: '경제 뉴스 개요',
+    news_subtitle: '최신 경제 뉴스, 전문가 의견 및 트렌드 분석을 통해 글로벌 경제 동향을 파악하세요',
+    view_news: '뉴스 보기'
   },
   
   ja: {
@@ -264,6 +282,7 @@ export const translations = {
     nav_home: 'ホーム',
     nav_functional: '機能別',
     nav_resources: 'タイプ別',
+    nav_news: '経済ニュース',
     nav_german: 'ドイツ特集',
     nav_faq: 'FAQ',
     
@@ -337,7 +356,12 @@ export const translations = {
     
     // Switch view messages
     switch_to_functional_view: '「機能別」ビューに切り替えて、このセクションとやり取りしてください',
-    switch_to_resource_view: '「タイプ別」ビューに切り替えて、このセクションとやり取りしてください'
+    switch_to_resource_view: '「タイプ別」ビューに切り替えて、このセクションとやり取りしてください',
+    
+    // News Section
+    news_title: '経済ニュース概要',
+    news_subtitle: '最新の経済ニュース、専門家の意見、トレンド分析を取得して、グローバル経済の動向を把握してください',
+    view_news: 'ニュースを見る'
   }
 };
 
