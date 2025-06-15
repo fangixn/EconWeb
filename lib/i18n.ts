@@ -121,7 +121,26 @@ export const translations = {
     
     // Additional UI text
     visit_resource: 'Visit Resource',
-    german_focus: 'German Focus'
+    german_focus: 'German Focus',
+    
+    // Navigation menu items
+    menu_features: 'Features',
+    menu_resources: 'Resources',
+    
+    // Footer links
+    footer_home: 'Home',
+    footer_features: 'Features', 
+    footer_resources: 'Resources',
+    footer_data_sources: 'Data Sources',
+    footer_research_papers: 'Research Papers',
+    footer_policy_reports: 'Policy Reports',
+    footer_learning_resources: 'Learning Resources',
+    footer_privacy: 'Privacy Policy',
+    footer_terms: 'Terms of Service',
+    footer_copyright: '© 2025 EconWeb. All rights reserved. Created by fangxin.',
+    
+    // Resource count text
+    resources_count: 'resources'
   },
   
   zh: {
@@ -236,7 +255,26 @@ export const translations = {
     
     // Additional UI text
     visit_resource: '访问资源',
-    german_focus: '德国专题'
+    german_focus: '德国专题',
+    
+    // Navigation menu items
+    menu_features: '功能特色',
+    menu_resources: '资源',
+    
+    // Footer links
+    footer_home: '首页',
+    footer_features: '功能特色', 
+    footer_resources: '资源',
+    footer_data_sources: '数据源',
+    footer_research_papers: '研究论文',
+    footer_policy_reports: '政策报告',
+    footer_learning_resources: '学习资源',
+    footer_privacy: '隐私政策',
+    footer_terms: '服务条款',
+    footer_copyright: '© 2025 EconWeb. 版权所有。由方馨创建。',
+    
+    // Resource count text
+    resources_count: '个资源'
   },
   
   ko: {
@@ -351,7 +389,26 @@ export const translations = {
     
     // Additional UI text
     visit_resource: '리소스 방문',
-    german_focus: '독일 집중'
+    german_focus: '독일 집중',
+    
+    // Navigation menu items
+    menu_features: '기능',
+    menu_resources: '리소스',
+    
+    // Footer links
+    footer_home: '홈',
+    footer_features: '기능', 
+    footer_resources: '리소스',
+    footer_data_sources: '데이터 소스',
+    footer_research_papers: '연구 논문',
+    footer_policy_reports: '정책 보고서',
+    footer_learning_resources: '학습 리소스',
+    footer_privacy: '개인정보 보호정책',
+    footer_terms: '서비스 약관',
+    footer_copyright: '© 2025 EconWeb. 모든 권리 보유. 방신(fangxin)이 제작.',
+    
+    // Resource count text
+    resources_count: '리소스'
   },
   
   ja: {
@@ -466,7 +523,26 @@ export const translations = {
     
     // Additional UI text
     visit_resource: 'リソースを訪問',
-    german_focus: 'ドイツ特集'
+    german_focus: 'ドイツ特集',
+    
+    // Navigation menu items
+    menu_features: '機能',
+    menu_resources: 'リソース',
+    
+    // Footer links
+    footer_home: 'ホーム',
+    footer_features: '機能', 
+    footer_resources: 'リソース',
+    footer_data_sources: 'データソース',
+    footer_research_papers: '研究論文',
+    footer_policy_reports: '政策レポート',
+    footer_learning_resources: '学習リソース',
+    footer_privacy: 'プライバシーポリシー',
+    footer_terms: '利用規約',
+    footer_copyright: '© 2025 EconWeb. 全著作権所有。方馨(fangxin)によって作成。',
+    
+    // Resource count text
+    resources_count: 'リソース'
   },
 
   de: {
@@ -581,7 +657,26 @@ export const translations = {
     
     // Additional UI text
     visit_resource: 'Ressource besuchen',
-    german_focus: 'Deutschland-Fokus'
+    german_focus: 'Deutschland-Fokus',
+    
+    // Navigation menu items
+    menu_features: 'Funktionen',
+    menu_resources: 'Ressourcen',
+    
+    // Footer links
+    footer_home: 'Startseite',
+    footer_features: 'Funktionen', 
+    footer_resources: 'Ressourcen',
+    footer_data_sources: 'Datenquellen',
+    footer_research_papers: 'Forschungsarbeiten',
+    footer_policy_reports: 'Politikberichte',
+    footer_learning_resources: 'Lernressourcen',
+    footer_privacy: 'Datenschutzrichtlinie',
+    footer_terms: 'Nutzungsbedingungen',
+    footer_copyright: '© 2025 EconWeb. Alle Rechte vorbehalten. Erstellt von fangxin.',
+    
+    // Resource count text
+    resources_count: 'Ressourcen'
   }
 };
 

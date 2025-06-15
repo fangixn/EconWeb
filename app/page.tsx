@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { Search, Building, FileText, TrendingUp, Globe, Users, Database, BookOpen, GraduationCap, Wrench, ExternalLink, Filter, Mail, ArrowRight, MapPin, Star, ChevronDown, Menu, X } from 'lucide-react';
+import { Search, Building, FileText, TrendingUp, Globe, Users, Database, BookOpen, GraduationCap, Wrench, ExternalLink, Filter, Mail, MapPin, Star, ChevronDown, Menu, X, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+
 import { Badge } from '@/components/ui/badge';
 import { economicsCategories, germanEconomicsResources } from '@/lib/data';
 import { useLanguage } from '@/lib/LanguageContext';
@@ -61,22 +61,7 @@ export default function Home() {
     setIsMenuOpen(false);
   };
 
-  const startExploring = () => {
-    // 根据当前语言设置热门搜索词
-    const searchKeywords = {
-      'zh': '数据',
-      'en': 'data', 
-      'ko': '데이터',
-      'ja': 'データ',
-      'de': 'Daten'
-    };
-    
-    const keyword = searchKeywords[currentLanguage] || 'data';
-    setSearchTerm(keyword);
-    
-    // 滚动到资源区域
-    scrollToSection('resources');
-  };
+
 
   const toggleCategoryExpansion = (categoryKey: string) => {
     const newExpanded = new Set(expandedCategories);
@@ -99,17 +84,38 @@ export default function Home() {
     return Array.from(tags);
   };
 
-  // Filter resources
+  // Filter resources with intelligent search logic
   const filterResources = (resources: any[]) => {
-    return resources.filter((resource: any) => {
+    if (!searchTerm && !selectedTag) {
+      return resources; // No filters applied
+    }
+
+    const results = resources.map((resource: any) => {
       const matchesSearch = searchTerm === '' || 
         resource.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         resource.description.toLowerCase().includes(searchTerm.toLowerCase());
       
       const matchesTag = selectedTag === null || resource.tags.includes(selectedTag);
       
-      return matchesSearch && matchesTag;
-    });
+      // Calculate relevance score
+      let score = 0;
+      if (matchesSearch && matchesTag) {
+        score = 3; // Perfect match - both search term and tag
+      } else if (matchesSearch && selectedTag) {
+        score = 2; // Matches search but not tag
+      } else if (matchesTag && searchTerm) {
+        score = 1; // Matches tag but not search
+      } else if (matchesSearch || matchesTag) {
+        score = 1; // Matches either search or tag (when only one filter is active)
+      }
+      
+      return { resource, score };
+    })
+    .filter(item => item.score > 0) // Only include resources with some relevance
+    .sort((a, b) => b.score - a.score) // Sort by relevance score (highest first)
+    .map(item => item.resource); // Extract the resource objects
+
+    return results;
   };
 
   const features = [
@@ -135,20 +141,7 @@ export default function Home() {
     }
   ];
 
-  const faqItems = [
-    {
-      question: t('faq_q1'),
-      answer: t('faq_a1')
-    },
-    {
-      question: t('faq_q2'),
-      answer: t('faq_a2')
-    },
-    {
-      question: t('faq_q3'),
-      answer: t('faq_a3')
-    }
-  ];
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -169,9 +162,8 @@ export default function Home() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-6">
               <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-gray-900 transition-colors">{t('nav_home')}</button>
-              <button onClick={() => scrollToSection('features')} className="text-gray-600 hover:text-gray-900 transition-colors">Features</button>
-              <button onClick={() => scrollToSection('resources')} className="text-gray-600 hover:text-gray-900 transition-colors">Resources</button>
-              <button onClick={() => scrollToSection('faq')} className="text-gray-600 hover:text-gray-900 transition-colors">{t('nav_faq')}</button>
+              <button onClick={() => scrollToSection('features')} className="text-gray-600 hover:text-gray-900 transition-colors">{t('menu_features')}</button>
+              <button onClick={() => scrollToSection('resources')} className="text-gray-600 hover:text-gray-900 transition-colors">{t('menu_resources')}</button>
               <LanguageSwitcher />
               <Button variant="outline" size="sm" onClick={() => scrollToSection('resources')}>{t('btn_get_started')}</Button>
             </nav>
@@ -190,9 +182,8 @@ export default function Home() {
             <div className="md:hidden mt-4 pb-4 border-t border-gray-100">
               <nav className="flex flex-col space-y-4 pt-4">
                 <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">{t('nav_home')}</button>
-                <button onClick={() => scrollToSection('features')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">Features</button>
-                <button onClick={() => scrollToSection('resources')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">Resources</button>
-                <button onClick={() => scrollToSection('faq')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">{t('nav_faq')}</button>
+                <button onClick={() => scrollToSection('features')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">{t('menu_features')}</button>
+                <button onClick={() => scrollToSection('resources')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">{t('menu_resources')}</button>
                 <div className="pt-2">
                   <LanguageSwitcher />
                 </div>
@@ -288,28 +279,33 @@ export default function Home() {
               {(searchTerm || selectedTag) && (
                 <div className="mt-4 text-center">
                   <p className="text-sm text-gray-500">
-                    {searchTerm && `${t('searching_for') || 'Searching for'}: "${searchTerm}"`}
-                    {searchTerm && selectedTag && ' • '}
-                    {selectedTag && `${t('filtered_by') || 'Filtered by'}: ${getResourceTranslation(currentLanguage, 'tags', selectedTag) || selectedTag}`}
+                    {searchTerm && selectedTag && (
+                      <>
+                        {t('searching_for') || 'Searching for'}: "<span className="font-medium">{searchTerm}</span>" 
+                        <span className="mx-2">+</span>
+                        {t('filtered_by') || 'Filtered by'}: <span className="font-medium">{getResourceTranslation(currentLanguage, 'tags', selectedTag) || selectedTag}</span>
+                        <br />
+                        <span className="text-xs text-gray-400 mt-1 block">
+                          {currentLanguage === 'zh' ? '智能排序：优先显示同时匹配的结果' : 
+                           currentLanguage === 'ko' ? '스마트 정렬: 모두 일치하는 결과 우선 표시' :
+                           currentLanguage === 'ja' ? 'スマートソート：両方に一致する結果を優先表示' :
+                           currentLanguage === 'de' ? 'Intelligente Sortierung: Ergebnisse mit beiden Übereinstimmungen zuerst' :
+                           'Smart sorting: Results matching both criteria shown first'}
+                        </span>
+                      </>
+                    )}
+                    {searchTerm && !selectedTag && `${t('searching_for') || 'Searching for'}: "${searchTerm}"`}
+                    {!searchTerm && selectedTag && `${t('filtered_by') || 'Filtered by'}: ${getResourceTranslation(currentLanguage, 'tags', selectedTag) || selectedTag}`}
                   </p>
                 </div>
               )}
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {/* CTA Button */}
+            <div className="flex justify-center">
               <Button 
                 size="lg" 
-                className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg rounded-2xl"
-                onClick={startExploring}
-              >
-                {t('btn_start_exploring')}
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="px-8 py-4 text-lg rounded-2xl border-2"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-2xl"
                 onClick={() => scrollToSection('resources')}
               >
                 {t('btn_view_resources')}
@@ -381,7 +377,7 @@ export default function Home() {
                           {category.title}
                         </CardTitle>
                         <CardDescription className="text-sm text-gray-500">
-                          {filteredResources.length} resources
+                          {filteredResources.length} {t('resources_count')}
                         </CardDescription>
                       </div>
                     </div>
@@ -391,30 +387,32 @@ export default function Home() {
                       {category.description}
                     </p>
                     
-                    <div className="space-y-3">
+                    <div className="space-y-4">
                       {(expandedCategories.has(key) ? filteredResources : filteredResources.slice(0, 3)).map((resource, index) => (
-                        <div key={index} className="flex items-start space-x-3 p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors">
-                          <ExternalLink className="w-4 h-4 text-gray-400 mt-1 flex-shrink-0" />
-                          <div className="flex-1 min-w-0">
-                            <a
-                              href={resource.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-sm font-medium text-blue-600 hover:text-blue-800 line-clamp-1"
-                            >
-                              {getResourceTranslation(currentLanguage, 'resources', resource.name) || resource.name}
-                            </a>
-                            <p className="text-xs text-gray-500 mt-1 line-clamp-2">
+                        <div key={index} className="group cursor-pointer">
+                          <a
+                            href={resource.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block p-6 bg-white border border-gray-100 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group-hover:bg-blue-50/30"
+                          >
+                            <div className="flex items-start justify-between mb-3">
+                              <h4 className="text-lg font-semibold text-gray-900 group-hover:text-blue-700 transition-colors leading-tight">
+                                {getResourceTranslation(currentLanguage, 'resources', resource.name) || resource.name}
+                              </h4>
+                              <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 ml-3" />
+                            </div>
+                            <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2">
                               {resource.description}
                             </p>
-                            <div className="flex flex-wrap gap-1 mt-2">
-                              {resource.tags.slice(0, 2).map((tag: string) => (
-                                <Badge key={tag} variant="secondary" className="text-xs px-2 py-0.5">
+                            <div className="flex flex-wrap gap-2">
+                              {resource.tags.slice(0, 3).map((tag: string) => (
+                                <Badge key={tag} variant="secondary" className="text-xs px-3 py-1 bg-gray-100 text-gray-700 border-0 group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors">
                                   {getResourceTranslation(currentLanguage, 'tags', tag) || tag}
                                 </Badge>
                               ))}
                             </div>
-                          </div>
+                          </a>
                         </div>
                       ))}
                     </div>
@@ -456,80 +454,50 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {germanEconomicsResources.map((resource, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 group border-0 shadow-md bg-white">
-                <CardHeader className="pb-4">
-                  <div className="flex items-start justify-between">
+              <div key={index} className="group cursor-pointer">
+                <a
+                  href={resource.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-8 bg-white border border-orange-100 rounded-3xl hover:border-orange-200 hover:shadow-xl transition-all duration-300 group-hover:bg-orange-50/30"
+                >
+                  <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
-                      <CardTitle className="text-lg font-semibold text-gray-900 mb-2">
+                      <div className="flex items-center space-x-3 mb-3">
+                        <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <Star className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="inline-flex items-center space-x-2 bg-orange-100 px-3 py-1 rounded-full">
+                          <MapPin className="w-4 h-4 text-orange-600" />
+                          <span className="text-orange-800 font-medium text-sm">{t('german_focus')}</span>
+                        </div>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 group-hover:text-orange-700 transition-colors leading-tight mb-3">
                         {getResourceTranslation(currentLanguage, 'resources', resource.name) || resource.name}
-                      </CardTitle>
-                      <CardDescription className="text-sm text-gray-600 leading-relaxed">
+                      </h4>
+                      <p className="text-gray-600 leading-relaxed mb-4">
                         {resource.description}
-                      </CardDescription>
+                      </p>
                     </div>
-                    <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl flex items-center justify-center ml-4 group-hover:scale-110 transition-transform duration-300">
-                      <Star className="w-5 h-5 text-white" />
-                    </div>
+                    <ArrowRight className="w-6 h-6 text-gray-400 group-hover:text-orange-600 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 ml-4" />
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-2">
                     {resource.tags.map((tag: string) => (
-                      <Badge key={tag} variant="secondary" className="text-xs px-2 py-1 bg-orange-100 text-orange-800">
+                      <Badge key={tag} variant="secondary" className="text-sm px-4 py-2 bg-orange-100 text-orange-800 border-0 group-hover:bg-orange-200 transition-colors">
                         {getResourceTranslation(currentLanguage, 'tags', tag) || tag}
                       </Badge>
                     ))}
                   </div>
-                  <a
-                    href={resource.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-orange-600 hover:text-orange-800 font-medium text-sm transition-colors"
-                  >
-                    {t('visit_resource')}
-                    <ExternalLink className="ml-2 w-4 h-4" />
-                  </a>
-                </CardContent>
-              </Card>
+                </a>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section id="faq" className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              {t('faq_title')}
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t('faq_subtitle')}
-            </p>
-          </div>
 
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqItems.map((item, index) => (
-                <AccordionItem 
-                  key={index} 
-                  value={`item-${index}`}
-                  className="border border-gray-200 rounded-2xl px-6 data-[state=open]:bg-gray-50"
-                >
-                  <AccordionTrigger className="text-left font-semibold text-gray-900 hover:no-underline py-6">
-                    {item.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-gray-600 pb-6 leading-relaxed">
-                    {item.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-16">
@@ -559,31 +527,30 @@ export default function Home() {
             <div>
               <h4 className="text-lg font-semibold mb-6">{t('quick_links')}</h4>
               <div className="space-y-3">
-                <button onClick={() => scrollToSection('home')} className="block text-gray-400 hover:text-white transition-colors text-left">Home</button>
-                <button onClick={() => scrollToSection('features')} className="block text-gray-400 hover:text-white transition-colors text-left">Features</button>
-                <button onClick={() => scrollToSection('resources')} className="block text-gray-400 hover:text-white transition-colors text-left">Resources</button>
-                <button onClick={() => scrollToSection('faq')} className="block text-gray-400 hover:text-white transition-colors text-left">FAQ</button>
+                <button onClick={() => scrollToSection('home')} className="block text-gray-400 hover:text-white transition-colors text-left">{t('footer_home')}</button>
+                <button onClick={() => scrollToSection('features')} className="block text-gray-400 hover:text-white transition-colors text-left">{t('footer_features')}</button>
+                <button onClick={() => scrollToSection('resources')} className="block text-gray-400 hover:text-white transition-colors text-left">{t('footer_resources')}</button>
               </div>
             </div>
 
             <div>
               <h4 className="text-lg font-semibold mb-6">{t('main_categories')}</h4>
               <div className="space-y-3">
-                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Data Sources</a>
-                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Research Papers</a>
-                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Policy Reports</a>
-                <a href="#" className="block text-gray-400 hover:text-white transition-colors">Learning Resources</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">{t('footer_data_sources')}</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">{t('footer_research_papers')}</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">{t('footer_policy_reports')}</a>
+                <a href="#" className="block text-gray-400 hover:text-white transition-colors">{t('footer_learning_resources')}</a>
               </div>
             </div>
           </div>
 
           <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2025 EconWeb. All rights reserved. Created by fangxin.
+              {t('footer_copyright')}
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">{t('footer_privacy')}</a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">{t('footer_terms')}</a>
             </div>
           </div>
         </div>
