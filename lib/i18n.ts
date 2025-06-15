@@ -107,7 +107,6 @@ export const translations = {
     // Buttons
     btn_start_exploring: 'Start Exploring',
     btn_view_resources: 'View Resources',
-    btn_get_started: 'Get Started',
     btn_show_less: 'Show Less',
     
     // Additional UI text
@@ -117,6 +116,8 @@ export const translations = {
     // Navigation menu items
     menu_features: 'Features',
     menu_resources: 'Resources',
+    top_journals_nav: 'Top Journals',
+    german_nav: 'German Focus',
     
     // Footer links
     footer_home: 'Home',
@@ -173,15 +174,15 @@ export const translations = {
     example_online_learning: 'Online Learning',
     example_online_learning_desc: 'Courses and learning resources',
     
-    // Search Tips
-    search_by_function: 'By Function:',
-    search_by_function_keywords: '"API", "Free", "Real-time"',
-    search_by_academic: 'By Academic Level:',
-    search_by_academic_keywords: '"Top Journals", "Working Papers", "Preprints"',
-    search_by_learning: 'By Learning Stage:',
-    search_by_learning_keywords: '"Beginner", "Advanced", "Online Learning"',
-    search_by_data_type: 'By Data Type:',
-    search_by_data_type_keywords: '"Macro Data", "Micro Data", "Panel Data"',
+    // Search Tips - New Smart Search
+    search_smart_search: '🔍 Smart Search:',
+    search_smart_search_desc: 'Supports fuzzy matching, e.g. "data", "journal", "learning"',
+    search_journal_abbrev: '📚 Journal Abbreviations:',
+    search_journal_abbrev_desc: '"AER", "QJE", "JPE" automatically recognized',
+    search_region_search: '🌍 Regional Search:',
+    search_region_search_desc: '"China", "Germany" auto-expand related resources',
+    search_concept_search: '📊 Concept Search:',
+    search_concept_search_desc: '"macro", "monetary", "policy" semantic matching',
     
     // Quick Tags
     quick_tags_title: 'Quick Filter:',
@@ -325,7 +326,6 @@ export const translations = {
     // Buttons
     btn_start_exploring: '开始探索',
     btn_view_resources: '查看资源',
-    btn_get_started: '立即开始',
     btn_show_less: '收起',
     
     // Additional UI text
@@ -335,6 +335,8 @@ export const translations = {
     // Navigation menu items
     menu_features: '功能特色',
     menu_resources: '资源',
+    top_journals_nav: '顶刊专题',
+    german_nav: '德国专题',
     
     // Footer links
     footer_home: '首页',
@@ -391,15 +393,15 @@ export const translations = {
     example_online_learning: '在线学习',
     example_online_learning_desc: '课程和学习资源',
     
-    // Search Tips
-    search_by_function: '按功能搜索：',
-    search_by_function_keywords: '"API", "免费", "实时数据"',
-    search_by_academic: '按学术等级：',
-    search_by_academic_keywords: '"顶级期刊", "工作论文", "预印本"',
-    search_by_learning: '按学习阶段：',
-    search_by_learning_keywords: '"入门课程", "高级教程", "在线学习"',
-    search_by_data_type: '按数据类型：',
-    search_by_data_type_keywords: '"宏观数据", "微观数据", "面板数据"',
+    // Search Tips - New Smart Search
+    search_smart_search: '🔍 智能搜索：',
+    search_smart_search_desc: '支持模糊匹配，如"数据"、"期刊"、"学习"',
+    search_journal_abbrev: '📚 期刊缩写：',
+    search_journal_abbrev_desc: '"AER"、"QJE"、"JPE" 等自动识别',
+    search_region_search: '🌍 地区搜索：',
+    search_region_search_desc: '"中国"、"德国" 等自动扩展相关资源',
+    search_concept_search: '📊 概念搜索：',
+    search_concept_search_desc: '"宏观"、"货币"、"政策" 等关联匹配',
     
     // Quick Tags
     quick_tags_title: '快速筛选：',
@@ -543,7 +545,6 @@ export const translations = {
     // Buttons
     btn_start_exploring: '탐색 시작',
     btn_view_resources: '리소스 보기',
-    btn_get_started: '시작하기',
     btn_show_less: '접기',
     
     // Additional UI text
@@ -553,6 +554,8 @@ export const translations = {
     // Navigation menu items
     menu_features: '기능',
     menu_resources: '리소스',
+    top_journals_nav: '톱 저널',
+    german_nav: '독일 특집',
     
     // Footer links
     footer_home: '홈',
@@ -609,15 +612,15 @@ export const translations = {
     example_online_learning: '온라인 학습',
     example_online_learning_desc: '코스 및 학습 리소스',
     
-    // Search Tips
-    search_by_function: '기능별 검색:',
-    search_by_function_keywords: '"API", "무료", "실시간"',
-    search_by_academic: '학술 수준별:',
-    search_by_academic_keywords: '"탑 저널", "워킹 페이퍼", "프리프린트"',
-    search_by_learning: '학습 단계별:',
-    search_by_learning_keywords: '"초급", "고급", "온라인 학습"',
-    search_by_data_type: '데이터 유형별:',
-    search_by_data_type_keywords: '"거시 데이터", "미시 데이터", "패널 데이터"',
+    // Search Tips - New Smart Search
+    search_smart_search: '🔍 스마트 검색:',
+    search_smart_search_desc: '퍼지 매칭 지원, 예: "데이터", "저널", "학습"',
+    search_journal_abbrev: '📚 저널 약어:',
+    search_journal_abbrev_desc: '"AER", "QJE", "JPE" 등 자동 인식',
+    search_region_search: '🌍 지역 검색:',
+    search_region_search_desc: '"중국", "독일" 등 관련 리소스 자동 확장',
+    search_concept_search: '📊 개념 검색:',
+    search_concept_search_desc: '"거시", "화폐", "정책" 등 연관 매칭',
     
     // Quick Tags
     quick_tags_title: '빠른 필터:',
@@ -761,7 +764,6 @@ export const translations = {
     // Buttons
     btn_start_exploring: '探索を開始',
     btn_view_resources: 'リソースを表示',
-    btn_get_started: '始める',
     btn_show_less: '折りたたむ',
     
     // Additional UI text
@@ -771,6 +773,8 @@ export const translations = {
     // Navigation menu items
     menu_features: '機能',
     menu_resources: 'リソース',
+    top_journals_nav: 'トップジャーナル',
+    german_nav: 'ドイツ特集',
     
     // Footer links
     footer_home: 'ホーム',
@@ -827,15 +831,15 @@ export const translations = {
     example_online_learning: 'オンライン学習',
     example_online_learning_desc: 'コースと学習リソース',
     
-    // Search Tips
-    search_by_function: '機能別検索：',
-    search_by_function_keywords: '"API", "無料", "リアルタイム"',
-    search_by_academic: '学術レベル別：',
-    search_by_academic_keywords: '"トップジャーナル", "ワーキングペーパー", "プレプリント"',
-    search_by_learning: '学習段階別：',
-    search_by_learning_keywords: '"初級", "上級", "オンライン学習"',
-    search_by_data_type: 'データタイプ別：',
-    search_by_data_type_keywords: '"マクロデータ", "ミクロデータ", "パネルデータ"',
+    // Search Tips - New Smart Search
+    search_smart_search: '🔍 スマート検索：',
+    search_smart_search_desc: 'ファジーマッチング対応、例："データ"、"ジャーナル"、"学習"',
+    search_journal_abbrev: '📚 ジャーナル略語：',
+    search_journal_abbrev_desc: '"AER"、"QJE"、"JPE" など自動認識',
+    search_region_search: '🌍 地域検索：',
+    search_region_search_desc: '"中国"、"ドイツ" など関連リソース自動拡張',
+    search_concept_search: '📊 概念検索：',
+    search_concept_search_desc: '"マクロ"、"金融"、"政策" など関連マッチング',
     
     // Quick Tags
     quick_tags_title: 'クイックフィルター：',
@@ -979,7 +983,6 @@ export const translations = {
     // Buttons
     btn_start_exploring: 'Entdeckung beginnen',
     btn_view_resources: 'Ressourcen anzeigen',
-    btn_get_started: 'Loslegen',
     btn_show_less: 'Weniger anzeigen',
     
     // Additional UI text
@@ -989,6 +992,8 @@ export const translations = {
     // Navigation menu items
     menu_features: 'Funktionen',
     menu_resources: 'Ressourcen',
+    top_journals_nav: 'Top-Journals',
+    german_nav: 'Deutschland-Fokus',
     
     // Footer links
     footer_home: 'Startseite',
@@ -1045,15 +1050,15 @@ export const translations = {
     example_online_learning: 'Online Lernen',
     example_online_learning_desc: 'Kurse und Lernressourcen',
     
-    // Search Tips
-    search_by_function: 'Nach Funktion suchen:',
-    search_by_function_keywords: '"API", "Kostenlos", "Echtzeit"',
-    search_by_academic: 'Nach akademischem Level:',
-    search_by_academic_keywords: '"Top Journals", "Working Papers", "Preprints"',
-    search_by_learning: 'Nach Lernstufe:',
-    search_by_learning_keywords: '"Anfänger", "Fortgeschritten", "Online Lernen"',
-    search_by_data_type: 'Nach Datentyp:',
-    search_by_data_type_keywords: '"Makrodaten", "Mikrodaten", "Paneldaten"',
+    // Search Tips - New Smart Search
+    search_smart_search: '🔍 Intelligente Suche:',
+    search_smart_search_desc: 'Unterstützt unscharfe Suche, z.B. "Daten", "Journal", "Lernen"',
+    search_journal_abbrev: '📚 Journal-Abkürzungen:',
+    search_journal_abbrev_desc: '"AER", "QJE", "JPE" automatisch erkannt',
+    search_region_search: '🌍 Regionale Suche:',
+    search_region_search_desc: '"China", "Deutschland" erweitert verwandte Ressourcen',
+    search_concept_search: '📊 Konzeptsuche:',
+    search_concept_search_desc: '"Makro", "Währung", "Politik" semantische Zuordnung',
     
     // Quick Tags
     quick_tags_title: 'Schnellfilter:',

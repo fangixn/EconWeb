@@ -113,6 +113,42 @@ export default function Home() {
     ];
   };
 
+  // 获取所有资源（合并三个数据源）
+  const getAllResources = () => {
+    const allResources: any[] = [];
+    
+    // 从主要分类中获取资源
+    Object.entries(economicsCategories).forEach(([categoryKey, category]) => {
+      category.resources.forEach(resource => {
+        allResources.push({
+          ...resource,
+          category: categoryKey,
+          source: 'main'
+        });
+      });
+    });
+    
+    // 添加顶级期刊资源
+    topJournalsResources.forEach(journal => {
+      allResources.push({
+        ...journal,
+        category: 'top-journals',
+        source: 'journals'
+      });
+    });
+    
+    // 添加德国经济学资源
+    germanEconomicsResources.forEach(resource => {
+      allResources.push({
+        ...resource,
+        category: 'german',
+        source: 'german'
+      });
+    });
+    
+    return allResources;
+  };
+
   // Filter resources with intelligent search logic
   const filterResources = (resources: any[]) => {
     if (!searchTerm && !selectedTag) {
@@ -140,9 +176,111 @@ export default function Home() {
           const translatedTag = getResourceTranslation(currentLanguage, 'tags', tag);
           return translatedTag.toLowerCase().includes(searchLower);
         });
+
+        // 4. 智能关键词识别和扩展 - 多语言支持
+        const getSmartKeywords = (searchTerm: string): string[] => {
+          const keywords: string[] = [searchTerm]; // 保留原搜索词
+          
+          // 期刊缩写扩展
+          const journalAbbrevs: Record<string, string[]> = {
+            'aer': ['american economic review', 'aea'],
+            'qje': ['quarterly journal of economics', 'quarterly'],
+            'jpe': ['journal of political economy', 'political economy'],
+            'restud': ['review of economic studies', 'economic studies'],
+            'jf': ['journal of finance', 'finance journal'],
+            'jfe': ['journal of financial economics', 'financial economics'],
+            'rfs': ['review of financial studies', 'financial studies']
+          };
+          
+                     // 多语言概念映射
+           const conceptMappings: Record<string, string[]> = {
+             // 中文
+             '数据': ['data', 'database', 'statistics', 'statistical'],
+             '宏观': ['macro', 'macroeconomic', 'fred', 'imf', 'world bank', 'economic indicators'],
+             '微观': ['micro', 'microdata', 'survey', 'household', 'firm'],
+             '央行': ['central bank', 'monetary', 'pboc', 'federal reserve', 'ecb'],
+             '货币': ['monetary', 'currency', 'central bank'],
+             '政策zh': ['policy', 'government', 'regulation', 'official', 'report'],
+             '期刊': ['journal', 'review', 'quarterly', 'economic'],
+             '顶级': ['top tier', 'premier', 'leading', 'flagship'],
+             '课程': ['course', 'learning', 'education', 'university', 'academy'],
+             '学习': ['learning', 'course', 'education', 'study'],
+             '入门': ['beginner', 'introduction', 'basic', 'khan'],
+             '高级': ['advanced', 'graduate', 'phd', 'mit', 'harvard'],
+             '实时': ['real-time', 'live', 'current', 'updated'],
+             '中国': ['china', 'chinese', 'pboc', 'stats.gov.cn', 'beijing'],
+             '德国': ['germany', 'german', 'bundesbank', 'destatis', 'berlin'],
+             
+             // 英文
+             'data': ['database', 'statistics', 'statistical', '数据'],
+             'macro': ['macroeconomic', 'fred', 'imf', 'world bank', '宏观'],
+             'micro': ['microdata', 'survey', 'household', 'firm', '微观'],
+             'monetary': ['central bank', 'currency', '货币', '央行'],
+             'policy': ['government', 'regulation', 'official'],
+             'journal_en': ['review', 'quarterly', 'economic', '期刊'],
+             'learning': ['course', 'education', 'study', '学习'],
+             'beginner': ['introduction', 'basic', 'khan', '入门'],
+             'advanced': ['graduate', 'phd', 'mit', 'harvard', '高级'],
+             'china': ['chinese', 'pboc', '中国'],
+             'germany': ['german', 'bundesbank', '德国'],
+             
+             // 韩文
+             '데이터': ['data', 'database', 'statistics'],
+             '거시': ['macro', 'macroeconomic'],
+             '미시': ['micro', 'microdata'],
+             '화폐': ['monetary', 'currency'],
+             '정책': ['policy', 'government'],
+             '저널': ['journal', 'review'],
+             '학습': ['learning', 'course'],
+             
+             // 日文
+             'データ': ['data', 'database', 'statistics'],
+             'マクロ': ['macro', 'macroeconomic'],
+             'ミクロ': ['micro', 'microdata'],
+             '金融': ['finance', 'monetary'],
+             '政策ja': ['policy', 'government'],
+             'ジャーナル': ['journal', 'review'],
+             '学習': ['learning', 'course'],
+             
+             // 德文
+             'daten': ['data', 'database', 'statistics'],
+             'makro': ['macro', 'macroeconomic'],
+             'mikro': ['micro', 'microdata'],
+             'währung': ['monetary', 'currency'],
+             'politik': ['policy', 'government'],
+             'journal_de': ['review', 'zeitschrift'],
+             'lernen': ['learning', 'course']
+           };
+          
+          // 检查概念映射
+          for (const [concept, expansions] of Object.entries(conceptMappings)) {
+            if (searchTerm.toLowerCase().includes(concept.toLowerCase())) {
+              keywords.push(...expansions);
+            }
+          }
+          
+          // 检查精确匹配的缩写
+          const exactMatch = journalAbbrevs[searchTerm.toLowerCase()];
+          if (exactMatch) {
+            keywords.push(...exactMatch);
+          }
+          
+                     return Array.from(new Set(keywords)); // 去重
+        };
+        
+        // 5. 智能关键词匹配
+        let matchesKeywords = false;
+        const smartKeywords = getSmartKeywords(searchLower);
+        if (smartKeywords.length > 1) { // 如果有扩展关键词
+          matchesKeywords = smartKeywords.some(keyword => 
+            resource.name.toLowerCase().includes(keyword.toLowerCase()) ||
+            resource.description.toLowerCase().includes(keyword.toLowerCase()) ||
+            resource.tags.some((tag: string) => tag.toLowerCase().includes(keyword.toLowerCase()))
+          );
+        }
         
         // 只有匹配任一条件才通过搜索筛选
-        matchesSearch = matchesOriginal || matchesTranslatedName || matchesTranslatedTags;
+        matchesSearch = matchesOriginal || matchesTranslatedName || matchesTranslatedTags || matchesKeywords;
       }
       
       // 标签筛选逻辑
@@ -239,6 +377,8 @@ export default function Home() {
             <nav className="hidden md:flex items-center space-x-6">
               <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-gray-900 transition-colors">{t('nav_home')}</button>
               <button onClick={() => scrollToSection('features')} className="text-gray-600 hover:text-gray-900 transition-colors">{t('menu_features')}</button>
+              <button onClick={() => scrollToSection('top-journals')} className="text-gray-600 hover:text-gray-900 transition-colors">{t('top_journals_nav') || '顶刊专题'}</button>
+              <button onClick={() => scrollToSection('german')} className="text-gray-600 hover:text-gray-900 transition-colors">{t('german_nav') || '德国专题'}</button>
               
               {/* Resources Dropdown */}
               <div className="relative resources-dropdown">
@@ -277,7 +417,6 @@ export default function Home() {
               </div>
               
               <LanguageSwitcher />
-              <Button variant="outline" size="sm" onClick={() => scrollToSection('resources')}>{t('btn_get_started')}</Button>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -295,6 +434,8 @@ export default function Home() {
               <nav className="flex flex-col space-y-4 pt-4">
                 <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">{t('nav_home')}</button>
                 <button onClick={() => scrollToSection('features')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">{t('menu_features')}</button>
+                <button onClick={() => scrollToSection('top-journals')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">{t('top_journals_nav') || '顶刊专题'}</button>
+                <button onClick={() => scrollToSection('german')} className="text-gray-600 hover:text-gray-900 transition-colors text-left">{t('german_nav') || '德国专题'}</button>
                 
                 {/* Mobile Resources Dropdown */}
                 <div className="resources-dropdown">
@@ -330,7 +471,6 @@ export default function Home() {
                 <div className="pt-2">
                   <LanguageSwitcher />
                 </div>
-                <Button variant="outline" size="sm" className="w-fit" onClick={() => scrollToSection('resources')}>{t('btn_get_started')}</Button>
               </nav>
             </div>
           )}
@@ -385,10 +525,10 @@ export default function Home() {
               </form>
             </div>
 
-            {/* Search Examples */}
-            <div className="mb-12">
+            {/* Search Tips */}
+            <div className="mb-12 max-w-4xl mx-auto">
               <div className="flex items-center justify-center space-x-4 mb-4">
-                <p className="text-sm text-gray-500">💡 {t('search_examples_title')}</p>
+                <p className="text-sm text-gray-500">💡 {t('search_tips_title')}</p>
                 {(searchTerm || selectedTag) && (
                   <Button
                     variant="ghost"
@@ -401,82 +541,27 @@ export default function Home() {
                 )}
               </div>
               
-              {/* Search Examples */}
-              <div className="max-w-4xl mx-auto">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-                  {[
-                    { queryKey: "example_free_data", descKey: "example_free_data_desc", icon: "💰" },
-                    { queryKey: "example_china_policy", descKey: "example_china_policy_desc", icon: "🇨🇳" },
-                    { queryKey: "example_top_journals", descKey: "example_top_journals_desc", icon: "⭐" },
-                    { queryKey: "example_online_learning", descKey: "example_online_learning_desc", icon: "🎓" }
-                  ].map((example) => {
-                    const query = t(example.queryKey);
-                    const desc = t(example.descKey);
-                    return (
-                      <button
-                        key={example.queryKey}
-                        onClick={() => {
-                          setSearchTerm(query);
-                          setTimeout(() => scrollToSection('resources'), 100);
-                        }}
-                        className="p-3 bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 border border-blue-100 rounded-xl transition-all duration-200 text-left group"
-                      >
-                        <div className="flex items-center space-x-2 mb-1">
-                          <span className="text-lg">{example.icon}</span>
-                          <span className="font-medium text-blue-700 group-hover:text-blue-800">"{query}"</span>
-                        </div>
-                        <p className="text-xs text-gray-600">{desc}</p>
-                      </button>
-                    );
-                  })}
+              <div className="p-6 bg-gray-50 rounded-xl border border-gray-100">
+                <div className="flex items-center space-x-2 mb-4">
+                  <span className="text-lg">🔍</span>
+                  <span className="text-base font-medium text-gray-700">{t('search_tips_title')}</span>
                 </div>
-                
-                {/* Quick Tags */}
-                <div className="flex flex-wrap justify-center gap-2">
-                  <span className="text-xs text-gray-500 mr-2">{t('quick_tags_title')}</span>
-                  {['Free', 'China', 'Germany', 'API'].map((tag: string) => (
-                    <Badge
-                      key={tag}
-                      variant={selectedTag === tag ? "default" : "secondary"}
-                      className={`px-2 py-1 cursor-pointer transition-all duration-200 text-xs ${
-                        selectedTag === tag 
-                          ? 'bg-blue-600 text-white hover:bg-blue-700' 
-                          : 'bg-gray-100 text-gray-600 hover:bg-blue-100 hover:text-blue-700'
-                      }`}
-                      onClick={() => {
-                        setSelectedTag(selectedTag === tag ? null : tag);
-                        setTimeout(() => scrollToSection('resources'), 100);
-                      }}
-                    >
-                      {getResourceTranslation(currentLanguage, 'tags', tag) || tag}
-                      {selectedTag === tag && <X className="ml-1 w-2 h-2" />}
-                    </Badge>
-                  ))}
-                </div>
-                
-                {/* Search Tips */}
-                <div className="mt-6 p-4 bg-gray-50 rounded-xl border border-gray-100">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <span className="text-sm">🔍</span>
-                    <span className="text-sm font-medium text-gray-700">{t('search_tips_title')}</span>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
+                  <div>
+                    <span className="font-medium">{t('search_smart_search')}</span>
+                    <span className="ml-1">{t('search_smart_search_desc')}</span>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-600">
-                    <div>
-                      <span className="font-medium">{t('search_by_function')}</span>
-                      <span className="ml-1">{t('search_by_function_keywords')}</span>
-                    </div>
-                    <div>
-                      <span className="font-medium">{t('search_by_academic')}</span>
-                      <span className="ml-1">{t('search_by_academic_keywords')}</span>
-                    </div>
-                    <div>
-                      <span className="font-medium">{t('search_by_learning')}</span>
-                      <span className="ml-1">{t('search_by_learning_keywords')}</span>
-                    </div>
-                    <div>
-                      <span className="font-medium">{t('search_by_data_type')}</span>
-                      <span className="ml-1">{t('search_by_data_type_keywords')}</span>
-                    </div>
+                  <div>
+                    <span className="font-medium">{t('search_journal_abbrev')}</span>
+                    <span className="ml-1">{t('search_journal_abbrev_desc')}</span>
+                  </div>
+                  <div>
+                    <span className="font-medium">{t('search_region_search')}</span>
+                    <span className="ml-1">{t('search_region_search_desc')}</span>
+                  </div>
+                  <div>
+                    <span className="font-medium">{t('search_concept_search')}</span>
+                    <span className="ml-1">{t('search_concept_search_desc')}</span>
                   </div>
                 </div>
               </div>
@@ -537,7 +622,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* 功能导航 */}
-            <div className="group cursor-pointer" onClick={() => scrollToSection('functional')}>
+            <div className="group cursor-pointer" onClick={() => scrollToSection('home')}>
               <div className="p-6 bg-white border border-blue-100 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group-hover:bg-blue-50/30">
                 <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Target className="w-6 h-6 text-white" />
@@ -682,12 +767,9 @@ export default function Home() {
                   <Search className="w-5 h-5 text-blue-600" />
                   <span className="text-blue-800 font-medium">
                     {(() => {
-                      const totalResults = Object.values(economicsCategories).reduce((total, category) => 
-                        total + filterResources(category.resources).length, 0
-                      );
-                      const totalResources = Object.values(economicsCategories).reduce((total, category) => 
-                        total + category.resources.length, 0
-                      );
+                      const allResources = getAllResources();
+                      const totalResults = filterResources(allResources).length;
+                      const totalResources = allResources.length;
                       return `找到 ${totalResults} 个资源 (共 ${totalResources} 个)`;
                     })()}
                   </span>
@@ -711,15 +793,83 @@ export default function Home() {
             )}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Object.entries(economicsCategories).map(([key, category]) => {
-              const IconComponent = iconMap[category.icon as keyof typeof iconMap];
-              const filteredResources = filterResources(category.resources);
-              
-              // 如果筛选后没有资源，则隐藏该分类
-              if (filteredResources.length === 0 && (searchTerm || selectedTag)) {
-                return null;
-              }
+          {/* 搜索结果展示 */}
+          {(searchTerm || selectedTag) ? (
+            <div className="space-y-6">
+              {(() => {
+                const allResources = getAllResources();
+                const filteredResults = filterResources(allResources);
+                
+                if (filteredResults.length === 0) {
+                  return (
+                    <div className="text-center py-12">
+                      <Search className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+                      <h3 className="text-xl font-semibold text-gray-700 mb-2">未找到匹配的资源</h3>
+                      <p className="text-gray-500 mb-4">请尝试使用其他关键词或清除筛选条件</p>
+                      <Button onClick={clearSearch} variant="outline">
+                        清除所有筛选条件
+                      </Button>
+                    </div>
+                  );
+                }
+                
+                return (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {filteredResults.map((resource, index) => (
+                      <div key={`${resource.source}-${index}`} className="group cursor-pointer">
+                        <a
+                          href={resource.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block p-6 bg-white border border-gray-100 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group-hover:bg-blue-50/30"
+                        >
+                          <div className="flex items-start justify-between mb-3">
+                            <div className="flex-1">
+                              <div className="flex items-center space-x-2 mb-3">
+                                {resource.source === 'journals' && (
+                                  <div className="inline-flex items-center space-x-1 bg-purple-100 px-2 py-1 rounded-full">
+                                    <Star className="w-3 h-3 text-purple-600" />
+                                    <span className="text-purple-800 font-medium text-xs">顶级期刊</span>
+                                  </div>
+                                )}
+                                {resource.source === 'german' && (
+                                  <div className="inline-flex items-center space-x-1 bg-orange-100 px-2 py-1 rounded-full">
+                                    <MapPin className="w-3 h-3 text-orange-600" />
+                                    <span className="text-orange-800 font-medium text-xs">德国专题</span>
+                                  </div>
+                                )}
+                              </div>
+                              <h4 className="text-lg font-semibold text-gray-900 group-hover:text-blue-700 transition-colors leading-tight mb-2">
+                                {resource.source === 'journals' 
+                                  ? getJournalTranslation(currentLanguage, resource.name)
+                                  : getResourceTranslation(currentLanguage, 'resources', resource.name) || resource.name
+                                }
+                              </h4>
+                              <p className="text-gray-600 text-sm leading-relaxed mb-3 line-clamp-2">
+                                {resource.description}
+                              </p>
+                            </div>
+                            <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 ml-3" />
+                          </div>
+                          <div className="flex flex-wrap gap-2">
+                            {resource.tags.slice(0, 3).map((tag: string) => (
+                              <Badge key={tag} variant="secondary" className="text-xs px-2 py-1 bg-gray-100 text-gray-700 border-0 group-hover:bg-blue-100 group-hover:text-blue-800 transition-colors">
+                                {getResourceTranslation(currentLanguage, 'tags', tag) || tag}
+                              </Badge>
+                            ))}
+                          </div>
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })()}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {Object.entries(economicsCategories).map(([key, category]) => {
+                const IconComponent = iconMap[category.icon as keyof typeof iconMap];
+                const filteredResources = filterResources(category.resources);
               
               return (
                 <Card key={key} id={`category-${key}`} className="hover:shadow-xl transition-all duration-300 group border-0 shadow-md">
@@ -800,6 +950,7 @@ export default function Home() {
               );
             })}
           </div>
+          )}
         </div>
       </section>
 
