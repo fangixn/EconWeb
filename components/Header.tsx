@@ -1,23 +1,23 @@
 import { useState } from 'react';
 import { Globe, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/lib/LanguageContext';
 
 export default function Header() {
+  const { t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: '首页', href: '#home' },
-    { name: '功能导航', href: '#functional' },
-    { name: '资源分类', href: '#resources' },
-    { name: '学习专题', href: '#learning' },
-    { name: '媒体专题', href: '#media' },
-    { name: '政策专题', href: '#policy' },
-    { name: '数据专题', href: '#data' },
-    { name: '市场专题', href: '#market' },
-    { name: '工具专题', href: '#tools' },
-    { name: '顶刊专题', href: '#top-journals' },
-    { name: '德国专题', href: '#german' },
-    { name: '使用指导', href: '#guide' },
+    { name: t('nav_home') || '首页', href: '#home' },
+    { name: t('nav_learning') || '学习专题', href: '#learning' },
+    { name: t('nav_media') || '媒体专题', href: '#media' },
+    { name: t('nav_policy') || '政策专题', href: '#policy' },
+    { name: t('nav_data') || '数据专题', href: '#data' },
+    { name: t('nav_market') || '市场专题', href: '#market' },
+    { name: t('nav_tools') || '工具专题', href: '#tools' },
+    { name: t('nav_top_journals') || '顶刊专题', href: '#top-journals' },
+    { name: t('nav_german') || '德国专题', href: '#german' },
+
   ];
 
   return (
@@ -27,8 +27,8 @@ export default function Header() {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <Globe className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-slate-900">EconWeb</span>
-            <span className="text-sm text-slate-500 hidden sm:inline">经济学导航</span>
+            <span className="text-xl font-bold text-slate-900">{t('site_name') || 'EconWeb'}</span>
+            <span className="text-sm text-slate-500 hidden sm:inline">{t('site_subtitle') || '经济学资源导航站'}</span>
           </div>
 
           {/* Desktop Navigation */}

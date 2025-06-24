@@ -14,9 +14,7 @@ export const translations = {
     site_name: 'EconWeb',
     site_subtitle: 'EconNavigator by EconomicsWeb',
     nav_home: 'Home',
-    nav_functional: 'By Function',
-    nav_resources: 'By Type',
-    nav_news: 'News',
+
     nav_german: 'German Focus',
     media_nav: 'Media Focus',
     
@@ -33,13 +31,7 @@ export const translations = {
     searching_for: 'Searching for',
     filtered_by: 'Filtered by',
     
-    // Navigation Toggle
-    toggle_functional: 'By Function',
-    toggle_resource: 'By Type',
     
-    // Functional Navigation
-    functional_title: 'Functional Navigation',
-    functional_subtitle: 'Find resources based on your specific needs',
     
     // Categories
     find_data: 'Find Data',
@@ -51,9 +43,7 @@ export const translations = {
     watch_market: 'Watch Market',
     watch_market_desc: 'Industry analysis, investment tools and company data',
     
-    // Resource Types
-    resource_title: 'Resource Categories',
-    resource_subtitle: 'Browse by resource type for systematic learning',
+
     authorities: 'Authorities',
     authorities_desc: 'Official reports from international organizations and government agencies',
     academic: 'Academic Papers',
@@ -80,18 +70,20 @@ export const translations = {
     // Footer
     footer_description: 'Your comprehensive guide to economics resources. Discover the best data sources, research papers, and tools to advance your understanding of economics.',
     quick_links: 'Quick Links',
-    main_categories: 'Resource Categories',
+  quick_actions: 'Quick Actions',
+  back_to_top: 'Back to Top',
+  go_to_footer: 'Go to Footer',
+    specialties: 'Specialties',
     
 
     
     // Switch view messages
-    switch_to_functional_view: 'Switch to "By Function" view to interact with this section',
-    switch_to_resource_view: 'Switch to "By Type" view to interact with this section',
+
     
     // News Section
     news_title: 'Economic News Overview',
     news_subtitle: 'Get the latest economic news, expert opinions and trend analysis to stay informed about global economic dynamics',
-    view_news: 'View News',
+
     
     // Features Section
     features_title: 'Why Choose EconWeb?',
@@ -117,6 +109,15 @@ export const translations = {
     // Navigation menu items
     menu_features: 'Features',
     menu_resources: 'Resources',
+    nav_features: 'Features',
+    nav_learning: 'Learning Focus',
+    nav_media: 'Media Focus',
+    nav_policy: 'Policy Focus',
+    nav_data: 'Data Focus',
+    nav_market: 'Market Focus',
+    nav_tools: 'Tools Focus',
+    nav_top_journals: 'Top Journals',
+
     top_journals_nav: 'Top Journals',
     german_nav: 'German Focus',
     
@@ -124,10 +125,20 @@ export const translations = {
     footer_home: 'Home',
     footer_features: 'Features', 
     footer_resources: 'Resources',
+    footer_learning: 'Learning Focus',
+    footer_media: 'Media Focus',
+    footer_policy: 'Policy Focus',
+    footer_data: 'Data Focus',
+    footer_market: 'Market Focus',
+    footer_tools: 'Tools Focus',
+    footer_german: 'German Focus',
     footer_data_sources: 'Data Sources',
     footer_research_papers: 'Research Papers',
     footer_policy_reports: 'Policy Reports',
     footer_learning_resources: 'Learning Resources',
+    footer_media_resources: 'Media Resources',
+    footer_market_analysis: 'Market Analysis',
+    footer_german_economics: 'German Economics',
     footer_privacy: 'Privacy Policy',
     footer_terms: 'Terms of Service',
     footer_top_journals: 'Top Journals',
@@ -188,39 +199,10 @@ export const translations = {
     // Quick Tags
     quick_tags_title: 'Quick Filter:',
     
-    // Usage Guide Section
-    usage_guide: 'Usage Guide',
-    usage_guide_title: 'How to Use EconWeb?',
-    usage_guide_subtitle: 'Choose the most suitable navigation method based on your needs',
     
-    // Guide Cards
-    guide_functional_title: 'Functional Navigation',
-    guide_functional_desc: 'When you know exactly what you want to do',
-    guide_functional_tip1: '• Need data → Data Sources',
-    guide_functional_tip2: '• Read policy → Policy Analysis', 
-    guide_functional_tip3: '• Do research → Academic Research',
-    guide_functional_tip4: '• Watch market → Market Observation',
     
-    guide_resources_title: 'Resource Categories',
-    guide_resources_desc: 'When you want to browse systematically',
-    guide_resources_tip1: '• Categorized by resource type',
-    guide_resources_tip2: '• Suitable for beginners to explore',
-    guide_resources_tip3: '• Systematic learning path',
-    guide_resources_tip4: '• Comprehensive understanding of all fields',
     
-    guide_journals_title: 'Top Journals',
-    guide_journals_desc: 'When you need high-quality academic resources',
-    guide_journals_tip1: '• Top economics journals',
-    guide_journals_tip2: '• Authoritative academic publishing platforms',
-    guide_journals_tip3: '• Cutting-edge research papers',
-    guide_journals_tip4: '• Essential for academic research',
-    
-    guide_german_title: 'German Focus',
-    guide_german_desc: 'When you specifically study German economy',
-    guide_german_tip1: '• German central bank data',
-    guide_german_tip2: '• German economic institutions',
-    guide_german_tip3: '• German policy reports',
-    guide_german_tip4: '• European economic research',
+
     
     // Quick Tips
     quick_tips_title: 'Quick Tips',
@@ -234,9 +216,8 @@ export const translations = {
     site_name: 'EconWeb',
     site_subtitle: 'EconNavigator by EconomicsWeb',
     nav_home: '首页',
-    nav_functional: '功能导航',
-    nav_resources: '资源分类',
-    nav_news: '经济资讯',
+
+
     nav_german: '德国专题',
     
     // Hero Section
@@ -254,7 +235,6 @@ export const translations = {
     
     // Navigation Toggle
     toggle_functional: '功能导向',
-    toggle_resource: '资源分类',
     
     // Functional Navigation
     functional_title: '功能导向导航',
@@ -270,9 +250,7 @@ export const translations = {
     watch_market: '看市场',
     watch_market_desc: '行业分析、投资工具和公司数据',
     
-    // Resource Types
-    resource_title: '资源分类导航',
-    resource_subtitle: '按照资源类型浏览，适合系统性学习',
+
     authorities: '权威机构',
     authorities_desc: '国际组织和政府机构的官方报告',
     academic: '学术论文',
@@ -299,13 +277,15 @@ export const translations = {
     // Footer
     footer_description: '您的经济学资源综合指南。发现最好的数据源、研究论文和工具，提升您对经济学的理解。',
     quick_links: '快速链接',
-    main_categories: '资源分类',
+  quick_actions: '快速操作',
+  back_to_top: '回到顶部',
+  go_to_footer: '跳到页脚',
+    specialties: '专题导航',
     
 
     
     // Switch view messages
     switch_to_functional_view: '切换到"功能导向"视图以与此部分交互',
-    switch_to_resource_view: '切换到"资源分类"视图以与此部分交互',
     
     // News Section
     news_title: '经济资讯一览',
@@ -336,6 +316,15 @@ export const translations = {
     // Navigation menu items
     menu_features: '功能特色',
     menu_resources: '资源',
+    nav_features: '功能导航',
+    nav_learning: '学习专题',
+    nav_media: '媒体专题',
+    nav_policy: '政策专题',
+    nav_data: '数据专题',
+    nav_market: '市场专题',
+    nav_tools: '工具专题',
+    nav_top_journals: '顶刊专题',
+    nav_guide: '使用指导',
     top_journals_nav: '顶刊专题',
     german_nav: '德国专题',
     learning_nav: '学习专题',
@@ -344,10 +333,20 @@ export const translations = {
     footer_home: '首页',
     footer_features: '功能特色', 
     footer_resources: '资源',
+    footer_learning: '学习专题',
+    footer_media: '媒体专题',
+    footer_policy: '政策专题',
+    footer_data: '数据专题',
+    footer_market: '市场专题',
+    footer_tools: '工具专题',
+    footer_german: '德国专题',
     footer_data_sources: '数据源',
     footer_research_papers: '研究论文',
     footer_policy_reports: '政策报告',
     footer_learning_resources: '学习资源',
+    footer_media_resources: '媒体资讯',
+    footer_market_analysis: '市场专题',
+    footer_german_economics: '德国专题',
     footer_privacy: '隐私政策',
     footer_terms: '服务条款',
     footer_top_journals: '顶级期刊',
@@ -404,29 +403,6 @@ export const translations = {
     search_region_search_desc: '"中国"、"德国" 等自动扩展相关资源',
     search_concept_search: '📊 概念搜索：',
     search_concept_search_desc: '"宏观"、"货币"、"政策" 等关联匹配',
-    
-    // Quick Tags
-    quick_tags_title: '快速筛选：',
-    
-    // Usage Guide Section
-    usage_guide: '使用指导',
-    usage_guide_title: '如何使用 EconWeb？',
-    usage_guide_subtitle: '根据你的需求，选择最适合的导航方式',
-    
-    // Guide Cards
-    guide_functional_title: '功能导航',
-    guide_functional_desc: '当你明确知道要做什么时',
-    guide_functional_tip1: '• 需要找数据 → 数据获取',
-    guide_functional_tip2: '• 要读政策 → 政策研读', 
-    guide_functional_tip3: '• 做研究 → 学术研究',
-    guide_functional_tip4: '• 看市场 → 市场观察',
-    
-    guide_resources_title: '资源分类',
-    guide_resources_desc: '当你想系统性浏览时',
-    guide_resources_tip1: '• 按资源类型分类',
-    guide_resources_tip2: '• 适合初学者探索',
-    guide_resources_tip3: '• 系统性学习路径',
-    guide_resources_tip4: '• 全面了解各领域',
     
     guide_journals_title: '顶刊专题',
     guide_journals_desc: '当你需要高质量学术资源时',
@@ -521,7 +497,6 @@ export const translations = {
     site_subtitle: 'EconNavigator by EconomicsWeb',
     nav_home: '홈',
     nav_functional: '기능별',
-    nav_resources: '유형별',
     nav_news: '경제 뉴스',
     nav_german: '독일 특집',
     
@@ -540,7 +515,6 @@ export const translations = {
     
     // Navigation Toggle
     toggle_functional: '기능별',
-    toggle_resource: '유형별',
     
     // Functional Navigation
     functional_title: '기능별 내비게이션',
@@ -585,13 +559,15 @@ export const translations = {
     // Footer
     footer_description: '경제학 리소스에 대한 종합 가이드입니다. 최고의 데이터 소스, 연구 논문 및 도구를 발견하여 경제학 이해를 향상시키세요.',
     quick_links: '빠른 링크',
-    main_categories: '리소스 카테고리',
+  quick_actions: '빠른 동작',
+  back_to_top: '맨 위로',
+  go_to_footer: '하단으로',
+    specialties: '전문 분야',
     
 
     
     // Switch view messages
     switch_to_functional_view: '"기능별" 보기로 전환하여 이 섹션과 상호작용하세요',
-    switch_to_resource_view: '"유형별" 보기로 전환하여 이 섹션과 상호작용하세요',
     
     // News Section
     news_title: '경제 뉴스 개요',
@@ -622,6 +598,15 @@ export const translations = {
     // Navigation menu items
     menu_features: '기능',
     menu_resources: '리소스',
+    nav_features: '기능',
+    nav_learning: '학습 특집',
+    nav_media: '미디어 특집',
+    nav_policy: '정책 특집',
+    nav_data: '데이터 특집',
+    nav_market: '시장 특집',
+    nav_tools: '도구 특집',
+    nav_top_journals: '톱 저널',
+    nav_guide: '사용 가이드',
     top_journals_nav: '톱 저널',
     german_nav: '독일 특집',
     
@@ -706,12 +691,6 @@ export const translations = {
     guide_functional_tip3: '• 연구하기 → 학술 연구',
     guide_functional_tip4: '• 시장 보기 → 시장 관찰',
     
-    guide_resources_title: '리소스 카테고리',
-    guide_resources_desc: '체계적으로 탐색하고 싶을 때',
-    guide_resources_tip1: '• 리소스 유형별 분류',
-    guide_resources_tip2: '• 초보자 탐색에 적합',
-    guide_resources_tip3: '• 체계적 학습 경로',
-    guide_resources_tip4: '• 모든 분야의 포괄적 이해',
     
     guide_journals_title: '탑 저널',
     guide_journals_desc: '고품질 학술 자원이 필요할 때',
@@ -740,7 +719,6 @@ export const translations = {
     site_subtitle: 'EconNavigator by EconomicsWeb',
     nav_home: 'ホーム',
     nav_functional: '機能別',
-    nav_resources: 'タイプ別',
     nav_news: '経済ニュース',
     nav_german: 'ドイツ特集',
     
@@ -759,7 +737,6 @@ export const translations = {
     
     // Navigation Toggle
     toggle_functional: '機能別',
-    toggle_resource: 'タイプ別',
     
     // Functional Navigation
     functional_title: '機能別ナビゲーション',
@@ -804,13 +781,15 @@ export const translations = {
     // Footer
     footer_description: '経済学リソースの包括的なガイドです。最高のデータソース、研究論文、ツールを発見して、経済学の理解を向上させてください。',
     quick_links: 'クイックリンク',
-    main_categories: 'リソースカテゴリ',
+  quick_actions: 'クイックアクション',
+  back_to_top: 'トップに戻る',
+  go_to_footer: 'フッターへ',
+    specialties: '専門分野',
     
 
     
     // Switch view messages
     switch_to_functional_view: '「機能別」ビューに切り替えて、このセクションとやり取りしてください',
-    switch_to_resource_view: '「タイプ別」ビューに切り替えて、このセクションとやり取りしてください',
     
     // News Section
     news_title: '経済ニュース概要',
@@ -841,6 +820,15 @@ export const translations = {
     // Navigation menu items
     menu_features: '機能',
     menu_resources: 'リソース',
+    nav_features: '機能',
+    nav_learning: '学習特集',
+    nav_media: 'メディア特集',
+    nav_policy: '政策特集',
+    nav_data: 'データ特集',
+    nav_market: '市場特集',
+    nav_tools: 'ツール特集',
+    nav_top_journals: 'トップジャーナル',
+    nav_guide: '利用ガイド',
     top_journals_nav: 'トップジャーナル',
     german_nav: 'ドイツ特集',
     
@@ -848,13 +836,23 @@ export const translations = {
     footer_home: 'ホーム',
     footer_features: '機能', 
     footer_resources: 'リソース',
+    footer_learning: '学習特集',
+    footer_media: 'メディア特集',
+    footer_policy: '政策特集',
+    footer_data: 'データ特集',
+    footer_market: '市場特集',
+    footer_tools: 'ツール特集',
+    footer_german: 'ドイツ特集',
     footer_data_sources: 'データソース',
     footer_research_papers: '研究論文',
     footer_policy_reports: '政策レポート',
     footer_learning_resources: '学習リソース',
+    footer_media_resources: 'メディア資料',
+    footer_market_analysis: '市場分析',
+    footer_german_economics: 'ドイツ経済',
     footer_privacy: 'プライバシーポリシー',
     footer_terms: '利用規約',
-    footer_top_journals: 'Top Journals',
+    footer_top_journals: 'トップジャーナル',
     footer_copyright: '© 2025 EconWeb. 全著作権所有。方馨(fangxin)によって作成。',
     
     // Resource count text
@@ -925,12 +923,6 @@ export const translations = {
     guide_functional_tip3: '• 研究する → 学術研究',
     guide_functional_tip4: '• 市場を見る → 市場観察',
     
-    guide_resources_title: 'リソースカテゴリ',
-    guide_resources_desc: '体系的に閲覧したい場合',
-    guide_resources_tip1: '• リソースタイプ別分類',
-    guide_resources_tip2: '• 初心者の探索に適している',
-    guide_resources_tip3: '• 体系的な学習パス',
-    guide_resources_tip4: '• 全分野の包括的理解',
     
     guide_journals_title: 'トップジャーナル',
     guide_journals_desc: '高品質な学術リソースが必要な場合',
@@ -959,7 +951,6 @@ export const translations = {
     site_subtitle: 'EconNavigator by EconomicsWeb',
     nav_home: 'Startseite',
     nav_functional: 'Nach Funktion',
-    nav_resources: 'Nach Typ',
     nav_news: 'Wirtschaftsnews',
     nav_german: 'Deutschland-Fokus',
     
@@ -978,7 +969,6 @@ export const translations = {
     
     // Navigation Toggle
     toggle_functional: 'Nach Funktion',
-    toggle_resource: 'Nach Typ',
     
     // Functional Navigation
     functional_title: 'Funktionale Navigation',
@@ -1023,13 +1013,15 @@ export const translations = {
     // Footer
     footer_description: 'Ihr umfassender Leitfaden für Wirtschaftsressourcen. Entdecken Sie die besten Datenquellen, Forschungsarbeiten und Tools, um Ihr Verständnis der Wirtschaft zu verbessern.',
     quick_links: 'Schnelllinks',
-    main_categories: 'Ressourcenkategorien',
+  quick_actions: 'Schnellaktionen',
+  back_to_top: 'Nach oben',
+  go_to_footer: 'Zum Footer',
+    specialties: 'Fachbereiche',
     
 
     
     // Switch view messages
     switch_to_functional_view: 'Wechseln Sie zur "Nach Funktion"-Ansicht, um mit diesem Abschnitt zu interagieren',
-    switch_to_resource_view: 'Wechseln Sie zur "Nach Typ"-Ansicht, um mit diesem Abschnitt zu interagieren',
     
     // News Section
     news_title: 'Wirtschaftsnews Überblick',
@@ -1060,6 +1052,15 @@ export const translations = {
     // Navigation menu items
     menu_features: 'Funktionen',
     menu_resources: 'Ressourcen',
+    nav_features: 'Funktionen',
+    nav_learning: 'Lernen-Fokus',
+    nav_media: 'Medien-Fokus',
+    nav_policy: 'Politik-Fokus',
+    nav_data: 'Daten-Fokus',
+    nav_market: 'Markt-Fokus',
+    nav_tools: 'Tools-Fokus',
+    nav_top_journals: 'Top-Journals',
+    nav_guide: 'Nutzungsanleitung',
     top_journals_nav: 'Top-Journals',
     german_nav: 'Deutschland-Fokus',
     
@@ -1067,13 +1068,23 @@ export const translations = {
     footer_home: 'Startseite',
     footer_features: 'Funktionen', 
     footer_resources: 'Ressourcen',
+    footer_learning: 'Lernen-Fokus',
+    footer_media: 'Medien-Fokus',
+    footer_policy: 'Politik-Fokus',
+    footer_data: 'Daten-Fokus',
+    footer_market: 'Markt-Fokus',
+    footer_tools: 'Tools-Fokus',
+    footer_german: 'Deutschland-Fokus',
     footer_data_sources: 'Datenquellen',
     footer_research_papers: 'Forschungsarbeiten',
     footer_policy_reports: 'Politikberichte',
     footer_learning_resources: 'Lernressourcen',
+    footer_media_resources: 'Medienressourcen',
+    footer_market_analysis: 'Marktanalyse',
+    footer_german_economics: 'Deutsche Wirtschaft',
     footer_privacy: 'Datenschutzrichtlinie',
     footer_terms: 'Nutzungsbedingungen',
-    footer_top_journals: 'Top Journals',
+    footer_top_journals: 'Top-Journals',
     footer_copyright: '© 2025 EconWeb. Alle Rechte vorbehalten. Erstellt von fangxin.',
     
     // Resource count text
@@ -1144,12 +1155,6 @@ export const translations = {
     guide_functional_tip3: '• Forschen → Akademische Forschung',
     guide_functional_tip4: '• Markt beobachten → Marktbeobachtung',
     
-    guide_resources_title: 'Ressourcenkategorien',
-    guide_resources_desc: 'Wenn Sie systematisch durchsuchen möchten',
-    guide_resources_tip1: '• Nach Ressourcentyp kategorisiert',
-    guide_resources_tip2: '• Geeignet für Anfänger zum Erkunden',
-    guide_resources_tip3: '• Systematischer Lernpfad',
-    guide_resources_tip4: '• Umfassendes Verständnis aller Bereiche',
     
     guide_journals_title: 'Top Journals',
     guide_journals_desc: 'Wenn Sie hochwertige akademische Ressourcen benötigen',

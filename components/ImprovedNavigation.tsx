@@ -2,16 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import { 
-  Menu, X, ChevronDown, ChevronRight, 
-  Database, FileText, TrendingUp, Globe, 
-  MapPin, Newspaper, Search, Home,
-  BookOpen, Building, Users, Briefcase
+  Menu, X, Search, Home, BookOpen, Globe, Shield, Database, 
+  TrendingUp, Wrench, Star, MapPin
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
-import { Language } from '@/lib/i18n';
+import { Language, getTranslation } from '@/lib/i18n';
 
 interface NavigationProps {
   currentLanguage: Language;
@@ -21,53 +18,60 @@ interface NavigationProps {
   onSearch: (term: string) => void;
 }
 
-const navigationItems = [
+const getNavigationItems = (currentLanguage: Language) => [
   {
     id: 'home',
     icon: Home,
-    label: '首页',
+    label: getTranslation(currentLanguage, 'nav_home'),
     color: 'blue'
   },
   {
-    id: 'functional',
-    icon: Database,
-    label: '功能导航',
-    color: 'blue',
-    children: [
-      { id: 'find-data', label: '找数据', icon: Database },
-      { id: 'read-policy', label: '读政策', icon: FileText },
-      { id: 'do-research', label: '做研究', icon: BookOpen },
-      { id: 'watch-market', label: '看市场', icon: TrendingUp },
-      { id: 'view-news', label: '看资讯', icon: Newspaper }
-    ]
+    id: 'learning',
+    icon: BookOpen,
+    label: getTranslation(currentLanguage, 'nav_learning'),
+    color: 'green'
   },
   {
-    id: 'resources',
-    icon: Building,
-    label: '资源分类',
-    color: 'green',
-    children: [
-      { id: 'authorities', label: '权威机构', icon: Building },
-      { id: 'academic', label: '学术论文', icon: BookOpen },
-      { id: 'data-sources', label: '数据来源', icon: Database },
-      { id: 'policy-docs', label: '政策文件', icon: FileText },
-      { id: 'media-news', label: '媒体资讯', icon: Newspaper },
-      { id: 'courses', label: '学习资源', icon: Users },
-      { id: 'tools', label: '实用工具', icon: Briefcase },
-      { id: 'new-media', label: '新媒体', icon: Globe }
-    ]
+    id: 'media',
+    icon: Globe,
+    label: getTranslation(currentLanguage, 'nav_media'),
+    color: 'cyan'
+  },
+  {
+    id: 'policy',
+    icon: Shield,
+    label: getTranslation(currentLanguage, 'nav_policy'),
+    color: 'blue'
+  },
+  {
+    id: 'data',
+    icon: Database,
+    label: getTranslation(currentLanguage, 'nav_data'),
+    color: 'indigo'
+  },
+  {
+    id: 'market',
+    icon: TrendingUp,
+    label: getTranslation(currentLanguage, 'nav_market'),
+    color: 'pink'
+  },
+  {
+    id: 'tools',
+    icon: Wrench,
+    label: getTranslation(currentLanguage, 'nav_tools'),
+    color: 'amber'
+  },
+  {
+    id: 'top-journals',
+    icon: Star,
+    label: getTranslation(currentLanguage, 'nav_top_journals'),
+    color: 'purple'
   },
   {
     id: 'german',
     icon: MapPin,
-    label: '德国专题',
+    label: getTranslation(currentLanguage, 'nav_german'),
     color: 'orange'
-  },
-  {
-    id: 'news',
-    icon: Newspaper,
-    label: '经济资讯',
-    color: 'purple'
   }
 ];
 
@@ -79,7 +83,6 @@ export default function ImprovedNavigation({
   onSearch 
 }: NavigationProps) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [expandedItems, setExpandedItems] = useState<string[]>(['functional']);
   const [isDesktop, setIsDesktop] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -97,14 +100,6 @@ export default function ImprovedNavigation({
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
-  const toggleExpanded = (itemId: string) => {
-    setExpandedItems(prev => 
-      prev.includes(itemId) 
-        ? prev.filter(id => id !== itemId)
-        : [...prev, itemId]
-    );
-  };
-
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     onSearch(searchTerm);
@@ -114,10 +109,36 @@ export default function ImprovedNavigation({
     const colors = {
       blue: isActive ? 'bg-blue-100 text-blue-700 border-blue-200' : 'hover:bg-blue-50 hover:text-blue-600',
       green: isActive ? 'bg-green-100 text-green-700 border-green-200' : 'hover:bg-green-50 hover:text-green-600',
-      orange: isActive ? 'bg-orange-100 text-orange-700 border-orange-200' : 'hover:bg-orange-50 hover:text-orange-600',
-      purple: isActive ? 'bg-purple-100 text-purple-700 border-purple-200' : 'hover:bg-purple-50 hover:text-purple-600'
+      cyan: isActive ? 'bg-cyan-100 text-cyan-700 border-cyan-200' : 'hover:bg-cyan-50 hover:text-cyan-600',
+      indigo: isActive ? 'bg-indigo-100 text-indigo-700 border-indigo-200' : 'hover:bg-indigo-50 hover:text-indigo-600',
+      pink: isActive ? 'bg-pink-100 text-pink-700 border-pink-200' : 'hover:bg-pink-50 hover:text-pink-600',
+      amber: isActive ? 'bg-amber-100 text-amber-700 border-amber-200' : 'hover:bg-amber-50 hover:text-amber-600',
+      purple: isActive ? 'bg-purple-100 text-purple-700 border-purple-200' : 'hover:bg-purple-50 hover:text-purple-600',
+      orange: isActive ? 'bg-orange-100 text-orange-700 border-orange-200' : 'hover:bg-orange-50 hover:text-orange-600'
     };
     return colors[color as keyof typeof colors] || colors.blue;
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    if (sectionId === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  const handleNavigation = (itemId: string) => {
+    if (itemId === 'home') {
+      onViewChange('home');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      scrollToSection(itemId);
+      onViewChange(itemId);
+    }
+    if (!isDesktop) setIsSidebarOpen(false);
   };
 
   return (
@@ -149,7 +170,7 @@ export default function ImprovedNavigation({
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-slate-400" />
                 <input
                   type="text"
-                  placeholder="搜索经济资源..."
+                  placeholder={getTranslation(currentLanguage, 'search_placeholder')}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -177,7 +198,7 @@ export default function ImprovedNavigation({
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-slate-400" />
                 <input
                   type="text"
-                  placeholder="搜索经济资源..."
+                  placeholder={getTranslation(currentLanguage, 'search_placeholder')}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -188,94 +209,57 @@ export default function ImprovedNavigation({
 
           {/* 导航菜单 */}
           <nav className="space-y-2">
-            {navigationItems.map((item) => {
+            {getNavigationItems(currentLanguage).map((item) => {
               const Icon = item.icon;
               const isActive = activeView === item.id;
-              const isExpanded = expandedItems.includes(item.id);
-              const hasChildren = item.children && item.children.length > 0;
 
               return (
-                <div key={item.id}>
-                  <button
-                    onClick={() => {
-                      if (hasChildren) {
-                        toggleExpanded(item.id);
-                      } else {
-                        onViewChange(item.id);
-                        if (!isDesktop) setIsSidebarOpen(false);
-                      }
-                    }}
-                    className={`
-                      w-full flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-colors
-                      ${getColorClasses(item.color, isActive)}
-                      ${isActive ? 'border' : ''}
-                    `}
-                  >
-                    <div className="flex items-center space-x-3">
-                      <Icon className="h-5 w-5" />
-                      <span>{item.label}</span>
-                      {hasChildren && (
-                        <Badge variant="secondary" className="ml-auto text-xs">
-                          {item.children.length}
-                        </Badge>
-                      )}
-                    </div>
-                    {hasChildren && (
-                      isExpanded ? 
-                        <ChevronDown className="h-4 w-4" /> : 
-                        <ChevronRight className="h-4 w-4" />
-                    )}
-                  </button>
-
-                  {/* 子菜单 */}
-                  {hasChildren && isExpanded && (
-                    <div className="ml-4 mt-2 space-y-1 border-l-2 border-slate-100 pl-4">
-                      {item.children.map((child) => {
-                        const ChildIcon = child.icon;
-                        const isChildActive = activeView === child.id;
-                        
-                        return (
-                          <button
-                            key={child.id}
-                            onClick={() => {
-                              onViewChange(child.id);
-                              if (!isDesktop) setIsSidebarOpen(false);
-                            }}
-                            className={`
-                              w-full flex items-center space-x-3 px-3 py-2 rounded-md text-sm transition-colors
-                              ${isChildActive 
-                                ? 'bg-slate-100 text-slate-900 font-medium' 
-                                : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
-                              }
-                            `}
-                          >
-                            <ChildIcon className="h-4 w-4" />
-                            <span>{child.label}</span>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
+                <button
+                  key={item.id}
+                  onClick={() => handleNavigation(item.id)}
+                  className={`
+                    w-full flex items-center space-x-3 px-3 py-3 rounded-lg text-sm font-medium transition-colors
+                    ${getColorClasses(item.color, isActive)}
+                    ${isActive ? 'border' : ''}
+                  `}
+                >
+                  <Icon className="h-5 w-5" />
+                  <span>{item.label}</span>
+                </button>
               );
             })}
           </nav>
 
-          {/* 底部信息 */}
-          <div className="mt-8 pt-4 border-t border-slate-200">
-            <div className="text-xs text-slate-500 space-y-1">
-              <p>📊 已收录 80+ 经济资源</p>
-              <p>🔄 定期更新维护</p>
-              <p>📧 fangin1230@gmail.com</p>
+          {/* 快速操作 */}
+          <div className="mt-8 pt-6 border-t border-slate-200">
+            <h3 className="text-sm font-semibold text-slate-900 mb-3">{getTranslation(currentLanguage, 'quick_actions')}</h3>
+            <div className="space-y-2">
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"
+              >
+                {getTranslation(currentLanguage, 'back_to_top')}
+              </button>
+              <button
+                onClick={() => {
+                  const footer = document.querySelector('footer');
+                  if (footer) {
+                    footer.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 rounded-md transition-colors"
+              >
+                {getTranslation(currentLanguage, 'go_to_footer')}
+              </button>
             </div>
           </div>
         </div>
       </aside>
 
-      {/* 遮罩层 (移动端) */}
+      {/* 移动端背景遮罩 */}
       {isSidebarOpen && !isDesktop && (
         <div 
-          className="fixed inset-0 z-30 bg-black/20 lg:hidden"
+          className="fixed inset-0 z-30 bg-black bg-opacity-50 lg:hidden"
           onClick={() => setIsSidebarOpen(false)}
         />
       )}
