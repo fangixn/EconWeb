@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/lib/LanguageContext';
+import { getResourceTranslation, getTagTranslation } from '@/lib/resourcesI18n';
 
 interface Resource {
   name: string;
@@ -24,9 +25,11 @@ interface SearchResultsProps {
 }
 
 export default function SearchResults({ searchTerm, resources, onClearSearch }: SearchResultsProps) {
+  const { currentLanguage } = useLanguage();
   const { t } = useLanguage();
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<'relevance' | 'alphabetical'>('relevance');
+  const [showAllTags, setShowAllTags] = useState(false);
 
   // 计算相关性得分
   const calculateRelevanceScore = (resource: Resource, searchLower: string): number => {
@@ -84,13 +87,20 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
     return filtered;
   }, [resources, searchTerm, selectedTag, sortBy]);
 
-  // 获取所有标签
+  // 获取热门标签（按使用频率排序）
   const allTags = useMemo(() => {
-    const tagSet = new Set<string>();
+    const tagCounts = new Map<string, number>();
     filteredAndSortedResources.forEach(resource => {
-      resource.tags.forEach(tag => tagSet.add(tag));
+      resource.tags.forEach(tag => {
+        tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+      });
     });
-    return Array.from(tagSet).slice(0, 10); // 限制显示前10个热门标签
+    
+    // 按频率排序并取前15个热门标签
+    return Array.from(tagCounts.entries())
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 15)
+      .map(([tag, count]) => ({ tag, count }));
   }, [filteredAndSortedResources]);
 
   // 获取分类统计
@@ -152,7 +162,10 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
                 </Badge>
               )}
             </div>
-            <Button variant="outline" onClick={onClearSearch} className="text-gray-600">
+            <Button variant="outline" onClick={() => {
+              setSelectedTag(null);
+              onClearSearch();
+            }} className="text-gray-600">
               <X className="w-4 h-4 mr-2" />
               清除搜索
             </Button>
@@ -185,32 +198,72 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
                     <Tag className="w-4 h-4 mr-2" />
                     热门标签
                   </h3>
-                  <div className="space-y-2">
-                    {selectedTag && (
-                      <div className="flex items-center justify-between p-2 bg-blue-50 rounded">
-                        <span className="text-blue-800 text-sm">{selectedTag}</span>
-                        <button 
-                          onClick={() => setSelectedTag(null)}
-                          className="text-blue-600 hover:text-blue-800"
-                        >
-                          <X className="w-3 h-3" />
-                        </button>
-                      </div>
-                    )}
-                    {allTags.map(tag => (
+                  
+                  {/* 选中的标签 */}
+                  {selectedTag && (
+                    <div className="mb-3 flex items-center justify-between p-2 bg-blue-50 rounded-lg border border-blue-200">
+                      <span className="text-blue-800 text-sm font-medium">{getTagTranslation(currentLanguage, selectedTag)}</span>
+                      <button 
+                        onClick={() => setSelectedTag(null)}
+                        className="text-blue-600 hover:text-blue-800 p-1 rounded hover:bg-blue-100 transition-colors"
+                      >
+                        <X className="w-3 h-3" />
+                      </button>
+                    </div>
+                  )}
+                  
+                  {/* 热门标签列表 - 垂直滚动 */}
+                  <div className="space-y-2 max-h-80 overflow-y-auto scrollbar-hide">
+                    {allTags.slice(0, showAllTags ? allTags.length : 15).map(({ tag, count }, index) => (
                       <button
                         key={tag}
                         onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
-                        className={`w-full text-left p-2 rounded text-sm transition-colors ${
+                        className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 border ${
                           selectedTag === tag 
-                            ? 'bg-blue-100 text-blue-800' 
-                            : 'hover:bg-gray-100 text-gray-700'
+                            ? 'bg-blue-100 text-blue-800 border-blue-300 shadow-sm transform scale-105' 
+                            : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm hover:scale-102'
                         }`}
+                        style={{
+                          animationDelay: `${index * 0.05}s`
+                        }}
                       >
-                        {tag}
+                        <span className="flex-1 text-left truncate">{getTagTranslation(currentLanguage, tag)}</span>
+                        <span className={`ml-2 text-xs px-2 py-1 rounded-full font-medium ${
+                          selectedTag === tag 
+                            ? 'bg-blue-200 text-blue-700' 
+                            : 'bg-gray-200 text-gray-600'
+                        }`}>
+                          {count}
+                        </span>
                       </button>
                     ))}
                   </div>
+                  
+                  {/* 展开/收起标签按钮 */}
+                  {allTags.length > 15 && (
+                    <div className="mt-3 text-center">
+                      <button 
+                        onClick={() => setShowAllTags(!showAllTags)}
+                        className="text-sm text-blue-600 hover:text-blue-700 font-medium transition-colors flex items-center justify-center w-full py-2 rounded-md hover:bg-blue-50"
+                      >
+                        {showAllTags ? (
+                          <>
+                            <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                            </svg>
+                            收起标签
+                          </>
+                        ) : (
+                          <>
+                            查看全部 {allTags.length} 个标签
+                            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -221,12 +274,16 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
                     <Filter className="w-4 h-4 mr-2" />
                     分类分布
                   </h3>
-                  <div className="space-y-2">
-                    {Object.entries(categoryStats).map(([category, count]) => (
-                      <div key={category} className="flex items-center justify-between text-sm">
-                        <span className="text-gray-700">{getCategoryLabel(category)}</span>
+                  <div className="space-y-2 max-h-64 overflow-y-auto">
+                    {Object.entries(categoryStats)
+                      .sort((a, b) => b[1] - a[1])
+                      .map(([category, count]) => (
+                      <div key={category} className="flex items-center justify-between text-sm p-2 rounded hover:bg-gray-50 transition-colors">
+                        <span className={`font-medium ${getCategoryColor(category).split(' ')[1]}`}>
+                          {getCategoryLabel(category)}
+                        </span>
                         <Badge variant="secondary" className="text-xs">
-                          {count}
+                          {count}个
                         </Badge>
                       </div>
                     ))}
@@ -243,7 +300,10 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
                 <Search className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                 <h3 className="text-lg font-medium text-gray-900 mb-2">未找到相关资源</h3>
                 <p className="text-gray-600 mb-4">试试调整搜索词或清除过滤条件</p>
-                <Button variant="outline" onClick={onClearSearch}>
+                <Button variant="outline" onClick={() => {
+                  setSelectedTag(null);
+                  onClearSearch();
+                }}>
                   重新搜索
                 </Button>
               </div>
@@ -256,7 +316,7 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
                         <div className="flex-1">
                           <div className="flex items-center space-x-3 mb-2">
                             <h3 className="text-lg font-semibold text-gray-900 hover:text-blue-600">
-                              {resource.name}
+                              {getResourceTranslation(currentLanguage, resource.name)}
                             </h3>
                             {resource.category && (
                               <Badge className={`text-xs ${getCategoryColor(resource.category)}`}>
@@ -274,7 +334,7 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
                                 onClick={() => setSelectedTag(tag)}
                                 className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded hover:bg-blue-100 hover:text-blue-800 transition-colors"
                               >
-                                {tag}
+                                {getTagTranslation(currentLanguage, tag)}
                               </button>
                             ))}
                             {resource.tags.length > 5 && (

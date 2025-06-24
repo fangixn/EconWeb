@@ -18,6 +18,7 @@ import {
   marketSpecial, 
   toolsSpecial 
 } from '@/lib/data';
+import { getResourceTranslation, getTagTranslation } from '@/lib/resourcesI18n';
 
 export default function Home() {
   const { t, currentLanguage, changeLanguage } = useLanguage();
@@ -167,7 +168,7 @@ export default function Home() {
       <main className={`pt-20 transition-all duration-300 ${
         sidebarCollapsed ? 'lg:ml-16' : 'lg:ml-80'
       }`}>
-        <HeroSection onSearch={handleSearch} />
+        <HeroSection onSearch={handleSearch} resources={allResources} />
         
         {/* 搜索结果区域 */}
         <div id="search-results">
@@ -201,12 +202,14 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {learningResourcesSpecial.slice(0, 6).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-green-100">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                        {getResourceTranslation(currentLanguage, resource.name)}
+                      </h3>
                       <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {resource.tags.slice(0, 3).map((tag, tagIndex) => (
                           <span key={tagIndex} className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">
-                            {tag}
+                            {getTagTranslation(currentLanguage, tag)}
                           </span>
                         ))}
                       </div>
@@ -242,12 +245,14 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {mediaResourcesSpecial.slice(0, 6).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-cyan-100">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                        {getResourceTranslation(currentLanguage, resource.name)}
+                      </h3>
                       <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {resource.tags.slice(0, 3).map((tag, tagIndex) => (
                           <span key={tagIndex} className="px-2 py-1 bg-cyan-100 text-cyan-800 text-xs rounded-full">
-                            {tag}
+                            {getTagTranslation(currentLanguage, tag)}
                           </span>
                         ))}
                       </div>
@@ -283,12 +288,14 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {policySpecial.slice(0, 6).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-blue-100">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                        {getResourceTranslation(currentLanguage, resource.name)}
+                      </h3>
                       <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {resource.tags.slice(0, 3).map((tag, tagIndex) => (
                           <span key={tagIndex} className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
-                            {tag}
+                            {getTagTranslation(currentLanguage, tag)}
                           </span>
                         ))}
                       </div>
@@ -324,12 +331,14 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {dataSpecial.slice(0, 6).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-indigo-100">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                        {getResourceTranslation(currentLanguage, resource.name)}
+                      </h3>
                       <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {resource.tags.slice(0, 3).map((tag, tagIndex) => (
                           <span key={tagIndex} className="px-2 py-1 bg-indigo-100 text-indigo-800 text-xs rounded-full">
-                            {tag}
+                            {getTagTranslation(currentLanguage, tag)}
                           </span>
                         ))}
                       </div>
@@ -365,12 +374,14 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {marketSpecial.slice(0, 6).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-pink-100">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                        {getResourceTranslation(currentLanguage, resource.name)}
+                      </h3>
                       <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {resource.tags.slice(0, 3).map((tag, tagIndex) => (
                           <span key={tagIndex} className="px-2 py-1 bg-pink-100 text-pink-800 text-xs rounded-full">
-                            {tag}
+                            {getTagTranslation(currentLanguage, tag)}
                           </span>
                         ))}
                       </div>
@@ -519,9 +530,9 @@ export default function Home() {
       {/* 页脚 */}
       <footer className="bg-gray-900 text-white py-16">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* 网站信息 */}
-            <div className="lg:col-span-2">
+            <div>
               <div className="flex items-center space-x-2 mb-6">
                 <Globe className="h-8 w-8 text-blue-400" />
                 <span className="text-2xl font-bold">EconWeb</span>
@@ -530,86 +541,67 @@ export default function Home() {
                 {t('footer_description') || 'Your comprehensive guide to economics resources. Discover the best data sources, research papers, and tools to enhance your understanding of economics.'}
               </p>
               <div className="flex space-x-4">
-                <LanguageSwitcher />
+                <LanguageSwitcher theme="dark" />
               </div>
-            </div>
-
-            {/* 快速链接 */}
-            <div>
-              <h3 className="text-lg font-semibold mb-6">{t('quick_links') || 'Quick Links'}</h3>
-              <ul className="space-y-3">
-                <li>
-                  <button 
-                    onClick={() => scrollToSection('learning')}
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    {t('footer_learning') || 'Learning Focus'}
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => scrollToSection('data')}
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    {t('footer_data') || 'Data Focus'}
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => scrollToSection('top-journals')}
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    {t('footer_top_journals') || 'Top Journals'}
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => scrollToSection('german')}
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    {t('footer_german') || 'German Focus'}
-                  </button>
-                </li>
-              </ul>
             </div>
 
             {/* 专题分类 */}
             <div>
               <h3 className="text-lg font-semibold mb-6">{t('specialties') || 'Specialties'}</h3>
-              <ul className="space-y-3">
-                <li>
+              <div className="grid grid-cols-2 gap-x-6 gap-y-3">
+                <div className="space-y-3">
                   <button 
-                    onClick={() => scrollToSection('policy')}
-                    className="text-gray-300 hover:text-white transition-colors"
+                    onClick={() => scrollToSection('learning')}
+                    className="block text-left text-gray-300 hover:text-white transition-colors"
                   >
-                    {t('footer_policy') || 'Policy Focus'}
+                    {t('footer_learning') || 'Learning Focus'}
                   </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => scrollToSection('market')}
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    {t('footer_market') || 'Market Focus'}
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => scrollToSection('tools')}
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    {t('footer_tools') || 'Tools Focus'}
-                  </button>
-                </li>
-                <li>
                   <button 
                     onClick={() => scrollToSection('media')}
-                    className="text-gray-300 hover:text-white transition-colors"
+                    className="block text-left text-gray-300 hover:text-white transition-colors"
                   >
                     {t('footer_media') || 'Media Focus'}
                   </button>
-                </li>
-              </ul>
+                  <button 
+                    onClick={() => scrollToSection('policy')}
+                    className="block text-left text-gray-300 hover:text-white transition-colors"
+                  >
+                    {t('footer_policy') || 'Policy Focus'}
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('data')}
+                    className="block text-left text-gray-300 hover:text-white transition-colors"
+                  >
+                    {t('footer_data') || 'Data Focus'}
+                  </button>
+                </div>
+                <div className="space-y-3">
+                  <button 
+                    onClick={() => scrollToSection('market')}
+                    className="block text-left text-gray-300 hover:text-white transition-colors"
+                  >
+                    {t('footer_market') || 'Market Focus'}
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('tools')}
+                    className="block text-left text-gray-300 hover:text-white transition-colors"
+                  >
+                    {t('footer_tools') || 'Tools Focus'}
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('top-journals')}
+                    className="block text-left text-gray-300 hover:text-white transition-colors"
+                  >
+                    {t('footer_top_journals') || 'Top Journals'}
+                  </button>
+                  <button 
+                    onClick={() => scrollToSection('german')}
+                    className="block text-left text-gray-300 hover:text-white transition-colors"
+                  >
+                    {t('footer_german') || 'German Focus'}
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 

@@ -110,28 +110,28 @@ export const translations = {
     menu_features: 'Features',
     menu_resources: 'Resources',
     nav_features: 'Features',
-    nav_learning: 'Learning Focus',
-    nav_media: 'Media Focus',
-    nav_policy: 'Policy Focus',
-    nav_data: 'Data Focus',
-    nav_market: 'Market Focus',
-    nav_tools: 'Tools Focus',
+    nav_learning: 'Learning Specialization',
+    nav_media: 'Media Specialization',
+    nav_policy: 'Policy Specialization',
+    nav_data: 'Data Specialization',
+    nav_market: 'Market Specialization',
+    nav_tools: 'Tools Specialization',
     nav_top_journals: 'Top Journals',
 
     top_journals_nav: 'Top Journals',
-    german_nav: 'German Focus',
+    german_nav: 'German Specialization',
     
     // Footer links
     footer_home: 'Home',
     footer_features: 'Features', 
     footer_resources: 'Resources',
-    footer_learning: 'Learning Focus',
-    footer_media: 'Media Focus',
-    footer_policy: 'Policy Focus',
-    footer_data: 'Data Focus',
-    footer_market: 'Market Focus',
-    footer_tools: 'Tools Focus',
-    footer_german: 'German Focus',
+    footer_learning: 'Learning Specialization',
+    footer_media: 'Media Specialization',
+    footer_policy: 'Policy Specialization',
+    footer_data: 'Data Specialization',
+    footer_market: 'Market Specialization',
+    footer_tools: 'Tools Specialization',
+    footer_german: 'German Specialization',
     footer_data_sources: 'Data Sources',
     footer_research_papers: 'Research Papers',
     footer_policy_reports: 'Policy Reports',
@@ -142,7 +142,7 @@ export const translations = {
     footer_privacy: 'Privacy Policy',
     footer_terms: 'Terms of Service',
     footer_top_journals: 'Top Journals',
-    footer_copyright: '© 2025 EconWeb. All rights reserved. Created by fangxin.',
+    footer_copyright: '© 2025 EconWeb. All rights reserved. Created by Fang Xin.',
     
 
     
@@ -173,39 +173,7 @@ export const translations = {
 
 
     
-    // Search Examples
-    example_free_data: 'Free Data',
-    example_free_data_desc: 'Find free data resources',
-    example_china_policy: 'China Policy', 
-    example_china_policy_desc: 'China-related policy documents',
-    example_top_journals: 'Top Journals',
-    example_top_journals_desc: 'Leading economics journals',
-    example_online_learning: 'Online Learning',
-    example_online_learning_desc: 'Courses and learning resources',
-    
-    // Search Tips - New Smart Search
-    search_smart_search: '🔍 Smart Search:',
-    search_smart_search_desc: 'Supports fuzzy matching, e.g. "data", "journal", "learning"',
-    search_journal_abbrev: '📚 Journal Abbreviations:',
-    search_journal_abbrev_desc: '"AER", "QJE", "JPE" automatically recognized',
-    search_region_search: '🌍 Regional Search:',
-    search_region_search_desc: '"China", "Germany" auto-expand related resources',
-    search_concept_search: '📊 Concept Search:',
-    search_concept_search_desc: '"macro", "monetary", "policy" semantic matching',
-    
-    // Quick Tags
-    quick_tags_title: 'Quick Filter:',
-    
-    
-    
-    
 
-    
-    // Quick Tips
-    quick_tips_title: 'Quick Tips',
-    quick_tip_search: 'Use search bar to quickly find specific resources',
-    quick_tip_filter: 'Click tags for quick filtering',
-    quick_tip_bookmark: 'Bookmark frequently used resources for easy access'
   },
   
   zh: {
@@ -365,27 +333,6 @@ export const translations = {
     top_journals_subtitle: '经济学领域最权威的学术出版平台，收录全球顶尖学者前沿研究成果',
 
     // Search Examples Section
-
-    
-    // Search Examples
-    example_free_data: '免费数据',
-    example_free_data_desc: '寻找免费的数据资源',
-    example_china_policy: '中国政策', 
-    example_china_policy_desc: '中国相关政策文件',
-    example_top_journals: '顶级期刊',
-    example_top_journals_desc: '经济学顶级学术期刊',
-    example_online_learning: '在线学习',
-    example_online_learning_desc: '课程和学习资源',
-    
-    // Search Tips - New Smart Search
-    search_smart_search: '🔍 智能搜索：',
-    search_smart_search_desc: '支持模糊匹配，如"数据"、"期刊"、"学习"',
-    search_journal_abbrev: '📚 期刊缩写：',
-    search_journal_abbrev_desc: '"AER"、"QJE"、"JPE" 等自动识别',
-    search_region_search: '🌍 地区搜索：',
-    search_region_search_desc: '"中国"、"德国" 等自动扩展相关资源',
-    search_concept_search: '📊 概念搜索：',
-    search_concept_search_desc: '"宏观"、"货币"、"政策" 等关联匹配',
     
     guide_journals_title: '顶刊专题',
     guide_journals_desc: '当你需要高质量学术资源时',
@@ -467,11 +414,7 @@ export const translations = {
     guide_tools_tip3: '• R语言统计分析',
     guide_tools_tip4: '• 数据分析平台工具',
     
-    // Quick Tips
-    quick_tips_title: '快速提示',
-    quick_tip_search: '使用搜索栏快速找到特定资源',
-    quick_tip_filter: '点击标签进行快速筛选',
-    quick_tip_bookmark: '收藏常用资源便于后续访问'
+
   },
   
   ko: {
@@ -571,29 +514,39 @@ export const translations = {
     menu_features: '기능',
     menu_resources: '리소스',
     nav_features: '기능',
-    nav_learning: '학습 특집',
-    nav_media: '미디어 특집',
-    nav_policy: '정책 특집',
-    nav_data: '데이터 특집',
-    nav_market: '시장 특집',
-    nav_tools: '도구 특집',
-    nav_top_journals: '톱 저널',
+    nav_learning: '학습전문',
+    nav_media: '미디어전문',
+    nav_policy: '정책전문',
+    nav_data: '데이터전문',
+    nav_market: '시장전문',
+    nav_tools: '도구전문',
+    nav_top_journals: '톱저널',
     nav_guide: '사용 가이드',
-    top_journals_nav: '톱 저널',
-    german_nav: '독일 특집',
+    top_journals_nav: '톱저널',
+    german_nav: '독일전문',
     
     // Footer links
     footer_home: '홈',
     footer_features: '기능', 
     footer_resources: '리소스',
+    footer_learning: '학습전문',
+    footer_media: '미디어전문',
+    footer_policy: '정책전문',
+    footer_data: '데이터전문',
+    footer_market: '시장전문',
+    footer_tools: '도구전문',
+    footer_german: '독일전문',
     footer_data_sources: '데이터 소스',
     footer_research_papers: '연구 논문',
     footer_policy_reports: '정책 보고서',
     footer_learning_resources: '학습 리소스',
+    footer_media_resources: '미디어 자료',
+    footer_market_analysis: '시장 분석',
+    footer_german_economics: '독일 경제',
     footer_privacy: '개인정보 보호정책',
     footer_terms: '서비스 약관',
-    footer_top_journals: 'Top Journals',
-    footer_copyright: '© 2025 EconWeb. 모든 권리 보유. 방신(fangxin)이 제작.',
+    footer_top_journals: '톱저널',
+    footer_copyright: '© 2025 EconWeb. 모든 권리 보유. 방신이 제작.',
     
 
     
@@ -622,31 +575,7 @@ export const translations = {
     top_journals_title: '최고급 학술 저널',
     top_journals_subtitle: '경제학 분야에서 가장 권위 있는 학술 출판 플랫폼으로, 전 세계 선도적인 학자들의 최첨단 연구를 수록합니다',
 
-    // Search Examples Section
 
-    
-    // Search Examples
-    example_free_data: '무료 데이터',
-    example_free_data_desc: '무료 데이터 리소스 찾기',
-    example_china_policy: '중국 정책', 
-    example_china_policy_desc: '중국 관련 정책 문서',
-    example_top_journals: '탑 저널',
-    example_top_journals_desc: '경제학 최고급 저널',
-    example_online_learning: '온라인 학습',
-    example_online_learning_desc: '코스 및 학습 리소스',
-    
-    // Search Tips - New Smart Search
-    search_smart_search: '🔍 스마트 검색:',
-    search_smart_search_desc: '퍼지 매칭 지원, 예: "데이터", "저널", "학습"',
-    search_journal_abbrev: '📚 저널 약어:',
-    search_journal_abbrev_desc: '"AER", "QJE", "JPE" 등 자동 인식',
-    search_region_search: '🌍 지역 검색:',
-    search_region_search_desc: '"중국", "독일" 등 관련 리소스 자동 확장',
-    search_concept_search: '📊 개념 검색:',
-    search_concept_search_desc: '"거시", "화폐", "정책" 등 연관 매칭',
-    
-    // Quick Tags
-    quick_tags_title: '빠른 필터:',
     
     // Usage Guide Section
     usage_guide: '사용 가이드',
@@ -676,11 +605,7 @@ export const translations = {
     guide_german_tip3: '• 독일 정책 보고서',
     guide_german_tip4: '• 유럽 경제 연구',
     
-    // Quick Tips
-    quick_tips_title: '빠른 팁',
-    quick_tip_search: '검색창을 사용하여 특정 리소스를 빠르게 찾으세요',
-    quick_tip_filter: '태그를 클릭하여 빠른 필터링',
-    quick_tip_bookmark: '자주 사용하는 리소스를 북마크하여 쉽게 접근'
+
   },
   
   ja: {
@@ -780,28 +705,28 @@ export const translations = {
     menu_features: '機能',
     menu_resources: 'リソース',
     nav_features: '機能',
-    nav_learning: '学習特集',
-    nav_media: 'メディア特集',
-    nav_policy: '政策特集',
-    nav_data: 'データ特集',
-    nav_market: '市場特集',
-    nav_tools: 'ツール特集',
+    nav_learning: '学習専門',
+    nav_media: 'メディア専門',
+    nav_policy: '政策専門',
+    nav_data: 'データ専門',
+    nav_market: '市場専門',
+    nav_tools: 'ツール専門',
     nav_top_journals: 'トップジャーナル',
     nav_guide: '利用ガイド',
     top_journals_nav: 'トップジャーナル',
-    german_nav: 'ドイツ特集',
+    german_nav: 'ドイツ専門',
     
     // Footer links
     footer_home: 'ホーム',
     footer_features: '機能', 
     footer_resources: 'リソース',
-    footer_learning: '学習特集',
-    footer_media: 'メディア特集',
-    footer_policy: '政策特集',
-    footer_data: 'データ特集',
-    footer_market: '市場特集',
-    footer_tools: 'ツール特集',
-    footer_german: 'ドイツ特集',
+    footer_learning: '学習専門',
+    footer_media: 'メディア専門',
+    footer_policy: '政策専門',
+    footer_data: 'データ専門',
+    footer_market: '市場専門',
+    footer_tools: 'ツール専門',
+    footer_german: 'ドイツ専門',
     footer_data_sources: 'データソース',
     footer_research_papers: '研究論文',
     footer_policy_reports: '政策レポート',
@@ -812,7 +737,7 @@ export const translations = {
     footer_privacy: 'プライバシーポリシー',
     footer_terms: '利用規約',
     footer_top_journals: 'トップジャーナル',
-    footer_copyright: '© 2025 EconWeb. 全著作権所有。方馨(fangxin)によって作成。',
+    footer_copyright: '© 2025 EconWeb. 全著作権所有。方馨によって作成。',
     
 
     
@@ -841,31 +766,7 @@ export const translations = {
     top_journals_title: '最高級学術誌',
     top_journals_subtitle: '経済学分野で最も権威ある学術出版プラットフォームで、世界の主要学者による最先端研究を収録',
 
-    // Search Examples Section
 
-    
-    // Search Examples
-    example_free_data: '無料データ',
-    example_free_data_desc: '無料データリソースを見つける',
-    example_china_policy: '中国政策', 
-    example_china_policy_desc: '中国関連政策文書',
-    example_top_journals: 'トップジャーナル',
-    example_top_journals_desc: '経済学最高級ジャーナル',
-    example_online_learning: 'オンライン学習',
-    example_online_learning_desc: 'コースと学習リソース',
-    
-    // Search Tips - New Smart Search
-    search_smart_search: '🔍 スマート検索：',
-    search_smart_search_desc: 'ファジーマッチング対応、例："データ"、"ジャーナル"、"学習"',
-    search_journal_abbrev: '📚 ジャーナル略語：',
-    search_journal_abbrev_desc: '"AER"、"QJE"、"JPE" など自動認識',
-    search_region_search: '🌍 地域検索：',
-    search_region_search_desc: '"中国"、"ドイツ" など関連リソース自動拡張',
-    search_concept_search: '📊 概念検索：',
-    search_concept_search_desc: '"マクロ"、"金融"、"政策" など関連マッチング',
-    
-    // Quick Tags
-    quick_tags_title: 'クイックフィルター：',
     
     // Usage Guide Section
     usage_guide: '使用ガイド',
@@ -895,11 +796,7 @@ export const translations = {
     guide_german_tip3: '• ドイツ政策報告書',
     guide_german_tip4: '• ヨーロッパ経済研究',
     
-    // Quick Tips
-    quick_tips_title: 'クイックヒント',
-    quick_tip_search: '検索バーを使用して特定のリソースをすばやく見つける',
-    quick_tip_filter: 'タグをクリックしてクイックフィルタリング',
-    quick_tip_bookmark: 'よく使用するリソースをブックマークして簡単にアクセス'
+
   },
 
   de: {
@@ -999,28 +896,28 @@ export const translations = {
     menu_features: 'Funktionen',
     menu_resources: 'Ressourcen',
     nav_features: 'Funktionen',
-    nav_learning: 'Lernen-Fokus',
-    nav_media: 'Medien-Fokus',
-    nav_policy: 'Politik-Fokus',
-    nav_data: 'Daten-Fokus',
-    nav_market: 'Markt-Fokus',
-    nav_tools: 'Tools-Fokus',
-    nav_top_journals: 'Top-Journals',
+    nav_learning: 'Lernschwerpunkt',
+    nav_media: 'Medienschwerpunkt',
+    nav_policy: 'Politikschwerpunkt',
+    nav_data: 'Datenschwerpunkt',
+    nav_market: 'Marktschwerpunkt',
+    nav_tools: 'Werkzeugschwerpunkt',
+    nav_top_journals: 'Topjournale',
     nav_guide: 'Nutzungsanleitung',
-    top_journals_nav: 'Top-Journals',
-    german_nav: 'Deutschland-Fokus',
+    top_journals_nav: 'Topjournale',
+    german_nav: 'Deutschlandschwerpunkt',
     
     // Footer links
     footer_home: 'Startseite',
     footer_features: 'Funktionen', 
     footer_resources: 'Ressourcen',
-    footer_learning: 'Lernen-Fokus',
-    footer_media: 'Medien-Fokus',
-    footer_policy: 'Politik-Fokus',
-    footer_data: 'Daten-Fokus',
-    footer_market: 'Markt-Fokus',
-    footer_tools: 'Tools-Fokus',
-    footer_german: 'Deutschland-Fokus',
+    footer_learning: 'Lernschwerpunkt',
+    footer_media: 'Medienschwerpunkt',
+    footer_policy: 'Politikschwerpunkt',
+    footer_data: 'Datenschwerpunkt',
+    footer_market: 'Marktschwerpunkt',
+    footer_tools: 'Werkzeugschwerpunkt',
+    footer_german: 'Deutschlandschwerpunkt',
     footer_data_sources: 'Datenquellen',
     footer_research_papers: 'Forschungsarbeiten',
     footer_policy_reports: 'Politikberichte',
@@ -1030,8 +927,8 @@ export const translations = {
     footer_german_economics: 'Deutsche Wirtschaft',
     footer_privacy: 'Datenschutzrichtlinie',
     footer_terms: 'Nutzungsbedingungen',
-    footer_top_journals: 'Top-Journals',
-    footer_copyright: '© 2025 EconWeb. Alle Rechte vorbehalten. Erstellt von fangxin.',
+    footer_top_journals: 'Topjournale',
+    footer_copyright: '© 2025 EconWeb. Alle Rechte vorbehalten. Erstellt von Fang Xin.',
     
 
     
@@ -1060,31 +957,7 @@ export const translations = {
     top_journals_title: 'Führende Akademische Zeitschriften',
     top_journals_subtitle: 'Die autoritativsten akademischen Publikationsplattformen in der Wirtschaftswissenschaft mit wegweisender Forschung von führenden Wissenschaftlern weltweit',
 
-    // Search Examples Section
 
-    
-    // Search Examples
-    example_free_data: 'Kostenlose Daten',
-    example_free_data_desc: 'Kostenlose Datenressourcen finden',
-    example_china_policy: 'China Politik', 
-    example_china_policy_desc: 'China-bezogene Politikdokumente',
-    example_top_journals: 'Top Journals',
-    example_top_journals_desc: 'Führende Wirtschaftszeitschriften',
-    example_online_learning: 'Online Lernen',
-    example_online_learning_desc: 'Kurse und Lernressourcen',
-    
-    // Search Tips - New Smart Search
-    search_smart_search: '🔍 Intelligente Suche:',
-    search_smart_search_desc: 'Unterstützt unscharfe Suche, z.B. "Daten", "Journal", "Lernen"',
-    search_journal_abbrev: '📚 Journal-Abkürzungen:',
-    search_journal_abbrev_desc: '"AER", "QJE", "JPE" automatisch erkannt',
-    search_region_search: '🌍 Regionale Suche:',
-    search_region_search_desc: '"China", "Deutschland" erweitert verwandte Ressourcen',
-    search_concept_search: '📊 Konzeptsuche:',
-    search_concept_search_desc: '"Makro", "Währung", "Politik" semantische Zuordnung',
-    
-    // Quick Tags
-    quick_tags_title: 'Schnellfilter:',
     
     // Usage Guide Section
     usage_guide: 'Nutzungsanleitung',
@@ -1114,11 +987,7 @@ export const translations = {
     guide_german_tip3: '• Deutsche Politikberichte',
     guide_german_tip4: '• Europäische Wirtschaftsforschung',
     
-    // Quick Tips
-    quick_tips_title: 'Schnelle Tipps',
-    quick_tip_search: 'Verwenden Sie die Suchleiste, um bestimmte Ressourcen schnell zu finden',
-    quick_tip_filter: 'Klicken Sie auf Tags für schnelle Filterung',
-    quick_tip_bookmark: 'Häufig verwendete Ressourcen als Lesezeichen speichern für einfachen Zugriff'
+
   }
 };
 
