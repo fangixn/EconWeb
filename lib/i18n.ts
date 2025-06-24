@@ -18,6 +18,7 @@ export const translations = {
     nav_resources: 'By Type',
     nav_news: 'News',
     nav_german: 'German Focus',
+    media_nav: 'Media Focus',
     
     // Hero Section
     hero_title: 'Your Gateway to',
@@ -337,6 +338,7 @@ export const translations = {
     menu_resources: '资源',
     top_journals_nav: '顶刊专题',
     german_nav: '德国专题',
+    learning_nav: '学习专题',
     
     // Footer links
     footer_home: '首页',
@@ -434,11 +436,77 @@ export const translations = {
     guide_journals_tip4: '• 学术研究必备',
     
     guide_german_title: '德国专题',
+    guide_learning_title: '学习专题',
+    guide_learning_desc: '系统学习经济学的优质资源集合',
+    guide_learning_tip1: '• 顶级大学课程资源',
+    guide_learning_tip2: '• 免费在线学习平台',  
+    guide_learning_tip3: '• 经济思想史纪录片',
+    guide_media_title: '媒体专题',
+    guide_media_desc: '获取权威经济资讯与专家观点的优质媒体平台',
+    guide_media_tip1: '• 国际权威财经媒体',
+    guide_media_tip2: '• 中文财经资讯平台',
+    guide_media_tip3: '• 学术智库观点媒体',
     guide_german_desc: '当你专门研究德国经济时',
     guide_german_tip1: '• 德国央行数据',
     guide_german_tip2: '• 德国经济机构',
     guide_german_tip3: '• 德国政策报告',
     guide_german_tip4: '• 欧洲经济研究',
+    
+    // Policy special section
+    policy_nav: '政策专题',
+    policy_title: '政策解读专题',
+    policy_subtitle: '追踪全球政策动态，把握政策风向',
+    policy_description: '汇聚全球主要央行、政府部门和监管机构，提供权威政策信息和政策解读，助您准确把握政策脉搏。',
+    policy_count: '10个权威政策机构',
+    policy_features: '央行货币政策 • 财政税收政策 • 金融监管政策 • 产业政策导向',
+    guide_policy_title: '政策专题',
+    guide_policy_desc: '追踪全球政策动态和权威政策机构',
+    guide_policy_tip1: '• 全球主要央行政策',
+    guide_policy_tip2: '• 财政税收政策信息',
+    guide_policy_tip3: '• 金融监管政策解读',
+    guide_policy_tip4: '• 产业政策发展动向',
+    
+    // Data special section
+    data_nav: '数据专题',
+    data_title: '数据资源专题',
+    data_subtitle: '汇聚全球权威数据源，支撑经济分析',
+    data_description: '精选全球最权威的经济数据平台，从美联储FRED到世界银行，从实时指标到历史数据，为您的研究提供坚实数据支撑。',
+    data_count: '9个权威数据平台',
+    data_features: '美联储FRED • 世界银行数据 • IMF统计 • 实时经济指标',
+    guide_data_title: '数据专题',
+    guide_data_desc: '获取权威经济数据和统计资源',
+    guide_data_tip1: '• 美联储FRED经济数据',
+    guide_data_tip2: '• 世界银行发展指标',
+    guide_data_tip3: '• IMF国际统计数据',
+    guide_data_tip4: '• 实时经济指标预测',
+    
+    // Market special section
+    market_nav: '市场专题',
+    market_title: '市场分析专题',
+    market_subtitle: '覆盖全球主要交易所，洞察市场动态',
+    market_description: '汇聚全球主要证券交易所和期货市场，从A股、港股到美股，从股票到期货，全方位覆盖市场信息和交易数据。',
+    market_count: '6个主要交易所',
+    market_features: 'A股港股美股 • 证券期货市场 • 实时行情数据 • IPO市场信息',
+    guide_market_title: '市场专题',
+    guide_market_desc: '覆盖全球主要交易所和市场信息',
+    guide_market_tip1: '• A股港股美股市场',
+    guide_market_tip2: '• 证券期货交易数据',
+    guide_market_tip3: '• 实时行情和IPO信息',
+    guide_market_tip4: '• 大宗商品期货分析',
+    
+    // Tools special section
+    tools_nav: '工具专题',
+    tools_title: '分析工具专题',
+    tools_subtitle: '专业分析工具，提升研究效率',
+    tools_description: '精选专业金融分析工具和编程资源，从Bloomberg终端到Python编程，助力您进行高效的经济金融分析和研究。',
+    tools_count: '4个专业工具',
+    tools_features: '专业金融终端 • 编程分析工具 • 数据分析平台 • 研究支持',
+    guide_tools_title: '工具专题',
+    guide_tools_desc: '专业分析工具和编程资源',
+    guide_tools_tip1: '• Bloomberg等专业终端',
+    guide_tools_tip2: '• Python金融分析编程',
+    guide_tools_tip3: '• R语言统计分析',
+    guide_tools_tip4: '• 数据分析平台工具',
     
     // Quick Tips
     quick_tips_title: '快速提示',

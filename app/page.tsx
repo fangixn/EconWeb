@@ -1,13 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Search, Building, FileText, TrendingUp, Globe, Users, Database, BookOpen, GraduationCap, Wrench, ExternalLink, Filter, Mail, MapPin, Star, ChevronDown, Menu, X, ArrowRight, HelpCircle, Target, Grid3X3, Lightbulb, BookmarkIcon } from 'lucide-react';
+import { Search, Building, FileText, TrendingUp, Globe, Users, Database, BookOpen, GraduationCap, Wrench, ExternalLink, Filter, Mail, MapPin, Star, ChevronDown, Menu, X, ArrowRight, HelpCircle, Target, Grid3X3, Lightbulb, BookmarkIcon, PlayCircle, Shield, BarChart3, Cpu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 import { Badge } from '@/components/ui/badge';
-import { economicsCategories, germanEconomicsResources, topJournalsResources } from '@/lib/data';
+import { economicsCategories, germanEconomicsResources, topJournalsResources, learningResourcesSpecial, mediaResourcesSpecial, policySpecial, dataSpecial, marketSpecial, toolsSpecial } from '@/lib/data';
 import { useLanguage } from '@/lib/LanguageContext';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { getJournalTranslation } from '@/lib/journalsI18n';
@@ -143,6 +143,24 @@ export default function Home() {
         ...resource,
         category: 'german',
         source: 'german'
+      });
+    });
+    
+    // 添加学习资源专题
+    learningResourcesSpecial.forEach(resource => {
+      allResources.push({
+        ...resource,
+        category: 'learning',
+        source: 'learning'
+      });
+    });
+    
+    // 添加媒体资源专题
+    mediaResourcesSpecial.forEach(resource => {
+      allResources.push({
+        ...resource,
+        category: 'media',
+        source: 'media'
       });
     });
     
@@ -878,6 +896,106 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            {/* 学习专题 */}
+            <div className="group cursor-pointer" onClick={() => scrollToSection('learning')}>
+              <div className="p-6 bg-white border border-green-100 rounded-2xl hover:border-green-200 hover:shadow-lg transition-all duration-300 group-hover:bg-green-50/30">
+                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <GraduationCap className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('guide_learning_title')}</h3>
+                <p className="text-sm text-gray-600 mb-3">{t('guide_learning_desc')}</p>
+                <div className="space-y-1 text-xs text-gray-500">
+                  <div>{t('guide_learning_tip1')}</div>
+                  <div>{t('guide_learning_tip2')}</div>
+                  <div>{t('guide_learning_tip3')}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* 媒体专题 */}
+            <div className="group cursor-pointer" onClick={() => scrollToSection('media')}>
+              <div className="p-6 bg-white border border-cyan-100 rounded-2xl hover:border-cyan-200 hover:shadow-lg transition-all duration-300 group-hover:bg-cyan-50/30">
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Globe className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('guide_media_title')}</h3>
+                <p className="text-sm text-gray-600 mb-3">{t('guide_media_desc')}</p>
+                <div className="space-y-1 text-xs text-gray-500">
+                  <div>{t('guide_media_tip1')}</div>
+                  <div>{t('guide_media_tip2')}</div>
+                  <div>{t('guide_media_tip3')}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* 政策专题 */}
+            <div className="group cursor-pointer" onClick={() => scrollToSection('policy')}>
+              <div className="p-6 bg-white border border-blue-100 rounded-2xl hover:border-blue-200 hover:shadow-lg transition-all duration-300 group-hover:bg-blue-50/30">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('guide_policy_title')}</h3>
+                <p className="text-sm text-gray-600 mb-3">{t('guide_policy_desc')}</p>
+                <div className="space-y-1 text-xs text-gray-500">
+                  <div>{t('guide_policy_tip1')}</div>
+                  <div>{t('guide_policy_tip2')}</div>
+                  <div>{t('guide_policy_tip3')}</div>
+                  <div>{t('guide_policy_tip4')}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* 数据专题 */}
+            <div className="group cursor-pointer" onClick={() => scrollToSection('data')}>
+              <div className="p-6 bg-white border border-indigo-100 rounded-2xl hover:border-indigo-200 hover:shadow-lg transition-all duration-300 group-hover:bg-indigo-50/30">
+                <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Database className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('guide_data_title')}</h3>
+                <p className="text-sm text-gray-600 mb-3">{t('guide_data_desc')}</p>
+                <div className="space-y-1 text-xs text-gray-500">
+                  <div>{t('guide_data_tip1')}</div>
+                  <div>{t('guide_data_tip2')}</div>
+                  <div>{t('guide_data_tip3')}</div>
+                  <div>{t('guide_data_tip4')}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* 市场专题 */}
+            <div className="group cursor-pointer" onClick={() => scrollToSection('market')}>
+              <div className="p-6 bg-white border border-pink-100 rounded-2xl hover:border-pink-200 hover:shadow-lg transition-all duration-300 group-hover:bg-pink-50/30">
+                <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <TrendingUp className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('guide_market_title')}</h3>
+                <p className="text-sm text-gray-600 mb-3">{t('guide_market_desc')}</p>
+                <div className="space-y-1 text-xs text-gray-500">
+                  <div>{t('guide_market_tip1')}</div>
+                  <div>{t('guide_market_tip2')}</div>
+                  <div>{t('guide_market_tip3')}</div>
+                  <div>{t('guide_market_tip4')}</div>
+                </div>
+              </div>
+            </div>
+
+            {/* 工具专题 */}
+            <div className="group cursor-pointer" onClick={() => scrollToSection('tools')}>
+              <div className="p-6 bg-white border border-amber-100 rounded-2xl hover:border-amber-200 hover:shadow-lg transition-all duration-300 group-hover:bg-amber-50/30">
+                <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Wrench className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('guide_tools_title')}</h3>
+                <p className="text-sm text-gray-600 mb-3">{t('guide_tools_desc')}</p>
+                <div className="space-y-1 text-xs text-gray-500">
+                  <div>{t('guide_tools_tip1')}</div>
+                  <div>{t('guide_tools_tip2')}</div>
+                  <div>{t('guide_tools_tip3')}</div>
+                  <div>{t('guide_tools_tip4')}</div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* 快速提示 */}
@@ -1028,6 +1146,18 @@ export default function Home() {
                                     <span className="text-orange-800 font-medium text-xs">德国专题</span>
                                   </div>
                                 )}
+                                {resource.source === 'learning' && (
+                                  <div className="inline-flex items-center space-x-1 bg-green-100 px-2 py-1 rounded-full">
+                                    <GraduationCap className="w-3 h-3 text-green-600" />
+                                    <span className="text-green-800 font-medium text-xs">学习专题</span>
+                                  </div>
+                                )}
+                                {resource.source === 'media' && (
+                                  <div className="inline-flex items-center space-x-1 bg-cyan-100 px-2 py-1 rounded-full">
+                                    <Globe className="w-3 h-3 text-cyan-600" />
+                                    <span className="text-cyan-800 font-medium text-xs">媒体专题</span>
+                                  </div>
+                                )}
                               </div>
                               <h4 className="text-lg font-semibold text-gray-900 group-hover:text-blue-700 transition-colors leading-tight mb-2">
                                 {resource.source === 'journals' 
@@ -1141,6 +1271,416 @@ export default function Home() {
             })}
           </div>
           )}
+        </div>
+      </section>
+
+      {/* Learning Resources Special Section */}
+      <section id="learning" className="py-20 bg-gradient-to-r from-green-50 to-emerald-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-3 bg-green-100 px-6 py-3 rounded-full mb-6">
+              <GraduationCap className="w-5 h-5 text-green-600" />
+              <span className="text-green-800 font-medium">{t('learning_nav') || '学习专题'}</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              {t('guide_learning_title') || '学习资源专题'}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {t('guide_learning_desc') || '系统学习经济学的优质资源集合，从顶级大学课程到经典纪录片，助力您的学术之旅'}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {learningResourcesSpecial.map((resource, index) => (
+              <div key={index} className="group cursor-pointer">
+                <a
+                  href={resource.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-8 bg-white border border-green-100 rounded-3xl hover:border-green-200 hover:shadow-xl transition-all duration-300 group-hover:bg-green-50/30"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-3 mb-3">
+                        <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          {resource.name.includes('BBC') ? (
+                            <PlayCircle className="w-6 h-6 text-white" />
+                          ) : (
+                            <GraduationCap className="w-6 h-6 text-white" />
+                          )}
+                        </div>
+                        <div className="inline-flex items-center space-x-2 bg-green-100 px-3 py-1 rounded-full">
+                          <BookOpen className="w-4 h-4 text-green-600" />
+                          <span className="text-green-800 font-medium text-sm">学习资源</span>
+                        </div>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 group-hover:text-green-700 transition-colors leading-tight mb-3">
+                        {resource.name}
+                      </h4>
+                      <p className="text-gray-600 leading-relaxed mb-4">
+                        {resource.description}
+                      </p>
+                    </div>
+                    <ArrowRight className="w-6 h-6 text-gray-400 group-hover:text-green-600 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 ml-4" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {resource.tags.map((tag: string) => (
+                      <Badge key={tag} variant="secondary" className="text-sm px-4 py-2 bg-green-100 text-green-800 border-0 group-hover:bg-green-200 transition-colors">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Media Resources Special Section */}
+      <section id="media" className="py-20 bg-gradient-to-r from-cyan-50 to-blue-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-3 bg-cyan-100 px-6 py-3 rounded-full mb-6">
+              <Globe className="w-5 h-5 text-cyan-600" />
+              <span className="text-cyan-800 font-medium">{t('guide_media_title') || '媒体专题'}</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              {t('guide_media_title') || '新闻媒体专题'}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {t('guide_media_desc') || '获取权威经济资讯与专家观点的优质媒体平台，从国际财经权威到中文主流媒体'}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {mediaResourcesSpecial.map((resource, index) => (
+              <div key={index} className="group cursor-pointer">
+                <a
+                  href={resource.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-8 bg-white border border-cyan-100 rounded-3xl hover:border-cyan-200 hover:shadow-xl transition-all duration-300 group-hover:bg-cyan-50/30"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-3 mb-3">
+                        <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <Globe className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="inline-flex items-center space-x-2 bg-cyan-100 px-3 py-1 rounded-full">
+                          <Globe className="w-4 h-4 text-cyan-600" />
+                          <span className="text-cyan-800 font-medium text-sm">媒体资讯</span>
+                        </div>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 group-hover:text-cyan-700 transition-colors leading-tight mb-3">
+                        {resource.name}
+                      </h4>
+                      <p className="text-gray-600 leading-relaxed mb-4">
+                        {resource.description}
+                      </p>
+                    </div>
+                    <ArrowRight className="w-6 h-6 text-gray-400 group-hover:text-cyan-600 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 ml-4" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {resource.tags.map((tag: string) => (
+                      <Badge key={tag} variant="secondary" className="text-sm px-4 py-2 bg-cyan-100 text-cyan-800 border-0 group-hover:bg-cyan-200 transition-colors">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Policy Special Section */}
+      <section id="policy" className="py-20 bg-gradient-to-r from-blue-50 to-cyan-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-3 bg-blue-100 px-6 py-3 rounded-full mb-6">
+              <Shield className="w-5 h-5 text-blue-600" />
+              <span className="text-blue-800 font-medium">{t('policy_nav')}</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              {t('policy_title')}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              {t('policy_subtitle')}
+            </p>
+            <div className="bg-white rounded-2xl p-6 shadow-lg max-w-4xl mx-auto">
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {t('policy_description')}
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
+                <div className="flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full">
+                  <Building className="w-4 h-4 text-blue-600" />
+                  <span className="text-blue-800 font-medium">{t('policy_count')}</span>
+                </div>
+                <div className="text-gray-500">•</div>
+                <span className="text-gray-600">{t('policy_features')}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {policySpecial.map((resource, index) => (
+              <div key={index} className="group cursor-pointer">
+                <a
+                  href={resource.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-8 bg-white border border-blue-100 rounded-3xl hover:border-blue-200 hover:shadow-xl transition-all duration-300 group-hover:bg-blue-50/30"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-3 mb-3">
+                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <Shield className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="inline-flex items-center space-x-2 bg-blue-100 px-3 py-1 rounded-full">
+                          <Building className="w-4 h-4 text-blue-600" />
+                          <span className="text-blue-800 font-medium text-sm">政策机构</span>
+                        </div>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors leading-tight mb-3">
+                        {resource.name}
+                      </h4>
+                      <p className="text-gray-600 leading-relaxed mb-4">
+                        {resource.description}
+                      </p>
+                    </div>
+                    <ArrowRight className="w-6 h-6 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 ml-4" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {resource.tags.map((tag: string) => (
+                      <Badge key={tag} variant="secondary" className="text-sm px-4 py-2 bg-blue-100 text-blue-800 border-0 group-hover:bg-blue-200 transition-colors">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Data Special Section */}
+      <section id="data" className="py-20 bg-gradient-to-r from-indigo-50 to-purple-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-3 bg-indigo-100 px-6 py-3 rounded-full mb-6">
+              <Database className="w-5 h-5 text-indigo-600" />
+              <span className="text-indigo-800 font-medium">{t('data_nav')}</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              {t('data_title')}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              {t('data_subtitle')}
+            </p>
+            <div className="bg-white rounded-2xl p-6 shadow-lg max-w-4xl mx-auto">
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {t('data_description')}
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
+                <div className="flex items-center space-x-2 bg-indigo-50 px-4 py-2 rounded-full">
+                  <BarChart3 className="w-4 h-4 text-indigo-600" />
+                  <span className="text-indigo-800 font-medium">{t('data_count')}</span>
+                </div>
+                <div className="text-gray-500">•</div>
+                <span className="text-gray-600">{t('data_features')}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {dataSpecial.map((resource, index) => (
+              <div key={index} className="group cursor-pointer">
+                <a
+                  href={resource.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-8 bg-white border border-indigo-100 rounded-3xl hover:border-indigo-200 hover:shadow-xl transition-all duration-300 group-hover:bg-indigo-50/30"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-3 mb-3">
+                        <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <Database className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="inline-flex items-center space-x-2 bg-indigo-100 px-3 py-1 rounded-full">
+                          <BarChart3 className="w-4 h-4 text-indigo-600" />
+                          <span className="text-indigo-800 font-medium text-sm">数据平台</span>
+                        </div>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 group-hover:text-indigo-700 transition-colors leading-tight mb-3">
+                        {resource.name}
+                      </h4>
+                      <p className="text-gray-600 leading-relaxed mb-4">
+                        {resource.description}
+                      </p>
+                    </div>
+                    <ArrowRight className="w-6 h-6 text-gray-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 ml-4" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {resource.tags.map((tag: string) => (
+                      <Badge key={tag} variant="secondary" className="text-sm px-4 py-2 bg-indigo-100 text-indigo-800 border-0 group-hover:bg-indigo-200 transition-colors">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Market Special Section */}
+      <section id="market" className="py-20 bg-gradient-to-r from-pink-50 to-rose-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-3 bg-pink-100 px-6 py-3 rounded-full mb-6">
+              <TrendingUp className="w-5 h-5 text-pink-600" />
+              <span className="text-pink-800 font-medium">{t('market_nav')}</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              {t('market_title')}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              {t('market_subtitle')}
+            </p>
+            <div className="bg-white rounded-2xl p-6 shadow-lg max-w-4xl mx-auto">
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {t('market_description')}
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
+                <div className="flex items-center space-x-2 bg-pink-50 px-4 py-2 rounded-full">
+                  <Building className="w-4 h-4 text-pink-600" />
+                  <span className="text-pink-800 font-medium">{t('market_count')}</span>
+                </div>
+                <div className="text-gray-500">•</div>
+                <span className="text-gray-600">{t('market_features')}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {marketSpecial.map((resource, index) => (
+              <div key={index} className="group cursor-pointer">
+                <a
+                  href={resource.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-8 bg-white border border-pink-100 rounded-3xl hover:border-pink-200 hover:shadow-xl transition-all duration-300 group-hover:bg-pink-50/30"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-3 mb-3">
+                        <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <TrendingUp className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="inline-flex items-center space-x-2 bg-pink-100 px-3 py-1 rounded-full">
+                          <Building className="w-4 h-4 text-pink-600" />
+                          <span className="text-pink-800 font-medium text-sm">交易所</span>
+                        </div>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 group-hover:text-pink-700 transition-colors leading-tight mb-3">
+                        {resource.name}
+                      </h4>
+                      <p className="text-gray-600 leading-relaxed mb-4">
+                        {resource.description}
+                      </p>
+                    </div>
+                    <ArrowRight className="w-6 h-6 text-gray-400 group-hover:text-pink-600 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 ml-4" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {resource.tags.map((tag: string) => (
+                      <Badge key={tag} variant="secondary" className="text-sm px-4 py-2 bg-pink-100 text-pink-800 border-0 group-hover:bg-pink-200 transition-colors">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tools Special Section */}
+      <section id="tools" className="py-20 bg-gradient-to-r from-amber-50 to-yellow-50">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-3 bg-amber-100 px-6 py-3 rounded-full mb-6">
+              <Wrench className="w-5 h-5 text-amber-600" />
+              <span className="text-amber-800 font-medium">{t('tools_nav')}</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              {t('tools_title')}
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              {t('tools_subtitle')}
+            </p>
+            <div className="bg-white rounded-2xl p-6 shadow-lg max-w-4xl mx-auto">
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {t('tools_description')}
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
+                <div className="flex items-center space-x-2 bg-amber-50 px-4 py-2 rounded-full">
+                  <Cpu className="w-4 h-4 text-amber-600" />
+                  <span className="text-amber-800 font-medium">{t('tools_count')}</span>
+                </div>
+                <div className="text-gray-500">•</div>
+                <span className="text-gray-600">{t('tools_features')}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {toolsSpecial.map((resource, index) => (
+              <div key={index} className="group cursor-pointer">
+                <a
+                  href={resource.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-8 bg-white border border-amber-100 rounded-3xl hover:border-amber-200 hover:shadow-xl transition-all duration-300 group-hover:bg-amber-50/30"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-3 mb-3">
+                        <div className="w-12 h-12 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <Wrench className="w-6 h-6 text-white" />
+                        </div>
+                        <div className="inline-flex items-center space-x-2 bg-amber-100 px-3 py-1 rounded-full">
+                          <Cpu className="w-4 h-4 text-amber-600" />
+                          <span className="text-amber-800 font-medium text-sm">分析工具</span>
+                        </div>
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 group-hover:text-amber-700 transition-colors leading-tight mb-3">
+                        {resource.name}
+                      </h4>
+                      <p className="text-gray-600 leading-relaxed mb-4">
+                        {resource.description}
+                      </p>
+                    </div>
+                    <ArrowRight className="w-6 h-6 text-gray-400 group-hover:text-amber-600 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 ml-4" />
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {resource.tags.map((tag: string) => (
+                      <Badge key={tag} variant="secondary" className="text-sm px-4 py-2 bg-amber-100 text-amber-800 border-0 group-hover:bg-amber-200 transition-colors">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
