@@ -25,6 +25,26 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeView, setActiveView] = useState('specialty');
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  
+  // 添加展开状态管理
+  const [expandedSections, setExpandedSections] = useState<{[key: string]: boolean}>({
+    learning: false,
+    media: false,
+    policy: false,
+    data: false,
+    market: false,
+    tools: false,
+    journals: false,
+    german: false
+  });
+
+  // 切换专题展开状态
+  const toggleSection = (sectionKey: string) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [sectionKey]: !prev[sectionKey]
+    }));
+  };
 
   // 整合所有资源数据
   const allResources = useMemo(() => {
@@ -192,7 +212,7 @@ export default function Home() {
                     <span className="text-green-800 font-medium">{t('nav_learning') || 'Learning Focus'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    {t('guide_learning_title') || 'Learning Resources'}
+                    {t('guide_learning_title') || '优质学习资源'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     {t('guide_learning_desc') || 'Systematic learning resources for economics, from top university courses to classic documentaries'}
@@ -200,7 +220,7 @@ export default function Home() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {learningResourcesSpecial.slice(0, 6).map((resource, index) => (
+                  {(expandedSections.learning ? learningResourcesSpecial : learningResourcesSpecial.slice(0, 6)).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-green-100">
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">
                         {getResourceTranslation(currentLanguage, resource.name)}
@@ -224,6 +244,20 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+                
+                {learningResourcesSpecial.length > 6 && (
+                  <div className="text-center mt-12">
+                    <button
+                      onClick={() => toggleSection('learning')}
+                      className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium"
+                    >
+                      {expandedSections.learning ? '收起' : `查看更多 (${learningResourcesSpecial.length - 6})`}
+                      <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.learning ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                )}
               </div>
             </section>
 
@@ -235,7 +269,7 @@ export default function Home() {
                     <span className="text-cyan-800 font-medium">{t('nav_media') || 'Media Focus'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    {t('guide_media_title') || 'Media Resources'}
+                    {t('guide_media_title') || '权威媒体平台'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     {t('guide_media_desc') || 'Authoritative economic news and expert opinions from quality media platforms'}
@@ -243,7 +277,7 @@ export default function Home() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {mediaResourcesSpecial.slice(0, 6).map((resource, index) => (
+                  {(expandedSections.media ? mediaResourcesSpecial : mediaResourcesSpecial.slice(0, 6)).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-cyan-100">
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">
                         {getResourceTranslation(currentLanguage, resource.name)}
@@ -267,6 +301,20 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+                
+                {mediaResourcesSpecial.length > 6 && (
+                  <div className="text-center mt-12">
+                    <button
+                      onClick={() => toggleSection('media')}
+                      className="inline-flex items-center px-6 py-3 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition-colors font-medium"
+                    >
+                      {expandedSections.media ? '收起' : `查看更多 (${mediaResourcesSpecial.length - 6})`}
+                      <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.media ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                )}
               </div>
             </section>
 
@@ -278,7 +326,7 @@ export default function Home() {
                     <span className="text-blue-800 font-medium">{t('nav_policy') || 'Policy Focus'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    {t('policy_title') || 'Policy Resources'}
+                    {t('policy_title') || '政策解读中心'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     {t('policy_description') || 'Track global policy dynamics and understand policy directions from authoritative institutions'}
@@ -286,7 +334,7 @@ export default function Home() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {policySpecial.slice(0, 6).map((resource, index) => (
+                  {(expandedSections.policy ? policySpecial : policySpecial.slice(0, 6)).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-blue-100">
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">
                         {getResourceTranslation(currentLanguage, resource.name)}
@@ -310,6 +358,20 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+                
+                {policySpecial.length > 6 && (
+                  <div className="text-center mt-12">
+                    <button
+                      onClick={() => toggleSection('policy')}
+                      className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
+                    >
+                      {expandedSections.policy ? '收起' : `查看更多 (${policySpecial.length - 6})`}
+                      <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.policy ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                )}
               </div>
             </section>
 
@@ -321,7 +383,7 @@ export default function Home() {
                     <span className="text-indigo-800 font-medium">{t('nav_data') || 'Data Focus'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    {t('data_title') || 'Data Resources'}
+                    {t('data_title') || '经济数据库'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     {t('data_description') || 'Access comprehensive economic data and statistical resources from authoritative sources'}
@@ -329,7 +391,7 @@ export default function Home() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {dataSpecial.slice(0, 6).map((resource, index) => (
+                  {(expandedSections.data ? dataSpecial : dataSpecial.slice(0, 6)).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-indigo-100">
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">
                         {getResourceTranslation(currentLanguage, resource.name)}
@@ -353,6 +415,20 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+                
+                {dataSpecial.length > 6 && (
+                  <div className="text-center mt-12">
+                    <button
+                      onClick={() => toggleSection('data')}
+                      className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium"
+                    >
+                      {expandedSections.data ? '收起' : `查看更多 (${dataSpecial.length - 6})`}
+                      <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.data ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                )}
               </div>
             </section>
 
@@ -364,7 +440,7 @@ export default function Home() {
                     <span className="text-pink-800 font-medium">{t('nav_market') || 'Market Focus'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    {t('market_title') || 'Market Analysis'}
+                    {t('market_title') || '金融市场观察'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     {t('market_description') || 'Monitor global financial markets and access professional market analysis tools'}
@@ -372,7 +448,7 @@ export default function Home() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {marketSpecial.slice(0, 6).map((resource, index) => (
+                  {(expandedSections.market ? marketSpecial : marketSpecial.slice(0, 6)).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-pink-100">
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">
                         {getResourceTranslation(currentLanguage, resource.name)}
@@ -396,6 +472,20 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+                
+                {marketSpecial.length > 6 && (
+                  <div className="text-center mt-12">
+                    <button
+                      onClick={() => toggleSection('market')}
+                      className="inline-flex items-center px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors font-medium"
+                    >
+                      {expandedSections.market ? '收起' : `查看更多 (${marketSpecial.length - 6})`}
+                      <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.market ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                )}
               </div>
             </section>
 
@@ -407,7 +497,7 @@ export default function Home() {
                     <span className="text-amber-800 font-medium">{t('nav_tools') || 'Tools Focus'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    {t('tools_title') || 'Analysis Tools'}
+                    {t('tools_title') || '分析工具箱'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     {t('tools_description') || 'Professional analysis tools and programming resources for efficient economic research'}
@@ -415,7 +505,7 @@ export default function Home() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {toolsSpecial.slice(0, 6).map((resource, index) => (
+                  {(expandedSections.tools ? toolsSpecial : toolsSpecial.slice(0, 6)).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-amber-100">
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
                       <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
@@ -437,6 +527,20 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+                
+                {toolsSpecial.length > 6 && (
+                  <div className="text-center mt-12">
+                    <button
+                      onClick={() => toggleSection('tools')}
+                      className="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-medium"
+                    >
+                      {expandedSections.tools ? '收起' : `查看更多 (${toolsSpecial.length - 6})`}
+                      <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.tools ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                )}
               </div>
             </section>
 
@@ -448,7 +552,7 @@ export default function Home() {
                     <span className="text-purple-800 font-medium">{t('nav_top_journals') || 'Top Journals'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    {t('top_journals_title') || 'Premier Academic Journals'}
+                    {t('top_journals_title') || '顶级学术期刊'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     {t('top_journals_subtitle') || 'The most authoritative academic publishing platforms in economics'}
@@ -456,7 +560,7 @@ export default function Home() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {topJournalsResources.slice(0, 6).map((resource, index) => (
+                  {(expandedSections.journals ? topJournalsResources : topJournalsResources.slice(0, 6)).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-purple-100">
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
                       <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
@@ -478,6 +582,20 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+                
+                {topJournalsResources.length > 6 && (
+                  <div className="text-center mt-12">
+                    <button
+                      onClick={() => toggleSection('journals')}
+                      className="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium"
+                    >
+                      {expandedSections.journals ? '收起' : `查看更多 (${topJournalsResources.length - 6})`}
+                      <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.journals ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                )}
               </div>
             </section>
 
@@ -489,7 +607,7 @@ export default function Home() {
                     <span className="text-orange-800 font-medium">{t('nav_german') || 'German Focus'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    {t('german_title') || 'German Economics Focus'}
+                    {t('german_title') || '德国经济研究'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     {t('german_subtitle') || 'Specialized resources and institutions for German economics research'}
@@ -497,7 +615,7 @@ export default function Home() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {germanEconomicsResources.slice(0, 6).map((resource, index) => (
+                  {(expandedSections.german ? germanEconomicsResources : germanEconomicsResources.slice(0, 6)).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-orange-100">
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
                       <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
@@ -519,6 +637,20 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+                
+                {germanEconomicsResources.length > 6 && (
+                  <div className="text-center mt-12">
+                    <button
+                      onClick={() => toggleSection('german')}
+                      className="inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors font-medium"
+                    >
+                      {expandedSections.german ? '收起' : `查看更多 (${germanEconomicsResources.length - 6})`}
+                      <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.german ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                )}
               </div>
             </section>
 
@@ -528,7 +660,9 @@ export default function Home() {
       </main>
 
       {/* 页脚 */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer className={`bg-gray-900 text-white py-16 transition-all duration-300 ${
+        sidebarCollapsed ? 'lg:ml-16' : 'lg:ml-80'
+      }`}>
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* 网站信息 */}
