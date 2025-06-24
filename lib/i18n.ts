@@ -22,8 +22,6 @@ export const translations = {
     hero_title: 'Your Gateway to',
     hero_title_highlight: 'Economics',
     hero_subtitle: 'Discover the most comprehensive collection of economics resources. From data analysis to academic research, find everything you need to stay ahead in the world of economics.',
-    btn_find_data: 'Find Data',
-    btn_learn: 'Learn',
     search_placeholder: 'Search economics resources...',
     popular_tags: 'Popular Tags:',
     search_btn: 'Search',
@@ -33,9 +31,7 @@ export const translations = {
     
     
     
-    // Categories
-    find_data: 'Find Data',
-    find_data_desc: 'Access macro data, micro surveys, and economic indicators',
+    // Categories (legacy - can be removed if not used elsewhere)
     read_policy: 'Read Policy',
     read_policy_desc: 'Get latest policy papers, central bank reports and analysis',
     do_research: 'Do Research',
@@ -63,7 +59,6 @@ export const translations = {
     
     // Common
     view_all: 'View All',
-    resources: 'Resources',
     
 
     
@@ -85,17 +80,7 @@ export const translations = {
     news_subtitle: 'Get the latest economic news, expert opinions and trend analysis to stay informed about global economic dynamics',
 
     
-    // Features Section
-    features_title: 'Why Choose EconWeb?',
-    features_subtitle: 'Built specifically for economics professionals, researchers, and students who demand the best resources.',
-    feature_smart_title: 'Smart Discovery',
-    feature_smart_desc: 'Advanced search and filtering to help you find exactly what you need from thousands of economics resources.',
-    feature_updates_title: 'Real-time Updates',
-    feature_updates_desc: 'Stay current with the latest economic data, research, and policy developments as they happen.',
-    feature_global_title: 'Global Coverage',
-    feature_global_desc: 'Access resources from leading institutions worldwide, with special focus on German economics.',
-    feature_database_title: 'Comprehensive Database',
-    feature_database_desc: 'Curated collection of high-quality resources across all major economics disciplines and specializations.',
+
     
     // Buttons
     btn_start_exploring: 'Start Exploring',
@@ -105,6 +90,21 @@ export const translations = {
     // Additional UI text
     visit_resource: 'Visit Resource',
     german_focus: 'German Focus',
+    
+    // Missing translation keys
+    world_bank: 'World Bank',
+    central_bank: 'Central Bank',
+    germany: 'Germany',
+    data_analysis: 'Data Analysis',
+    china_statistics: 'China Bureau of Statistics',
+    data_title: 'Data Resources',
+    data_description: 'Access comprehensive economic data and statistical resources from authoritative sources',
+    market_title: 'Market Analysis',
+    market_description: 'Monitor global financial markets and access professional market analysis tools',
+    tools_title: 'Analysis Tools',
+    tools_description: 'Professional analysis tools and programming resources for efficient economic research',
+    policy_title: 'Policy Resources',
+    policy_description: 'Track global policy dynamics and understand policy directions from authoritative institutions',
     
     // Navigation menu items
     menu_features: 'Features',
@@ -144,8 +144,7 @@ export const translations = {
     footer_top_journals: 'Top Journals',
     footer_copyright: '© 2025 EconWeb. All rights reserved. Created by fangxin.',
     
-    // Resource count text
-    resources_count: 'resources',
+
     
     // Category Titles
     category_organizations: 'Organizations & Institutions',
@@ -172,9 +171,7 @@ export const translations = {
     top_journals_title: 'Premier Academic Journals',
     top_journals_subtitle: 'The most authoritative academic publishing platforms in economics, featuring cutting-edge research from leading scholars worldwide',
 
-    // Search Examples Section
-    search_examples_title: 'Search Examples',
-    search_tips_title: 'Search Tips',
+
     
     // Search Examples
     example_free_data: 'Free Data',
@@ -224,8 +221,6 @@ export const translations = {
     hero_title: '经济学资源',
     hero_title_highlight: '导航站',
     hero_subtitle: '发现最全面的经济学资源集合。从数据分析到学术研究，找到您在经济学世界中所需的一切资源。',
-    btn_find_data: '我要找数据',
-    btn_learn: '我要学习',
     search_placeholder: '搜索经济学资源...',
     popular_tags: '热门标签：',
     search_btn: '搜索',
@@ -292,17 +287,7 @@ export const translations = {
     news_subtitle: '获取最新经济新闻、专家观点和趋势分析，掌握全球经济动态',
     view_news: '看资讯',
     
-    // Features Section
-    features_title: '为什么选择 EconWeb？',
-    features_subtitle: '专为经济学专业人士、研究人员和学生打造，提供最优质的资源。',
-    feature_smart_title: '智能发现',
-    feature_smart_desc: '先进的搜索和筛选功能，帮助您从数千个经济学资源中找到所需内容。',
-    feature_updates_title: '实时更新',
-    feature_updates_desc: '及时获取最新的经济数据、研究和政策发展动态。',
-    feature_global_title: '全球覆盖',
-    feature_global_desc: '访问全球领先机构的资源，特别关注德国经济学。',
-    feature_database_title: '综合数据库',
-    feature_database_desc: '涵盖所有主要经济学学科和专业领域的精选高质量资源集合。',
+
     
     // Buttons
     btn_start_exploring: '开始探索',
@@ -352,8 +337,7 @@ export const translations = {
     footer_top_journals: '顶级期刊',
     footer_copyright: '© 2025 EconWeb. 版权所有。由方馨创建。',
     
-    // Resource count text
-    resources_count: '个资源',
+
     
     // Category Titles
     category_organizations: '组织机构',
@@ -381,8 +365,7 @@ export const translations = {
     top_journals_subtitle: '经济学领域最权威的学术出版平台，收录全球顶尖学者前沿研究成果',
 
     // Search Examples Section
-    search_examples_title: '搜索示例',
-    search_tips_title: '搜索技巧',
+
     
     // Search Examples
     example_free_data: '免费数据',
@@ -504,8 +487,7 @@ export const translations = {
     hero_title: '경제학 리소스',
     hero_title_highlight: '내비게이션',
     hero_subtitle: '가장 포괄적인 경제학 리소스 컬렉션을 발견하세요. 데이터 분석부터 학술 연구까지, 경제학 세계에서 앞서 나가기 위해 필요한 모든 것을 찾아보세요.',
-    btn_find_data: '데이터 찾기',
-    btn_learn: '학습하기',
+
     search_placeholder: '경제학 리소스 검색...',
     popular_tags: '인기 태그:',
     search_btn: '검색',
@@ -574,17 +556,7 @@ export const translations = {
     news_subtitle: '최신 경제 뉴스, 전문가 의견 및 트렌드 분석을 통해 글로벌 경제 동향을 파악하세요',
     view_news: '뉴스 보기',
     
-    // Features Section
-    features_title: '왜 EconWeb를 선택해야 할까요?',
-    features_subtitle: '최고의 리소스를 요구하는 경제학 전문가, 연구자, 학생을 위해 특별히 제작되었습니다.',
-    feature_smart_title: '스마트 발견',
-    feature_smart_desc: '수천 개의 경제학 리소스에서 필요한 것을 정확히 찾을 수 있도록 도와주는 고급 검색 및 필터링 기능.',
-    feature_updates_title: '실시간 업데이트',
-    feature_updates_desc: '최신 경제 데이터, 연구 및 정책 개발 동향을 실시간으로 파악하세요.',
-    feature_global_title: '글로벌 커버리지',
-    feature_global_desc: '독일 경제학에 특별히 중점을 둔 전 세계 주요 기관의 리소스에 액세스하세요.',
-    feature_database_title: '종합 데이터베이스',
-    feature_database_desc: '모든 주요 경제학 분야와 전문 영역에 걸친 고품질 리소스의 엄선된 컬렉션.',
+
     
     // Buttons
     btn_start_exploring: '탐색 시작',
@@ -623,8 +595,7 @@ export const translations = {
     footer_top_journals: 'Top Journals',
     footer_copyright: '© 2025 EconWeb. 모든 권리 보유. 방신(fangxin)이 제작.',
     
-    // Resource count text
-    resources_count: '리소스',
+
     
     // Category Titles
     category_organizations: '조직 & 기관',
@@ -652,8 +623,7 @@ export const translations = {
     top_journals_subtitle: '경제학 분야에서 가장 권위 있는 학술 출판 플랫폼으로, 전 세계 선도적인 학자들의 최첨단 연구를 수록합니다',
 
     // Search Examples Section
-    search_examples_title: '검색 예시',
-    search_tips_title: '검색 팁',
+
     
     // Search Examples
     example_free_data: '무료 데이터',
@@ -726,8 +696,7 @@ export const translations = {
     hero_title: '経済学リソース',
     hero_title_highlight: 'ナビゲーション',
     hero_subtitle: '最も包括的な経済学リソースコレクションを発見してください。データ分析から学術研究まで、経済学の世界で先を行くために必要なすべてを見つけてください。',
-    btn_find_data: 'データを探す',
-    btn_learn: '学習する',
+
     search_placeholder: '経済学リソースを検索...',
     popular_tags: '人気のタグ：',
     search_btn: '検索',
@@ -796,17 +765,7 @@ export const translations = {
     news_subtitle: '最新の経済ニュース、専門家の意見、トレンド分析を取得して、グローバル経済の動向を把握してください',
     view_news: 'ニュースを見る',
     
-    // Features Section
-    features_title: 'なぜEconWebを選ぶのか？',
-    features_subtitle: '最高のリソースを求める経済学の専門家、研究者、学生のために特別に構築されました。',
-    feature_smart_title: 'スマート発見',
-    feature_smart_desc: '数千の経済学リソースから必要なものを正確に見つけるための高度な検索とフィルタリング機能。',
-    feature_updates_title: 'リアルタイム更新',
-    feature_updates_desc: '最新の経済データ、研究、政策開発の動向をリアルタイムで把握してください。',
-    feature_global_title: 'グローバルカバレッジ',
-    feature_global_desc: 'ドイツ経済学に特に焦点を当てた、世界の主要機関からのリソースにアクセスしてください。',
-    feature_database_title: '包括的データベース',
-    feature_database_desc: 'すべての主要な経済学分野と専門領域にわたる高品質リソースの厳選されたコレクション。',
+
     
     // Buttons
     btn_start_exploring: '探索を開始',
@@ -855,8 +814,7 @@ export const translations = {
     footer_top_journals: 'トップジャーナル',
     footer_copyright: '© 2025 EconWeb. 全著作権所有。方馨(fangxin)によって作成。',
     
-    // Resource count text
-    resources_count: 'リソース',
+
     
     // Category Titles
     category_organizations: '組織＆機関',
@@ -884,8 +842,7 @@ export const translations = {
     top_journals_subtitle: '経済学分野で最も権威ある学術出版プラットフォームで、世界の主要学者による最先端研究を収録',
 
     // Search Examples Section
-    search_examples_title: '検索例',
-    search_tips_title: '検索のコツ',
+
     
     // Search Examples
     example_free_data: '無料データ',
@@ -958,8 +915,7 @@ export const translations = {
     hero_title: 'Ihr Tor zu',
     hero_title_highlight: 'Wirtschaftsexzellenz',
     hero_subtitle: 'Entdecken Sie die umfassendste Sammlung von Wirtschaftsressourcen. Von Datenanalyse bis zur akademischen Forschung - finden Sie alles, was Sie brauchen, um in der Welt der Wirtschaft voranzukommen.',
-    btn_find_data: 'Daten finden',
-    btn_learn: 'Lernen',
+
     search_placeholder: 'Wirtschaftsressourcen suchen...',
     popular_tags: 'Beliebte Tags:',
     search_btn: 'Suchen',
@@ -1028,17 +984,7 @@ export const translations = {
     news_subtitle: 'Erhalten Sie die neuesten Wirtschaftsnachrichten, Expertenmeinungen und Trendanalysen, um über globale Wirtschaftsdynamiken informiert zu bleiben',
     view_news: 'News anzeigen',
     
-    // Features Section
-    features_title: 'Warum EconWeb wählen?',
-    features_subtitle: 'Speziell für Wirtschaftsexperten, Forscher und Studenten entwickelt, die die besten Ressourcen benötigen.',
-    feature_smart_title: 'Intelligente Entdeckung',
-    feature_smart_desc: 'Erweiterte Such- und Filterfunktionen helfen Ihnen, genau das zu finden, was Sie aus Tausenden von Wirtschaftsressourcen benötigen.',
-    feature_updates_title: 'Echtzeit-Updates',
-    feature_updates_desc: 'Bleiben Sie mit den neuesten Wirtschaftsdaten, Forschungen und Politikentwicklungen auf dem Laufenden.',
-    feature_global_title: 'Globale Abdeckung',
-    feature_global_desc: 'Zugang zu Ressourcen führender Institutionen weltweit, mit besonderem Fokus auf deutsche Wirtschaft.',
-    feature_database_title: 'Umfassende Datenbank',
-    feature_database_desc: 'Kuratierte Sammlung hochwertiger Ressourcen aus allen wichtigen Wirtschaftsdisziplinen und Spezialisierungen.',
+
     
     // Buttons
     btn_start_exploring: 'Entdeckung beginnen',
@@ -1087,8 +1033,7 @@ export const translations = {
     footer_top_journals: 'Top-Journals',
     footer_copyright: '© 2025 EconWeb. Alle Rechte vorbehalten. Erstellt von fangxin.',
     
-    // Resource count text
-    resources_count: 'Ressourcen',
+
     
     // Category Titles
     category_organizations: 'Organisationen & Institutionen',
@@ -1116,8 +1061,7 @@ export const translations = {
     top_journals_subtitle: 'Die autoritativsten akademischen Publikationsplattformen in der Wirtschaftswissenschaft mit wegweisender Forschung von führenden Wissenschaftlern weltweit',
 
     // Search Examples Section
-    search_examples_title: 'Suchbeispiele',
-    search_tips_title: 'Suchtipps',
+
     
     // Search Examples
     example_free_data: 'Kostenlose Daten',

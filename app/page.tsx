@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import { Globe } from 'lucide-react';
 import Header from '@/components/Header';
 import ImprovedNavigation from '@/components/ImprovedNavigation';
 import HeroSection from '@/components/HeroSection';
 import SearchResults from '@/components/SearchResults';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useLanguage } from '@/lib/LanguageContext';
 import { 
   germanEconomicsResources, 
@@ -21,6 +23,7 @@ export default function Home() {
   const { t, currentLanguage, changeLanguage } = useLanguage();
   const [searchTerm, setSearchTerm] = useState('');
   const [activeView, setActiveView] = useState('specialty');
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   // 整合所有资源数据
   const allResources = useMemo(() => {
@@ -137,6 +140,17 @@ export default function Home() {
     setActiveView(view);
   };
 
+  const handleSidebarToggle = (collapsed: boolean) => {
+    setSidebarCollapsed(collapsed);
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -146,10 +160,13 @@ export default function Home() {
         activeView={activeView}
         onViewChange={handleViewChange}
         onSearch={handleSearch}
+        onSidebarToggle={handleSidebarToggle}
       />
       
       {/* Main Content */}
-      <main className="pt-20">
+      <main className={`pt-20 transition-all duration-300 ${
+        sidebarCollapsed ? 'lg:ml-16' : 'lg:ml-80'
+      }`}>
         <HeroSection onSearch={handleSearch} />
         
         {/* 搜索结果区域 */}
@@ -164,107 +181,454 @@ export default function Home() {
         {/* 默认内容区域 - 只在没有搜索时显示 */}
         {!searchTerm.trim() && (
           <>
-            {/* 资源概览 */}
-            <section className="py-20 bg-white">
+            
+
+            {/* 学习专题 Section */}
+            <section id="learning" className="py-20 bg-gradient-to-r from-green-50 to-emerald-50">
               <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
+                  <div className="inline-flex items-center justify-center bg-green-100 px-6 py-3 rounded-full mb-6">
+                    <span className="text-green-800 font-medium">{t('nav_learning') || 'Learning Focus'}</span>
+                  </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    经济学资源总览
+                    {t('guide_learning_title') || 'Learning Resources'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                    浏览我们精心收集的经济学专题资源，涵盖学习、研究、数据、政策等各个方面
+                    {t('guide_learning_desc') || 'Systematic learning resources for economics, from top university courses to classic documentaries'}
                   </p>
                 </div>
 
-                {/* 资源统计卡片 */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                  {[
-                    { name: '学习专题', count: learningResourcesSpecial.length, color: 'bg-green-100 text-green-800', icon: '📚' },
-                    { name: '媒体专题', count: mediaResourcesSpecial.length, color: 'bg-cyan-100 text-cyan-800', icon: '📰' },
-                    { name: '政策专题', count: policySpecial.length, color: 'bg-blue-100 text-blue-800', icon: '🏛️' },
-                    { name: '数据专题', count: dataSpecial.length, color: 'bg-indigo-100 text-indigo-800', icon: '📊' },
-                    { name: '市场专题', count: marketSpecial.length, color: 'bg-pink-100 text-pink-800', icon: '📈' },
-                    { name: '工具专题', count: toolsSpecial.length, color: 'bg-amber-100 text-amber-800', icon: '🔧' },
-                    { name: '顶刊专题', count: topJournalsResources.length, color: 'bg-purple-100 text-purple-800', icon: '⭐' },
-                    { name: '德国专题', count: germanEconomicsResources.length, color: 'bg-orange-100 text-orange-800', icon: '🇩🇪' }
-                  ].map((category, index) => (
-                    <div key={index} className="text-center group cursor-pointer">
-                      <div className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-                        <div className="text-4xl mb-4">{category.icon}</div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">{category.name}</h3>
-                        <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${category.color}`}>
-                          {category.count} 个资源
-                        </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {learningResourcesSpecial.slice(0, 6).map((resource, index) => (
+                    <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-green-100">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
+                      <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {resource.tags.slice(0, 3).map((tag, tagIndex) => (
+                          <span key={tagIndex} className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">
+                            {tag}
+                          </span>
+                        ))}
                       </div>
+                      <a 
+                        href={resource.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-green-600 hover:text-green-700 font-medium text-sm"
+                      >
+                        {t('visit_resource') || 'Visit Resource'} →
+                      </a>
                     </div>
                   ))}
                 </div>
-
-                {/* 快速搜索建议 */}
-                <div className="bg-gray-50 rounded-2xl p-8 text-center">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">快速搜索建议</h3>
-                  <p className="text-gray-600 mb-6">试试这些热门搜索词，快速找到您需要的资源</p>
-                  <div className="flex flex-wrap justify-center gap-3">
-                    {['FRED', 'IMF', 'MIT', '世界银行', '央行', '德国', 'Economist', '顶级期刊', 'Bloomberg', '数据分析'].map((keyword) => (
-                      <button
-                        key={keyword}
-                        onClick={() => handleSearch(keyword)}
-                        className="px-4 py-2 bg-white text-gray-700 rounded-full hover:bg-blue-100 hover:text-blue-700 transition-colors border border-gray-200"
-                      >
-                        {keyword}
-                      </button>
-                    ))}
-                  </div>
-                </div>
               </div>
             </section>
 
-            {/* 功能特色 */}
-            <section className="py-20 bg-gray-50">
+            {/* 媒体专题 Section */}
+            <section id="media" className="py-20 bg-gradient-to-r from-cyan-50 to-blue-50">
               <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                    为什么选择 EconWeb
+                  <div className="inline-flex items-center justify-center bg-cyan-100 px-6 py-3 rounded-full mb-6">
+                    <span className="text-cyan-800 font-medium">{t('nav_media') || 'Media Focus'}</span>
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    {t('guide_media_title') || 'Media Resources'}
                   </h2>
-                  <p className="text-gray-600 max-w-2xl mx-auto">
-                    我们致力于为经济学研究者和学习者提供最全面、最权威的资源导航服务
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    {t('guide_media_desc') || 'Authoritative economic news and expert opinions from quality media platforms'}
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <div className="text-center group">
-                    <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors">
-                      <span className="text-2xl">🔍</span>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {mediaResourcesSpecial.slice(0, 6).map((resource, index) => (
+                    <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-cyan-100">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
+                      <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {resource.tags.slice(0, 3).map((tag, tagIndex) => (
+                          <span key={tagIndex} className="px-2 py-1 bg-cyan-100 text-cyan-800 text-xs rounded-full">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <a 
+                        href={resource.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-cyan-600 hover:text-cyan-700 font-medium text-sm"
+                      >
+                        {t('visit_resource') || 'Visit Resource'} →
+                      </a>
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">智能搜索</h3>
-                    <p className="text-gray-600">
-                      基于相关性的智能搜索算法，快速定位您需要的经济学资源
-                    </p>
-                  </div>
-                  <div className="text-center group">
-                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors">
-                      <span className="text-2xl">✅</span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">权威精选</h3>
-                    <p className="text-gray-600">
-                      精心筛选来自顶级机构和权威媒体的高质量经济学资源
-                    </p>
-                  </div>
-                  <div className="text-center group">
-                    <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
-                      <span className="text-2xl">🌍</span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">全球视野</h3>
-                    <p className="text-gray-600">
-                      覆盖全球主要经济体的资源，特别关注德国经济学研究
-                    </p>
-                  </div>
+                  ))}
                 </div>
               </div>
             </section>
+
+            {/* 政策专题 Section */}
+            <section id="policy" className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
+              <div className="container mx-auto px-6">
+                <div className="text-center mb-16">
+                  <div className="inline-flex items-center justify-center bg-blue-100 px-6 py-3 rounded-full mb-6">
+                    <span className="text-blue-800 font-medium">{t('nav_policy') || 'Policy Focus'}</span>
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    {t('policy_title') || 'Policy Resources'}
+                  </h2>
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    {t('policy_description') || 'Track global policy dynamics and understand policy directions from authoritative institutions'}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {policySpecial.slice(0, 6).map((resource, index) => (
+                    <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-blue-100">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
+                      <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {resource.tags.slice(0, 3).map((tag, tagIndex) => (
+                          <span key={tagIndex} className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <a 
+                        href={resource.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm"
+                      >
+                        {t('visit_resource') || 'Visit Resource'} →
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 数据专题 Section */}
+            <section id="data" className="py-20 bg-gradient-to-r from-indigo-50 to-purple-50">
+              <div className="container mx-auto px-6">
+                <div className="text-center mb-16">
+                  <div className="inline-flex items-center justify-center bg-indigo-100 px-6 py-3 rounded-full mb-6">
+                    <span className="text-indigo-800 font-medium">{t('nav_data') || 'Data Focus'}</span>
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    {t('data_title') || 'Data Resources'}
+                  </h2>
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    {t('data_description') || 'Access comprehensive economic data and statistical resources from authoritative sources'}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {dataSpecial.slice(0, 6).map((resource, index) => (
+                    <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-indigo-100">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
+                      <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {resource.tags.slice(0, 3).map((tag, tagIndex) => (
+                          <span key={tagIndex} className="px-2 py-1 bg-indigo-100 text-indigo-800 text-xs rounded-full">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <a 
+                        href={resource.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-medium text-sm"
+                      >
+                        {t('visit_resource') || 'Visit Resource'} →
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 市场专题 Section */}
+            <section id="market" className="py-20 bg-gradient-to-r from-pink-50 to-rose-50">
+              <div className="container mx-auto px-6">
+                <div className="text-center mb-16">
+                  <div className="inline-flex items-center justify-center bg-pink-100 px-6 py-3 rounded-full mb-6">
+                    <span className="text-pink-800 font-medium">{t('nav_market') || 'Market Focus'}</span>
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    {t('market_title') || 'Market Analysis'}
+                  </h2>
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    {t('market_description') || 'Monitor global financial markets and access professional market analysis tools'}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {marketSpecial.slice(0, 6).map((resource, index) => (
+                    <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-pink-100">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
+                      <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {resource.tags.slice(0, 3).map((tag, tagIndex) => (
+                          <span key={tagIndex} className="px-2 py-1 bg-pink-100 text-pink-800 text-xs rounded-full">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <a 
+                        href={resource.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-pink-600 hover:text-pink-700 font-medium text-sm"
+                      >
+                        {t('visit_resource') || 'Visit Resource'} →
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 工具专题 Section */}
+            <section id="tools" className="py-20 bg-gradient-to-r from-amber-50 to-yellow-50">
+              <div className="container mx-auto px-6">
+                <div className="text-center mb-16">
+                  <div className="inline-flex items-center justify-center bg-amber-100 px-6 py-3 rounded-full mb-6">
+                    <span className="text-amber-800 font-medium">{t('nav_tools') || 'Tools Focus'}</span>
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    {t('tools_title') || 'Analysis Tools'}
+                  </h2>
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    {t('tools_description') || 'Professional analysis tools and programming resources for efficient economic research'}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {toolsSpecial.slice(0, 6).map((resource, index) => (
+                    <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-amber-100">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
+                      <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {resource.tags.slice(0, 3).map((tag, tagIndex) => (
+                          <span key={tagIndex} className="px-2 py-1 bg-amber-100 text-amber-800 text-xs rounded-full">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <a 
+                        href={resource.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium text-sm"
+                      >
+                        {t('visit_resource') || 'Visit Resource'} →
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 顶刊专题 Section */}
+            <section id="top-journals" className="py-20 bg-gradient-to-r from-purple-50 to-violet-50">
+              <div className="container mx-auto px-6">
+                <div className="text-center mb-16">
+                  <div className="inline-flex items-center justify-center bg-purple-100 px-6 py-3 rounded-full mb-6">
+                    <span className="text-purple-800 font-medium">{t('nav_top_journals') || 'Top Journals'}</span>
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    {t('top_journals_title') || 'Premier Academic Journals'}
+                  </h2>
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    {t('top_journals_subtitle') || 'The most authoritative academic publishing platforms in economics'}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {topJournalsResources.slice(0, 6).map((resource, index) => (
+                    <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-purple-100">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
+                      <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {resource.tags.slice(0, 3).map((tag, tagIndex) => (
+                          <span key={tagIndex} className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <a 
+                        href={resource.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium text-sm"
+                      >
+                        {t('visit_resource') || 'Visit Resource'} →
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* 德国专题 Section */}
+            <section id="german" className="py-20 bg-gradient-to-r from-orange-50 to-amber-50">
+              <div className="container mx-auto px-6">
+                <div className="text-center mb-16">
+                  <div className="inline-flex items-center justify-center bg-orange-100 px-6 py-3 rounded-full mb-6">
+                    <span className="text-orange-800 font-medium">{t('nav_german') || 'German Focus'}</span>
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    {t('german_title') || 'German Economics Focus'}
+                  </h2>
+                  <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                    {t('german_subtitle') || 'Specialized resources and institutions for German economics research'}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {germanEconomicsResources.slice(0, 6).map((resource, index) => (
+                    <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-orange-100">
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
+                      <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {resource.tags.slice(0, 3).map((tag, tagIndex) => (
+                          <span key={tagIndex} className="px-2 py-1 bg-orange-100 text-orange-800 text-xs rounded-full">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <a 
+                        href={resource.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium text-sm"
+                      >
+                        {t('visit_resource') || 'Visit Resource'} →
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+
           </>
         )}
       </main>
+
+      {/* 页脚 */}
+      <footer className="bg-gray-900 text-white py-16">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* 网站信息 */}
+            <div className="lg:col-span-2">
+              <div className="flex items-center space-x-2 mb-6">
+                <Globe className="h-8 w-8 text-blue-400" />
+                <span className="text-2xl font-bold">EconWeb</span>
+              </div>
+              <p className="text-gray-300 mb-6 max-w-md">
+                {t('footer_description') || 'Your comprehensive guide to economics resources. Discover the best data sources, research papers, and tools to enhance your understanding of economics.'}
+              </p>
+              <div className="flex space-x-4">
+                <LanguageSwitcher />
+              </div>
+            </div>
+
+            {/* 快速链接 */}
+            <div>
+              <h3 className="text-lg font-semibold mb-6">{t('quick_links') || 'Quick Links'}</h3>
+              <ul className="space-y-3">
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('learning')}
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    {t('footer_learning') || 'Learning Focus'}
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('data')}
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    {t('footer_data') || 'Data Focus'}
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('top-journals')}
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    {t('footer_top_journals') || 'Top Journals'}
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('german')}
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    {t('footer_german') || 'German Focus'}
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* 专题分类 */}
+            <div>
+              <h3 className="text-lg font-semibold mb-6">{t('specialties') || 'Specialties'}</h3>
+              <ul className="space-y-3">
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('policy')}
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    {t('footer_policy') || 'Policy Focus'}
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('market')}
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    {t('footer_market') || 'Market Focus'}
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('tools')}
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    {t('footer_tools') || 'Tools Focus'}
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection('media')}
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    {t('footer_media') || 'Media Focus'}
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* 底部版权信息 */}
+          <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm">
+              {t('footer_copyright') || '© 2025 EconWeb. All rights reserved. Created by fangxin.'}
+            </p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <button 
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
+                {t('back_to_top') || 'Back to Top'}
+              </button>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 } 

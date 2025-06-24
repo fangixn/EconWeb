@@ -4,5 +4,8 @@
 User-agent: *
 Allow: /
 
+# 爬取频率限制（避免过于频繁的爬取）
+Crawl-delay: 1
+
 # 网站地图
-Sitemap: https://your-domain.com/sitemap.xml 
+Sitemap: https://economicsweb.org/sitemap.xml 
