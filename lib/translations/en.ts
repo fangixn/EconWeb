@@ -460,8 +460,7 @@ export const enResourceDescriptions: Record<string, string> = {
 
 // English tag translations
 export const enTagTranslations: Record<string, string> = {
-
-"顶级大学": "Top Universities",
+  "顶级大学": "Top Universities",
 
 "免费课程": "Free Courses",
 

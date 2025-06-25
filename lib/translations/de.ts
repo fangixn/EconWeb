@@ -5,6 +5,13 @@ export const deTranslations = {
   site_subtitle: 'Wirtschaftsnavigator von EconomicsWeb',
   nav_home: 'Startseite',
   nav_german: 'Deutschland-Fokus',
+  nav_learning: 'Lernspezialisierung',
+  nav_media: 'Medienspezialisierung',
+  nav_policy: 'Politikspezialisierung',
+  nav_data: 'Datenspezialisierung',
+  nav_market: 'Marktspezialisierung',
+  nav_tools: 'Tools-Spezialisierung',
+  nav_top_journals: 'Top-Zeitschriften',
   media_nav: 'Medien-Fokus',
   
   // Hero Section
@@ -17,6 +24,125 @@ export const deTranslations = {
   clear_filters: 'Alle löschen',
   searching_for: 'Suche nach',
   filtered_by: 'Gefiltert nach',
+  
+  // Categories
+  read_policy: 'Politik lesen',
+  read_policy_desc: 'Neueste Politikdokumente, Zentralbankberichte und Analysen erhalten',
+  do_research: 'Forschung betreiben',
+  do_research_desc: 'Wissenschaftliche Arbeiten, Forschungstools und Think-Tank-Ressourcen',
+  watch_market: 'Markt beobachten',
+  watch_market_desc: 'Branchenanalyse, Investment-Tools und Unternehmensdaten',
+  
+  authorities: 'Autoritäten',
+  authorities_desc: 'Offizielle Berichte von internationalen Organisationen und Regierungsbehörden',
+  academic: 'Wissenschaftliche Arbeiten',
+  academic_desc: 'Wirtschaftszeitschriften und wissenschaftliche Ressourcenplattformen',
+  data_stats: 'Daten & Statistiken',
+  data_stats_desc: 'Wirtschaftsdatenbanken und Statistikplattformen',
+  learning: 'Online-Lernen',
+  learning_desc: 'Wirtschafts-Online-Kurse und Lernressourcen',
+  tools: 'Praktische Tools',
+  tools_desc: 'Wirtschaftsanalyse-Tools und Referenzressourcen',
+  
+  // German Special
+  german_title: 'Deutsche Wirtschaftsforschung',
+  german_subtitle: 'Spezialisierte Ressourcen und Institutionen für deutsche Wirtschaftsforschung',
+  core_institutions: 'Kerninstitutionen',
+  special_resources: 'Spezielle Ressourcen',
+  
+  // Common
+  view_all: 'Alle anzeigen',
+  
+  // Footer
+  footer_description: 'Ihr umfassender Leitfaden für Wirtschaftsressourcen. Entdecken Sie die besten Datenquellen, Forschungsarbeiten und Tools zur Vertiefung Ihres Wirtschaftsverständnisses.',
+  quick_links: 'Schnelle Links',
+  quick_actions: 'Schnellaktionen',
+  back_to_top: 'Nach oben',
+  go_to_footer: 'Zu Fußzeile',
+  specialties: 'Spezialisierungen',
+  
+  // News Section
+  news_title: 'Wirtschaftsnachrichten Übersicht',
+  news_subtitle: 'Erhalten Sie die neuesten Wirtschaftsnachrichten, Expertenmeinungen und Trendanalysen, um über globale Wirtschaftsdynamiken informiert zu bleiben',
+  
+  // Buttons
+  btn_start_exploring: 'Erkunden beginnen',
+  btn_view_resources: 'Ressourcen anzeigen',
+  btn_show_less: 'Weniger anzeigen',
+  btn_show_more: 'Mehr anzeigen',
+  btn_collapse: 'Einklappen',
+  
+  // Additional UI text
+  visit_resource: 'Ressource besuchen',
+  german_focus: 'Deutschland-Fokus',
+  
+  // Missing translation keys
+  world_bank: 'Weltbank',
+  central_bank: 'Zentralbank',
+  germany: 'Deutschland',
+  data_analysis: 'Datenanalyse',
+  china_statistics: 'Chinesisches Statistikamt',
+  data_title: 'Datenressourcen',
+  data_description: 'Zugang zu umfassenden Wirtschaftsdaten und statistischen Ressourcen aus autoritativen Quellen',
+  market_title: 'Marktanalyse',
+  market_description: 'Überwachung globaler Finanzmärkte und Zugang zu professionellen Marktanalyse-Tools',
+  tools_title: 'Analyse-Tools',
+  tools_description: 'Professionelle Analyse-Tools und Programmierressourcen für effiziente Wirtschaftsforschung',
+  policy_title: 'Politik-Ressourcen',
+  policy_description: 'Verfolgung globaler Politikdynamiken und Verständnis von Politikrichtungen autoritativer Institutionen',
+  
+  // Navigation menu items
+  menu_features: 'Funktionen',
+  menu_resources: 'Ressourcen',
+  nav_features: 'Funktionen',
+  top_journals_nav: 'Top-Zeitschriften',
+  german_nav: 'Deutschland-Spezialisierung',
+  
+  // Footer links
+  footer_home: 'Startseite',
+  footer_features: 'Funktionen',
+  footer_resources: 'Ressourcen',
+  footer_learning: 'Lernspezialisierung',
+  footer_media: 'Medienspezialisierung',
+  footer_policy: 'Politikspezialisierung',
+  footer_data: 'Datenspezialisierung',
+  footer_market: 'Marktspezialisierung',
+  footer_tools: 'Tools-Spezialisierung',
+  footer_german: 'Deutschland-Spezialisierung',
+  footer_data_sources: 'Datenquellen',
+  footer_research_papers: 'Forschungsarbeiten',
+  footer_policy_reports: 'Politikberichte',
+  footer_learning_resources: 'Lernressourcen',
+  footer_media_resources: 'Medienressourcen',
+  footer_market_analysis: 'Marktanalyse',
+  footer_german_economics: 'Deutsche Wirtschaft',
+  footer_top_journals: 'Top-Zeitschriften',
+  footer_copyright: '© 2025 EconWeb. Alle Rechte vorbehalten. Erstellt von Fang Xin.',
+  
+  // Category Titles
+  category_organizations: 'Organisationen & Institutionen',
+  category_organizations_desc: 'Internationale Organisationen, Regierungsbehörden, Zentralbanken und Regulierungsabteilungen',
+  category_data_sources: 'Datenquellen',
+  category_data_sources_desc: 'Makroökonomische Datenbanken, mikroökonomische Erhebungen und statistische Ressourcen',
+  category_policy_analysis: 'Politikanalyse',
+  category_policy_analysis_desc: 'Politikinterpretation, Regulierungsdokumente und Regierungsberichte',
+  category_academic_research: 'Wissenschaftliche Forschung',
+  category_academic_research_desc: 'Wissenschaftliche Arbeiten, Forschungsplattformen und akademische Ressourcen',
+  category_market_observation: 'Marktanalyse',
+  category_market_observation_desc: 'Branchenanalyse, Investment-Tools und Unternehmensdaten',
+  category_financial_news: 'Finanznachrichten',
+  category_financial_news_desc: 'Finanznachrichten, Marktinformationen und Wirtschaftskommentare',
+  category_think_tanks: 'Think-Tank-Einblicke',
+  category_think_tanks_desc: 'Akademische Standpunkte und Think-Tank-Medien',
+  category_learning_resources: 'Online-Lernen',
+  category_learning_resources_desc: 'Wirtschaftskurse und Lernressourcen',
+  category_practical_tools: 'Praktische Tools',
+  category_practical_tools_desc: 'Analyse-Tools und Referenzressourcen',
+
+  // Top Journals Section
+  top_journals_focus: 'Top-Zeitschriften',
+  top_journals_title: 'Führende wissenschaftliche Zeitschriften',
+  top_journals_subtitle: 'Die autoritativsten wissenschaftlichen Veröffentlichungsplattformen der Wirtschaftswissenschaften mit wegweisender Forschung führender Wissenschaftler weltweit',
   
   // Main page section titles
   guide_learning_title: 'Hochwertige Lernressourcen',
@@ -36,14 +162,20 @@ export const deTranslations = {
   guide_german_title: 'Deutsche Wirtschaftsforschung',
   guide_german_desc: 'Spezialisierte deutsche Wirtschaftsinstitutionen und Forschungsressourcen',
 
-  // Buttons
-  btn_show_more: 'Mehr anzeigen',
-  btn_collapse: 'Einklappen',
-  
   // Search Results
   search_results_title: 'Suchergebnisse',
   search_results_found: 'Ergebnisse gefunden',
+  search_results_sort_by: 'Sortieren nach:',
+  search_results_relevance: 'Relevanz',
+  search_results_alphabetical: 'Alphabetisch',
+  search_results_clear: 'Suche löschen',
+  search_results_retry: 'Erneut suchen',
+  search_results_no_results: 'Keine Ressourcen gefunden',
+  search_results_no_results_desc: 'Versuchen Sie, Ihre Suchbegriffe anzupassen oder Filter zu löschen',
   search_results_popular_tags: 'Beliebte Tags',
+  search_results_category_stats: 'Kategorieverteilung',
+  search_results_show_all_tags: 'Alle anzeigen',
+  search_results_collapse_tags: 'Tags einklappen',
   search_results_visit: 'Besuchen',
   search_results_more: 'mehr',
 
@@ -56,15 +188,6 @@ export const deTranslations = {
   category_tools: 'Tools-Spezialisierung',
   category_top_journals: 'Top-Zeitschriften',
   category_german: 'Deutschland-Fokus',
-
-  // Footer
-  footer_contact: 'Kontakt',
-  footer_about: 'Über uns',
-  footer_privacy: 'Datenschutz',
-  footer_terms: 'Nutzungsbedingungen',
-  footer_german: 'Deutschland-Fokus',
-  footer_top_journals: 'Top-Zeitschriften',
-  footer_copyright: '© 2025 EconWeb. Alle Rechte vorbehalten. Erstellt von Fang Xin.',
 };
 
 // Deutsche Ressourcenübersetzungen

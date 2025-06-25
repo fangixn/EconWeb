@@ -5,6 +5,13 @@ export const jaTranslations = {
   site_subtitle: 'EconomicsWebの経済ナビゲーター',
   nav_home: 'ホーム',
   nav_german: 'ドイツ専門',
+  nav_learning: '学習専門',
+  nav_media: 'メディア専門',
+  nav_policy: '政策専門', 
+  nav_data: 'データ専門',
+  nav_market: '市場専門',
+  nav_tools: 'ツール専門',
+  nav_top_journals: 'トップジャーナル',
   media_nav: 'メディア専門',
   
   // Hero Section
@@ -18,6 +25,126 @@ export const jaTranslations = {
   searching_for: '検索中',
   filtered_by: 'フィルタリング',
   
+  // Categories
+  read_policy: '政策を読む',
+  read_policy_desc: '最新の政策文書、中央銀行レポート、分析を取得',
+  do_research: '研究を行う',
+  do_research_desc: '学術論文、研究ツール、シンクタンクリソース',
+  watch_market: '市場を監視',
+  watch_market_desc: '業界分析、投資ツール、企業データ',
+  
+  authorities: '権威機関',
+  authorities_desc: '国際機関と政府機関からの公式レポート',
+  academic: '学術論文',
+  academic_desc: '経済学ジャーナルと学術リソースプラットフォーム',
+  data_stats: 'データ・統計',
+  data_stats_desc: '経済データベースと統計プラットフォーム',
+  learning: 'オンライン学習',
+  learning_desc: '経済学オンラインコースと学習リソース',
+  tools: '実用ツール',
+  tools_desc: '経済分析ツールと参考リソース',
+  
+  // German Special
+  german_title: 'ドイツ経済特化',
+  german_subtitle: 'ドイツ経済のための専門リソースと機関',
+  core_institutions: 'コア機関',
+  special_resources: '特別リソース',
+  
+  // Common
+  view_all: 'すべて表示',
+  
+  // Footer
+  footer_description: '経済学リソースへの包括的なガイド。経済学の理解を深めるための最高のデータソース、研究論文、ツールを発見してください。',
+  quick_links: 'クイックリンク',
+  quick_actions: 'クイックアクション',
+  back_to_top: 'トップに戻る',
+  go_to_footer: 'フッターへ移動',
+  specialties: '専門分野',
+  
+  // News Section
+  news_title: '経済ニュース概要',
+  news_subtitle: '最新の経済ニュース、専門家の意見、トレンド分析を取得してグローバル経済の動向を把握',
+  
+  // Buttons
+  btn_start_exploring: '探索を開始',
+  btn_view_resources: 'リソースを表示',
+  btn_show_less: '少なく表示',
+  btn_show_more: '詳細を見る',
+  btn_collapse: '折りたたむ',
+  
+  // Additional UI text
+  visit_resource: 'リソースを訪問',
+  german_focus: 'ドイツ特化',
+  
+  // Missing translation keys
+  world_bank: '世界銀行',
+  central_bank: '中央銀行',
+  germany: 'ドイツ',
+  data_analysis: 'データ分析',
+  china_statistics: '中国国家統計局',
+  data_title: 'データリソース',
+  data_description: '権威ある情報源からの包括的な経済データと統計リソースにアクセス',
+  market_title: '市場分析',
+  market_description: 'グローバル金融市場を監視し、専門的な市場分析ツールにアクセス',
+  tools_title: '分析ツール',
+  tools_description: '効率的な経済研究のための専門分析ツールとプログラミングリソース',
+  policy_title: '政策リソース',
+  policy_description: 'グローバル政策動向を追跡し、権威機関からの政策方向を理解',
+  
+  // Navigation menu items
+  menu_features: '機能',
+  menu_resources: 'リソース',
+  nav_features: '機能',
+  top_journals_nav: 'トップジャーナル',
+  german_nav: 'ドイツ専門',
+  
+  // Footer links
+  footer_home: 'ホーム',
+  footer_features: '機能',
+  footer_resources: 'リソース',
+  footer_learning: '学習専門',
+  footer_media: 'メディア専門',
+  footer_policy: '政策専門',
+  footer_data: 'データ専門',
+  footer_market: '市場専門',
+  footer_tools: 'ツール専門',
+  footer_german: 'ドイツ専門',
+  footer_data_sources: 'データソース',
+  footer_research_papers: '研究論文',
+  footer_policy_reports: '政策レポート',
+  footer_learning_resources: '学習リソース',
+  footer_media_resources: 'メディアリソース',
+  footer_market_analysis: '市場分析',
+  footer_german_economics: 'ドイツ経済学',
+
+  footer_top_journals: 'トップジャーナル',
+  footer_copyright: '© 2025 EconWeb. 全ての権利を保有。ファンシン作成。',
+  
+  // Category Titles
+  category_organizations: '組織・機関',
+  category_organizations_desc: '国際機関、政府機関、中央銀行、規制部門',
+  category_data_sources: 'データソース',
+  category_data_sources_desc: 'マクロ経済データベース、ミクロ経済調査、統計リソース',
+  category_policy_analysis: '政策分析',
+  category_policy_analysis_desc: '政策解釈、規制文書、政府レポート',
+  category_academic_research: '学術研究',
+  category_academic_research_desc: '学術論文、研究プラットフォーム、学術リソース',
+  category_market_observation: '市場分析',
+  category_market_observation_desc: '業界分析、投資ツール、企業データ',
+  category_financial_news: '金融ニュース',
+  category_financial_news_desc: '金融ニュース、市場情報、経済コメンタリー',
+  category_think_tanks: 'シンクタンクの洞察',
+  category_think_tanks_desc: '学術的視点とシンクタンクメディア',
+  category_learning_resources: 'オンライン学習',
+  category_learning_resources_desc: '経済学コースと学習リソース',
+  category_practical_tools: '実用ツール',
+  category_practical_tools_desc: '分析ツールと参考リソース',
+
+  // Top Journals Section
+  top_journals_focus: 'トップジャーナル',
+  top_journals_title: '主要学術誌',
+  top_journals_subtitle: '経済学で最も権威ある学術出版プラットフォーム、世界の主要学者による最先端研究を特集',
+
   // Main page section titles
   guide_learning_title: '優良学習リソース',
   guide_learning_desc: 'トップ大学の講座から古典的なドキュメンタリーまで、体系的な経済学学習リソース',
@@ -36,14 +163,20 @@ export const jaTranslations = {
   guide_german_title: 'ドイツ経済研究',
   guide_german_desc: '専門的なドイツ経済機関と研究リソース',
 
-  // Buttons
-  btn_show_more: '詳細を見る',
-  btn_collapse: '折りたたむ',
-  
   // Search Results
   search_results_title: '検索結果',
   search_results_found: '件の結果',
+  search_results_sort_by: '並び替え:',
+  search_results_relevance: '関連性',
+  search_results_alphabetical: 'アルファベット順',
+  search_results_clear: '検索をクリア',
+  search_results_retry: '再検索',
+  search_results_no_results: 'リソースが見つかりません',
+  search_results_no_results_desc: '検索用語を調整するかフィルターをクリアしてください',
   search_results_popular_tags: '人気タグ',
+  search_results_category_stats: 'カテゴリ分布',
+  search_results_show_all_tags: 'すべて表示',
+  search_results_collapse_tags: 'タグを折りたたむ',
   search_results_visit: '訪問',
   search_results_more: 'もっと',
 
@@ -56,15 +189,6 @@ export const jaTranslations = {
   category_tools: 'ツール専門',
   category_top_journals: 'トップジャーナル',
   category_german: 'ドイツフォーカス',
-
-  // Footer
-  footer_contact: 'お問い合わせ',
-  footer_about: '私たちについて',
-  footer_privacy: 'プライバシーポリシー',
-  footer_terms: '利用規約',
-  footer_german: 'ドイツ専門',
-  footer_top_journals: 'トップジャーナル',
-  footer_copyright: '© 2025 EconWeb. 全ての権利を保有。ファンシン作成。',
 };
 
 // 日本語リソース翻訳

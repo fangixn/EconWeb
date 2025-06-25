@@ -159,7 +159,7 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
               </h2>
               {searchTerm && (
                 <Badge variant="outline" className="text-blue-600 border-blue-300">
-                  "{searchTerm}"
+                  "{getTagTranslation(currentLanguage, searchTerm) || searchTerm}"
                 </Badge>
               )}
             </div>
