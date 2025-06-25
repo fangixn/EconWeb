@@ -344,5 +344,4 @@ export const koTagTranslations: Record<string, string> = {
   "德国经济": "독일경제",
   "德国企业": "독일기업",
   "德国数据": "독일데이터",
-  "德语资源": "독일어자료",
 }; 
