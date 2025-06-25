@@ -54,6 +54,83 @@ export const germanResourcesTranslations: Record<string, ResourceTranslation> = 
     ko: "ZEW 경제심리 지수",
     ja: "ZEW経済センチメント指数",
     de: "ZEW-Konjunkturerwartungen"
+  },
+  "德国联邦银行(Bundesbank)": {
+    en: "Deutsche Bundesbank",
+    zh: "德国联邦银行",
+    ko: "독일 연방은행",
+    ja: "ドイツ連邦銀行",
+    de: "Deutsche Bundesbank"
+  },
+  "德国联邦统计局": {
+    en: "Federal Statistical Office of Germany",
+    zh: "德国联邦统计局",
+    ko: "독일 연방통계청",
+    ja: "ドイツ連邦統計庁",
+    de: "Statistisches Bundesamt"
+  },
+  "德国经济研究所(DIW Berlin)": {
+    en: "German Institute for Economic Research (DIW Berlin)",
+    zh: "德国经济研究所",
+    ko: "독일경제연구소 (DIW 베를린)",
+    ja: "ドイツ経済研究所 (DIW ベルリン)",
+    de: "Deutsches Institut für Wirtschaftsforschung (DIW Berlin)"
+  },
+  "德国经济部": {
+    en: "Federal Ministry for Economic Affairs and Energy",
+    zh: "德国经济部",
+    ko: "독일 경제부",
+    ja: "ドイツ経済省",
+    de: "Bundesministerium für Wirtschaft und Energie"
+  },
+  "德国对华政策研究所(MERICS)": {
+    en: "Mercator Institute for China Studies (MERICS)",
+    zh: "德国对华政策研究所",
+    ko: "독일 대중국정책연구소 (MERICS)",
+    ja: "ドイツ対中国政策研究所 (MERICS)",
+    de: "Mercator Institute for China Studies (MERICS)"
+  },
+  "German Council of Economic Experts": {
+    en: "German Council of Economic Experts",
+    zh: "德国经济专家委员会",
+    ko: "독일 경제전문가위원회",
+    ja: "ドイツ経済専門家委員会",
+    de: "Sachverständigenrat zur Begutachtung der gesamtwirtschaftlichen Entwicklung"
+  },
+  "法兰克福证券交易所": {
+    en: "Frankfurt Stock Exchange",
+    zh: "法兰克福证券交易所",
+    ko: "프랑크푸르트 증권거래소",
+    ja: "フランクフルト証券取引所",
+    de: "Frankfurter Wertpapierbörse"
+  },
+  "德国工商总会(DIHK)": {
+    en: "Association of German Chambers of Commerce and Industry (DIHK)",
+    zh: "德国工商总会",
+    ko: "독일상공회의소연합회 (DIHK)",
+    ja: "ドイツ商工会議所連合会 (DIHK)",
+    de: "Deutscher Industrie- und Handelskammertag (DIHK)"
+  },
+  "德国汽车工业协会(VDA)": {
+    en: "German Association of the Automotive Industry (VDA)",
+    zh: "德国汽车工业协会",
+    ko: "독일자동차공업협회 (VDA)",
+    ja: "ドイツ自動車工業会 (VDA)",
+    de: "Verband der Automobilindustrie (VDA)"
+  },
+  "德国DAX指数分析": {
+    en: "German DAX Index Analysis",
+    zh: "德国DAX指数分析",
+    ko: "독일 DAX 지수 분석",
+    ja: "ドイツDAX指数分析",
+    de: "DAX-Index-Analyse"
+  },
+  "德国企业信贷数据库": {
+    en: "German Corporate Credit Database",
+    zh: "德国企业信贷数据库",
+    ko: "독일 기업신용 데이터베이스",
+    ja: "ドイツ企業信用データベース",
+    de: "Deutsche Unternehmenskreditdatenbank"
   }
 };
 
@@ -858,6 +935,247 @@ const resourceDescriptionTranslations: Record<string, ResourceTranslation> = {
     ko: "실시간 경제지표, 시장 데이터 및 예측",
     ja: "リアルタイム経済指標、市場データと予測",
     de: "Echtzeitindikatoren, Marktdaten und Prognosen"
+  },
+  
+  // 德国专题资源描述翻译
+  "德国联邦银行(Bundesbank)": {
+    en: "German central bank, monetary policy and financial stability",
+    zh: "德国央行，货币政策与金融稳定",
+    ko: "독일 중앙은행, 통화정책 및 금융안정",
+    ja: "ドイツ中央銀行、金融政策と金融安定",
+    de: "Deutsche Zentralbank, Geldpolitik und Finanzstabilität"
+  },
+  "德国联邦统计局": {
+    en: "Official statistics and economic data for Germany",
+    zh: "德国官方统计数据和经济数据",
+    ko: "독일 공식 통계 및 경제 데이터",
+    ja: "ドイツの公式統計・経済データ",
+    de: "Amtliche Statistiken und Wirtschaftsdaten für Deutschland"
+  },
+  "德国经济研究所(DIW Berlin)": {
+    en: "Leading German economic research institute with policy analysis",
+    zh: "德国顶级经济研究机构，提供政策分析",
+    ko: "독일 최고 경제연구기관, 정책 분석 제공",
+    ja: "ドイツ最高の経済研究機関、政策分析を提供",
+    de: "Führendes deutsches Wirtschaftsforschungsinstitut mit Politikanalyse"
+  },
+  "德国经济部": {
+    en: "Federal ministry responsible for economic affairs and energy policy",
+    zh: "德国联邦经济事务和能源政策部门",
+    ko: "독일 연방 경제사무 및 에너지정책 부처",
+    ja: "ドイツ連邦経済事務・エネルギー政策省",
+    de: "Bundesministerium für Wirtschaftsangelegenheiten und Energiepolitik"
+  },
+  "德国对华政策研究所(MERICS)": {
+    en: "Leading European think tank on contemporary China research",
+    zh: "欧洲领先的中国问题研究智库",
+    ko: "유럽 최고의 중국 문제 연구 싱크탱크",
+    ja: "ヨーロッパ最高の中国問題研究シンクタンク",
+    de: "Führender europäischer Think Tank für zeitgenössische China-Forschung"
+  },
+  "German Council of Economic Experts": {
+    en: "Independent advisory body providing economic policy recommendations",
+    zh: "独立咨询机构，提供经济政策建议",
+    ko: "독립 자문기구, 경제정책 권고 제공",
+    ja: "独立諮問機関、経済政策提言を提供",
+    de: "Unabhängiges Beratungsgremium für wirtschaftspolitische Empfehlungen"
+  },
+  "法兰克福证券交易所": {
+    en: "One of the world's largest stock exchanges, European financial center",
+    zh: "世界最大证券交易所之一，欧洲金融中心",
+    ko: "세계 최대 증권거래소 중 하나, 유럽 금융중심지",
+    ja: "世界最大の証券取引所の一つ、ヨーロッパ金融センター",
+    de: "Eine der weltweit größten Börsen, europäisches Finanzzentrum"
+  },
+  "德国工商总会(DIHK)": {
+    en: "Umbrella organization of German chambers of commerce and industry",
+    zh: "德国工商会议所联合组织",
+    ko: "독일 상공회의소 연합 조직",
+    ja: "ドイツ商工会議所連合組織",
+    de: "Dachorganisation der deutschen Industrie- und Handelskammern"
+  },
+  "德国汽车工业协会(VDA)": {
+    en: "German automotive industry association representing major car manufacturers",
+    zh: "德国汽车工业协会，代表主要汽车制造商",
+    ko: "주요 자동차 제조업체를 대표하는 독일 자동차공업협회",
+    ja: "主要自動車メーカーを代表するドイツ自動車工業会",
+    de: "Deutscher Automobilverband, der große Autohersteller vertritt"
+  },
+  "德国DAX指数分析": {
+    en: "Analysis and data on Germany's leading stock market index",
+    zh: "德国主要股市指数分析和数据",
+    ko: "독일 주요 주식시장 지수 분석 및 데이터",
+    ja: "ドイツ主要株式市場指数の分析とデータ",
+    de: "Analyse und Daten zu Deutschlands führendem Aktienmarktindex"
+  },
+  "德国企业信贷数据库": {
+    en: "Corporate credit and financing data for German companies",
+    zh: "德国企业信贷和融资数据",
+    ko: "독일 기업 신용 및 금융 데이터",
+    ja: "ドイツ企業の信用・融資データ",
+    de: "Unternehmenskredit- und Finanzierungsdaten für deutsche Unternehmen"
+  },
+  
+  // 政策专题资源描述翻译
+  "工信部": {
+    en: "Ministry of Industry and Information Technology, industrial policy and regulation",
+    zh: "工业和信息化部，产业政策与监管",
+    ko: "공업정보화부, 산업정책 및 규제",
+    ja: "工業情報化部、産業政策と規制",
+    de: "Ministerium für Industrie und Informationstechnologie, Industriepolitik und Regulierung"
+  },
+  "商务部": {
+    en: "Ministry of Commerce, trade policy and foreign investment regulation",
+    zh: "商务部，贸易政策与外资监管",
+    ko: "상무부, 무역정책 및 외국인투자 규제",
+    ja: "商務部、貿易政策と外国投資規制",
+    de: "Handelsministerium, Handelspolitik und ausländische Investitionsregulierung"
+  },
+  "国家统计局": {
+    en: "National Bureau of Statistics, official economic statistics and data",
+    zh: "国家统计局，官方经济统计与数据",
+    ko: "국가통계국, 공식 경제통계 및 데이터",
+    ja: "国家統計局、公式経済統計とデータ",
+    de: "Nationales Statistikamt, offizielle Wirtschaftsstatistiken und -daten"
+  },
+  "银保监会": {
+    en: "Banking and insurance regulatory commission, financial supervision",
+    zh: "银行保险监督管理委员会，金融监管",
+    ko: "은행보험감독관리위원회, 금융감독",
+    ja: "銀行保険監督管理委員会、金融監督",
+    de: "Banken- und Versicherungsaufsichtskommission, Finanzaufsicht"
+  },
+  "证监会": {
+    en: "Securities regulatory commission, capital market supervision",
+    zh: "证券监督管理委员会，资本市场监管",
+    ko: "증권감독관리위원회, 자본시장 감독",
+    ja: "証券監督管理委員会、資本市場監督",
+    de: "Wertpapieraufsichtskommission, Kapitalmarktaufsicht"
+  },
+  "国务院政策解读专栏": {
+    en: "State Council policy interpretation and analysis platform",
+    zh: "国务院政策解读和分析平台",
+    ko: "국무원 정책해석 및 분석 플랫폼",
+    ja: "国務院政策解釈・分析プラットフォーム",
+    de: "Staatsrat-Politikinterpretations- und Analyseplattform"
+  },
+  "人民银行货币政策报告": {
+    en: "People's Bank of China quarterly monetary policy reports",
+    zh: "中国人民银行季度货币政策报告",
+    ko: "중국인민은행 분기별 통화정책 보고서",
+    ja: "中国人民銀行四半期金融政策報告書",
+    de: "Vierteljährliche Geldpolitikberichte der Volksbank China"
+  },
+  "IMF政策跟踪": {
+    en: "IMF policy tracking and analysis platform",
+    zh: "IMF政策跟踪和分析平台",
+    ko: "IMF 정책 추적 및 분석 플랫폼",
+    ja: "IMF政策追跡・分析プラットフォーム",
+    de: "IWF-Politikverfolgungs- und Analyseplattform"
+  },
+  
+  // 工具专题资源描述翻译
+  "Bloomberg Terminal": {
+    en: "Professional financial data terminal, industry standard for traders",
+    zh: "专业金融数据终端，交易员行业标准",
+    ko: "전문 금융데이터 터미널, 트레이더 업계 표준",
+    ja: "プロフェッショナル金融データターミナル、トレーダー業界標準",
+    de: "Professionelles Finanzdatenterminal, Industriestandard für Händler"
+  },
+  "Python for Economics": {
+    en: "Python programming tools and libraries for economic analysis",
+    zh: "Python经济学编程工具和库",
+    ko: "경제 분석을 위한 파이썬 프로그래밍 도구 및 라이브러리",
+    ja: "経済分析のためのPythonプログラミングツールとライブラリ",
+    de: "Python-Programmiertools und -bibliotheken für Wirtschaftsanalyse"
+  },
+  "R for Economics": {
+    en: "R statistical programming language for econometric analysis",
+    zh: "R语言统计编程，用于计量经济学分析",
+    ko: "계량경제학 분석을 위한 R 통계 프로그래밍 언어",
+    ja: "計量経済学分析のためのR統計プログラミング言語",
+    de: "R statistische Programmiersprache für ökonometrische Analyse"
+  },
+  "Stata": {
+    en: "Professional statistical software for econometric analysis",
+    zh: "专业统计软件，用于计量经济学分析",
+    ko: "계량경제학 분석을 위한 전문 통계 소프트웨어",
+    ja: "計量経済学分析のための専門統計ソフトウェア",
+    de: "Professionelle Statistiksoftware für ökonometrische Analyse"
+  },
+  "美国通胀计算器": {
+    en: "US inflation calculator based on historical CPI data",
+    zh: "基于历史CPI数据的美国通胀计算器",
+    ko: "역사적 CPI 데이터 기반 미국 인플레이션 계산기",
+    ja: "歴史的CPIデータに基づく米国インフレ計算機",
+    de: "US-Inflationsrechner basierend auf historischen CPI-Daten"
+  },
+  "Our World in Data": {
+    en: "Data visualization platform showing global development trends",
+    zh: "数据可视化平台，展示全球发展趋势",
+    ko: "글로벌 개발 동향을 보여주는 데이터 시각화 플랫폼",
+    ja: "グローバル発展トレンドを示すデータ可視化プラットフォーム",
+    de: "Datenvisualisierungsplattform zeigt globale Entwicklungstrends"
+  },
+  "Zotero": {
+    en: "Free reference management software for academic research",
+    zh: "免费文献管理软件，用于学术研究",
+    ko: "학술 연구를 위한 무료 참고문헌 관리 소프트웨어",
+    ja: "学術研究のための無料参考文献管理ソフトウェア",
+    de: "Kostenlose Referenzverwaltungssoftware für akademische Forschung"
+  },
+  "Econlib": {
+    en: "Free online library of economics books and resources",
+    zh: "免费在线经济学图书和资源库",
+    ko: "무료 온라인 경제학 도서 및 자료 라이브러리",
+    ja: "無料オンライン経済学書籍・リソースライブラリ",
+    de: "Kostenlose Online-Bibliothek für Wirtschaftsbücher und -ressourcen"
+  },
+  
+  // 媒体专题资源描述翻译
+  "界面新闻财经": {
+    en: "Emerging financial media focusing on technology and new economy trends",
+    zh: "新兴财经媒体，关注科技和新经济趋势",
+    ko: "기술 및 신경제 동향에 중점을 둔 신흥 금융 미디어",
+    ja: "テクノロジーと新経済トレンドに焦点を当てた新興金融メディア",
+    de: "Aufstrebende Finanzmedien mit Fokus auf Technologie und neue Wirtschaftstrends"
+  },
+  "NBER Digest": {
+    en: "Official digest of National Bureau of Economic Research findings",
+    zh: "美国国家经济研究局官方研究摘要",
+    ko: "미국 국가경제연구소 공식 연구 요약",
+    ja: "米国国家経済研究所公式研究要約",
+    de: "Offizielle Zusammenfassung der Forschungsergebnisse des National Bureau of Economic Research"
+  },
+  "Brookings Institution": {
+    en: "Top-tier American think tank providing economic policy analysis",
+    zh: "美国顶级智库，提供经济政策分析",
+    ko: "경제정책 분석을 제공하는 미국 최고 싱크탱크",
+    ja: "経済政策分析を提供する米国最高級シンクタンク",
+    de: "Erstklassiger amerikanischer Think Tank für Wirtschaftspolitikanalyse"
+  },
+  "Peterson Institute for International Economics": {
+    en: "Authoritative think tank specializing in international economic policy",
+    zh: "专注国际经济政策的权威智库",
+    ko: "국제경제정책 전문 권위있는 싱크탱크",
+    ja: "国際経済政策専門の権威あるシンクタンク",
+    de: "Maßgeblicher Think Tank spezialisiert auf internationale Wirtschaftspolitik"
+  },
+  
+  // 市场专题资源描述翻译
+  "前瞻产业研究院": {
+    en: "Chinese industry research institute providing market analysis",
+    zh: "中国产业研究机构，提供市场分析",
+    ko: "시장 분석을 제공하는 중국 산업연구기관",
+    ja: "市場分析を提供する中国産業研究機関",
+    de: "Chinesisches Industrieforschungsinstitut für Marktanalyse"
+  },
+  "MacroMicro行业地图": {
+    en: "Industry mapping platform showing macroeconomic and microeconomic trends",
+    zh: "行业地图平台，展示宏观和微观经济趋势",
+    ko: "거시경제 및 미시경제 동향을 보여주는 산업 지도 플랫폼",
+    ja: "マクロ・ミクロ経済トレンドを示す産業マップ・プラットフォーム",
+    de: "Industriekarten-Plattform zeigt makro- und mikroökonomische Trends"
   }
 };
 
@@ -903,7 +1221,125 @@ export const tagTranslations: Record<Language, Record<string, string>> = {
     "研究": "Research",
     "宏观经济学": "Macroeconomics",
     "营销": "Marketing",
-    "消费行为": "Consumer Behavior"
+    "消费行为": "Consumer Behavior",
+    
+    // 学习专题标签
+    "顶级大学": "Top Universities",
+    "免费课程": "Free Courses",
+    "全面系统": "Comprehensive",
+    "英文教学": "English Teaching",
+    "公共政策": "Public Policy",
+    "执行教育": "Executive Education",
+    "权威师资": "Authoritative Faculty",
+    "免费学习": "Free Learning",
+    "基础入门": "Beginner Friendly",
+    "中文字幕": "Chinese Subtitles",
+    "互动练习": "Interactive Exercises",
+    "专业认证": "Professional Certification",
+    "系统学习": "Systematic Learning",
+    "大学课程": "University Courses",
+    "付费优质": "Premium Paid",
+    "现代教学": "Modern Teaching",
+    "经济思维": "Economic Thinking",
+    "免费资源": "Free Resources",
+    "创新方法": "Innovative Methods",
+    "经典纪录片": "Classic Documentary",
+    "经济学史": "Economic History",
+    "理论对比": "Theory Comparison",
+    "通俗易懂": "Easy to Understand",
+    "自由市场": "Free Market",
+    "哈耶克思想": "Hayek's Ideas",
+    "思辨性强": "Highly Analytical",
+    "马克思主义": "Marxism",
+    "资本主义": "Capitalism",
+    "历史视角": "Historical Perspective",
+    "学术论文": "Academic Papers",
+    "免费下载": "Free Download",
+    "全球研究": "Global Research",
+    "工作论文": "Working Papers",
+    "权威研究": "Authoritative Research",
+    "美国视角": "US Perspective",
+    "政策评估": "Policy Evaluation",
+    "实证研究": "Empirical Research",
+    "预印本": "Preprint",
+    "最新研究": "Latest Research",
+    "免费获取": "Free Access",
+    "全球论文": "Global Papers",
+    
+    // 市场专题标签
+    "A股": "A-shares",
+    "主板": "Main Board",
+    "中国": "China",
+    "创业板": "ChiNext",
+    "中小板": "SME Board",
+    "港股": "Hong Kong Stocks",
+    "中概股": "Chinese Concept Stocks",
+    "国际": "International",
+    "美股": "US Stocks",
+    "纽交所": "NYSE",
+    "全球": "Global",
+    "科技股": "Tech Stocks",
+    "纳斯达克": "NASDAQ",
+    "美国": "United States",
+    "期货": "Futures",
+    "期权": "Options",
+    "商品": "Commodities",
+    
+    // 数据专题标签
+    "美联储": "Federal Reserve",
+    "经济数据": "Economic Data",
+    "世界银行": "World Bank",
+    "全球数据": "Global Data",
+    "发展指标": "Development Indicators",
+    "IMF": "IMF",
+    "货币": "Currency",
+    "OECD": "OECD",
+    "发达国家": "Developed Countries",
+    "统计": "Statistics",
+    "实时数据": "Real-time Data",
+    "指标": "Indicators",
+    "预测": "Forecasts",
+    "金融数据": "Financial Data",
+    "专业": "Professional",
+    "亚洲": "Asia",
+    "欧盟": "European Union",
+    "国际清算银行": "BIS",
+    "金融统计": "Financial Statistics",
+    "银行业": "Banking",
+    "中国数据": "China Data",
+    "微观数据": "Microdata",
+    "需要申请": "Application Required",
+    "家庭金融": "Household Finance",
+    "德国数据": "Germany Data",
+    "学术申请": "Academic Application",
+    "面板数据": "Panel Data",
+    "长期跟踪": "Longitudinal",
+    "OECD数据": "OECD Data",
+    "统计平台": "Statistical Platform",
+    "结构化数据": "Structured Data",
+    
+    // 工具专题标签
+    "专业终端": "Professional Terminal",
+    "付费高端": "Premium Paid",
+    "行业标准": "Industry Standard",
+    "编程工具": "Programming Tools",
+    "开源工具": "Open Source",
+    "统计软件": "Statistical Software",
+    "计量分析": "Econometric Analysis",
+    "计量经济": "Econometrics",
+    "付费专业": "Professional Paid",
+    "学术标准": "Academic Standard",
+    "美国通胀": "US Inflation",
+    "计算工具": "Calculation Tool",
+    "历史CPI": "Historical CPI",
+    "实用工具": "Practical Tools",
+    "文献管理": "Reference Management",
+    "学术工具": "Academic Tools",
+    "免费软件": "Free Software",
+    "研究辅助": "Research Assistant",
+    "经济思想": "Economic Thought",
+    "图书资源": "Book Resources",
+    "理论学习": "Theoretical Learning"
   },
   zh: {
     // 英文标签转中文（这是现有数据中的英文标签）
@@ -954,7 +1390,50 @@ export const tagTranslations: Record<Language, Record<string, string>> = {
     "理论": "이론",
     "研究": "연구",
     "宏观经济学": "거시경제학",
-    "营销": "마케팅"
+    "营销": "마케팅",
+    
+    // 学习专题标签
+    "顶级大学": "최고 대학교",
+    "免费课程": "무료 과정",
+    "全面系统": "포괄적",
+    "英文教学": "영어 교육",
+    "公共政策": "공공정책",
+    "执行教育": "임원 교육",
+    "权威师资": "권위있는 교수진",
+    "免费学习": "무료 학습",
+    "基础入门": "초보자 친화적",
+    "中文字幕": "중국어 자막",
+    "互动练习": "대화형 연습",
+    "专业认证": "전문 인증",
+    "系统学习": "체계적 학습",
+    "大学课程": "대학 과정",
+    "付费优质": "프리미엄 유료",
+    "现代教学": "현대 교육",
+    "经济思维": "경제적 사고",
+    "免费资源": "무료 자원",
+    "创新方法": "혁신적 방법",
+    "经典纪录片": "클래식 다큐멘터리",
+    "经济学史": "경제학사",
+    "理论对比": "이론 비교",
+    "通俗易懂": "이해하기 쉬운",
+    "自由市场": "자유시장",
+    "哈耶克思想": "하이에크 사상",
+    "思辨性强": "분석적",
+    "马克思主义": "마르크스주의",
+    "资本主义": "자본주의",
+    "历史视角": "역사적 관점",
+    "学术论문": "학술 논문",
+    "免费下载": "무료 다운로드",
+    "全球研究": "글로벌 연구",
+    "工作论文": "워킹페이퍼",
+    "权威研究": "권위있는 연구",
+    "美国视角": "미국 관점",
+    "政策评估": "정책 평가",
+    "实证研究": "실증 연구",
+    "预印本": "프리프린트",
+    "最新研究": "최신 연구",
+    "免费获取": "무료 액세스",
+    "全球论文": "글로벌 논문"
   },
   ja: {
     // 日语翻译
@@ -973,7 +1452,50 @@ export const tagTranslations: Record<Language, Record<string, string>> = {
     "理论": "理論",
     "研究": "研究",
     "宏观经济学": "マクロ経済学",
-    "营销": "マーケティング"
+    "营销": "マーケティング",
+    
+    // 学习专题标签
+    "顶级大学": "トップ大学",
+    "免费课程": "無料コース",
+    "全面系统": "包括的",
+    "英文教学": "英語教育",
+    "公共政策": "公共政策",
+    "执行教育": "エグゼクティブ教育",
+    "权威师资": "権威ある教授陣",
+    "免费学习": "無料学習",
+    "基础入门": "初心者向け",
+    "中文字幕": "中国語字幕",
+    "互动练习": "インタラクティブ練習",
+    "专业认证": "専門認定",
+    "系统学习": "体系的学習",
+    "大学课程": "大学コース",
+    "付费优质": "プレミアム有料",
+    "现代教学": "現代教育",
+    "经济思维": "経済思考",
+    "免费资源": "無料リソース",
+    "创新方法": "革新的方法",
+    "经典纪录片": "クラシック・ドキュメンタリー",
+    "经济学史": "経済学史",
+    "理论对比": "理論比較",
+    "通俗易懂": "分かりやすい",
+    "自由市场": "自由市場",
+    "哈耶克思想": "ハイエク思想",
+    "思辨性强": "分析的",
+    "马克思主义": "マルクス主義",
+    "资本主义": "資本主義",
+    "历史视角": "歴史的視点",
+    "学术论文": "学術論文",
+    "免费下载": "無料ダウンロード",
+    "全球研究": "グローバル研究",
+    "工作论文": "ワーキングペーパー",
+    "权威研究": "権威ある研究",
+    "美国视角": "米国視点",
+    "政策评估": "政策評価",
+    "实证研究": "実証研究",
+    "预印本": "プレプリント",
+    "最新研究": "最新研究",
+    "免费获取": "無料アクセス",
+    "全球论文": "グローバル論文"
   },
   de: {
     // 德语翻译
@@ -992,7 +1514,50 @@ export const tagTranslations: Record<Language, Record<string, string>> = {
     "理论": "Theorie",
     "研究": "Forschung",
     "宏观经济学": "Makroökonomie",
-    "营销": "Marketing"
+    "营销": "Marketing",
+    
+    // 学习专题标签
+    "顶级大学": "Top-Universitäten",
+    "免费课程": "Kostenlose Kurse",
+    "全面系统": "Umfassend",
+    "英文教学": "Englischunterricht",
+    "公共政策": "Öffentliche Politik",
+    "执行教育": "Executive Education",
+    "权威师资": "Autoritative Fakultät",
+    "免费学习": "Kostenloses Lernen",
+    "基础入门": "Anfängerfreundlich",
+    "中文字幕": "Chinesische Untertitel",
+    "互动练习": "Interaktive Übungen",
+    "专业认证": "Professionelle Zertifizierung",
+    "系统学习": "Systematisches Lernen",
+    "大学课程": "Universitätskurse",
+    "付费优质": "Premium bezahlt",
+    "现代教学": "Moderne Lehre",
+    "经济思维": "Wirtschaftsdenken",
+    "免费资源": "Kostenlose Ressourcen",
+    "创新方法": "Innovative Methoden",
+    "经典纪录片": "Klassische Dokumentation",
+    "经济学史": "Wirtschaftsgeschichte",
+    "理论对比": "Theorienvergleich",
+    "通俗易懂": "Leicht verständlich",
+    "自由市场": "Freier Markt",
+    "哈耶克思想": "Hayek-Gedanken",
+    "思辨性强": "Analytisch",
+    "马克思主义": "Marxismus",
+    "资本主义": "Kapitalismus",
+    "历史视角": "Historische Perspektive",
+    "学术论文": "Akademische Arbeiten",
+    "免费下载": "Kostenloser Download",
+    "全球研究": "Globale Forschung",
+    "工作论文": "Arbeitspapiere",
+    "权威研究": "Autoritative Forschung",
+    "美国视角": "US-Perspektive",
+    "政策评估": "Politikbewertung",
+    "实证研究": "Empirische Forschung",
+    "预印本": "Preprint",
+    "最新研究": "Neueste Forschung",
+    "免费获取": "Kostenloser Zugang",
+    "全球论文": "Globale Papers"
   }
 };
 

@@ -282,7 +282,8 @@ export const translations = {
     // Buttons
     btn_start_exploring: '开始探索',
     btn_view_resources: '查看资源',
-    btn_show_less: '收起',
+    btn_show_more: '查看更多',
+    btn_collapse: '收起',
     
     // Additional UI text
     visit_resource: '访问资源',
@@ -379,6 +380,23 @@ export const translations = {
     guide_german_tip2: '• 德国经济机构',
     guide_german_tip3: '• 德国政策报告',
     guide_german_tip4: '• 欧洲经济研究',
+    
+    // Search Results
+    search_results_title: '搜索结果',
+    search_results_found: '个结果',
+    search_results_sort_by: '排序方式：',
+    search_results_relevance: '相关性',
+    search_results_alphabetical: '字母顺序',
+    search_results_clear: '清除搜索',
+    search_results_retry: '重新搜索',
+    search_results_no_results: '未找到资源',
+    search_results_no_results_desc: '尝试调整搜索词或清除筛选条件',
+    search_results_popular_tags: '热门标签',
+    search_results_category_stats: '分类统计',
+    search_results_show_all_tags: '显示全部',
+    search_results_collapse_tags: '收起标签',
+    search_results_visit: '访问',
+    search_results_more: '更多',
     
     // Policy special section
     policy_nav: '政策专题',
@@ -526,7 +544,8 @@ export const translations = {
     // Buttons
     btn_start_exploring: '탐색 시작',
     btn_view_resources: '리소스 보기',
-    btn_show_less: '접기',
+    btn_show_more: '더 보기',
+    btn_collapse: '접기',
     
     // Additional UI text
     visit_resource: '리소스 방문',
@@ -627,6 +646,22 @@ export const translations = {
     guide_german_tip3: '• 독일 정책 보고서',
     guide_german_tip4: '• 유럽 경제 연구',
     
+    // Search Results
+    search_results_title: '검색 결과',
+    search_results_found: '개 결과',
+    search_results_sort_by: '정렬 기준:',
+    search_results_relevance: '관련성',
+    search_results_alphabetical: '알파벳 순',
+    search_results_clear: '검색 지우기',
+    search_results_retry: '다시 검색',
+    search_results_no_results: '리소스를 찾을 수 없음',
+    search_results_no_results_desc: '검색어를 조정하거나 필터를 지워보세요',
+    search_results_popular_tags: '인기 태그',
+    search_results_category_stats: '카테고리 분포',
+    search_results_show_all_tags: '모두 보기',
+    search_results_collapse_tags: '태그 접기',
+    search_results_visit: '방문',
+    search_results_more: '더 보기',
 
   },
   
@@ -717,7 +752,8 @@ export const translations = {
     // Buttons
     btn_start_exploring: '探索を開始',
     btn_view_resources: 'リソースを表示',
-    btn_show_less: '折りたたむ',
+    btn_show_more: 'さらに表示',
+    btn_collapse: '折りたたむ',
     
     // Additional UI text
     visit_resource: 'リソースを訪問',
@@ -818,6 +854,22 @@ export const translations = {
     guide_german_tip3: '• ドイツ政策報告書',
     guide_german_tip4: '• ヨーロッパ経済研究',
     
+    // Search Results
+    search_results_title: '検索結果',
+    search_results_found: '件の結果',
+    search_results_sort_by: '並び順：',
+    search_results_relevance: '関連性',
+    search_results_alphabetical: 'アルファベット順',
+    search_results_clear: '検索をクリア',
+    search_results_retry: '再検索',
+    search_results_no_results: 'リソースが見つかりません',
+    search_results_no_results_desc: '検索語を調整するかフィルターをクリアしてください',
+    search_results_popular_tags: '人気のタグ',
+    search_results_category_stats: 'カテゴリ分布',
+    search_results_show_all_tags: 'すべて表示',
+    search_results_collapse_tags: 'タグを折りたたむ',
+    search_results_visit: '訪問',
+    search_results_more: 'さらに',
 
   },
 
@@ -908,7 +960,8 @@ export const translations = {
     // Buttons
     btn_start_exploring: 'Entdeckung beginnen',
     btn_view_resources: 'Ressourcen anzeigen',
-    btn_show_less: 'Weniger anzeigen',
+    btn_show_more: 'Mehr anzeigen',
+    btn_collapse: 'Weniger anzeigen',
     
     // Additional UI text
     visit_resource: 'Ressource besuchen',
@@ -1009,6 +1062,22 @@ export const translations = {
     guide_german_tip3: '• Deutsche Politikberichte',
     guide_german_tip4: '• Europäische Wirtschaftsforschung',
     
+    // Search Results
+    search_results_title: 'Suchergebnisse',
+    search_results_found: 'Ergebnisse gefunden',
+    search_results_sort_by: 'Sortieren nach:',
+    search_results_relevance: 'Relevanz',
+    search_results_alphabetical: 'Alphabetisch',
+    search_results_clear: 'Suche löschen',
+    search_results_retry: 'Erneut suchen',
+    search_results_no_results: 'Keine Ressourcen gefunden',
+    search_results_no_results_desc: 'Versuchen Sie, Ihre Suchbegriffe anzupassen oder Filter zu löschen',
+    search_results_popular_tags: 'Beliebte Tags',
+    search_results_category_stats: 'Kategorieverteilung',
+    search_results_show_all_tags: 'Alle anzeigen',
+    search_results_collapse_tags: 'Tags einklappen',
+    search_results_visit: 'Besuchen',
+    search_results_more: 'mehr',
 
   }
 };
