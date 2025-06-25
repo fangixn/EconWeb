@@ -180,6 +180,16 @@ export const enTranslations = {
   search_results_collapse_tags: 'Collapse tags',
   search_results_visit: 'Visit',
   search_results_more: 'more',
+
+  // Category labels for search results
+  category_learning: 'Learning Specialization',
+  category_media: 'Media Specialization',
+  category_policy: 'Policy Specialization', 
+  category_data: 'Data Specialization',
+  category_market: 'Market Specialization',
+  category_tools: 'Tools Specialization',
+  category_top_journals: 'Top Journals',
+  category_german: 'German Focus',
 };
 
 // English resource translations

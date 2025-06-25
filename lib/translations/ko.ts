@@ -180,6 +180,16 @@ export const koTranslations = {
   search_results_collapse_tags: '태그 접기',
   search_results_visit: '방문',
   search_results_more: '더',
+
+  // Category labels for search results
+  category_learning: '학습 전문',
+  category_media: '미디어 전문',
+  category_policy: '정책 전문', 
+  category_data: '데이터 전문',
+  category_market: '시장 전문',
+  category_tools: '도구 전문',
+  category_top_journals: '최고 저널',
+  category_german: '독일 포커스',
 };
 
 // 한국어 자료 번역

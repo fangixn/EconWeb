@@ -46,6 +46,16 @@ export const jaTranslations = {
   search_results_popular_tags: '人気タグ',
   search_results_visit: '訪問',
   search_results_more: 'もっと',
+
+  // Category labels for search results
+  category_learning: '学習専門',
+  category_media: 'メディア専門',
+  category_policy: '政策専門', 
+  category_data: 'データ専門',
+  category_market: '市場専門',
+  category_tools: 'ツール専門',
+  category_top_journals: 'トップジャーナル',
+  category_german: 'ドイツフォーカス',
 };
 
 // 日本語リソース翻訳

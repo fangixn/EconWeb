@@ -61,7 +61,7 @@ export function getResourceTranslation(lang: Language, resourceName: string, cat
 
 // 资源描述翻译函数
 export function getResourceDescriptionTranslation(lang: Language, resourceName: string, description: string): string {
-  return (allResourceDescriptions[lang] as any)?.[resourceName] || description;
+  return (allResourceDescriptions[lang] as any)?.[description] || description;
 }
 
 // 标签翻译函数

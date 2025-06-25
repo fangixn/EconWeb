@@ -180,6 +180,16 @@ export const zhTranslations = {
   search_results_collapse_tags: '收起标签',
   search_results_visit: '访问',
   search_results_more: '更多',
+
+  // Category labels for search results
+  category_learning: '学习专题',
+  category_media: '媒体专题',
+  category_policy: '政策专题', 
+  category_data: '数据专题',
+  category_market: '市场专题',
+  category_tools: '工具专题',
+  category_top_journals: '顶刊专题',
+  category_german: '德国专题',
 };
 
 // 中文资源翻译（与data.ts中的实际资源名称匹配）

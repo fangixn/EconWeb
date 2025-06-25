@@ -46,6 +46,16 @@ export const deTranslations = {
   search_results_popular_tags: 'Beliebte Tags',
   search_results_visit: 'Besuchen',
   search_results_more: 'mehr',
+
+  // Category labels for search results
+  category_learning: 'Lernspezialisierung',
+  category_media: 'Medienspezialisierung',
+  category_policy: 'Politikspezialisierung', 
+  category_data: 'Datenspezialisierung',
+  category_market: 'Marktspezialisierung',
+  category_tools: 'Tools-Spezialisierung',
+  category_top_journals: 'Top-Zeitschriften',
+  category_german: 'Deutschland-Fokus',
 };
 
 // Deutsche Ressourcenübersetzungen

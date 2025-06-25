@@ -114,17 +114,18 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
   }, [filteredAndSortedResources]);
 
   const getCategoryLabel = (category: string) => {
-    const labels: { [key: string]: string } = {
-      'learning': '学习专题',
-      'media': '媒体专题', 
-      'policy': '政策专题',
-      'data': '数据专题',
-      'market': '市场专题',
-      'tools': '工具专题',
-      'top-journals': '顶刊专题',
-      'german': '德国专题'
+    const categoryKeyMap: { [key: string]: string } = {
+      'learning': 'category_learning',
+      'media': 'category_media', 
+      'policy': 'category_policy',
+      'data': 'category_data',
+      'market': 'category_market',
+      'tools': 'category_tools',
+      'top-journals': 'category_top_journals',
+      'german': 'category_german'
     };
-    return labels[category] || category;
+    const translationKey = categoryKeyMap[category];
+    return translationKey ? (t(translationKey) || category) : category;
   };
 
   const getCategoryColor = (category: string) => {
