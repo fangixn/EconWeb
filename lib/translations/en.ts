@@ -294,84 +294,20 @@ export const enResourceTranslations: Record<string, string> = {
 // English resource description translations
 export const enResourceDescriptions: Record<string, string> = {
   // Learning specialization descriptions
-  "麻省理工开放课程 (MIT OCW)": "MIT OpenCourseWare with core courses in microeconomics, macroeconomics, and econometrics",
-  "哈佛肯尼迪学院": "Harvard Kennedy School online courses for public policy and economics",
-  "可汗学院经济学": "Khan Academy free economics courses, suitable for economics introduction and review",
-  "Coursera经济学专业课程": "Coursera systematic economics specialization courses from top universities",
-  "边际革命大学": "Innovative online platform focused on modern economics education",
-  "BBC货币大师：凯恩斯篇": "BBC 'Masters of Money' series Keynes episode, in-depth analysis of Keynesian economics",
-  "BBC货币大师：哈耶克篇": "BBC 'Masters of Money' series Hayek episode, exploring free market vs government intervention debate",
-  "BBC货币大师：马克思篇": "BBC 'Masters of Money' series Marx episode, re-examining Marx's economic theories",
-  "社会科学研究网络 (SSRN)": "Social Science Research Network for downloading latest working papers and research reports",
-  "美国国家经济研究局 (NBER)": "National Bureau of Economic Research, authoritative economic research and policy evaluation",
-  "arXiv经济学预印本": "Economics and finance preprint paper platform featuring latest research findings",
 
   // Media specialization descriptions
-  "The Economist": "British weekly magazine with in-depth coverage of global politics, economics, business, and technology trends",
-  "Financial Times": "Global authority on financial markets and macroeconomic policy, providing real-time market dynamics and professional analysis",
-  "Bloomberg": "Global leading financial information platform providing market data, macroeconomic analysis and real-time news",
-  "Wall Street Journal": "Leading American business and financial news source with in-depth coverage of global economic dynamics",
-  "Project Syndicate": "Global platform for renowned economists' columns, featuring Nobel laureates' insights on global issues",
-  "VoxEU (CEPR)": "European economic policy research center expert opinion platform for cutting-edge policy research and discussion",
-  "财新网": "China's top financial media known for investigative reporting and financial policy coverage",
-  "第一财经": "Professional financial media platform providing real-time economic news and in-depth data analysis",
-  "澎湃新闻·财经频道": "Focus on macroeconomic and policy implementation, providing timely and accurate financial news",
-  "21世纪经济报道": "Established financial media focusing on practical and policy reporting with strong industry influence",
-  "界面新闻财经": "Emerging financial media focusing on technology and new economy financial news and trend analysis",
-  "NBER Digest": "Official summary publication of the National Bureau of Economic Research, authoritative academic research highlights",
-  "Brookings Institution": "Brookings Institution economics research channel, top think tank policy analysis",
-  "Peterson Institute for International Economics": "Authoritative think tank specializing in international economic policy research",
 
   // Market specialization descriptions
-  "前瞻产业研究院": "AI and new energy industry reports, industrial development trend analysis",
-  "MacroMicro产业地图": "Industrial chain data visualization tool for global market correlation analysis",
 
   // Policy specialization descriptions
-  "中国人民银行": "People's Bank of China - China's central bank for monetary policy and financial regulation",
-  "美国联邦储备系统": "Federal Reserve System - central banking system of the United States",
-  "欧洲中央银行": "European Central Bank - monetary policy for the eurozone",
-  "IMF (国际货币基金组织)": "IMF - international organization promoting global monetary cooperation",
-  "世界银行(World Bank)": "World Bank Group - international financial institution providing development assistance",
 
   // Data specialization descriptions
-  "美联储经济数据库 (FRED)": "Federal Reserve Economic Database - the most authoritative economic data platform globally",
-  "世界银行开放数据": "Global development indicators and national statistics covering over 200 countries",
-  "国际货币基金组织数据库": "IMF official data and statistics, global financial stability indicators",
-  "经合组织统计数据 (OECD)": "OECD statistical data, economic indicators for developed countries",
-  "全球经济指标 (Trading Economics)": "Real-time economic indicators, market data and forecast analysis covering 196 countries",
-  "万得金融数据 (Wind)": "China's leading financial data provider, professional investment research platform",
-  "CEIC全球数据库": "Professional platform for Asian economic data, authoritative source for emerging market data",
 
   // Market specialization descriptions
-  "上海证券交易所": "Shanghai Stock Exchange - A-share main board market information and data, China's major capital market platform",
-  "深圳证券交易所": "Shenzhen Stock Exchange - ChiNext and SME board market information, supporting innovative enterprise development",
-  "香港交易所": "Hong Kong Exchanges - Hong Kong stocks and Chinese concept stocks information, Asia's international financial center",
-  "纽约证券交易所": "New York Stock Exchange - the world's largest stock exchange, core platform of global financial center",
-  "纳斯达克交易所": "NASDAQ - technology stock-focused exchange, global gathering place for tech companies",
-  "芝加哥商品交易所": "Chicago Mercantile Exchange - world's largest futures and options exchange, derivatives market leader",
 
   // Tools specialization descriptions
-  "彭博终端 (Bloomberg Terminal)": "Professional financial data analysis terminal, the gold standard for financial industry",
-  "经济学Python编程": "Python programming tutorials and toolkits for economics, quantitative economic analysis powerhouse",
-  "R语言计量经济学": "R programming guide for econometric applications, professional statistical modeling tool",
-  "Stata统计软件": "Professional statistical analysis software, standard tool for economic research",
-  "美国通胀计算器": "Historical CPI-based inflation calculator, a tool for analyzing purchasing power changes",
-  "我们的数据世界": "Global development trend visualization platform, authoritative data publishing platform",
-  "Zotero文献管理": "Academic reference management tool, essential software for researchers",
-  "经济学图书馆": "Free market economic thought resources and books, classic economics readings",
 
   // German specialization descriptions
-  "德国联邦银行": "German central bank official website providing monetary policy and economic research reports",
-  "德国联邦统计局": "German official statistical data portal, authoritative source for national economic statistics",
-  "德国经济研究所": "Leading German economic think tank focusing on housing crisis and migration economics",
-  "德国联邦经济部": "Federal Ministry for Economic Affairs and Energy, German economic policy-making department",
-  "德国对华政策研究所": "Specialized research on Chinese economy, risk assessment for German corporate investment in China",
-  "德国经济专家委员会": "German Council of Economic Experts, annual economic situation assessment",
-  "法兰克福证券交易所": "Important European financial market providing real-time quotes and analysis",
-  "德国工商总会": "Representative institution of German business community, business environment reports",
-  "德国汽车工业协会(VDA)": "Electric vehicle transition and supply chain white paper",
-  "德国DAX指数分析": "IFO index and stock market correlation dashboard",
-  "德国企业信贷数据库": "Corporate credit risk interactive map"
 };
 
 // English tag translations
@@ -582,8 +518,6 @@ export const enTagTranslations: Record<string, string> = {
 "经济分析": "Economic Analysis",
 
 "欧盟数据": "EU Data",
-
-"社会指标": "Social Indicators",
 
 "国际清算银行": "Bank for International Settlements",
 
@@ -965,13 +899,7 @@ export const enTagTranslations: Record<string, string> = {
 
 "官方政策": "Official Policy",
 
-"发展规划": "Development Planning",
-
-"官方政策": "Official Policy",
-
 "财政部": "Ministry of Finance",
-
-"财政政策": "Fiscal Policy",
 
 "税收政策": "Tax Policy",
 
@@ -985,7 +913,6 @@ export const enTagTranslations: Record<string, string> = {
 
 "工业发展": "Industrial Development",
 
-"商务部": "Ministry of Commerce",
 
 "贸易政策": "Trade Policy",
 
@@ -993,7 +920,6 @@ export const enTagTranslations: Record<string, string> = {
 
 "对外开放": "Opening-up",
 
-"国家统计局": "National Bureau of Statistics",
 
 "统计分析": "Statistical Analysis",
 
@@ -1043,149 +969,77 @@ export const enTagTranslations: Record<string, string> = {
 
 "OECD数据": "OECD Data",
 
-"经济指标": "Economic Indicators",
-
-"市场预测": "Market Forecasting",
-
 "社会指标": "Social Indicators",
 
-"A股市场": "A-Share Market",
 
-"主板交易": "Main Board Trading",
 
-"中国资本": "Chinese Capital",
 
-"创业板": "ChiNext",
 
-"中小板": "SME Board",
 
-"创新企业": "Innovative Enterprises",
 
-"港股市场": "Hong Kong Stock Market",
 
-"中概股": "Chinese Concept Stocks",
 
-"亚洲中心": "Asian Center",
 
-"美股市场": "U.S. Stock Market",
 
-"纽交所": "NYSE",
 
-"全球最大": "World's Largest",
 
-"科技股": "Technology Stocks",
 
-"纳斯达克": "NASDAQ",
 
-"美国市场": "U.S. Market",
 
-"科技企业": "Tech Companies",
 
-"期货交易": "Futures Trading",
 
-"期权市场": "Options Market",
 
-"商品期货": "Commodity Futures",
 
-"衍生品": "Derivatives",
 
-"中国市场": "Chinese Market",
 
-"产业研究": "Industrial Research",
 
-"趋势报告": "Trend Reports",
 
-"产业链分析": "Industry Chain Analysis",
 
-"交互工具": "Interactive Tools",
 
-"专业终端": "Professional Terminal",
 
-"付费高端": "Premium Service",
 
-"行业标准": "Industry Standard",
 
-"编程工具": "Programming Tools",
 
-"量化分析": "Quantitative Analysis",
 
-"统计软件": "Statistical Software",
 
-"计量分析": "Econometric Analysis",
 
-"免费工具": "Free Tools",
 
-"统计建模": "Statistical Modeling",
 
-"计量经济": "Econometrics",
 
-"付费专业": "Professional Paid",
 
-"学术标准": "Academic Standard",
 
-"通胀计算": "Inflation Calculation",
 
-"购买力分析": "Purchasing Power Analysis",
 
-"历史CPI": "Historical CPI",
 
-"实用工具": "Practical Tools",
 
-"发展趋势": "Development Trends",
 
-"文献管理": "Reference Management",
 
-"学术工具": "Academic Tools",
 
-"免费软件": "Free Software",
 
-"研究辅助": "Research Support",
 
-"图书资源": "Book Resources",
 
-"经典读物": "Classic Readings",
 
-"美联储数据": "Federal Reserve Data",
 
-"权威数据库": "Authoritative Database",
 
-"世界银行": "World Bank",
 
-"发展指标": "Development Indicators",
 
-"国家统计": "National Statistics",
 
-"货币统计": "Monetary Statistics",
 
-"发达国家": "Developed Countries",
 
-"经济统计": "Economic Statistics",
 
-"金融统计": "Financial Statistics",
 
-"银行业数据": "Banking Data",
 
-"金融稳定": "Financial Stability",
 
-"中国微观数据": "Chinese Microdata",
 
-"家庭金融": "Household Finance",
 
-"需要申请": "Application Required",
 
 "德国数据": "German Data",
 
-"面板数据": "Panel Data",
 
-"学术申请": "Academic Application",
 
-"长期跟踪": "Long-term Tracking",
 
-"OECD统计": "OECD Statistics",
 
-"结构化数据": "Structured Data",
 
-"互动查询": "Interactive Query",
 
 // 额外的关键标签翻译
 
@@ -1193,34 +1047,19 @@ export const enTagTranslations: Record<string, string> = {
 
 "金融数据": "Financial Data",
 
-"企业环境": "Business Environment",
 
-"商业报告": "Business Reports",
 
-"汽车工业": "Automotive Industry",
 
-"电动转型": "Electric Transition",
 
-"供应链": "Supply Chain",
 
-"行业协会": "Industry Association",
 
-"股市分析": "Stock Market Analysis",
 
-"相关性": "Correlation",
 
-"信贷风险": "Credit Risk",
 
-"企业分析": "Corporate Analysis",
 
-"经济评估": "Economic Assessment",
 
-"年度报告": "Annual Report",
 
-"政策咨询": "Policy Advisory",
 
-"工商组织": "Business Association",
 
-"行业代表": "Industry Representative",
 
 }; 
