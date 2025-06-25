@@ -33,10 +33,10 @@ export default function HeroSection({ onSearch, resources = [] }: HeroSectionPro
       });
     });
 
-    // 按频率排序并取前10个
+    // 按频率排序并取前4个最热门的标签
     const sortedTags = Array.from(tagCounts.entries())
       .sort((a, b) => b[1] - a[1])
-      .slice(0, 10)
+      .slice(0, 4)
       .map(([tag]) => tag);
 
     return sortedTags;
@@ -78,60 +78,29 @@ export default function HeroSection({ onSearch, resources = [] }: HeroSectionPro
           </Button>
         </form>
 
-        {/* 动态热门标签 */}
+        {/* 简化的热门标签 */}
         {popularTags.length > 0 && (
           <div className="mt-8">
             <div className="text-center mb-4">
               <span className="text-sm text-slate-500">{t('popular_tags') || 'Popular Tags:'}：</span>
             </div>
             
-            {/* 可滑动的标签容器 */}
-            <div className="relative max-w-5xl mx-auto">
-              <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-2 px-4 smooth-scroll">
-                {popularTags.slice(0, 12).map((tag, index) => (
-                  <button
-                    key={tag}
-                    onClick={() => onSearch(tag)}
-                    className="flex-shrink-0 group relative px-4 py-2 bg-white/80 hover:bg-white border border-slate-200 hover:border-blue-300 rounded-full text-slate-600 hover:text-blue-600 tag-hover-effect backdrop-blur-sm whitespace-nowrap animate-fadeInUp"
-                    style={{
-                      animationDelay: `${index * 0.1}s`
-                    }}
-                  >
-                    <span className="relative z-10 text-sm font-medium">{getTagTranslation(currentLanguage, tag)}</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 rounded-full transition-opacity duration-300"></div>
-                  </button>
-                ))}
-              </div>
-              
-              {/* 左侧渐变遮罩 */}
-              <div className="absolute left-0 top-0 bottom-2 w-8 bg-gradient-to-r from-slate-50 to-transparent pointer-events-none"></div>
-              
-              {/* 右侧渐变遮罩和滑动提示 */}
-              <div className="absolute right-0 top-0 bottom-2 w-16 bg-gradient-to-l from-slate-50 to-transparent pointer-events-none flex items-center justify-end pr-3">
-                <div className="text-slate-400 text-xs animate-pulse flex items-center">
-                  <span className="mr-1">滑动</span>
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            
-            {/* 如果标签很多，显示"查看更多"按钮 */}
-            {popularTags.length > 12 && (
-              <div className="text-center mt-4">
-                <button 
-                  onClick={() => {
-                    // 可以触发显示所有标签的搜索
-                    const allTagsText = popularTags.slice(12).join(' ');
-                    onSearch(allTagsText);
+            {/* 简洁的标签网格 */}
+            <div className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
+              {popularTags.map((tag, index) => (
+                <button
+                  key={tag}
+                  onClick={() => onSearch(tag)}
+                  className="group relative px-4 py-2 bg-white/80 hover:bg-white border border-slate-200 hover:border-blue-300 rounded-full text-slate-600 hover:text-blue-600 backdrop-blur-sm transition-all duration-200 animate-fadeInUp"
+                  style={{
+                    animationDelay: `${index * 0.1}s`
                   }}
-                  className="text-sm text-blue-600 hover:text-blue-700 font-medium underline decoration-dotted underline-offset-4 hover:decoration-solid transition-all"
                 >
-                  探索更多热门标签 ({popularTags.length - 12}个)
+                  <span className="relative z-10 text-sm font-medium">{getTagTranslation(currentLanguage, tag)}</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-10 rounded-full transition-opacity duration-300"></div>
                 </button>
-              </div>
-            )}
+              ))}
+            </div>
           </div>
         )}
 

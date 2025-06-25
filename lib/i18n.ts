@@ -171,8 +171,11 @@ export const translations = {
     top_journals_title: 'Premier Academic Journals',
     top_journals_subtitle: 'The most authoritative academic publishing platforms in economics, featuring cutting-edge research from leading scholars worldwide',
 
-
-    
+    // Main page section titles and descriptions
+    guide_learning_title: 'Quality Learning Resources',
+    guide_learning_desc: 'Systematic learning resources for economics, from top university courses to classic documentaries',
+    guide_media_title: 'Authoritative Media Platforms', 
+    guide_media_desc: 'Authoritative economic news and expert opinions from quality media platforms',
 
   },
   

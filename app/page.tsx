@@ -18,7 +18,7 @@ import {
   marketSpecial, 
   toolsSpecial 
 } from '@/lib/data';
-import { getResourceTranslation, getTagTranslation } from '@/lib/resourcesI18n';
+import { getResourceTranslation, getTagTranslation, getResourceDescriptionTranslation } from '@/lib/resourcesI18n';
 
 export default function Home() {
   const { t, currentLanguage, changeLanguage } = useLanguage();
@@ -212,7 +212,7 @@ export default function Home() {
                     <span className="text-green-800 font-medium">{t('nav_learning') || 'Learning Focus'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    {t('guide_learning_title') || '优质学习资源'}
+                    {t('guide_learning_title') || 'Quality Learning Resources'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     {t('guide_learning_desc') || 'Systematic learning resources for economics, from top university courses to classic documentaries'}
@@ -225,7 +225,7 @@ export default function Home() {
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">
                         {getResourceTranslation(currentLanguage, resource.name)}
                       </h3>
-                      <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                      <p className="text-gray-600 text-sm mb-4">{getResourceDescriptionTranslation(currentLanguage, resource.name, resource.description)}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {resource.tags.slice(0, 3).map((tag, tagIndex) => (
                           <span key={tagIndex} className="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">
@@ -269,7 +269,7 @@ export default function Home() {
                     <span className="text-cyan-800 font-medium">{t('nav_media') || 'Media Focus'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    {t('guide_media_title') || '权威媒体平台'}
+                    {t('guide_media_title') || 'Authoritative Media Platforms'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     {t('guide_media_desc') || 'Authoritative economic news and expert opinions from quality media platforms'}
@@ -282,7 +282,7 @@ export default function Home() {
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">
                         {getResourceTranslation(currentLanguage, resource.name)}
                       </h3>
-                      <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                      <p className="text-gray-600 text-sm mb-4">{getResourceDescriptionTranslation(currentLanguage, resource.name, resource.description)}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {resource.tags.slice(0, 3).map((tag, tagIndex) => (
                           <span key={tagIndex} className="px-2 py-1 bg-cyan-100 text-cyan-800 text-xs rounded-full">
@@ -326,7 +326,7 @@ export default function Home() {
                     <span className="text-blue-800 font-medium">{t('nav_policy') || 'Policy Focus'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    {t('policy_title') || '政策解读中心'}
+                    {t('policy_title') || 'Policy Resources'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     {t('policy_description') || 'Track global policy dynamics and understand policy directions from authoritative institutions'}
@@ -339,7 +339,7 @@ export default function Home() {
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">
                         {getResourceTranslation(currentLanguage, resource.name)}
                       </h3>
-                      <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                      <p className="text-gray-600 text-sm mb-4">{getResourceDescriptionTranslation(currentLanguage, resource.name, resource.description)}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {resource.tags.slice(0, 3).map((tag, tagIndex) => (
                           <span key={tagIndex} className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
@@ -383,7 +383,7 @@ export default function Home() {
                     <span className="text-indigo-800 font-medium">{t('nav_data') || 'Data Focus'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    {t('data_title') || '经济数据库'}
+                    {t('data_title') || 'Data Resources'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     {t('data_description') || 'Access comprehensive economic data and statistical resources from authoritative sources'}
@@ -396,7 +396,7 @@ export default function Home() {
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">
                         {getResourceTranslation(currentLanguage, resource.name)}
                       </h3>
-                      <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                      <p className="text-gray-600 text-sm mb-4">{getResourceDescriptionTranslation(currentLanguage, resource.name, resource.description)}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {resource.tags.slice(0, 3).map((tag, tagIndex) => (
                           <span key={tagIndex} className="px-2 py-1 bg-indigo-100 text-indigo-800 text-xs rounded-full">
@@ -440,7 +440,7 @@ export default function Home() {
                     <span className="text-pink-800 font-medium">{t('nav_market') || 'Market Focus'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    {t('market_title') || '金融市场观察'}
+                    {t('market_title') || 'Market Analysis'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     {t('market_description') || 'Monitor global financial markets and access professional market analysis tools'}
@@ -453,7 +453,7 @@ export default function Home() {
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">
                         {getResourceTranslation(currentLanguage, resource.name)}
                       </h3>
-                      <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                      <p className="text-gray-600 text-sm mb-4">{getResourceDescriptionTranslation(currentLanguage, resource.name, resource.description)}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {resource.tags.slice(0, 3).map((tag, tagIndex) => (
                           <span key={tagIndex} className="px-2 py-1 bg-pink-100 text-pink-800 text-xs rounded-full">
@@ -497,7 +497,7 @@ export default function Home() {
                     <span className="text-amber-800 font-medium">{t('nav_tools') || 'Tools Focus'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    {t('tools_title') || '分析工具箱'}
+                    {t('tools_title') || 'Analysis Tools'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     {t('tools_description') || 'Professional analysis tools and programming resources for efficient economic research'}
@@ -507,12 +507,12 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {(expandedSections.tools ? toolsSpecial : toolsSpecial.slice(0, 6)).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-amber-100">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
-                      <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{getResourceTranslation(currentLanguage, resource.name)}</h3>
+                      <p className="text-gray-600 text-sm mb-4">{getResourceDescriptionTranslation(currentLanguage, resource.name, resource.description)}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {resource.tags.slice(0, 3).map((tag, tagIndex) => (
                           <span key={tagIndex} className="px-2 py-1 bg-amber-100 text-amber-800 text-xs rounded-full">
-                            {tag}
+                            {getTagTranslation(currentLanguage, tag)}
                           </span>
                         ))}
                       </div>
@@ -552,7 +552,7 @@ export default function Home() {
                     <span className="text-purple-800 font-medium">{t('nav_top_journals') || 'Top Journals'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    {t('top_journals_title') || '顶级学术期刊'}
+                    {t('top_journals_title') || 'Premier Academic Journals'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     {t('top_journals_subtitle') || 'The most authoritative academic publishing platforms in economics'}
@@ -562,12 +562,12 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {(expandedSections.journals ? topJournalsResources : topJournalsResources.slice(0, 6)).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-purple-100">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
-                      <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{getResourceTranslation(currentLanguage, resource.name)}</h3>
+                      <p className="text-gray-600 text-sm mb-4">{getResourceDescriptionTranslation(currentLanguage, resource.name, resource.description)}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {resource.tags.slice(0, 3).map((tag, tagIndex) => (
                           <span key={tagIndex} className="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">
-                            {tag}
+                            {getTagTranslation(currentLanguage, tag)}
                           </span>
                         ))}
                       </div>
@@ -607,7 +607,7 @@ export default function Home() {
                     <span className="text-orange-800 font-medium">{t('nav_german') || 'German Focus'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    {t('german_title') || '德国经济研究'}
+                    {t('german_title') || 'German Economics Focus'}
                   </h2>
                   <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                     {t('german_subtitle') || 'Specialized resources and institutions for German economics research'}
@@ -617,12 +617,12 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {(expandedSections.german ? germanEconomicsResources : germanEconomicsResources.slice(0, 6)).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-orange-100">
-                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{resource.name}</h3>
-                      <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-3">{getResourceTranslation(currentLanguage, resource.name)}</h3>
+                      <p className="text-gray-600 text-sm mb-4">{getResourceDescriptionTranslation(currentLanguage, resource.name, resource.description)}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {resource.tags.slice(0, 3).map((tag, tagIndex) => (
                           <span key={tagIndex} className="px-2 py-1 bg-orange-100 text-orange-800 text-xs rounded-full">
-                            {tag}
+                            {getTagTranslation(currentLanguage, tag)}
                           </span>
                         ))}
                       </div>

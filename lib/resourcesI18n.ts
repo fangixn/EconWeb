@@ -662,10 +662,94 @@ export function getResourceTranslation(lang: Language, resourceName: string, cat
   return resourceName;
 }
 
+// 资源描述翻译映射
+const resourceDescriptionTranslations: Record<string, ResourceTranslation> = {
+  "MIT OCW - Economics": {
+    en: "MIT OpenCourseWare economics courses covering microeconomics, macroeconomics, and econometrics",
+    zh: "麻省理工学院开放课程，覆盖微观、宏观、计量经济学等核心课程",
+    ko: "MIT 오픈코스웨어 경제학 과정, 미시, 거시, 계량경제학 포함",
+    ja: "MITオープンコースウェア経済学、ミクロ・マクロ・計量経済学をカバー",
+    de: "MIT OpenCourseWare Wirtschaftskurse mit Mikro-, Makro- und Ökonometrie"
+  },
+  "Harvard Kennedy School": {
+    en: "Harvard Kennedy School's executive education programs in public policy and economics",
+    zh: "哈佛肯尼迪学院公共政策与经济学在线课程",
+    ko: "하버드 케네디 스쿨의 공공정책 및 경제학 온라인 과정",
+    ja: "ハーバード・ケネディ・スクールの公共政策・経済学オンライン課程",
+    de: "Harvard Kennedy School Executive Education in öffentlicher Politik und Wirtschaft"
+  },
+  "Khan Academy - Economics": {
+    en: "Free economics courses from Khan Academy, perfect for beginners and review",
+    zh: "可汗学院经济学免费课程，适合经济学入门和复习",
+    ko: "칸 아카데미의 무료 경제학 과정, 초보자와 복습에 적합",
+    ja: "カーン・アカデミーの無料経済学コース、初心者と復習に最適",
+    de: "Kostenlose Wirtschaftskurse von Khan Academy, ideal für Anfänger und Wiederholung"
+  },
+  "Coursera Economics Specialization": {
+    en: "Systematic economics specialization courses from top universities on Coursera",
+    zh: "Coursera经济学专业课程，来自顶级大学的系统性课程",
+    ko: "코세라의 최고 대학교 체계적 경제학 전문과정",
+    ja: "Courseraの一流大学による体系的経済学専門課程",
+    de: "Systematische Wirtschaftsspezialisierung von Top-Universitäten auf Coursera"
+  },
+  "Marginal Revolution University": {
+    en: "Innovative online platform focusing on modern economics education and economic thinking",
+    zh: "边际革命大学，专注现代经济学教育的创新在线平台",
+    ko: "현대 경제학 교육에 중점을 둔 혁신적인 온라인 플랫폼",
+    ja: "現代経済学教育に焦点を当てた革新的なオンラインプラットフォーム",
+    de: "Innovative Online-Plattform für moderne Wirtschaftsbildung"
+  },
+  "BBC Masters of Money - 凯恩斯": {
+    en: "BBC Masters of Money series - Keynes episode, exploring Keynesian economics in depth",
+    zh: "BBC《Masters of Money》系列 - 凯恩斯篇，深入解析凯恩斯主义经济学",
+    ko: "BBC 머니 마스터즈 시리즈 - 케인스편, 케인스 경제학 심층 탐구",
+    ja: "BBC マネー・マスターズ シリーズ - ケインズ編、ケインズ経済学の詳細分析",
+    de: "BBC Masters of Money Serie - Keynes-Folge, tiefgreifende Analyse der keynesianischen Ökonomie"
+  },
+  "BBC Masters of Money - 哈耶克": {
+    en: "BBC Masters of Money series - Hayek episode, exploring free market vs government intervention",
+    zh: "BBC《Masters of Money》系列 - 哈耶克篇，探讨自由市场与政府干预的争论",
+    ko: "BBC 머니 마스터즈 시리즈 - 하이에크편, 자유시장 vs 정부개입 논쟁 탐구",
+    ja: "BBC マネー・マスターズ シリーズ - ハイエク編、自由市場と政府介入の議論を探求",
+    de: "BBC Masters of Money Serie - Hayek-Folge, Debatte über freie Märkte vs. Staatseingriffe"
+  },
+  "BBC Masters of Money - 马克思": {
+    en: "BBC Masters of Money series - Marx episode, reexamining Marx's economic theories",
+    zh: "BBC《Masters of Money》系列 - 马克思篇，重新审视马克思的经济学理论",
+    ko: "BBC 머니 마스터즈 시리즈 - 마르크스편, 마르크스 경제학 이론 재검토",
+    ja: "BBC マネー・マスターズ シリーズ - マルクス編、マルクス経済学理論の再検討",
+    de: "BBC Masters of Money Serie - Marx-Folge, Neubetrachtung von Marx' Wirtschaftstheorien"
+  },
+  "SSRN": {
+    en: "Social Science Research Network for downloading latest working papers and research reports",
+    zh: "社会科学研究网络，下载最新工作论文和研究报告",
+    ko: "최신 워킹페이퍼와 연구보고서 다운로드를 위한 사회과학연구네트워크",
+    ja: "最新のワーキングペーパーと研究報告書をダウンロードする社会科学研究ネットワーク",
+    de: "Social Science Research Network zum Download aktueller Arbeitspapiere und Forschungsberichte"
+  },
+  "NBER Working Papers": {
+    en: "National Bureau of Economic Research - authoritative economic research and policy evaluation",
+    zh: "美国国家经济研究局，权威经济学研究和政策评估",
+    ko: "미국 국가경제연구소 - 권위있는 경제학 연구 및 정책 평가",
+    ja: "米国国家経済研究所 - 権威ある経済学研究と政策評価",
+    de: "US National Bureau of Economic Research - maßgebliche Wirtschaftsforschung und Politikbewertung"
+  },
+  "arXiv Economics": {
+    en: "Economics and finance preprint platform featuring the latest research findings",
+    zh: "经济学和金融学预印本论文平台，最新研究成果",
+    ko: "최신 연구 성과를 담은 경제학 및 금융학 프리프린트 플랫폼",
+    ja: "最新の研究成果を特集する経済学・金融学プレプリントプラットフォーム",
+    de: "Preprint-Plattform für Wirtschafts- und Finanzwissenschaften mit neuesten Forschungsergebnissen"
+  }
+};
+
 // 获取资源描述翻译
 export function getResourceDescriptionTranslation(lang: Language, resourceName: string, description: string): string {
-  // 这里可以添加描述的翻译逻辑
-  // 目前先返回原描述
+  if (resourceDescriptionTranslations[resourceName]) {
+    return resourceDescriptionTranslations[resourceName][lang];
+  }
+  
+  // 如果没有找到特定翻译，返回原描述
   return description;
 }
 

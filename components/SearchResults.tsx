@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/lib/LanguageContext';
-import { getResourceTranslation, getTagTranslation } from '@/lib/resourcesI18n';
+import { getResourceTranslation, getTagTranslation, getResourceDescriptionTranslation } from '@/lib/resourcesI18n';
 
 interface Resource {
   name: string;
@@ -214,25 +214,20 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
                   
                   {/* 热门标签列表 - 垂直滚动 */}
                   <div className="space-y-2 max-h-80 overflow-y-auto scrollbar-hide">
-                    {allTags.slice(0, showAllTags ? allTags.length : 15).map(({ tag, count }, index) => (
+                    {allTags
+                      .filter(({ tag }) => tag !== selectedTag) // 过滤掉已选中的标签
+                      .slice(0, showAllTags ? allTags.length : 15)
+                      .map(({ tag, count }, index) => (
                       <button
                         key={tag}
-                        onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
-                        className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 border ${
-                          selectedTag === tag 
-                            ? 'bg-blue-100 text-blue-800 border-blue-300 shadow-sm transform scale-105' 
-                            : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm hover:scale-102'
-                        }`}
+                        onClick={() => setSelectedTag(tag)}
+                        className="w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 border bg-white text-gray-700 border-gray-200 hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm hover:scale-102"
                         style={{
                           animationDelay: `${index * 0.05}s`
                         }}
                       >
                         <span className="flex-1 text-left truncate">{getTagTranslation(currentLanguage, tag)}</span>
-                        <span className={`ml-2 text-xs px-2 py-1 rounded-full font-medium ${
-                          selectedTag === tag 
-                            ? 'bg-blue-200 text-blue-700' 
-                            : 'bg-gray-200 text-gray-600'
-                        }`}>
+                        <span className="ml-2 text-xs px-2 py-1 rounded-full font-medium bg-gray-200 text-gray-600">
                           {count}
                         </span>
                       </button>
@@ -240,7 +235,7 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
                   </div>
                   
                   {/* 展开/收起标签按钮 */}
-                  {allTags.length > 15 && (
+                  {allTags.filter(({ tag }) => tag !== selectedTag).length > 15 && (
                     <div className="mt-3 text-center">
                       <button 
                         onClick={() => setShowAllTags(!showAllTags)}
@@ -255,7 +250,7 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
                           </>
                         ) : (
                           <>
-                            查看全部 {allTags.length} 个标签
+                            查看全部 {allTags.filter(({ tag }) => tag !== selectedTag).length} 个标签
                             <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                             </svg>
@@ -325,7 +320,7 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
                             )}
                           </div>
                           <p className="text-gray-600 text-sm leading-relaxed mb-3">
-                            {resource.description}
+                            {getResourceDescriptionTranslation(currentLanguage, resource.name, resource.description)}
                           </p>
                           <div className="flex flex-wrap gap-2 mb-3">
                             {resource.tags.slice(0, 5).map((tag, tagIndex) => (
