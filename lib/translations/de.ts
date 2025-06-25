@@ -1,0 +1,247 @@
+// Deutsche Übersetzungsdatei
+export const deTranslations = {
+  // Header
+  site_name: 'EconWeb',
+  site_subtitle: 'Wirtschaftsnavigator von EconomicsWeb',
+  nav_home: 'Startseite',
+  nav_german: 'Deutschland-Fokus',
+  media_nav: 'Medien-Fokus',
+  
+  // Hero Section
+  hero_title: 'Ihr Tor zur',
+  hero_title_highlight: 'Wirtschaftswissenschaft',
+  hero_subtitle: 'Entdecken Sie die umfassendste Sammlung von Wirtschaftsressourcen. Von Datenanalyse bis zu akademischer Forschung - finden Sie alles, was Sie brauchen, um in der Welt der Wirtschaft führend zu bleiben.',
+  search_placeholder: 'Wirtschaftsressourcen suchen...',
+  popular_tags: 'Beliebte Tags',
+  search_btn: 'Suchen',
+  clear_filters: 'Alle löschen',
+  searching_for: 'Suche nach',
+  filtered_by: 'Gefiltert nach',
+  
+  // Main page section titles
+  guide_learning_title: 'Hochwertige Lernressourcen',
+  guide_learning_desc: 'Systematische Wirtschafts-Lernressourcen von Top-Universitätskursen bis zu klassischen Dokumentationen',
+  guide_media_title: 'Autoritative Medienplattformen',
+  guide_media_desc: 'Autoritative Wirtschaftsnachrichten und Expertenmeinungen von hochwertigen Medienplattformen',
+  guide_policy_title: 'Politikanalysezentrum',
+  guide_policy_desc: 'Professionelle Politikinterpretation und -analyse von autoritativen Institutionen',
+  guide_data_title: 'Wirtschaftsdatenbank',
+  guide_data_desc: 'Umfassende Wirtschaftsdaten und statistische Ressourcen aus globalen autoritativen Quellen',
+  guide_market_title: 'Finanzmarktbeobachtung',
+  guide_market_desc: 'Echtzeit-Marktanalyse und professionelle Investitionsforschungstools',
+  guide_tools_title: 'Analyse-Toolkit',
+  guide_tools_desc: 'Professionelle Wirtschaftsanalyse-Tools und Programmierressourcen',
+  guide_top_journals_title: 'Top-Fachzeitschriften',
+  guide_top_journals_desc: 'Die autoritativsten Fachzeitschriften in den Bereichen Wirtschaft und Finanzen',
+  guide_german_title: 'Deutsche Wirtschaftsforschung',
+  guide_german_desc: 'Spezialisierte deutsche Wirtschaftsinstitutionen und Forschungsressourcen',
+
+  // Buttons
+  btn_show_more: 'Mehr anzeigen',
+  btn_collapse: 'Einklappen',
+  
+  // Search Results
+  search_results_title: 'Suchergebnisse',
+  search_results_found: 'Ergebnisse gefunden',
+  search_results_popular_tags: 'Beliebte Tags',
+  search_results_visit: 'Besuchen',
+  search_results_more: 'mehr',
+};
+
+// Deutsche Ressourcenübersetzungen
+export const deResourceTranslations: Record<string, string> = {
+  // Lernbereich - 数据源中的实际资源名称作为key
+  "麻省理工开放课程 (MIT OCW)": "MIT OpenCourseWare (MIT OCW)",
+  "哈佛肯尼迪学院": "Harvard Kennedy School",
+  "可汗学院经济学": "Khan Academy Wirtschaft",
+  "Coursera经济学专业课程": "Coursera Wirtschafts-Fachkurse",
+  "边际革命大学": "Marginal Revolution University",
+  "BBC货币大师：凯恩斯篇": "BBC Masters of Money: Keynes",
+  "BBC货币大师：哈耶克篇": "BBC Masters of Money: Hayek",
+  "BBC货币大师：马克思篇": "BBC Masters of Money: Marx",
+  "社会科学研究网络 (SSRN)": "Social Science Research Network (SSRN)",
+  "美国国家经济研究局 (NBER)": "National Bureau of Economic Research (NBER)",
+  "arXiv经济学预印本": "arXiv Wirtschafts-Preprints",
+
+  // Medienbereich
+  "The Economist": "The Economist",
+  "Financial Times": "Financial Times",
+  "华尔街日报": "Wall Street Journal",
+  "彭博商业周刊": "Bloomberg Businessweek",
+  "路透社": "Reuters",
+  "CNBC": "CNBC",
+  "BBC Business": "BBC Business",
+  "福布斯": "Forbes",
+  "Business Insider": "Business Insider",
+  "MarketWatch": "MarketWatch",
+  "Seeking Alpha": "Seeking Alpha",
+  "Barron's": "Barron's",
+
+  // Politikbereich
+  "美联储": "Federal Reserve",
+  "欧洲央行": "Europäische Zentralbank",
+  "国际货币基金组织": "Internationaler Währungsfonds",
+  "世界银行": "Weltbank",
+  "经济合作与发展组织": "OECD",
+  "国际清算银行": "Bank für Internationalen Zahlungsausgleich",
+  "中国人民银行": "Volksbank von China",
+  "日本银行": "Bank of Japan",
+  "英格兰银行": "Bank of England",
+  "加拿大银行": "Bank of Canada",
+  "澳大利亚储备银行": "Reserve Bank of Australia",
+  "瑞士国家银行": "Schweizerische Nationalbank",
+  "国会预算办公室": "Congressional Budget Office",
+  "财政部": "Finanzministerium",
+
+  // Datenbereich
+  "FRED经济数据": "FRED Wirtschaftsdaten",
+  "世界银行数据": "Weltbank-Daten",
+  "IMF数据": "IWF-Daten",
+  "OECD数据": "OECD-Daten",
+  "美国劳工统计局": "US Bureau of Labor Statistics",
+  "美国商务部": "US-Handelsministerium",
+  "美国人口普查局": "US Census Bureau",
+  "欧盟统计局": "Eurostat",
+  "中国国家统计局": "Nationales Statistikamt China",
+  "Trading Economics": "Trading Economics",
+  "Quandl": "Quandl",
+  "Alpha Architect": "Alpha Architect",
+
+  // Marktbereich
+  "Yahoo Finance": "Yahoo Finance",
+  "Google Finance": "Google Finance",
+  "Morningstar": "Morningstar",
+  "Zacks": "Zacks",
+  "Finviz": "Finviz",
+  "TradingView": "TradingView",
+  "Investing.com": "Investing.com",
+  "MarketScreener": "MarketScreener",
+  "Simply Wall St": "Simply Wall St",
+  "GuruFocus": "GuruFocus",
+
+  // Werkzeugbereich
+  "R语言": "R-Programmierung",
+  "Python": "Python",
+  "Stata": "Stata",
+  "MATLAB": "MATLAB",
+  "EViews": "EViews",
+  "SAS": "SAS",
+  "SPSS": "SPSS",
+  "Jupyter Notebook": "Jupyter Notebook",
+  "GitHub": "GitHub",
+  "Stack Overflow": "Stack Overflow",
+
+  // Top-Zeitschriften
+  "经济学季刊 (QJE)": "Quarterly Journal of Economics (QJE)",
+  "美国经济评论 (AER)": "American Economic Review (AER)",
+  "金融学期刊 (JF)": "Journal of Finance (JF)",
+  "计量经济学 (Econometrica)": "Econometrica",
+  "经济研究评论 (REStud)": "Review of Economic Studies (REStud)",
+  "金融经济学期刊 (JFE)": "Journal of Financial Economics (JFE)",
+  "政治经济学期刊 (JPE)": "Journal of Political Economy (JPE)",
+  "金融研究评论 (RFS)": "Review of Financial Studies (RFS)",
+  "美国经济期刊：宏观经济学 (AEJ:Macro)": "American Economic Journal: Macroeconomics (AEJ:Macro)",
+  "营销学期刊 (JM)": "Journal of Marketing (JM)",
+
+  // Deutschland-Fokus
+  "德国联邦银行(Bundesbank)": "Deutsche Bundesbank",
+  "德国联邦统计局": "Statistisches Bundesamt",
+  "德国经济研究所(DIW Berlin)": "Deutsches Institut für Wirtschaftsforschung (DIW Berlin)",
+  "德国经济部": "Bundesministerium für Wirtschaft",
+  "德国对华政策研究所(MERICS)": "Mercator Institute for China Studies (MERICS)",
+  "German Council of Economic Experts": "Sachverständigenrat zur Begutachtung der gesamtwirtschaftlichen Entwicklung",
+  "法兰克福证券交易所": "Frankfurter Wertpapierbörse",
+  "德国工商总会(DIHK)": "Deutscher Industrie- und Handelskammertag (DIHK)",
+  "德国汽车工业协会(VDA)": "Verband der Automobilindustrie (VDA)",
+  "德国DAX指数分析": "Deutsche DAX-Index-Analyse",
+  "德国企业信贷数据库": "Deutsche Unternehmenskreditdatenbank",
+};
+
+// Deutsche Ressourcenbeschreibungsübersetzungen
+export const deResourceDescriptions: Record<string, string> = {
+  // Lernbereich Beschreibungen
+  "麻省理工开放课程 (MIT OCW)": "MIT OpenCourseWare mit Kernkursen in Mikro-, Makroökonomie und Ökonometrie",
+  "哈佛肯尼迪学院": "Harvard Kennedy School Online-Kurse für öffentliche Politik und Wirtschaft",
+  "可汗学院经济学": "Khan Academy kostenlose Wirtschaftskurse, geeignet für Einsteiger und Wiederholung",
+  "Coursera经济学专业课程": "Coursera systematische Wirtschafts-Fachkurse von Top-Universitäten",
+  "边际革命大学": "Innovative Online-Plattform mit Fokus auf moderne Wirtschaftsbildung",
+
+  // Marktbereich Beschreibungen
+  "Yahoo Finance": "Umfassende Finanzdaten, Aktienkurse und Marktanalyse-Tools",
+  "Google Finance": "Echtzeit-Aktieninformationen und Finanznachrichten von Google",
+  "Morningstar": "Unabhängige Investmentforschung und Portfolio-Management-Tools",
+  "TradingView": "Erweiterte Chart-Plattform mit Social-Trading-Funktionen",
+
+  // Politikbereich Beschreibungen
+  "美联储": "Federal Reserve System - das Zentralbanksystem der Vereinigten Staaten",
+  "欧洲央行": "Europäische Zentralbank - Geldpolitik für die Eurozone",
+  "国际货币基金组织": "IWF - internationale Organisation zur Förderung der globalen Währungskooperation",
+  "世界银行": "Weltbankgruppe - internationale Finanzinstitution für Entwicklungshilfe",
+
+  // Datenbereich Beschreibungen
+  "FRED经济数据": "Federal Reserve Economic Data - umfassende Wirtschaftsdatenbank",
+  "世界银行数据": "Weltbank Open Data - kostenloser Zugang zu globalen Entwicklungsdaten",
+  "IMF数据": "Internationale Währungsfonds statistische Datenbanken und Publikationen",
+  "Trading Economics": "Wirtschaftsindikatoren und Finanzmarktdaten für 196 Länder",
+
+  // Deutschland-Fokus Beschreibungen
+  "德国联邦银行(Bundesbank)": "Deutschlands Zentralbank für Geldpolitik und Finanzstabilität",
+  "德国联邦统计局": "Statistisches Bundesamt für offizielle deutsche Statistiken",
+  "德国经济研究所(DIW Berlin)": "Führendes deutsches Wirtschaftsforschungsinstitut für Politikanalyse",
+  "法兰克福证券交易所": "Eine der weltgrößten Börsen nach Marktkapitalisierung",
+};
+
+// Deutsche Tag-Übersetzungen
+export const deTagTranslations: Record<string, string> = {
+  "顶级大学": "Top-Universitäten",
+  "免费课程": "Kostenlose Kurse",
+  "商学院": "Business Schools",
+  "在线学习": "Online-Lernen",
+  "经济学基础": "Wirtschaftsgrundlagen",
+  "高级课程": "Fortgeschrittene Kurse",
+  "纪录片": "Dokumentarfilme",
+  "视频课程": "Video-Kurse",
+  "权威媒体": "Autoritative Medien",
+  "财经新闻": "Finanznachrichten",
+  "市场分析": "Marktanalyse",
+  "专业报告": "Fachberichte",
+  "实时资讯": "Echtzeit-Nachrichten",
+  "深度分析": "Tiefgehende Analyse",
+  "央行": "Zentralbanken",
+  "国际组织": "Internationale Organisationen",
+  "政策报告": "Politikberichte",
+  "货币政策": "Geldpolitik",
+  "财政政策": "Fiskalpolitik",
+  "监管机构": "Regulierungsbehörden",
+  "政策分析": "Politikanalyse",
+  "官方数据": "Offizielle Daten",
+  "经济指标": "Wirtschaftsindikatoren",
+  "统计数据": "Statistische Daten",
+  "数据可视化": "Datenvisualisierung",
+  "免费数据": "Kostenlose Daten",
+  "API接口": "API-Zugang",
+  "股票分析": "Aktienanalyse",
+  "投资工具": "Investment-Tools",
+  "市场数据": "Marktdaten",
+  "技术分析": "Technische Analyse",
+  "基本面分析": "Fundamentalanalyse",
+  "投资研究": "Investitionsforschung",
+  "编程语言": "Programmiersprachen",
+  "统计软件": "Statistik-Software",
+  "数据分析": "Datenanalyse",
+  "开源工具": "Open-Source-Tools",
+  "计量经济学": "Ökonometrie",
+  "可视化工具": "Visualisierungs-Tools",
+  "顶级期刊": "Top-Zeitschriften",
+  "同行评议": "Peer-Review",
+  "学术研究": "Akademische Forschung",
+  "影响因子": "Impact-Faktor",
+  "经济学": "Wirtschaftswissenschaften",
+  "金融学": "Finanzwissenschaften",
+  "德国机构": "Deutsche Institutionen",
+  "欧洲经济": "Europäische Wirtschaft",
+  "德语资源": "Deutsche Ressourcen",
+  "政策研究": "Politikforschung",
+  "经济数据": "Wirtschaftsdaten",
+  "金融市场": "Finanzmärkte",
+}; 

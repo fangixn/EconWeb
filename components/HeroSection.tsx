@@ -82,7 +82,7 @@ export default function HeroSection({ onSearch, resources = [] }: HeroSectionPro
         {popularTags.length > 0 && (
           <div className="mt-8">
             <div className="text-center mb-4">
-              <span className="text-sm text-slate-500">{t('popular_tags') || 'Popular Tags:'}：</span>
+              <span className="text-sm text-slate-500">{t('popular_tags') || 'Popular Tags:'}</span>
             </div>
             
             {/* 简洁的标签网格 */}
