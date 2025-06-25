@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from 'react';
 import { Globe } from 'lucide-react';
-import Header from '@/components/Header';
 import ImprovedNavigation from '@/components/ImprovedNavigation';
 import HeroSection from '@/components/HeroSection';
 import SearchResults from '@/components/SearchResults';
@@ -174,7 +173,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
       <ImprovedNavigation 
         currentLanguage={currentLanguage}
         onLanguageChange={handleLanguageChange}
@@ -185,7 +183,7 @@ export default function Home() {
       />
       
       {/* Main Content */}
-      <main className={`pt-20 transition-all duration-300 ${
+      <main className={`pt-16 transition-all duration-300 ${
         sidebarCollapsed ? 'lg:ml-16' : 'lg:ml-80'
       }`}>
         <HeroSection onSearch={handleSearch} resources={allResources} />

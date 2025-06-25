@@ -294,20 +294,158 @@ export const enResourceTranslations: Record<string, string> = {
 // English resource description translations
 export const enResourceDescriptions: Record<string, string> = {
   // Learning specialization descriptions
+  "麻省理工学院开放课程，覆盖微观、宏观、计量经济学等核心课程": "MIT's open courseware covering microeconomics, macroeconomics, econometrics and other core economics courses",
+  "哈佛肯尼迪学院公共政策与经济学在线课程": "Harvard Kennedy School's online courses in public policy and economics",
+  "可汗学院经济学免费课程，适合经济学入门和复习": "Khan Academy's free economics courses, ideal for beginners and review",
+  "Coursera经济学专业课程，来自顶级大学的系统性课程": "Coursera economics specialization courses from top universities with systematic curriculum",
+  "边际革命大学，专注现代经济学教育的创新在线平台": "Marginal Revolution University, an innovative online platform focused on modern economics education",
+  "BBC《Masters of Money》系列凯恩斯篇，深入解析凯恩斯主义经济学": "BBC Masters of Money series on Keynes, providing in-depth analysis of Keynesian economics",
+  "BBC《Masters of Money》系列哈耶克篇，探讨自由市场与政府干预的争论": "BBC Masters of Money series on Hayek, exploring the debate between free markets and government intervention",
+  "BBC《Masters of Money》系列马克思篇，重新审视马克思的经济学理论": "BBC Masters of Money series on Marx, re-examining Marx's economic theories",
+  "社会科学研究网络，下载最新工作论文和研究报告": "Social Science Research Network for downloading latest working papers and research reports",
+  "美国国家经济研究局，权威经济学研究和政策评估": "National Bureau of Economic Research, authoritative economics research and policy evaluation",
+  "经济学和金融学预印本论文平台，最新研究成果": "Economics and finance preprint platform featuring the latest research findings",
 
   // Media specialization descriptions
-
-  // Market specialization descriptions
+  "英国老牌周刊，深入报道全球政治、经济、商业、科技趋势，视角独到分析深刻": "Prestigious British weekly magazine providing in-depth coverage of global politics, economics, business, and technology trends with unique perspectives and deep analysis",
+  "全球金融市场与宏观政策权威媒体，提供实时市场动态和专业分析": "Leading global authority on financial markets and macroeconomic policy, providing real-time market updates and professional analysis",
+  "全球领先财经资讯平台，提供市场数据、宏观分析和实时新闻": "Global leading financial information platform providing market data, macroeconomic analysis and real-time news",
+  "美国财经与商业新闻权威，深度报道美国及全球经济动态": "America's premier source for financial and business news, providing in-depth coverage of U.S. and global economic developments",
+  "全球知名经济学家专栏平台，汇聚诺奖得主观点，涵盖全球性议题": "Global platform featuring columns by renowned economists, including Nobel laureates, covering global issues",
+  "欧洲经济政策研究中心专家观点平台，前沿政策研究与讨论": "European Centre for Economic Policy Research expert opinion platform featuring cutting-edge policy research and discussions",
+  "中国顶级财经媒体，以深度调查与政策金融报道著称，专业性强": "China's premier financial media, renowned for in-depth investigations and policy-finance reporting with high professionalism",
+  "专业财经媒体平台，提供实时经济新闻与深度数据解读": "Professional financial media platform providing real-time economic news and in-depth data analysis",
+  "关注宏观经济与政策落地，提供及时准确的财经资讯": "Focused on macroeconomics and policy implementation, providing timely and accurate financial news",
+  "老牌财经媒体，专注实务与政策报道，行业影响力强": "Established financial media focusing on practical and policy reporting with strong industry influence",
+  "新兴财经媒体，关注科技、新经济方向的财经新闻和趋势分析": "Emerging financial media focusing on technology and new economy trends with trend analysis",
+  "美国国家经济研究局官方摘要刊物，权威学术研究精华": "Official digest publication of the National Bureau of Economic Research, featuring authoritative academic research highlights",
+  "美国布鲁金斯学会经济研究频道，顶级智库政策分析": "Brookings Institution's economic research channel, premier think tank policy analysis",
+  "专注国际经济政策研究的权威智库，国际贸易与金融专业性强": "Authoritative think tank focused on international economic policy research, specializing in international trade and finance",
 
   // Policy specialization descriptions
+  "美国联邦储备系统，美国央行，制定货币政策和金融监管": "Federal Reserve System, the U.S. central bank responsible for monetary policy and financial regulation",
+  "欧洲中央银行，负责欧元区货币政策制定和实施": "European Central Bank responsible for formulating and implementing monetary policy for the eurozone",
+  "中国人民银行，中国央行，负责货币政策和金融稳定": "People's Bank of China, China's central bank responsible for monetary policy and financial stability",
+  "国际货币基金组织，促进全球金融稳定和经济增长": "International Monetary Fund promoting global financial stability and economic growth",
+  "世界银行集团，致力于消除贫困和促进共同繁荣": "World Bank Group dedicated to ending poverty and promoting shared prosperity",
+  "经济合作与发展组织，发达国家政策协调平台": "Organisation for Economic Co-operation and Development, policy coordination platform for developed countries",
+  "美国国会预算办公室，为国会提供预算和经济分析": "Congressional Budget Office providing budget and economic analysis to the U.S. Congress",
+  "欧盟委员会经济金融总司，负责欧盟经济政策协调": "European Commission's Directorate-General for Economic and Financial Affairs, responsible for EU economic policy coordination",
+  "中国央行官网，货币政策、金融监管政策权威发布": "Official website of China's central bank, authoritative source for monetary policy and financial regulatory policies",
+  "美国央行，全球货币政策风向标和金融稳定指标": "U.S. central bank, global benchmark for monetary policy and financial stability indicators",
+  "欧洲央行官网，欧元区货币政策和金融监管": "European Central Bank official website for eurozone monetary policy and financial regulation",
+  "国家发展和改革委员会，宏观经济政策制定和发展规划": "National Development and Reform Commission, responsible for macroeconomic policy formulation and development planning",
+  "中国财政部，财政政策与税收政策制定执行": "China's Ministry of Finance, responsible for fiscal policy and tax policy formulation and implementation",
+  "工业和信息化部，产业政策与数字经济发展": "Ministry of Industry and Information Technology, responsible for industrial policy and digital economy development",
+  "对外贸易政策与投资促进，开放型经济政策": "Foreign trade policy and investment promotion, open economy policies",
+  "官方经济数据发布与统计分析，国民经济核算": "Official economic data release and statistical analysis, national economic accounting",
+  "银行业和保险业监督管理委员会，金融风险防控": "China Banking and Insurance Regulatory Commission, financial risk prevention and control",
+  "证券监督管理委员会，资本市场监管和投资者保护": "China Securities Regulatory Commission, capital market regulation and investor protection",
+  "全球宏观经济分析、地区展望、金融稳定报告": "Global macroeconomic analysis, regional outlook, and financial stability reports",
+  "发展经济研究、数据分析与发展报告": "Development economics research, data analysis and development reports",
+  "经济政策分析与统计，38个成员国政策协调": "Economic policy analysis and statistics, policy coordination among 38 member countries",
+  "中央一号文件、经济改革等权威政策解读": "Authoritative interpretation of Central Document No. 1, economic reforms and other key policies",
+  "季度货币政策执行报告及政策工具说明": "Quarterly monetary policy implementation reports and policy tool explanations",
+  "全球财政与货币政策分析": "Global fiscal and monetary policy analysis",
 
   // Data specialization descriptions
+  "美联储经济数据库，美国及全球宏观经济数据权威来源": "Federal Reserve Economic Database, authoritative source for U.S. and global macroeconomic data",
+  "世界银行开放数据平台，全球发展指标和统计数据": "World Bank Open Data platform featuring global development indicators and statistical data",
+  "经合组织统计数据库，发达国家经济社会统计": "OECD Statistics database covering economic and social statistics of developed countries",
+  "国际货币基金组织数据库，全球金融统计和经济指标": "International Monetary Fund database with global financial statistics and economic indicators",
+  "中国国家统计局，中国官方经济统计数据": "National Bureau of Statistics of China, official Chinese economic statistical data",
+  "美国劳工统计局，美国就业、价格和生产力数据": "U.S. Bureau of Labor Statistics providing employment, price, and productivity data",
+  "美国经济分析局，GDP、收入和支出等核心经济数据": "U.S. Bureau of Economic Analysis providing core economic data including GDP, income, and expenditure",
+  "联合国统计司，全球发展和社会经济统计": "UN Statistics Division providing global development and socio-economic statistics",
+  "美联储圣路易斯分行经济数据库，全球最权威的经济数据平台": "Federal Reserve Bank of St. Louis economic database, world's most authoritative economic data platform",
 
   // Market specialization descriptions
+  "上海证券交易所，中国A股主板市场": "Shanghai Stock Exchange, China's A-share main board market",
+  "深圳证券交易所，中国创业板和中小板": "Shenzhen Stock Exchange, China's ChiNext and SME board",
+  "香港证券交易所，亚洲国际金融中心": "Hong Kong Stock Exchange, Asia's international financial center",
+  "纽约证券交易所，全球最大股票交易所": "New York Stock Exchange, the world's largest stock exchange",
+  "纳斯达克，美国科技股集中地": "NASDAQ, America's technology stock hub",
+  "芝加哥商品交易所，全球最大期货和期权市场": "Chicago Mercantile Exchange, world's largest futures and options market",
+  "麦肯锡全球研究院，权威管理咨询和行业分析": "McKinsey Global Institute, authoritative management consulting and industry analysis",
+  "彭博专业终端，全球金融市场数据和分析平台": "Bloomberg Terminal, global financial market data and analysis platform",
 
   // Tools specialization descriptions
+  "开源统计计算语言，数据分析和可视化首选": "Open-source statistical computing language, preferred choice for data analysis and visualization",
+  "强大数据科学编程语言，机器学习和分析利器": "Powerful data science programming language, essential tool for machine learning and analysis",
+  "专业统计分析软件，学术研究标准工具": "Professional statistical analysis software, standard tool for academic research",
+  "综合数学计算平台，工程和金融建模专用": "Comprehensive mathematical computing platform specialized for engineering and financial modeling",
+  "电子表格软件，数据整理和基础分析": "Spreadsheet software for data organization and basic analysis",
+  "交互式数据可视化库，制作专业图表": "Interactive data visualization library for creating professional charts",
+  "开源商业智能平台，企业级数据分析": "Open-source business intelligence platform for enterprise-level data analysis",
+  "免费在线LaTeX编辑器，学术论文写作平台": "Free online LaTeX editor, academic paper writing platform",
+  
+  // Additional data specialization descriptions
+  "全球发展指标和国家统计数据，涵盖200多个国家": "Global development indicators and national statistical data covering over 200 countries",
+  "国际货币基金组织官方数据和统计，全球金融稳定指标": "International Monetary Fund official data and statistics, global financial stability indicators",
+  "经济合作与发展组织统计数据，发达国家经济指标": "OECD statistical data covering economic indicators of developed countries",
+  "实时经济指标、市场数据和预测分析，覆盖196个国家": "Real-time economic indicators, market data and forecast analysis covering 196 countries",
+  "中国领先的金融数据提供商，专业投资研究平台": "China's leading financial data provider, professional investment research platform",
+  "亚洲经济数据专业平台，新兴市场数据权威来源": "Professional Asian economic data platform, authoritative source for emerging market data",
+  "欧盟统计局官方数据，欧洲经济社会统计权威": "Official Eurostat data, authoritative source for European economic and social statistics",
+  "国际银行业和金融市场统计，全球金融稳定监测": "International banking and financial market statistics, global financial stability monitoring",
+  "中国家庭资产负债微观数据(2011-2023)，权威家庭金融研究数据": "China household asset-liability microdata (2011-2023), authoritative household finance research data",
+  "3万德国家庭的长期跟踪数据，欧洲最大家庭面板调查": "Long-term tracking data of 30,000 German households, Europe's largest household panel survey",
+  "OECD成员国结构化数据平台，互动式数据查询工具": "OECD member countries structured data platform with interactive data query tools",
+  
+  // Additional market specialization descriptions
+  "A股主板市场信息和数据，中国资本市场主要平台": "A-share main board market information and data, primary platform of China's capital market",
+  "创业板和中小板市场信息，支持创新企业发展": "ChiNext and SME board market information supporting innovative enterprise development",
+  "港股市场和中概股信息，亚洲国际金融中心": "Hong Kong stock market and Chinese concept stocks information, Asia's international financial center",
+  "全球最大股票交易所，世界金融中心核心平台": "World's largest stock exchange, core platform of the global financial center",
+  "科技股集中的交易所，全球科技企业聚集地": "Technology-focused exchange, global hub for tech companies",
+  "全球最大的期货和期权交易所，衍生品市场领导者": "World's largest futures and options exchange, derivatives market leader",
+  "AI、新能源等细分行业报告，产业发展趋势分析": "Industry reports on AI, new energy and other sectors, industrial development trend analysis",
+  "产业链数据可视化工具，全球市场关联分析": "Industrial chain data visualization tool for global market correlation analysis",
+  
+  // Additional tools specialization descriptions
+  "全球金融市场数据分析的专业终端，金融行业标准工具": "Professional terminal for global financial market data analysis, industry standard tool",
+  "经济学Python编程教程与工具包，量化经济分析利器": "Economics Python programming tutorials and toolkit, essential tool for quantitative economic analysis",
+  "R语言计量经济学应用指南，统计建模专业工具": "R programming guide for econometrics applications, professional statistical modeling tool",
+  "专业统计分析软件，经济学研究标准工具": "Professional statistical analysis software, standard tool for economics research",
+  "基于历史CPI计算真实购买力，通胀影响分析工具": "Calculate real purchasing power based on historical CPI, inflation impact analysis tool",
+  "数据驱动的全球发展趋势可视化平台，权威发展数据": "Data-driven global development trends visualization platform with authoritative development data",
+  "学术参考文献管理工具，研究者必备软件": "Academic reference management tool, essential software for researchers",
+  "自由市场经济思想资源与书籍，经济学经典读物": "Free market economic thought resources and books, classic economics literature",
 
   // German specialization descriptions
+  "德国联邦银行，德国央行和欧洲央行重要成员": "Deutsche Bundesbank, Germany's central bank and key member of the European Central Bank",
+  "德国联邦统计局，德国官方统计数据": "Federal Statistical Office of Germany, official German statistical data",
+  "德国经济研究所，权威经济政策研究机构": "German Institute for Economic Research, authoritative economic policy research institution",
+  "慕尼黑经济研究所，德国顶级经济智库": "Ifo Institute for Economic Research, Germany's premier economic think tank",
+  "基尔世界经济研究所，国际经济政策研究中心": "Kiel Institute for the World Economy, international economic policy research center",
+  "德国工商会，德国商业和经济代表机构": "German Chambers of Commerce, representative body for German business and economy",
+  "德国联邦经济和能源部，德国经济政策制定部门": "Federal Ministry for Economic Affairs and Energy, Germany's economic policy-making department",
+  "德国财政部，德国财政政策和税收管理": "Federal Ministry of Finance, Germany's fiscal policy and tax administration",
+  
+  // Additional German specialization descriptions
+  "德国央行官网，提供货币政策、经济研究报告": "Official website of Germany's central bank providing monetary policy and economic research reports",
+  "德国官方统计数据门户，国民经济统计权威来源": "Germany's official statistical data portal, authoritative source for national economic statistics",
+  "德国权威经济智库，关注房屋危机与移民经济学": "Germany's authoritative economic think tank focusing on housing crisis and migration economics",
+  "联邦经济与能源部，德国经济政策制定部门": "Federal Ministry for Economic Affairs and Energy, Germany's economic policy-making department",
+  "专门研究中国经济，德企对华投资风险评估": "Specialized research on Chinese economy and risk assessment for German investment in China",
+  "德国经济专家委员会，经济形势年度评估": "German Council of Economic Experts providing annual economic situation assessments",
+  "欧洲重要金融市场，实时行情与分析": "Important European financial market providing real-time quotes and analysis",
+  "德国工商界代表机构，企业经营环境报告": "Representative body of German business community providing business environment reports",
+  "电动汽车转型与供应链白皮书": "Electric vehicle transformation and supply chain white papers",
+  "IFO指数与股市相关性看板": "Dashboard showing correlation between IFO index and stock market",
+  "企业信贷风险交互式地图": "Interactive map for enterprise credit risk analysis",
+  
+  // Top journals descriptions
+  "历史最悠久、最权威的经济学期刊之一，发表突破性理论与实证研究": "One of the oldest and most authoritative economics journals, publishing groundbreaking theoretical and empirical research",
+  "美国经济学会旗舰期刊，发表经济学各领域高质量研究": "Flagship journal of the American Economic Association, publishing high-quality research across all fields of economics",
+  "美国金融学会领先期刊，涵盖金融学所有主要领域": "Leading journal of the American Finance Association, covering all major areas of finance",
+  "计量经济学会顶级期刊，专注理论与应用计量经济学": "Premier journal of the Econometric Society, focused on theoretical and applied econometrics",
+  "欧洲顶级经济学期刊，发表创新性理论与实证研究": "Europe's premier economics journal, publishing innovative theoretical and empirical research",
+  "顶级期刊，专注金融经济学与公司金融研究": "Top-tier journal focused on financial economics and corporate finance research",
+  "芝加哥大学旗舰经济学期刊，以严谨理论与实证研究著称": "University of Chicago's flagship economics journal, renowned for rigorous theoretical and empirical research",
+  "金融研究领域顶级学术期刊，牛津大学出版社发行": "Premier academic journal in financial research, published by Oxford University Press",
+  "美国经济学会专业期刊，专注宏观经济理论与政策分析": "Specialized journal of the American Economic Association, focused on macroeconomic theory and policy analysis",
+  "营销研究领域顶级期刊，发表消费者行为与营销策略前沿研究": "Premier journal in marketing research, publishing cutting-edge research on consumer behavior and marketing strategies"
 };
 
 // English tag translations
@@ -475,9 +613,13 @@ export const enTagTranslations: Record<string, string> = {
 
 // 数据专题标签
 
+"美联储": "Federal Reserve",
 "美联储数据": "Federal Reserve Data",
 
+"中国央行": "People's Bank of China",
+"全球影响": "Global Impact",
 "宏观经济": "Macroeconomics",
+"宏观经济学": "Macroeconomics",
 
 "权威数据库": "Authoritative Database",
 
@@ -489,6 +631,8 @@ export const enTagTranslations: Record<string, string> = {
 
 "发展指标": "Development Indicators",
 
+"商务部": "Ministry of Commerce",
+"国家统计局": "National Bureau of Statistics",
 "国家统计": "National Statistics",
 
 "国际金融": "International Finance",
@@ -515,6 +659,9 @@ export const enTagTranslations: Record<string, string> = {
 
 "专业数据库": "Professional Database",
 
+"营销学": "Marketing",
+"经济研究": "Economic Research", 
+"经济政策": "Economic Policy",
 "经济分析": "Economic Analysis",
 
 "欧盟数据": "EU Data",
