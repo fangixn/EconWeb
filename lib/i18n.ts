@@ -86,6 +86,8 @@ export const translations = {
     btn_start_exploring: 'Start Exploring',
     btn_view_resources: 'View Resources',
     btn_show_less: 'Show Less',
+    btn_show_more: 'Show More',
+    btn_collapse: 'Show Less',
     
     // Additional UI text
     visit_resource: 'Visit Resource',
@@ -176,6 +178,23 @@ export const translations = {
     guide_learning_desc: 'Systematic learning resources for economics, from top university courses to classic documentaries',
     guide_media_title: 'Authoritative Media Platforms', 
     guide_media_desc: 'Authoritative economic news and expert opinions from quality media platforms',
+
+    // Search Results
+    search_results_title: 'Search Results',
+    search_results_found: 'results found',
+    search_results_sort_by: 'Sort by:',
+    search_results_relevance: 'Relevance',
+    search_results_alphabetical: 'Alphabetical',
+    search_results_clear: 'Clear Search',
+    search_results_retry: 'Search Again',
+    search_results_no_results: 'No resources found',
+    search_results_no_results_desc: 'Try adjusting your search terms or clear filters',
+    search_results_popular_tags: 'Popular Tags',
+    search_results_category_stats: 'Category Distribution',
+    search_results_show_all_tags: 'Show all',
+    search_results_collapse_tags: 'Collapse tags',
+    search_results_visit: 'Visit',
+    search_results_more: 'more',
 
   },
   

@@ -251,7 +251,7 @@ export default function Home() {
                       onClick={() => toggleSection('learning')}
                       className="inline-flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-medium"
                     >
-                      {expandedSections.learning ? '收起' : `查看更多 (${learningResourcesSpecial.length - 6})`}
+                      {expandedSections.learning ? (t('btn_collapse') || 'Show Less') : `${t('btn_show_more') || 'Show More'} (${learningResourcesSpecial.length - 6})`}
                       <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.learning ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
@@ -308,7 +308,7 @@ export default function Home() {
                       onClick={() => toggleSection('media')}
                       className="inline-flex items-center px-6 py-3 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition-colors font-medium"
                     >
-                      {expandedSections.media ? '收起' : `查看更多 (${mediaResourcesSpecial.length - 6})`}
+                      {expandedSections.media ? (t('btn_collapse') || 'Show Less') : `${t('btn_show_more') || 'Show More'} (${mediaResourcesSpecial.length - 6})`}
                       <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.media ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
@@ -365,7 +365,7 @@ export default function Home() {
                       onClick={() => toggleSection('policy')}
                       className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
                     >
-                      {expandedSections.policy ? '收起' : `查看更多 (${policySpecial.length - 6})`}
+                      {expandedSections.policy ? (t('btn_collapse') || 'Show Less') : `${t('btn_show_more') || 'Show More'} (${policySpecial.length - 6})`}
                       <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.policy ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
@@ -422,7 +422,7 @@ export default function Home() {
                       onClick={() => toggleSection('data')}
                       className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium"
                     >
-                      {expandedSections.data ? '收起' : `查看更多 (${dataSpecial.length - 6})`}
+                      {expandedSections.data ? (t('btn_collapse') || 'Show Less') : `${t('btn_show_more') || 'Show More'} (${dataSpecial.length - 6})`}
                       <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.data ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
@@ -479,7 +479,7 @@ export default function Home() {
                       onClick={() => toggleSection('market')}
                       className="inline-flex items-center px-6 py-3 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition-colors font-medium"
                     >
-                      {expandedSections.market ? '收起' : `查看更多 (${marketSpecial.length - 6})`}
+                      {expandedSections.market ? (t('btn_collapse') || 'Show Less') : `${t('btn_show_more') || 'Show More'} (${marketSpecial.length - 6})`}
                       <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.market ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
@@ -534,7 +534,7 @@ export default function Home() {
                       onClick={() => toggleSection('tools')}
                       className="inline-flex items-center px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors font-medium"
                     >
-                      {expandedSections.tools ? '收起' : `查看更多 (${toolsSpecial.length - 6})`}
+                      {expandedSections.tools ? (t('btn_collapse') || 'Show Less') : `${t('btn_show_more') || 'Show More'} (${toolsSpecial.length - 6})`}
                       <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.tools ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
@@ -589,7 +589,7 @@ export default function Home() {
                       onClick={() => toggleSection('journals')}
                       className="inline-flex items-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium"
                     >
-                      {expandedSections.journals ? '收起' : `查看更多 (${topJournalsResources.length - 6})`}
+                      {expandedSections.journals ? (t('btn_collapse') || 'Show Less') : `${t('btn_show_more') || 'Show More'} (${topJournalsResources.length - 6})`}
                       <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.journals ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
@@ -644,7 +644,7 @@ export default function Home() {
                       onClick={() => toggleSection('german')}
                       className="inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors font-medium"
                     >
-                      {expandedSections.german ? '收起' : `查看更多 (${germanEconomicsResources.length - 6})`}
+                      {expandedSections.german ? (t('btn_collapse') || 'Show Less') : `${t('btn_show_more') || 'Show More'} (${germanEconomicsResources.length - 6})`}
                       <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.german ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>

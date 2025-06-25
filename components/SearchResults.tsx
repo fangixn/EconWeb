@@ -154,7 +154,7 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
             <div className="flex items-center space-x-4">
               <Search className="w-6 h-6 text-blue-600" />
               <h2 className="text-2xl font-bold text-gray-900">
-                搜索结果
+                {t('search_results_title') || 'Search Results'}
               </h2>
               {searchTerm && (
                 <Badge variant="outline" className="text-blue-600 border-blue-300">
@@ -167,21 +167,21 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
               onClearSearch();
             }} className="text-gray-600">
               <X className="w-4 h-4 mr-2" />
-              清除搜索
+              {t('search_results_clear') || 'Clear Search'}
             </Button>
           </div>
           
           <div className="flex items-center justify-between text-sm text-gray-600">
-            <span>找到 {filteredAndSortedResources.length} 个结果</span>
+            <span>{filteredAndSortedResources.length} {t('search_results_found') || 'results found'}</span>
             <div className="flex items-center space-x-4">
-              <span>排序方式:</span>
+              <span>{t('search_results_sort_by') || 'Sort by:'}</span>
               <select 
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as 'relevance' | 'alphabetical')}
                 className="border border-gray-300 rounded px-2 py-1 text-sm"
               >
-                <option value="relevance">相关性</option>
-                <option value="alphabetical">字母顺序</option>
+                <option value="relevance">{t('search_results_relevance') || 'Relevance'}</option>
+                <option value="alphabetical">{t('search_results_alphabetical') || 'Alphabetical'}</option>
               </select>
             </div>
           </div>
@@ -196,7 +196,7 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
                 <div className="mb-6">
                   <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
                     <Tag className="w-4 h-4 mr-2" />
-                    热门标签
+                    {t('search_results_popular_tags') || 'Popular Tags'}
                   </h3>
                   
                   {/* 选中的标签 */}
@@ -246,11 +246,11 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
                             <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
                             </svg>
-                            收起标签
+                            {t('search_results_collapse_tags') || 'Collapse tags'}
                           </>
                         ) : (
                           <>
-                            查看全部 {allTags.filter(({ tag }) => tag !== selectedTag).length} 个标签
+                            {t('search_results_show_all_tags') || 'Show all'} {allTags.filter(({ tag }) => tag !== selectedTag).length} tags
                             <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                             </svg>
@@ -267,7 +267,7 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
                     <Filter className="w-4 h-4 mr-2" />
-                    分类分布
+                    {t('search_results_category_stats') || 'Category Distribution'}
                   </h3>
                   <div className="space-y-2 max-h-64 overflow-y-auto">
                     {Object.entries(categoryStats)
@@ -278,7 +278,7 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
                           {getCategoryLabel(category)}
                         </span>
                         <Badge variant="secondary" className="text-xs">
-                          {count}个
+                          {count}
                         </Badge>
                       </div>
                     ))}
@@ -293,13 +293,13 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
             {filteredAndSortedResources.length === 0 ? (
               <div className="text-center py-12">
                 <Search className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                <h3 className="text-lg font-medium text-gray-900 mb-2">未找到相关资源</h3>
-                <p className="text-gray-600 mb-4">试试调整搜索词或清除过滤条件</p>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">{t('search_results_no_results') || 'No resources found'}</h3>
+                <p className="text-gray-600 mb-4">{t('search_results_no_results_desc') || 'Try adjusting your search terms or clear filters'}</p>
                 <Button variant="outline" onClick={() => {
                   setSelectedTag(null);
                   onClearSearch();
                 }}>
-                  重新搜索
+                  {t('search_results_retry') || 'Search Again'}
                 </Button>
               </div>
             ) : (
@@ -334,7 +334,7 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
                             ))}
                             {resource.tags.length > 5 && (
                               <span className="text-xs text-gray-500">
-                                +{resource.tags.length - 5} 更多
+                                +{resource.tags.length - 5} {t('search_results_more') || 'more'}
                               </span>
                             )}
                           </div>
@@ -346,7 +346,7 @@ export default function SearchResults({ searchTerm, resources, onClearSearch }: 
                           className="ml-4 flex-shrink-0 inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors"
                         >
                           <ExternalLink className="w-4 h-4 mr-2" />
-                          访问
+                          {t('search_results_visit') || 'Visit'}
                         </a>
                       </div>
                     </CardContent>

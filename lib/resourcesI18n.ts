@@ -738,8 +738,126 @@ const resourceDescriptionTranslations: Record<string, ResourceTranslation> = {
     en: "Economics and finance preprint platform featuring the latest research findings",
     zh: "经济学和金融学预印本论文平台，最新研究成果",
     ko: "최신 연구 성과를 담은 경제학 및 금융학 프리프린트 플랫폼",
-    ja: "最新の研究成果を特集する経済学・金融学プレプリントプラットフォーム",
+    ja: "最新の研究成果を特集する経济学・金融学プレプリントプラットフォーム",
     de: "Preprint-Plattform für Wirtschafts- und Finanzwissenschaften mit neuesten Forschungsergebnissen"
+  },
+  
+  // 市场专题资源描述翻译
+  "上海证券交易所": {
+    en: "A-share main board market information and data",
+    zh: "A股主板市场信息和数据",
+    ko: "A주 메인보드 시장 정보 및 데이터",
+    ja: "A株メインボード市場情報とデータ",
+    de: "A-Aktien Hauptbörsen-Marktinformationen und -daten"
+  },
+  "深圳证券交易所": {
+    en: "ChiNext and SME board market information",
+    zh: "创业板和中小板市场信息",
+    ko: "창업보드 및 중소기업보드 시장 정보",
+    ja: "創業板と中小企業板の市場情報",
+    de: "ChiNext- und KMU-Börsen-Marktinformationen"
+  },
+  "香港交易所": {
+    en: "Hong Kong stock market and Chinese concept stocks information",
+    zh: "港股市场和中概股信息",
+    ko: "홍콩 주식시장 및 중국 컨셉주 정보",
+    ja: "香港株式市場と中国コンセプト株情報",
+    de: "Hongkonger Aktienmarkt und chinesische Konzeptaktien-Informationen"
+  },
+  "纽约证券交易所": {
+    en: "World's largest stock exchange",
+    zh: "全球最大股票交易所",
+    ko: "세계 최대 주식거래소",
+    ja: "世界最大の証券取引所",
+    de: "Weltgrößte Börse"
+  },
+  "纳斯达克": {
+    en: "Technology-focused stock exchange",
+    zh: "科技股集中的交易所",
+    ko: "기술주 중심의 거래소",
+    ja: "テクノロジー株中心の取引所",
+    de: "Technologieorientierte Börse"
+  },
+  "芝加哥商品交易所": {
+    en: "World's largest futures and options exchange",
+    zh: "全球最大的期货和期权交易所",
+    ko: "세계 최대 선물 및 옵션 거래소",
+    ja: "世界最大の先物・オプション取引所",
+    de: "Weltgrößte Futures- und Optionsbörse"
+  },
+  
+  // 政策专题资源描述翻译
+  "中国人民银行": {
+    en: "People's Bank of China official website, monetary policy and financial regulation",
+    zh: "中国央行官网，货币政策、金融监管政策",
+    ko: "중국 인민은행 공식 웹사이트, 통화정책 및 금융규제",
+    ja: "中国人民銀行公式サイト、金融政策・金融規制",
+    de: "Offizielle Website der Volksbank China, Geldpolitik und Finanzregulierung"
+  },
+  "美联储(Federal Reserve)": {
+    en: "Federal Reserve, global monetary policy benchmark",
+    zh: "美国央行，全球货币政策风向标",
+    ko: "미국 연방준비제도, 글로벌 통화정책 기준",
+    ja: "米国連邦準備制度、グローバル金融政策の指標",
+    de: "US-Notenbank, globaler Geldpolitik-Benchmark"
+  },
+  "欧洲央行(ECB)": {
+    en: "European Central Bank official website, Eurozone monetary policy",
+    zh: "欧洲央行官网，欧元区货币政策",
+    ko: "유럽중앙은행 공식 웹사이트, 유로존 통화정책",
+    ja: "欧州中央銀行公式サイト、ユーロ圏金融政策",
+    de: "Offizielle Website der Europäischen Zentralbank, Eurozone-Geldpolitik"
+  },
+  "国家发改委": {
+    en: "National Development and Reform Commission, macroeconomic policy formulation",
+    zh: "国家发展和改革委员会，宏观经济政策制定",
+    ko: "국가발전개혁위원회, 거시경제정책 수립",
+    ja: "国家発展改革委員会、マクロ経済政策策定",
+    de: "Nationale Entwicklungs- und Reformkommission, makroökonomische Politikgestaltung"
+  },
+  "财政部": {
+    en: "Ministry of Finance of China, fiscal policy and taxation policy",
+    zh: "中国财政部，财政政策与税收政策",
+    ko: "중국 재정부, 재정정책 및 세제정책",
+    ja: "中国財政部、財政政策・税制政策",
+    de: "Finanzministerium Chinas, Finanz- und Steuerpolitik"
+  },
+  
+  // 数据专题资源描述翻译
+  "FRED (美联储经济数据)": {
+    en: "Federal Reserve Economic Data, the world's most authoritative economic database",
+    zh: "美联储圣路易斯分行经济数据库，全球最权威",
+    ko: "연방준비제도 경제데이터, 세계에서 가장 권위있는 경제 데이터베이스",
+    ja: "連邦準備制度経済データ、世界で最も権威ある経済データベース",
+    de: "Federal Reserve Wirtschaftsdaten, die weltweit maßgeblichste Wirtschaftsdatenbank"
+  },
+  "世界银行数据": {
+    en: "World Bank development indicators and global statistics",
+    zh: "世界银行发展指标和全球统计",
+    ko: "세계은행 개발지표 및 글로벌 통계",
+    ja: "世界銀行開発指標とグローバル統計",
+    de: "Weltbank-Entwicklungsindikatoren und globale Statistiken"
+  },
+  "IMF数据库": {
+    en: "International Monetary Fund data and statistics",
+    zh: "国际货币基金组织数据和统计",
+    ko: "국제통화기금 데이터 및 통계",
+    ja: "国際通貨基金データと統計",
+    de: "Internationale Währungsfonds Daten und Statistiken"
+  },
+  "OECD数据": {
+    en: "Organisation for Economic Co-operation and Development statistical data",
+    zh: "经济合作与发展组织统计数据",
+    ko: "경제협력개발기구 통계 데이터",
+    ja: "経済協力開発機構統計データ",
+    de: "Organisation für wirtschaftliche Zusammenarbeit und Entwicklung Statistikdaten"
+  },
+  "Trading Economics": {
+    en: "Real-time economic indicators, market data and forecasts",
+    zh: "实时经济指标、市场数据和预测",
+    ko: "실시간 경제지표, 시장 데이터 및 예측",
+    ja: "リアルタイム経済指標、市場データと予測",
+    de: "Echtzeitindikatoren, Marktdaten und Prognosen"
   }
 };
 
