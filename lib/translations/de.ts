@@ -56,6 +56,15 @@ export const deTranslations = {
   category_tools: 'Tools-Spezialisierung',
   category_top_journals: 'Top-Zeitschriften',
   category_german: 'Deutschland-Fokus',
+
+  // Footer
+  footer_contact: 'Kontakt',
+  footer_about: 'Über uns',
+  footer_privacy: 'Datenschutz',
+  footer_terms: 'Nutzungsbedingungen',
+  footer_german: 'Deutschland-Fokus',
+  footer_top_journals: 'Top-Zeitschriften',
+  footer_copyright: '© 2025 EconWeb. Alle Rechte vorbehalten. Erstellt von Fang Xin.',
 };
 
 // Deutsche Ressourcenübersetzungen
@@ -170,34 +179,45 @@ export const deResourceTranslations: Record<string, string> = {
 // Deutsche Ressourcenbeschreibungsübersetzungen
 export const deResourceDescriptions: Record<string, string> = {
   // Lernbereich Beschreibungen
-  "麻省理工开放课程 (MIT OCW)": "MIT OpenCourseWare mit Kernkursen in Mikro-, Makroökonomie und Ökonometrie",
-  "哈佛肯尼迪学院": "Harvard Kennedy School Online-Kurse für öffentliche Politik und Wirtschaft",
-  "可汗学院经济学": "Khan Academy kostenlose Wirtschaftskurse, geeignet für Einsteiger und Wiederholung",
-  "Coursera经济学专业课程": "Coursera systematische Wirtschafts-Fachkurse von Top-Universitäten",
-  "边际革命大学": "Innovative Online-Plattform mit Fokus auf moderne Wirtschaftsbildung",
+  "麻省理工学院开放课程，覆盖微观、宏观、计量经济学等核心课程": "MIT OpenCourseWare mit Kernkursen in Mikro-, Makroökonomie und Ökonometrie",
+  "哈佛肯尼迪学院公共政策与经济学在线课程": "Harvard Kennedy School Online-Kurse für öffentliche Politik und Wirtschaft",
+  "可汗学院经济学免费课程，适合经济学入门和复习": "Khan Academy kostenlose Wirtschaftskurse, geeignet für Einsteiger und Wiederholung",
+  "Coursera经济学专业课程，来自顶级大学的系统性课程": "Coursera systematische Wirtschafts-Fachkurse von Top-Universitäten",
+  "边际革命大学，专注现代经济学教育的创新在线平台": "Innovative Online-Plattform mit Fokus auf moderne Wirtschaftsbildung",
 
-  // Marktbereich Beschreibungen
-  "Yahoo Finance": "Umfassende Finanzdaten, Aktienkurse und Marktanalyse-Tools",
-  "Google Finance": "Echtzeit-Aktieninformationen und Finanznachrichten von Google",
-  "Morningstar": "Unabhängige Investmentforschung und Portfolio-Management-Tools",
-  "TradingView": "Erweiterte Chart-Plattform mit Social-Trading-Funktionen",
+  // Medienbereich Beschreibungen
+  "英国老牌周刊，深入报道全球政治、经济、商业、科技趋势，视角独到分析深刻": "Britisches Traditionsmagazin mit tiefgreifender Berichterstattung über globale Politik-, Wirtschafts-, Business- und Technologietrends mit einzigartiger Perspektive und tiefgehender Analyse",
+  "全球金融市场与宏观政策权威媒体，提供实时市场动态和专业分析": "Autoritative Medien für globale Finanzmärkte und Makropolitik, bietet Echtzeit-Marktdynamik und professionelle Analysen",
+  "中国顶级财经媒体，以深度调查与政策金融报道著称，专业性强": "Chinas führende Finanzmedien, bekannt für tiefgreifende Untersuchungen und Politik-Finanz-Berichterstattung mit hoher Professionalität",
+  "专业财经媒体平台，提供实时经济新闻与深度数据解读": "Professionelle Finanzmedien-Plattform, die Echtzeit-Wirtschaftsnachrichten und tiefgreifende Dateninterpretation bietet",
 
   // Politikbereich Beschreibungen
-  "美联储": "Federal Reserve System - das Zentralbanksystem der Vereinigten Staaten",
-  "欧洲央行": "Europäische Zentralbank - Geldpolitik für die Eurozone",
-  "国际货币基金组织": "IWF - internationale Organisation zur Förderung der globalen Währungskooperation",
-  "世界银行": "Weltbankgruppe - internationale Finanzinstitution für Entwicklungshilfe",
+  "中国央行官网，货币政策、金融监管政策权威发布": "Offizielle Website der chinesischen Zentralbank, autoritative Veröffentlichung von Geld- und Finanzaufsichtspolitik",
+  "美国央行，全球货币政策风向标和金融稳定指标": "US-Zentralbank, globaler Indikator für Geldpolitik und Finanzstabilität",
+  "欧洲央行官网，欧元区货币政策和金融监管": "Offizielle Website der Europäischen Zentralbank für Eurozone-Geldpolitik und Finanzaufsicht",
+  "国家发展和改革委员会，宏观经济政策制定和发展规划": "Nationale Entwicklungs- und Reformkommission, zuständig für makroökonomische Politikgestaltung und Entwicklungsplanung",
+  "中国财政部，财政政策与税收政策制定执行": "Chinesisches Finanzministerium, zuständig für Fiskal- und Steuerpolitikgestaltung und -umsetzung",
 
   // Datenbereich Beschreibungen
-  "FRED经济数据": "Federal Reserve Economic Data - umfassende Wirtschaftsdatenbank",
-  "世界银行数据": "Weltbank Open Data - kostenloser Zugang zu globalen Entwicklungsdaten",
-  "IMF数据": "Internationale Währungsfonds statistische Datenbanken und Publikationen",
-  "Trading Economics": "Wirtschaftsindikatoren und Finanzmarktdaten für 196 Länder",
+  "美联储圣路易斯分行经济数据库，全球最权威的经济数据平台": "Federal Reserve Bank of St. Louis Wirtschaftsdatenbank, weltweit maßgeblichste Wirtschaftsdatenplattform",
+  "全球发展指标和国家统计数据，涵盖200多个国家": "Globale Entwicklungsindikatoren und nationale Statistikdaten, die über 200 Länder abdecken",
+  "国际货币基金组织官方数据和统计，全球金融稳定指标": "Offizielle IWF-Daten und Statistiken, globale Finanzstabilitätsindikatoren",
+  "经济合作与发展组织统计数据，发达国家经济指标": "OECD-Statistikdaten, Wirtschaftsindikatoren entwickelter Länder",
+  "实时经济指标、市场数据和预测分析，覆盖196个国家": "Echtzeit-Wirtschaftsindikatoren, Marktdaten und Prognoseanalysen für 196 Länder",
+
+  // Marktbereich Beschreibungen
+  "A股主板市场信息和数据，中国资本市场主要平台": "A-Aktien-Hauptmarkt-Informationen und -Daten, Hauptplattform des chinesischen Kapitalmarkts",
+  "创业板和中小板市场信息，支持创新企业发展": "ChiNext- und SME-Board-Marktinformationen zur Unterstützung der Entwicklung innovativer Unternehmen",
+  "港股市场和中概股信息，亚洲国际金融中心": "Hongkonger Aktienmarkt- und China-Konzept-Aktien-Informationen, Asiens internationales Finanzzentrum",
+  "全球最大股票交易所，世界金融中心核心平台": "Weltgrößte Börse, Kernplattform des globalen Finanzzentrums",
+  "科技股集中的交易所，全球科技企业聚集地": "Technologie-fokussierte Börse, globaler Hub für Technologieunternehmen",
 
   // Deutschland-Fokus Beschreibungen
-  "德国联邦银行(Bundesbank)": "Deutschlands Zentralbank für Geldpolitik und Finanzstabilität",
-  "德国联邦统计局": "Statistisches Bundesamt für offizielle deutsche Statistiken",
-  "德国经济研究所(DIW Berlin)": "Führendes deutsches Wirtschaftsforschungsinstitut für Politikanalyse",
+  "德国央行官网，提供货币政策、经济研究报告": "Offizielle Website der deutschen Zentralbank, bietet Geldpolitik und Wirtschaftsforschungsberichte",
+  "德国官方统计数据门户，国民经济统计权威来源": "Deutsches offizielles Statistikdatenportal, autoritative Quelle für Volkswirtschaftsstatistiken",
+  "德国权威经济智库，关注房屋危机与移民经济学": "Deutschlands autoritative Wirtschafts-Denkfabrik, fokussiert auf Wohnungskrise und Migrationsökonomie",
+  "联邦经济与能源部，德国经济政策制定部门": "Bundesministerium für Wirtschaft und Energie, Deutschlands wirtschaftspolitische Gestaltungsabteilung",
+  "专门研究中国经济，德企对华投资风险评估": "Spezialisiert auf chinesische Wirtschaftsforschung, Risikobewertung deutscher Investitionen in China",
   "法兰克福证券交易所": "Eine der weltgrößten Börsen nach Marktkapitalisierung",
 };
 

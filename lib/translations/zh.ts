@@ -119,7 +119,7 @@ export const zhTranslations = {
   footer_privacy: '隐私政策',
   footer_terms: '服务条款',
   footer_top_journals: '顶级期刊',
-  footer_copyright: '© 2025 EconWeb. 版权所有。由方昕创建。',
+  footer_copyright: '© 2025 EconWeb. 版权所有。由方馨创建。',
   
   // Category Titles
   category_organizations: '组织机构',
