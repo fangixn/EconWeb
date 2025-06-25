@@ -6,45 +6,7 @@ export interface Resource {
   tags: string[];
 }
 
-// 德国经济学专题资源
-export const germanEconomicsResources = [
-  {
-    name: "German Central Bank",
-    url: "https://www.bundesbank.de",
-    description: "Monetary policy reports and financial stability data",
-    tags: ["Central Bank", "Authoritative"]
-  },
-  {
-    name: "Fraunhofer Institute",
-    url: "https://www.fraunhofer.de",
-    description: "Industry 4.0 and hydrogen energy technology reports",
-    tags: ["Technology", "Innovation"]
-  },
-  {
-    name: "GENESIS Regional Database",
-    url: "https://www-genesis.destatis.de",
-    description: "German state economic comparison tool",
-    tags: ["Regional", "Customizable"]
-  },
-  {
-    name: "Energy Transition Monitoring",
-    url: "https://www.agora-energiewende.de",
-    description: "Green hydrogen strategy and carbon pricing mechanism",
-    tags: ["Energy", "Policy"]
-  },
-  {
-    name: "IFO Business Climate Index",
-    url: "https://www.ifo.de",
-    description: "Manufacturing/service industry survey based on 9,000 German companies",
-    tags: ["Business Climate", "Survey"]
-  },
-  {
-    name: "ZEW Economic Sentiment Index",
-    url: "https://www.zew.de",
-    description: "Financial experts' expectations index for Germany and Eurozone",
-    tags: ["Economic Sentiment", "Financial"]
-  }
-];
+// 删除旧的germanEconomicsResources，统一使用germanSpecial
 
 // 顶级学术期刊专题资源 - 按影响因子排序
 // 1. QJE (35.995), 2. AER (25.102), 3. JF (22.836), 4. Econometrica (21.091), 5. REStud (19.166)
@@ -563,8 +525,7 @@ export const toolsSpecial = [
   }
 ];
 
-// 德国专题合并智库观点中的德国相关资源
-// 注意：这里还有另一个germanEconomicsResources导出在文件前面，我们保持两个都存在
+// 德国专题 - 德国经济学研究的专业资源和机构
 export const germanSpecial = [
   // 原有德国专题资源
   {

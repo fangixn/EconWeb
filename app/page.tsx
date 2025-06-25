@@ -9,7 +9,7 @@ import SearchResults from '@/components/SearchResults';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useLanguage } from '@/lib/LanguageContext';
 import { 
-  germanEconomicsResources, 
+  germanSpecial, 
   topJournalsResources, 
   learningResourcesSpecial, 
   mediaResourcesSpecial, 
@@ -123,7 +123,7 @@ export default function Home() {
     });
     
     // 8. 德国专题
-    germanEconomicsResources.forEach(resource => {
+    germanSpecial.forEach(resource => {
       resources.push({
         ...resource,
         category: 'german',
@@ -615,7 +615,7 @@ export default function Home() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {(expandedSections.german ? germanEconomicsResources : germanEconomicsResources.slice(0, 6)).map((resource, index) => (
+                  {(expandedSections.german ? germanSpecial : germanSpecial.slice(0, 6)).map((resource, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-orange-100">
                       <h3 className="text-lg font-semibold text-gray-900 mb-3">{getResourceTranslation(currentLanguage, resource.name)}</h3>
                       <p className="text-gray-600 text-sm mb-4">{getResourceDescriptionTranslation(currentLanguage, resource.name, resource.description)}</p>
@@ -638,13 +638,13 @@ export default function Home() {
                   ))}
                 </div>
                 
-                {germanEconomicsResources.length > 6 && (
+                {germanSpecial.length > 6 && (
                   <div className="text-center mt-12">
                     <button
                       onClick={() => toggleSection('german')}
                       className="inline-flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors font-medium"
                     >
-                      {expandedSections.german ? (t('btn_collapse') || 'Show Less') : `${t('btn_show_more') || 'Show More'} (${germanEconomicsResources.length - 6})`}
+                      {expandedSections.german ? (t('btn_collapse') || 'Show Less') : `${t('btn_show_more') || 'Show More'} (${germanSpecial.length - 6})`}
                       <svg className={`ml-2 h-4 w-4 transition-transform ${expandedSections.german ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                       </svg>
