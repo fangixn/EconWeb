@@ -136,153 +136,153 @@ export const germanResourcesTranslations: Record<string, ResourceTranslation> = 
 
 // 顶级期刊资源翻译
 export const topJournalsTranslations: Record<string, ResourceTranslation> = {
-  "Quarterly Journal of Economics (QJE)": {
+  "经济学季刊 (QJE)": {
     en: "Quarterly Journal of Economics (QJE)",
-    zh: "经济学季刊",
+    zh: "经济学季刊 (QJE)",
     ko: "경제학 계간지 (QJE)",
     ja: "経済学季刊 (QJE)",
     de: "Quarterly Journal of Economics (QJE)"
   },
-  "American Economic Review": {
-    en: "American Economic Review",
-    zh: "美国经济评论",
-    ko: "미국경제평론",
-    ja: "アメリカ経済評論",
-    de: "American Economic Review"
+  "美国经济评论 (AER)": {
+    en: "American Economic Review (AER)",
+    zh: "美国经济评论 (AER)",
+    ko: "미국경제평론 (AER)",
+    ja: "アメリカ経済評論 (AER)",
+    de: "American Economic Review (AER)"
   },
-  "Journal of Finance (JF)": {
+  "金融学期刊 (JF)": {
     en: "Journal of Finance (JF)",
-    zh: "金融学杂志",
+    zh: "金融学期刊 (JF)",
     ko: "금융학 저널 (JF)",
     ja: "ファイナンス・ジャーナル (JF)",
     de: "Journal of Finance (JF)"
   },
-  "Econometrica": {
+  "计量经济学 (Econometrica)": {
     en: "Econometrica",
-    zh: "计量经济学",
-    ko: "계량경제학",
+    zh: "计量经济学 (Econometrica)",
+    ko: "계량경제학 (Econometrica)",
     ja: "エコノメトリカ",
     de: "Econometrica"
   },
-  "Review of Economic Studies (REStud)": {
+  "经济研究评论 (REStud)": {
     en: "Review of Economic Studies (REStud)",
-    zh: "经济研究评论",
+    zh: "经济研究评论 (REStud)",
     ko: "경제연구 리뷰 (REStud)",
     ja: "経済研究評論 (REStud)",
     de: "Review of Economic Studies (REStud)"
   },
-  "Journal of Financial Economics (JFE)": {
+  "金融经济学期刊 (JFE)": {
     en: "Journal of Financial Economics (JFE)",
-    zh: "金融经济学杂志",
+    zh: "金融经济学期刊 (JFE)",
     ko: "금융경제학 저널 (JFE)",
     ja: "金融経済学ジャーナル (JFE)",
     de: "Journal of Financial Economics (JFE)"
   },
-  "Journal of Political Economy (JPE)": {
+  "政治经济学期刊 (JPE)": {
     en: "Journal of Political Economy (JPE)",
-    zh: "政治经济学杂志",
+    zh: "政治经济学期刊 (JPE)",
     ko: "정치경제학 저널 (JPE)",
     ja: "政治経済学ジャーナル (JPE)",
     de: "Journal of Political Economy (JPE)"
   },
-  "Review of Financial Studies (RFS)": {
+  "金融研究评论 (RFS)": {
     en: "Review of Financial Studies (RFS)",
-    zh: "金融研究评论",
+    zh: "金融研究评论 (RFS)",
     ko: "금융연구 리뷰 (RFS)",
     ja: "金融研究評論 (RFS)",
     de: "Review of Financial Studies (RFS)"
   },
-  "American Economic Journal: Macroeconomics": {
-    en: "American Economic Journal: Macroeconomics",
-    zh: "美国经济学杂志：宏观经济学",
-    ko: "미국경제저널: 거시경제학",
-    ja: "アメリカ経済ジャーナル：マクロ経済学",
-    de: "American Economic Journal: Macroeconomics"
+  "美国经济期刊：宏观经济学 (AEJ:Macro)": {
+    en: "American Economic Journal: Macroeconomics (AEJ:Macro)",
+    zh: "美国经济期刊：宏观经济学 (AEJ:Macro)",
+    ko: "미국경제저널: 거시경제학 (AEJ:Macro)",
+    ja: "アメリカ経済ジャーナル：マクロ経済学 (AEJ:Macro)",
+    de: "American Economic Journal: Macroeconomics (AEJ:Macro)"
   },
-  "Journal of Marketing": {
-    en: "Journal of Marketing",
-    zh: "营销学杂志",
-    ko: "마케팅 저널",
-    ja: "マーケティング・ジャーナル",
-    de: "Journal of Marketing"
+  "营销学期刊 (JM)": {
+    en: "Journal of Marketing (JM)",
+    zh: "营销学期刊 (JM)",
+    ko: "마케팅 저널 (JM)",
+    ja: "マーケティング・ジャーナル (JM)",
+    de: "Journal of Marketing (JM)"
   }
 };
 
 // 学习资源翻译
 export const learningResourcesTranslations: Record<string, ResourceTranslation> = {
-  "MIT OCW - Economics": {
+  "麻省理工开放课程 (MIT OCW)": {
     en: "MIT OpenCourseWare - Economics",
-    zh: "MIT开放课程 - 经济学",
+    zh: "麻省理工开放课程 (MIT OCW)",
     ko: "MIT 오픈코스웨어 - 경제학",
     ja: "MIT オープンコースウェア - 経済学",
     de: "MIT OpenCourseWare - Wirtschaftswissenschaften"
   },
-  "Harvard Kennedy School": {
+  "哈佛肯尼迪学院": {
     en: "Harvard Kennedy School",
     zh: "哈佛肯尼迪学院",
     ko: "하버드 케네디 스쿨",
     ja: "ハーバード・ケネディ・スクール",
     de: "Harvard Kennedy School"
   },
-  "Khan Academy - Economics": {
+  "可汗学院经济学": {
     en: "Khan Academy - Economics",
-    zh: "可汗学院 - 经济学",
+    zh: "可汗学院经济学",
     ko: "칸 아카데미 - 경제학",
     ja: "カーン・アカデミー - 経済学",
     de: "Khan Academy - Wirtschaftswissenschaften"
   },
-  "Coursera Economics Specialization": {
+  "Coursera经济学专业课程": {
     en: "Coursera Economics Specialization",
     zh: "Coursera经济学专业课程",
     ko: "코세라 경제학 전문과정",
     ja: "Coursera経済学専門課程",
     de: "Coursera-Wirtschaftsspezialisierung"
   },
-  "Marginal Revolution University": {
+  "边际革命大学": {
     en: "Marginal Revolution University",
     zh: "边际革命大学",
     ko: "마진얼 레볼루션 대학교",
     ja: "マージナル・レボリューション大学",
     de: "Marginal Revolution University"
   },
-  "BBC Masters of Money - 凯恩斯": {
+  "BBC货币大师：凯恩斯篇": {
     en: "BBC Masters of Money - Keynes",
-    zh: "BBC《货币大师》- 凯恩斯",
+    zh: "BBC货币大师：凯恩斯篇",
     ko: "BBC 머니 마스터즈 - 케인스",
     ja: "BBC マネー・マスターズ - ケインズ",
     de: "BBC Masters of Money - Keynes"
   },
-  "BBC Masters of Money - 哈耶克": {
+  "BBC货币大师：哈耶克篇": {
     en: "BBC Masters of Money - Hayek",
-    zh: "BBC《货币大师》- 哈耶克",
+    zh: "BBC货币大师：哈耶克篇",
     ko: "BBC 머니 마스터즈 - 하이에크",
     ja: "BBC マネー・マスターズ - ハイエク",
     de: "BBC Masters of Money - Hayek"
   },
-  "BBC Masters of Money - 马克思": {
+  "BBC货币大师：马克思篇": {
     en: "BBC Masters of Money - Marx",
-    zh: "BBC《货币大师》- 马克思",
+    zh: "BBC货币大师：马克思篇",
     ko: "BBC 머니 마스터즈 - 마르크스",
     ja: "BBC マネー・マスターズ - マルクス",
     de: "BBC Masters of Money - Marx"
   },
-  "SSRN": {
-    en: "SSRN",
-    zh: "社会科学研究网络",
+  "社会科学研究网络 (SSRN)": {
+    en: "SSRN (Social Science Research Network)",
+    zh: "社会科学研究网络 (SSRN)",
     ko: "SSRN (사회과학연구네트워크)",
     ja: "SSRN (社会科学研究ネットワーク)",
     de: "SSRN (Social Science Research Network)"
   },
-  "NBER Working Papers": {
+  "美国国家经济研究局 (NBER)": {
     en: "NBER Working Papers",
-    zh: "NBER工作论文",
+    zh: "美国国家经济研究局 (NBER)",
     ko: "NBER 워킹페이퍼",
     ja: "NBER ワーキングペーパー",
     de: "NBER Working Papers"
   },
-  "arXiv Economics": {
+  "arXiv经济学预印本": {
     en: "arXiv Economics",
-    zh: "arXiv经济学",
+    zh: "arXiv经济学预印本",
     ko: "arXiv 경제학",
     ja: "arXiv 経済学",
     de: "arXiv Wirtschaftswissenschaften"
@@ -291,44 +291,44 @@ export const learningResourcesTranslations: Record<string, ResourceTranslation> 
 
 // 媒体资源翻译
 export const mediaResourcesTranslations: Record<string, ResourceTranslation> = {
-  "The Economist": {
+  "经济学人 (The Economist)": {
     en: "The Economist",
-    zh: "经济学人",
+    zh: "经济学人 (The Economist)",
     ko: "이코노미스트",
     ja: "エコノミスト",
     de: "The Economist"
   },
-  "Financial Times": {
+  "金融时报 (Financial Times)": {
     en: "Financial Times",
-    zh: "金融时报",
+    zh: "金融时报 (Financial Times)",
     ko: "파이낸셜 타임스",
     ja: "フィナンシャル・タイムズ",
     de: "Financial Times"
   },
-  "Bloomberg": {
+  "彭博资讯 (Bloomberg)": {
     en: "Bloomberg",
-    zh: "彭博社",
+    zh: "彭博资讯 (Bloomberg)",
     ko: "블룸버그",
     ja: "ブルームバーグ",
     de: "Bloomberg"
   },
-  "Wall Street Journal": {
+  "华尔街日报 (WSJ)": {
     en: "Wall Street Journal",
-    zh: "华尔街日报",
+    zh: "华尔街日报 (WSJ)",
     ko: "월스트리트 저널",
     ja: "ウォール・ストリート・ジャーナル",
     de: "Wall Street Journal"
   },
-  "Project Syndicate": {
+  "报业辛迪加 (Project Syndicate)": {
     en: "Project Syndicate",
-    zh: "Project Syndicate",
+    zh: "报业辛迪加 (Project Syndicate)",
     ko: "프로젝트 신디케이트",
     ja: "プロジェクト・シンジケート",
     de: "Project Syndicate"
   },
-  "VoxEU (CEPR)": {
+  "欧洲经济政策研究中心": {
     en: "VoxEU (CEPR)",
-    zh: "VoxEU (欧洲经济政策研究中心)",
+    zh: "欧洲经济政策研究中心",
     ko: "VoxEU (CEPR)",
     ja: "VoxEU (CEPR)",
     de: "VoxEU (CEPR)"
@@ -368,21 +368,21 @@ export const mediaResourcesTranslations: Record<string, ResourceTranslation> = {
     ja: "界面新聞財经",
     de: "Jiemian News Finanzen"
   },
-  "NBER Digest": {
+  "美国国家经济研究局文摘": {
     en: "NBER Digest",
-    zh: "NBER文摘",
+    zh: "美国国家经济研究局文摘",
     ko: "NBER 다이제스트",
     ja: "NBER ダイジェスト",
     de: "NBER Digest"
   },
-  "Brookings Institution": {
+  "布鲁金斯学会": {
     en: "Brookings Institution",
     zh: "布鲁金斯学会",
     ko: "브루킹스 연구소",
     ja: "ブルッキングス研究所",
     de: "Brookings Institution"
   },
-  "Peterson Institute for International Economics": {
+  "彼得森国际经济研究所": {
     en: "Peterson Institute for International Economics",
     zh: "彼得森国际经济研究所",
     ko: "피터슨 국제경제연구소",
@@ -509,86 +509,86 @@ export const policyResourcesTranslations: Record<string, ResourceTranslation> = 
 
 // 数据资源翻译
 export const dataResourcesTranslations: Record<string, ResourceTranslation> = {
-  "FRED (美联储经济数据)": {
+  "美联储经济数据库 (FRED)": {
     en: "FRED Economic Data",
-    zh: "FRED经济数据库",
+    zh: "美联储经济数据库 (FRED)",
     ko: "FRED 경제 데이터",
     ja: "FRED経済データ",
     de: "FRED-Wirtschaftsdaten"
   },
-  "世界银行数据": {
-    en: "World Bank Data",
-    zh: "世界银行数据库",
-    ko: "세계은행 데이터",
-    ja: "世界銀行データ",
-    de: "Weltbank-Daten"
+  "世界银行开放数据": {
+    en: "World Bank Open Data",
+    zh: "世界银行开放数据",
+    ko: "세계은행 오픈 데이터",
+    ja: "世界銀行オープンデータ",
+    de: "Weltbank Open Data"
   },
-  "IMF数据库": {
+  "国际货币基金组织数据库": {
     en: "IMF Data",
-    zh: "IMF数据库",
+    zh: "国际货币基金组织数据库",
     ko: "IMF 데이터",
     ja: "IMFデータ",
     de: "IWF-Daten"
   },
-  "OECD数据": {
+  "经合组织统计数据 (OECD)": {
     en: "OECD Data",
-    zh: "OECD数据库",
+    zh: "经合组织统计数据 (OECD)",
     ko: "OECD 데이터",
     ja: "OECDデータ",
     de: "OECD-Daten"
   },
-  "Trading Economics": {
+  "全球经济指标 (Trading Economics)": {
     en: "Trading Economics",
-    zh: "Trading Economics",
+    zh: "全球经济指标 (Trading Economics)",
     ko: "트레이딩 이코노믹스",
     ja: "トレーディング・エコノミクス",
     de: "Trading Economics"
   },
-  "Wind万得": {
+  "万得金融数据 (Wind)": {
     en: "Wind Information",
-    zh: "Wind万得",
+    zh: "万得金融数据 (Wind)",
     ko: "윈드 정보",
     ja: "Wind万得",
     de: "Wind Information"
   },
-  "CEIC数据库": {
-    en: "CEIC Data",
-    zh: "CEIC数据库",
-    ko: "CEIC 데이터",
-    ja: "CEICデータ",
-    de: "CEIC-Daten"
+  "CEIC全球数据库": {
+    en: "CEIC Global Database",
+    zh: "CEIC全球数据库",
+    ko: "CEIC 글로벌 데이터베이스",
+    ja: "CEICグローバルデータベース",
+    de: "CEIC Global Database"
   },
-  "Eurostat": {
+  "欧盟统计局 (Eurostat)": {
     en: "Eurostat",
-    zh: "欧盟统计局",
+    zh: "欧盟统计局 (Eurostat)",
     ko: "유로스타트",
     ja: "ユーロスタット",
     de: "Eurostat"
   },
-  "BIS国际清算银行": {
-    en: "Bank for International Settlements (BIS)",
-    zh: "国际清算银行",
-    ko: "국제결제은행 (BIS)",
-    ja: "国際決済銀行 (BIS)",
-    de: "Bank für Internationalen Zahlungsausgleich (BIZ)"
+  "国际清算银行统计": {
+    en: "Bank for International Settlements (BIS) Statistics",
+    zh: "国际清算银行统计",
+    ko: "국제결제은행 (BIS) 통계",
+    ja: "国際決済銀行 (BIS) 統計",
+    de: "Bank für Internationalen Zahlungsausgleich (BIZ) Statistiken"
   },
-  "中国家庭金融调查(CHFS)": {
+  "中国家庭金融调查 (CHFS)": {
     en: "China Household Finance Survey (CHFS)",
-    zh: "中国家庭金融调查",
+    zh: "中国家庭金融调查 (CHFS)",
     ko: "중국 가계금융조사 (CHFS)",
     ja: "中国世帯金融調査 (CHFS)",
     de: "Chinesische Haushaltsfinanzerhebung (CHFS)"
   },
-  "德国社会经济面板(SOEP)": {
+  "德国社会经济面板 (SOEP)": {
     en: "German Socio-Economic Panel (SOEP)",
-    zh: "德国社会经济面板调查",
+    zh: "德国社会经济面板 (SOEP)",
     ko: "독일 사회경제 패널 (SOEP)",
     ja: "ドイツ社会経済パネル (SOEP)",
     de: "Sozio-oekonomisches Panel (SOEP)"
   },
-  "OECD.Stat": {
+  "OECD统计平台": {
     en: "OECD.Stat",
-    zh: "OECD统计数据库",
+    zh: "OECD统计平台",
     ko: "OECD.Stat",
     ja: "OECD.Stat",
     de: "OECD.Stat"
@@ -625,11 +625,11 @@ export const marketResourcesTranslations: Record<string, ResourceTranslation> = 
     ja: "ニューヨーク証券取引所",
     de: "New Yorker Börse"
   },
-  "纳斯达克": {
+  "纳斯达克交易所": {
     en: "NASDAQ",
-    zh: "纳斯达克",
-    ko: "나스닥",
-    ja: "ナスダック",
+    zh: "纳斯达克交易所",
+    ko: "나스닥 거래소",
+    ja: "ナスダック取引所",
     de: "NASDAQ"
   },
   "芝加哥商品交易所": {
@@ -646,9 +646,9 @@ export const marketResourcesTranslations: Record<string, ResourceTranslation> = 
     ja: "前瞻産業研究院",
     de: "Qianzhan-Industrieforschungsinstitut"
   },
-  "MacroMicro行业地图": {
+  "MacroMicro产业地图": {
     en: "MacroMicro Industry Map",
-    zh: "MacroMicro行业地图",
+    zh: "MacroMicro产业地图",
     ko: "마크로마이크로 산업지도",
     ja: "マクロマイクロ産業マップ",
     de: "MacroMicro-Industriekarte"
@@ -657,33 +657,33 @@ export const marketResourcesTranslations: Record<string, ResourceTranslation> = 
 
 // 工具资源翻译
 export const toolsResourcesTranslations: Record<string, ResourceTranslation> = {
-  "Bloomberg Terminal": {
+  "彭博终端 (Bloomberg Terminal)": {
     en: "Bloomberg Terminal",
-    zh: "彭博终端",
+    zh: "彭博终端 (Bloomberg Terminal)",
     ko: "블룸버그 터미널",
     ja: "ブルームバーグ・ターミナル",
     de: "Bloomberg-Terminal"
   },
-  "Python for Economics": {
+  "经济学Python编程": {
     en: "Python for Economics",
-    zh: "Python经济学编程",
+    zh: "经济学Python编程",
     ko: "경제학을 위한 파이썬",
     ja: "経済学のためのPython",
     de: "Python für Wirtschaftswissenschaften"
   },
-  "R for Economics": {
+  "R语言计量经济学": {
     en: "R for Economics",
-    zh: "R语言经济学应用",
+    zh: "R语言计量经济学",
     ko: "경제학을 위한 R",
     ja: "経済学のためのR",
     de: "R für Wirtschaftswissenschaften"
   },
-  "Stata": {
+  "Stata统计软件": {
     en: "Stata",
     zh: "Stata统计软件",
-    ko: "스타타",
-    ja: "Stata",
-    de: "Stata"
+    ko: "스타타 통계 소프트웨어",
+    ja: "Stata統計ソフトウェア",
+    de: "Stata-Statistiksoftware"
   },
   "美国通胀计算器": {
     en: "US Inflation Calculator",
@@ -692,23 +692,23 @@ export const toolsResourcesTranslations: Record<string, ResourceTranslation> = {
     ja: "米国インフレ計算機",
     de: "US-Inflationsrechner"
   },
-  "Our World in Data": {
+  "我们的数据世界": {
     en: "Our World in Data",
-    zh: "Our World in Data",
+    zh: "我们的数据世界",
     ko: "아워 월드 인 데이터",
     ja: "Our World in Data",
     de: "Our World in Data"
   },
-  "Zotero": {
+  "Zotero文献管理": {
     en: "Zotero",
     zh: "Zotero文献管理",
-    ko: "조테로",
-    ja: "Zotero",
-    de: "Zotero"
+    ko: "조테로 문헌관리",
+    ja: "Zotero文献管理",
+    de: "Zotero-Literaturverwaltung"
   },
-  "Econlib": {
+  "经济学图书馆": {
     en: "Econlib",
-    zh: "Econlib经济学图书馆",
+    zh: "经济学图书馆",
     ko: "이코노믹 라이브러리",
     ja: "エコノミック・ライブラリー",
     de: "Econlib"
@@ -1018,18 +1018,18 @@ const resourceDescriptionTranslations: Record<string, ResourceTranslation> = {
   
   // 政策专题资源描述翻译
   "工信部": {
-    en: "Ministry of Industry and Information Technology, industrial policy and regulation",
-    zh: "工业和信息化部，产业政策与监管",
-    ko: "공업정보화부, 산업정책 및 규제",
-    ja: "工業情報化部、産業政策と規制",
-    de: "Ministerium für Industrie und Informationstechnologie, Industriepolitik und Regulierung"
+    en: "Ministry of Industry and Information Technology, industrial policy and digital economy",
+    zh: "工业和信息化部，产业政策与数字经济",
+    ko: "공업정보화부, 산업정책 및 디지털 경제",
+    ja: "工業情報化部、産業政策とデジタル経済",
+    de: "Ministerium für Industrie und Informationstechnologie, Industriepolitik und digitale Wirtschaft"
   },
   "商务部": {
-    en: "Ministry of Commerce, trade policy and foreign investment regulation",
-    zh: "商务部，贸易政策与外资监管",
-    ko: "상무부, 무역정책 및 외국인투자 규제",
-    ja: "商務部、貿易政策と外国投資規制",
-    de: "Handelsministerium, Handelspolitik und ausländische Investitionsregulierung"
+    en: "Ministry of Commerce, foreign trade policy and investment promotion",
+    zh: "对外贸易政策与投资促进",
+    ko: "대외무역정책 및 투자촉진",
+    ja: "対外貿易政策と投資促進",
+    de: "Außenhandelspolitik und Investitionsförderung"
   },
   "国家统计局": {
     en: "National Bureau of Statistics, official economic statistics and data",
@@ -1133,33 +1133,103 @@ const resourceDescriptionTranslations: Record<string, ResourceTranslation> = {
   },
   
   // 媒体专题资源描述翻译
+  "The Economist": {
+    en: "British weekly magazine with in-depth coverage of global politics, economics, business, and technology trends",
+    zh: "英国老牌周刊，深入报道全球政治、经济、商业、科技趋势，视角独到分析深刻",
+    ko: "글로벌 정치, 경제, 비즈니스, 기술 동향을 심도있게 다루는 영국 주간지",
+    ja: "グローバル政治・経済・ビジネス・技術動向を詳細に報道する英国週刊誌",
+    de: "Britisches Wochenmagazin mit tiefgreifender Berichterstattung über globale Politik, Wirtschaft, Geschäft und Technologietrends"
+  },
+  "Financial Times": {
+    en: "Global authority on financial markets and macroeconomic policy, providing real-time market dynamics and professional analysis",
+    zh: "全球金融市场与宏观政策权威媒体，提供实时市场动态和专业分析",
+    ko: "실시간 시장 동향과 전문 분석을 제공하는 글로벌 금융시장 및 거시경제정책 권위 매체",
+    ja: "リアルタイム市場動向と専門分析を提供するグローバル金融市場・マクロ経済政策の権威メディア",
+    de: "Globale Autorität für Finanzmärkte und makroökonomische Politik, bietet Echtzeit-Marktdynamik und professionelle Analyse"
+  },
+  "Bloomberg": {
+    en: "Global leading financial information platform providing market data, macroeconomic analysis and real-time news",
+    zh: "全球领先财经资讯平台，提供市场数据、宏观分析和实时新闻",
+    ko: "시장 데이터, 거시경제 분석 및 실시간 뉴스를 제공하는 글로벌 선도 금융정보 플랫폼",
+    ja: "市場データ、マクロ経済分析、リアルタイムニュースを提供するグローバル最先端金融情報プラットフォーム",
+    de: "Global führende Finanzinformationsplattform mit Marktdaten, makroökonomischer Analyse und Echtzeit-Nachrichten"
+  },
+  "Wall Street Journal": {
+    en: "American authority on financial and business news, providing in-depth coverage of US and global economic dynamics",
+    zh: "美国财经与商业新闻权威，深度报道美国及全球经济动态",
+    ko: "미국 및 글로벌 경제 동향을 심도있게 보도하는 미국 재경 및 비즈니스 뉴스 권위지",
+    ja: "米国およびグローバル経済動向を詳細に報道する米国財経・ビジネスニュースの権威",
+    de: "Amerikanische Autorität für Finanz- und Wirtschaftsnachrichten mit tiefgreifender Berichterstattung über US- und globale Wirtschaftsdynamik"
+  },
+  "Project Syndicate": {
+    en: "Global platform for renowned economists' columns, featuring Nobel laureates' perspectives on global issues",
+    zh: "全球知名经济学家专栏平台，汇聚诺奖得主观点，涵盖全球性议题",
+    ko: "노벨상 수상자들의 관점을 담은 글로벌 저명 경제학자 칼럼 플랫폼",
+    ja: "ノーベル賞受賞者の視点を含む世界著名経済学者コラムプラットフォーム",
+    de: "Globale Plattform für renommierte Ökonomen-Kolumnen mit Perspektiven von Nobelpreisträgern zu globalen Themen"
+  },
+  "VoxEU (CEPR)": {
+    en: "Expert opinion platform from Centre for Economic Policy Research, featuring cutting-edge policy research and discussions",
+    zh: "欧洲经济政策研究中心专家观点平台，前沿政策研究与讨论",
+    ko: "유럽경제정책연구센터의 전문가 의견 플랫폼, 최첨단 정책 연구 및 토론",
+    ja: "欧州経済政策研究センターの専門家意見プラットフォーム、最先端政策研究と議論",
+    de: "Expertenplattform des Centre for Economic Policy Research mit hochmoderner Politikforschung und Diskussionen"
+  },
+  "财新网": {
+    en: "China's top financial media, renowned for in-depth investigative reporting and policy-financial coverage",
+    zh: "中国顶级财经媒体，以深度调查与政策金融报道著称，专业性强",
+    ko: "심층 조사와 정책 금융 보도로 유명한 중국 최고 재경 매체",
+    ja: "深層調査と政策金融報道で著名な中国トップ財経メディア",
+    de: "Chinas führende Finanzmedien, bekannt für tiefgreifende investigative Berichterstattung und Politik-Finanz-Berichterstattung"
+  },
+  "第一财经": {
+    en: "Professional financial media platform providing real-time economic news and in-depth data analysis",
+    zh: "专业财经媒体平台，提供实时经济新闻与深度数据解读",
+    ko: "실시간 경제 뉴스와 심층 데이터 분석을 제공하는 전문 재경 매체 플랫폼",
+    ja: "リアルタイム経済ニュースと詳細データ分析を提供する専門財経メディアプラットフォーム",
+    de: "Professionelle Finanzmedienplattform mit Echtzeit-Wirtschaftsnachrichten und tiefgreifender Datenanalyse"
+  },
+  "澎湃新闻·财经频道": {
+    en: "Focuses on macroeconomic and policy implementation, providing timely and accurate financial information",
+    zh: "关注宏观经济与政策落地，提供及时准确的财经资讯",
+    ko: "거시경제와 정책 시행에 중점을 두고 시의적절하고 정확한 재경 정보를 제공",
+    ja: "マクロ経済と政策実施に焦点を当て、タイムリーで正確な財経情報を提供",
+    de: "Fokussiert auf Makroökonomie und Politikumsetzung, bietet zeitnahe und genaue Finanzinformationen"
+  },
+  "21世纪经济报道": {
+    en: "Established financial media focusing on practical and policy reporting with strong industry influence",
+    zh: "老牌财经媒体，专注实务与政策报道，行业影响力强",
+    ko: "실무와 정책 보도에 중점을 두고 강한 업계 영향력을 가진 노포 재경 매체",
+    ja: "実務と政策報道に重点を置く老舗財経メディア、業界影響力が強い",
+    de: "Etablierte Finanzmedien mit Fokus auf praktische und politische Berichterstattung und starkem Brancheneinfluss"
+  },
   "界面新闻财经": {
     en: "Emerging financial media focusing on technology and new economy trends",
-    zh: "新兴财经媒体，关注科技和新经济趋势",
+    zh: "新兴财经媒体，关注科技、新经济方向的财经新闻和趋势分析",
     ko: "기술 및 신경제 동향에 중점을 둔 신흥 금융 미디어",
     ja: "テクノロジーと新経済トレンドに焦点を当てた新興金融メディア",
     de: "Aufstrebende Finanzmedien mit Fokus auf Technologie und neue Wirtschaftstrends"
   },
   "NBER Digest": {
-    en: "Official digest of National Bureau of Economic Research findings",
-    zh: "美国国家经济研究局官方研究摘要",
-    ko: "미국 국가경제연구소 공식 연구 요약",
-    ja: "米国国家経済研究所公式研究要約",
-    de: "Offizielle Zusammenfassung der Forschungsergebnisse des National Bureau of Economic Research"
+    en: "Official digest of National Bureau of Economic Research findings, featuring authoritative academic research highlights",
+    zh: "美国国家经济研究局官方摘要刊物，权威学术研究精华",
+    ko: "미국 국가경제연구소 공식 요약 간행물, 권위있는 학술 연구 하이라이트",
+    ja: "米国国家経済研究所公式要約刊行物、権威ある学術研究のハイライト",
+    de: "Offizielle Zusammenfassung des National Bureau of Economic Research mit autoritativen akademischen Forschungshighlights"
   },
   "Brookings Institution": {
-    en: "Top-tier American think tank providing economic policy analysis",
-    zh: "美国顶级智库，提供经济政策分析",
-    ko: "경제정책 분석을 제공하는 미국 최고 싱크탱크",
-    ja: "経済政策分析を提供する米国最高級シンクタンク",
-    de: "Erstklassiger amerikanischer Think Tank für Wirtschaftspolitikanalyse"
+    en: "Top-tier American think tank's economic research channel, providing policy analysis from leading experts",
+    zh: "美国布鲁金斯学会经济研究频道，顶级智库政策分析",
+    ko: "미국 브루킹스 연구소 경제연구 채널, 최고 싱크탱크 정책 분석",
+    ja: "米国ブルッキングス研究所経済研究チャンネル、トップシンクタンク政策分析",
+    de: "Wirtschaftsforschungskanal der amerikanischen Brookings Institution, Top-Think-Tank-Politikanalyse"
   },
   "Peterson Institute for International Economics": {
-    en: "Authoritative think tank specializing in international economic policy",
-    zh: "专注国际经济政策的权威智库",
-    ko: "국제경제정책 전문 권위있는 싱크탱크",
-    ja: "国際経済政策専門の権威あるシンクタンク",
-    de: "Maßgeblicher Think Tank spezialisiert auf internationale Wirtschaftspolitik"
+    en: "Authoritative think tank specializing in international economic policy research with strong expertise in international trade and finance",
+    zh: "专注国际经济政策研究的权威智库，国际贸易与金融专业性强",
+    ko: "국제 무역과 금융에 강한 전문성을 가진 국제경제정책 연구 전문 권위 싱크탱크",
+    ja: "国際貿易・金融に強い専門性を持つ国際経済政策研究専門の権威シンクタンク",
+    de: "Maßgeblicher Think Tank spezialisiert auf internationale Wirtschaftspolitikforschung mit starker Expertise in internationalem Handel und Finanzen"
   },
   
   // 市场专题资源描述翻译
@@ -1265,6 +1335,87 @@ export const tagTranslations: Record<Language, Record<string, string>> = {
     "最新研究": "Latest Research",
     "免费获取": "Free Access",
     "全球论文": "Global Papers",
+    
+    // 媒体专题标签
+    "权威媒体": "Authoritative Media",
+    "全球视野": "Global Perspective",
+    "深度分析": "In-depth Analysis",
+    "经济趋势": "Economic Trends",
+    "金融权威": "Financial Authority",
+    "市场动态": "Market Dynamics",
+    "宏观政策": "Macroeconomic Policy",
+    "专业分析": "Professional Analysis",
+    "市场数据": "Market Data",
+    "实时资讯": "Real-time Information",
+    "财经权威": "Financial Authority",
+    "全球覆盖": "Global Coverage",
+    "美国权威": "US Authority",
+    "商业新闻": "Business News",
+    "经济动态": "Economic Dynamics",
+    "深度报道": "In-depth Reporting",
+    "经济学家": "Economists",
+    "专栏观点": "Column Opinions",
+    "全球议题": "Global Issues",
+    "欧洲视角": "European Perspective",
+    "专家观点": "Expert Opinions",
+    "前沿讨论": "Cutting-edge Discussion",
+    "深度调查": "In-depth Investigation",
+    "政策解读": "Policy Interpretation",
+    "金融专业": "Financial Professional",
+    "权威中文": "Authoritative Chinese",
+    "实时新闻": "Real-time News",
+    "数据解读": "Data Interpretation",
+    "财经专业": "Financial Professional",
+    "及时准确": "Timely and Accurate",
+    "主流媒体": "Mainstream Media",
+    "老牌媒体": "Established Media",
+    "实务导向": "Practice-oriented",
+    "政策报道": "Policy Reporting",
+    "行业影响": "Industry Influence",
+    "新兴媒体": "Emerging Media",
+    "科技财经": "Tech Finance",
+    "新经济": "New Economy",
+    "趋势分析": "Trend Analysis",
+    "研究摘要": "Research Summary",
+    "NBER": "NBER",
+    "顶级智库": "Top Think Tank",
+    "美国智库": "American Think Tank",
+    "国际政策": "International Policy",
+    "贸易金融": "Trade Finance",
+    "权威智库": "Authoritative Think Tank",
+    "专业研究": "Professional Research",
+    
+    // 政策专题标签
+    "发改委": "NDRC",
+    "财政部": "Ministry of Finance",
+    "财政政策": "Fiscal Policy",
+    "税收": "Taxation",
+    "工信部": "MIIT",
+    "产业政策": "Industrial Policy",
+    "数字经济": "Digital Economy",
+    "商务部": "Ministry of Commerce",
+    "贸易政策": "Trade Policy",
+    "投资": "Investment",
+    "统计局": "Statistics Bureau",
+    "金融监管": "Financial Regulation",
+    "银行": "Banking",
+    "保险": "Insurance",
+    "证监会": "CSRC",
+    "资本市场": "Capital Market",
+    "监管": "Regulation",
+    "国际组织": "International Organizations",
+    "权威机构": "Authoritative Institutions",
+    "发展政策": "Development Policy",
+    "中国政策": "China Policy",
+    "官方解读": "Official Interpretation",
+    "实时更新": "Real-time Updates",
+    "权威信息": "Authoritative Information",
+    "中国货币": "China Monetary",
+    "季度报告": "Quarterly Reports",
+    "政策工具": "Policy Tools",
+    "PDF下载": "PDF Download",
+    "欧洲央行": "European Central Bank",
+    "欧元区": "Eurozone",
     
     // 市场专题标签
     "A股": "A-shares",
@@ -1433,7 +1584,88 @@ export const tagTranslations: Record<Language, Record<string, string>> = {
     "预印本": "프리프린트",
     "最新研究": "최신 연구",
     "免费获取": "무료 액세스",
-    "全球论文": "글로벌 논문"
+    "全球论문": "글로벌 논문",
+    
+    // 媒体专题标签
+    "权威媒体": "권위 매체",
+    "全球视野": "글로벌 관점",
+    "深度分析": "심층 분석",
+    "经济趋势": "경제 동향",
+    "金融权威": "금융 권위",
+    "市场动态": "시장 동향",
+    "宏观政策": "거시경제정책",
+    "专业分析": "전문 분석",
+    "市场数据": "시장 데이터",
+    "实时资讯": "실시간 정보",
+    "财经权威": "재경 권위",
+    "全球覆盖": "글로벌 커버리지",
+    "美国权威": "미국 권위",
+    "商业新闻": "비즈니스 뉴스",
+    "经济动态": "경제 동향",
+    "深度报道": "심층 보도",
+    "经济学家": "경제학자",
+    "专栏观点": "칼럼 의견",
+    "全球议题": "글로벌 이슈",
+    "欧洲视角": "유럽 관점",
+    "专家观点": "전문가 의견",
+    "前沿讨论": "최첨단 토론",
+    "深度调查": "심층 조사",
+    "政策解读": "정책 해석",
+    "金融专业": "금융 전문",
+    "权威中文": "권위있는 중문",
+    "实时新闻": "실시간 뉴스",
+    "数据解读": "데이터 해석",
+    "财经专业": "재경 전문",
+    "及时准确": "시의적절하고 정확",
+    "主流媒体": "주류 매체",
+    "老牌媒体": "노포 매체",
+    "实务导向": "실무 지향",
+    "政策报道": "정책 보도",
+    "行业影响": "업계 영향",
+    "新兴媒体": "신흥 매체",
+    "科技财经": "기술 재경",
+    "新经济": "신경제",
+    "趋势分析": "동향 분석",
+    "研究摘要": "연구 요약",
+    "NBER": "NBER",
+    "顶级智库": "최고 싱크탱크",
+    "美国智库": "미국 싱크탱크",
+    "国际政策": "국제정책",
+    "贸易金融": "무역금융",
+    "权威智库": "권위 싱크탱크",
+    "专业研究": "전문 연구",
+    
+    // 政策专题标签
+    "发改委": "발개위",
+    "财政部": "재정부",
+    "财政政策": "재정정책",
+    "税收": "세수",
+    "工信部": "공신부",
+    "产业政策": "산업정책",
+    "数字经济": "디지털 경제",
+    "商务部": "상무부",
+    "贸易政策": "무역정책",
+    "投资": "투자",
+    "统计局": "통계국",
+    "金融监管": "금융감독",
+    "银行": "은행",
+    "保险": "보험",
+    "证监会": "증감회",
+    "资本市场": "자본시장",
+    "监管": "감독",
+    "国际组织": "국제기구",
+    "权威机构": "권위기관",
+    "发展政策": "발전정책",
+    "中国政策": "중국정책",
+    "官方解读": "공식해석",
+    "实时更新": "실시간 업데이트",
+    "权威信息": "권위정보",
+    "中国货币": "중국통화",
+    "季度报告": "분기보고서",
+    "政策工具": "정책도구",
+    "PDF下载": "PDF 다운로드",
+    "欧洲央行": "유럽중앙은행",
+    "欧元区": "유로존"
   },
   ja: {
     // 日语翻译
@@ -1495,7 +1727,88 @@ export const tagTranslations: Record<Language, Record<string, string>> = {
     "预印本": "プレプリント",
     "最新研究": "最新研究",
     "免费获取": "無料アクセス",
-    "全球论文": "グローバル論文"
+    "全球论文": "グローバル論文",
+    
+    // 媒体专题标签
+    "权威媒体": "権威メディア",
+    "全球视野": "グローバル視点",
+    "深度分析": "詳細分析",
+    "经济趋势": "経済トレンド",
+    "金融权威": "金融権威",
+    "市场动态": "市場動向",
+    "宏观政策": "マクロ経済政策",
+    "专业分析": "専門分析",
+    "市场数据": "市場データ",
+    "实时资讯": "リアルタイム情報",
+    "财经权威": "財経権威",
+    "全球覆盖": "グローバルカバレッジ",
+    "美国权威": "米国権威",
+    "商业新闻": "ビジネスニュース",
+    "经济动态": "経済動向",
+    "深度报道": "詳細報道",
+    "经济学家": "経済学者",
+    "专栏观点": "コラム意見",
+    "全球议题": "グローバル議題",
+    "欧洲视角": "欧州視点",
+    "专家观点": "専門家意見",
+    "前沿讨论": "最先端議論",
+    "深度调查": "詳細調査",
+    "政策解读": "政策解釈",
+    "金融专业": "金融専門",
+    "权威中文": "権威中文",
+    "实时新闻": "リアルタイムニュース",
+    "数据解读": "データ解釈",
+    "财经专业": "財経専門",
+    "及时准确": "タイムリーで正確",
+    "主流媒体": "主流メディア",
+    "老牌媒体": "老舗メディア",
+    "实务导向": "実務指向",
+    "政策报道": "政策報道",
+    "行业影响": "業界影響",
+    "新兴媒体": "新興メディア",
+    "科技财经": "テック財経",
+    "新经济": "新経済",
+    "趋势分析": "トレンド分析",
+    "研究摘要": "研究要約",
+    "NBER": "NBER",
+    "顶级智库": "トップシンクタンク",
+    "美国智库": "米国シンクタンク",
+    "国际政策": "国際政策",
+    "贸易金融": "貿易金融",
+    "权威智库": "権威シンクタンク",
+    "专业研究": "専門研究",
+    
+    // 政策专题标签
+    "发改委": "発改委",
+    "财政部": "財政部",
+    "财政政策": "財政政策",
+    "税收": "税収",
+    "工信部": "工信部",
+    "产业政策": "産業政策",
+    "数字经济": "デジタル経済",
+    "商务部": "商務部",
+    "贸易政策": "貿易政策",
+    "投资": "投資",
+    "统计局": "統計局",
+    "金融监管": "金融監督",
+    "银行": "銀行",
+    "保险": "保険",
+    "证监会": "証監会",
+    "资本市场": "資本市場",
+    "监管": "監督",
+    "国际组织": "国際機関",
+    "权威机构": "権威機関",
+    "发展政策": "発展政策",
+    "中国政策": "中国政策",
+    "官方解读": "公式解釈",
+    "实时更新": "リアルタイム更新",
+    "权威信息": "権威情報",
+    "中国货币": "中国通貨",
+    "季度报告": "四半期報告",
+    "政策工具": "政策ツール",
+    "PDF下载": "PDFダウンロード",
+    "欧洲央行": "欧州中央銀行",
+    "欧元区": "ユーロ圏"
   },
   de: {
     // 德语翻译
@@ -1557,7 +1870,88 @@ export const tagTranslations: Record<Language, Record<string, string>> = {
     "预印本": "Preprint",
     "最新研究": "Neueste Forschung",
     "免费获取": "Kostenloser Zugang",
-    "全球论文": "Globale Papers"
+    "全球论文": "Globale Papers",
+    
+    // 媒体专题标签
+    "权威媒体": "Autoritative Medien",
+    "全球视野": "Globale Perspektive",
+    "深度分析": "Tiefgreifende Analyse",
+    "经济趋势": "Wirtschaftstrends",
+    "金融权威": "Finanzautorität",
+    "市场动态": "Marktdynamik",
+    "宏观政策": "Makroökonomische Politik",
+    "专业分析": "Professionelle Analyse",
+    "市场数据": "Marktdaten",
+    "实时资讯": "Echtzeit-Informationen",
+    "财经权威": "Finanzautorität",
+    "全球覆盖": "Globale Abdeckung",
+    "美国权威": "US-Autorität",
+    "商业新闻": "Business-Nachrichten",
+    "经济动态": "Wirtschaftsdynamik",
+    "深度报道": "Tiefgreifende Berichterstattung",
+    "经济学家": "Ökonomen",
+    "专栏观点": "Kolumnen-Meinungen",
+    "全球议题": "Globale Themen",
+    "欧洲视角": "Europäische Perspektive",
+    "专家观点": "Expertenmeinungen",
+    "前沿讨论": "Hochmoderne Diskussion",
+    "深度调查": "Tiefgreifende Untersuchung",
+    "政策解读": "Politikinterpretation",
+    "金融专业": "Finanzfachbereich",
+    "权威中文": "Autoritative Chinesisch",
+    "实时新闻": "Echtzeit-Nachrichten",
+    "数据解读": "Dateninterpretation",
+    "财经专业": "Finanzfachbereich",
+    "及时准确": "Zeitnah und genau",
+    "主流媒体": "Mainstream-Medien",
+    "老牌媒体": "Etablierte Medien",
+    "实务导向": "Praxisorientiert",
+    "政策报道": "Politikberichterstattung",
+    "行业影响": "Brancheneinfluss",
+    "新兴媒体": "Aufstrebende Medien",
+    "科技财经": "Tech-Finanzen",
+    "新经济": "Neue Wirtschaft",
+    "趋势分析": "Trendanalyse",
+    "研究摘要": "Forschungszusammenfassung",
+    "NBER": "NBER",
+    "顶级智库": "Top-Think-Tank",
+    "美国智库": "US-Think-Tank",
+    "国际政策": "Internationale Politik",
+    "贸易金融": "Handelsfinanzierung",
+    "权威智库": "Autoritativer Think Tank",
+    "专业研究": "Professionelle Forschung",
+    
+    // 政策专题标签
+    "发改委": "NDRC",
+    "财政部": "Finanzministerium",
+    "财政政策": "Finanzpolitik",
+    "税收": "Besteuerung",
+    "工信部": "MIIT",
+    "产业政策": "Industriepolitik",
+    "数字经济": "Digitale Wirtschaft",
+    "商务部": "Handelsministerium",
+    "贸易政策": "Handelspolitik",
+    "投资": "Investition",
+    "统计局": "Statistikamt",
+    "金融监管": "Finanzaufsicht",
+    "银行": "Bankwesen",
+    "保险": "Versicherung",
+    "证监会": "CSRC",
+    "资本市场": "Kapitalmarkt",
+    "监管": "Regulierung",
+    "国际组织": "Internationale Organisationen",
+    "权威机构": "Autoritative Institutionen",
+    "发展政策": "Entwicklungspolitik",
+    "中国政策": "China-Politik",
+    "官方解读": "Offizielle Interpretation",
+    "实时更新": "Echtzeit-Updates",
+    "权威信息": "Autoritative Informationen",
+    "中国货币": "Chinesische Währung",
+    "季度报告": "Quartalsberichte",
+    "政策工具": "Politikinstrumente",
+    "PDF下载": "PDF-Download",
+    "欧洲央行": "Europäische Zentralbank",
+    "欧元区": "Eurozone"
   }
 };
 
