@@ -331,6 +331,25 @@ export const deResourceTranslations: Record<string, string> = {
   "路透社 (Reuters)": "Reuters",
   "谷歌财经 (Google Finance)": "Google Finance",
   "雅虎财经 (Yahoo Finance)": "Yahoo Finance",
+  
+  // 缺失的中文媒体资源翻译
+  "财新网": "Caixin Media",
+  "第一财经": "Yicai Global",
+  "澎湃新闻·财经频道": "The Paper Finanzkanal",
+  "21世纪经济报道": "21st Century Business Herald",
+  "界面新闻财经": "Jiemian Finanzen",
+  
+  // 缺失的政府机构翻译
+  "国家发展改革委员会": "Nationale Entwicklungs- und Reformkommission",
+  "中华人民共和国财政部": "Chinesisches Finanzministerium",
+  "工业和信息化部": "Ministerium für Industrie und Informationstechnologie",
+  "商务部": "Handelsministerium",
+  "国家统计局": "Nationales Statistikamt",
+  "银行保险监督管理委员会": "Banken- und Versicherungsaufsichtskommission",
+  
+  // 缺失的央行翻译
+  "美国联邦储备系统": "US-Zentralbanksystem",
+  "欧洲中央银行": "Europäische Zentralbank",
 };
 
 // Deutsche Ressourcenbeschreibungsübersetzungen
@@ -702,4 +721,13 @@ export const deTagTranslations: Record<string, string> = {
   "股市分析": "Aktienmarktanalyse",
   "投资建议": "Investment-Beratung",
   "市场观察": "Marktbeobachtung",
+  
+  // 补充缺失的中文标签翻译（删除重复项）
+  "深度调研": "Tiefgreifende Untersuchung",
+  "学术权威": "Akademische Autorität",
+  "全球影响": "Globaler Einfluss",
+  "发展规划": "Entwicklungsplanung",
+  "国家发改委": "Nationale Entwicklungskommission",
+  "工信部": "Industrieministerium",
+  "银保监会": "Banken- und Versicherungsaufsicht",
 }; 
