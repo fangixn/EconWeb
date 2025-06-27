@@ -235,6 +235,50 @@ export const mediaResourcesSpecial = [
     url: "https://www.piie.com",
     description: "专注国际经济政策研究的权威智库，国际贸易与金融专业性强",
     tags: ["国际政策", "贸易金融", "权威智库", "专业研究"]
+  },
+  
+  // 补充全球主要财经媒体平台
+  {
+    name: "福布斯 (Forbes)",
+    url: "https://www.forbes.com/",
+    description: "全球商业权威媒体，专注企业家精神、财富排行、投资趋势和商业洞察",
+    tags: ["商业权威", "财富排行", "投资趋势", "企业家精神"]
+  },
+  {
+    name: "BBC商业频道",
+    url: "https://www.bbc.com/business",
+    description: "BBC商业频道，提供全球商业新闻、市场分析和经济政策报道",
+    tags: ["全球视野", "商业新闻", "市场分析", "权威媒体"]
+  },
+  {
+    name: "巴伦周刊 (Barron's)",
+    url: "https://www.barrons.com/",
+    description: "投资领域权威周刊，专业股市分析、投资策略和金融市场深度报道",
+    tags: ["投资分析", "股市报道", "金融策略", "专业投资"]
+  },
+  {
+    name: "路透社 (Reuters)",
+    url: "https://www.reuters.com/",
+    description: "全球领先新闻通讯社，提供及时准确的金融市场新闻和经济数据",
+    tags: ["新闻通讯", "实时资讯", "金融新闻", "全球覆盖"]
+  },
+  {
+    name: "谷歌财经 (Google Finance)",
+    url: "https://www.google.com/finance/",
+    description: "谷歌财经平台，提供股票报价、市场数据、财经新闻和投资组合管理",
+    tags: ["股票数据", "市场报价", "财经工具", "投资组合"]
+  },
+  {
+    name: "雅虎财经 (Yahoo Finance)",
+    url: "https://finance.yahoo.com/",
+    description: "全球最受欢迎的财经平台之一，提供股票、基金、期货等全面金融数据",
+    tags: ["财经数据", "股票基金", "期货市场", "投资工具"]
+  },
+  {
+    name: "MarketWatch",
+    url: "https://www.marketwatch.com/",
+    description: "道琼斯旗下财经媒体，专注美国股市分析、投资建议和市场观察",
+    tags: ["股市分析", "投资建议", "市场观察", "美国市场"]
   }
 ]; 
 

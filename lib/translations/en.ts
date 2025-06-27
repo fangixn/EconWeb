@@ -299,6 +299,15 @@ export const enResourceTranslations: Record<string, string> = {
   "德国汽车工业协会(VDA)": "German Association of the Automotive Industry (VDA)",
   "德国DAX指数分析": "German DAX Index Analysis",
   "德国企业信贷数据库": "German Corporate Credit Database",
+  
+  // New media resources translations
+  "福布斯 (Forbes)": "Forbes",
+  "BBC商业频道": "BBC Business",
+  "巴伦周刊 (Barron's)": "Barron's",
+  "路透社 (Reuters)": "Reuters",
+  "谷歌财经 (Google Finance)": "Google Finance",
+  "雅虎财经 (Yahoo Finance)": "Yahoo Finance",
+  "MarketWatch": "MarketWatch",
 };
 
 // English resource description translations
@@ -331,6 +340,13 @@ export const enResourceDescriptions: Record<string, string> = {
   "美国国家经济研究局官方摘要刊物，权威学术研究精华": "Official digest publication of the National Bureau of Economic Research, featuring authoritative academic research highlights",
   "美国布鲁金斯学会经济研究频道，顶级智库政策分析": "Brookings Institution's economic research channel, premier think tank policy analysis",
   "专注国际经济政策研究的权威智库，国际贸易与金融专业性强": "Authoritative think tank focused on international economic policy research, specializing in international trade and finance",
+  "全球商业权威媒体，专注企业家精神、财富排行、投资趋势和商业洞察": "Global authoritative business media focusing on entrepreneurship, wealth rankings, investment trends and business insights",
+  "BBC商业频道，提供全球商业新闻、市场分析和经济政策报道": "BBC Business channel providing global business news, market analysis and economic policy coverage",
+  "投资领域权威周刊，专业股市分析、投资策略和金融市场深度报道": "Authoritative weekly in investment field with professional stock market analysis, investment strategies and in-depth financial market coverage",
+  "全球领先新闻通讯社，提供及时准确的金融市场新闻和经济数据": "World's leading news agency providing timely and accurate financial market news and economic data",
+  "谷歌财经平台，提供股票报价、市场数据、财经新闻和投资组合管理": "Google Finance platform providing stock quotes, market data, financial news and portfolio management",
+  "全球最受欢迎的财经平台之一，提供股票、基金、期货等全面金融数据": "One of the world's most popular financial platforms providing comprehensive financial data for stocks, funds, futures and more",
+  "道琼斯旗下财经媒体，专注美国股市分析、投资建议和市场观察": "Dow Jones financial media focusing on U.S. stock market analysis, investment advice and market observation",
 
   // Policy specialization descriptions
   "美国联邦储备系统，美国央行，制定货币政策和金融监管": "Federal Reserve System, the U.S. central bank responsible for monetary policy and financial regulation",
@@ -1203,19 +1219,22 @@ export const enTagTranslations: Record<string, string> = {
 
 "金融数据": "Financial Data",
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// 新增财经媒体标签翻译
+"商业权威": "Business Authority",
+"财富排行": "Wealth Rankings",
+"投资趋势": "Investment Trends",
+"企业家精神": "Entrepreneurship",
+"股市报道": "Stock Market Coverage",
+"金融策略": "Financial Strategy",
+"专业投资": "Professional Investment",
+"新闻通讯": "News Agency",
+"股票数据": "Stock Data",
+"市场报价": "Market Quotes",
+"财经工具": "Financial Tools",
+"投资组合": "Portfolio",
+"股票基金": "Stocks & Funds",
+"期货市场": "Futures Market",
+"投资建议": "Investment Advice",
+"市场观察": "Market Watch",
 
 }; 
