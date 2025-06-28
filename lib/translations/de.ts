@@ -350,6 +350,14 @@ export const deResourceTranslations: Record<string, string> = {
   // 缺失的央行翻译
   "美国联邦储备系统": "US-Zentralbanksystem",
   "欧洲中央银行": "Europäische Zentralbank",
+  
+  // 用户指定的新增资源标题翻译
+  "德国联邦银行": "Deutsche Bundesbank",
+  "德国经济研究所": "Deutsches Institut für Wirtschaftsforschung",
+  "德国联邦经济部": "Bundesministerium für Wirtschaft und Energie",
+  "德国对华政策研究所": "Mercator Institute for China Studies",
+  "德国经济专家委员会": "Deutscher Wirtschaftsexperten-Rat",
+  "德国工商总会": "Deutscher Industrie- und Handelskammertag"
 };
 
 // Deutsche Ressourcenbeschreibungsübersetzungen
@@ -491,6 +499,11 @@ export const deResourceDescriptions: Record<string, string> = {
   "3万德国家庭的长期跟踪数据，欧洲最大家庭面板调查": "Langzeit-Nachverfolgungsdaten von 30.000 deutschen Haushalten, Europas größte Haushaltspanel-Umfrage",
   "OECD成员国结构化数据平台，互动式数据查询工具": "Strukturierte Datenplattform der OECD-Mitgliedsländer, interaktives Datenabfrage-Tool",
 
+  // 用户指定的新增资源描述翻译
+  "欧盟统计局官方数据，欧洲经济社会统计权威": "Offizielle Eurostat-Daten, europäische Autorität für Wirtschafts- und Sozialstatistiken",
+  "国际银行业和金融市场统计，全球金融稳定监测": "Internationale Banken- und Finanzmarktstatistiken, globale Finanzstabilitätsüberwachung",
+  "港股市场和中概股信息，亚洲国际金融中心": "Hongkonger Aktienmarkt und China-Konzept-Aktien-Informationen, asiatisches internationales Finanzzentrum",
+  "全球最大股票交易所，世界金融中心核心平台": "Weltgrößte Börse, Kernplattform des globalen Finanzzentrums"
 
 };
 
@@ -730,4 +743,97 @@ export const deTagTranslations: Record<string, string> = {
   "国家发改委": "Nationale Entwicklungskommission",
   "工信部": "Industrieministerium",
   "银保监会": "Banken- und Versicherungsaufsicht",
+  
+  // 用户指定需要补充的标签翻译
+  "全面系统": "Umfassend systematisch",
+  "公共政策": "Öffentliche Politik",
+  "执行教育": "Executive Education",
+  "基础入门": "Grundlagen-Einführung",
+  "中文字幕": "Chinesische Untertitel",
+  "财经权威": "Finanzautorität",
+  "财经专业": "Finanzfachbereich",
+  "宏观经济": "Makroökonomie",
+  "投资分析": "Investment-Analyse",
+  "金融新闻": "Finanznachrichten",
+  "财经数据": "Finanzdaten",
+  "中国央行": "Chinesische Zentralbank",
+  "金融监管": "Finanzaufsicht",
+  "美联储": "Federal Reserve",
+  "欧洲央行": "Europäische Zentralbank",
+  "欧元区": "Eurozone",
+  "财政部": "Finanzministerium",
+  "税收政策": "Steuerpolitik",
+  "产业政策": "Industriepolitik",
+  "数字经济": "Digitale Wirtschaft",
+  
+  // 用户指定的新增标签翻译
+  "贸易政策": "Handelspolitik",
+  "投资促进": "Investitionsförderung",
+  "统计分析": "Statistische Analyse",
+  "风险防控": "Risikokontrolle",
+  "证监会": "Wertpapieraufsichtskommission",
+  "资本市场": "Kapitalmarkt",
+  "证券监管": "Wertpapieraufsicht",
+  "权威机构": "Autoritative Institutionen",
+  "发展政策": "Entwicklungspolitik",
+  "中国政策": "Chinesische Politik",
+  "官方解读": "Offizielle Interpretation",
+  "实时更新": "Echtzeit-Updates",
+  "中国货币": "Chinesische Währung",
+  "季度报告": "Quartalsberichte",
+  "政策工具": "Politikinstrumente",
+  "英文资源": "Englische Ressourcen",
+  "全球数据": "Globale Daten",
+  "商务部": "Handelsministerium",
+  "国家统计局": "Nationales Statistikamt",
+  "世界银行": "Weltbank",
+  
+  // 用户指定的新增标签翻译（第二批）
+  "IMF数据": "IWF-Daten",
+  "OECD数据": "OECD-Daten",
+  "经济统计": "Wirtschaftsstatistiken",
+  "金融数据": "Finanzdaten",
+  "官方统计": "Offizielle Statistiken",
+  "国际清算银行": "Bank für Internationalen Zahlungsausgleich",
+  "金融统计": "Finanzstatistiken",
+  "计量分析": "Quantitative Analyse",
+  "免费工具": "Kostenlose Tools",
+  "计量经济": "Ökonometrie",
+  "综合经济学": "Allgemeine Wirtschaftswissenschaften",
+  "高影响因子": "Hoher Impact-Faktor",
+  "美国经济学会": "American Economic Association",
+  "理论方法": "Theoretische Methoden",
+  "欧洲权威": "Europäische Autorität",
+  "金融经济学": "Finanzökonomie",
+  "公司金融": "Unternehmensfinanzierung",
+  "政治经济学": "Politische Ökonomie",
+  "芝加哥学派": "Chicago School",
+  "金融研究": "Finanzforschung",
+  "宏观经济学": "Makroökonomie",
+  "营销学": "Marketing",
+  "消费者行为": "Verbraucherverhalten",
+  
+  // 用户指定的新增标签翻译（第三批）
+  "德国央行": "Deutsche Bundesbank",
+  "经济研究": "Wirtschaftsforschung",
+  "信贷风险": "Kreditrisiko",
+  "交互地图": "Interaktive Karte",
+  "相关性": "Korrelation",
+  "工商组织": "Industrie- und Handelskammer",
+  "企业环境": "Unternehmensumfeld",
+  "商业报告": "Geschäftsberichte",
+  "汽车工业": "Automobilindustrie",
+  "电动转型": "Elektromobilität-Transformation",
+  "供应链": "Lieferkette",
+  "专家委员会": "Expertenrat",
+  "经济评估": "Wirtschaftsbewertung",
+  "年度报告": "Jahresberichte",
+  "证券交易": "Wertpapierhandel",
+  "经济政策": "Wirtschaftspolitik",
+  "能源政策": "Energiepolitik",
+  "官方部门": "Offizielle Stellen",
+  "中德关系": "Deutsch-chinesische Beziehungen",
+  "中国研究": "China-Studien",
+  "经济智库": "Wirtschafts-Think-Tank",
+  "独立机构": "Unabhängige Institutionen"
 }; 
