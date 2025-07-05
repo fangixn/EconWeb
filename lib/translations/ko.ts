@@ -189,6 +189,9 @@ export const koTranslations = {
   category_learning_resources_desc: '경제학 과정 및 학습 자원',
   category_practical_tools: '실용 도구',
   category_practical_tools_desc: '분석 도구 및 참고 자원',
+
+  // Buy Me a Coffee
+  buy_me_coffee: '커피 한 잔 사주세요',
 };
 
 // 한국어 리소스 번역

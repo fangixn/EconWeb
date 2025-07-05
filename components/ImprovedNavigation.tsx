@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { BuyMeCoffeeButton } from '@/components/BuyMeCoffeeButton';
 
 import { Language, getTranslation } from '@/lib/i18n';
 
@@ -194,8 +195,11 @@ export default function ImprovedNavigation({
             </form>
           </div>
 
-          {/* 语言切换 */}
-          <LanguageSwitcher />
+          {/* 右侧按钮组 */}
+          <div className="flex items-center space-x-3">
+            <BuyMeCoffeeButton />
+            <LanguageSwitcher />
+          </div>
         </div>
       </header>
 
@@ -288,6 +292,11 @@ export default function ImprovedNavigation({
                 >
                   {getTranslation(currentLanguage, 'go_to_footer')}
                 </button>
+              </div>
+              
+              {/* 移动端的 Buy Me a Coffee 按钮 */}
+              <div className="mt-4 lg:hidden">
+                <BuyMeCoffeeButton className="w-full" />
               </div>
             </div>
           )}

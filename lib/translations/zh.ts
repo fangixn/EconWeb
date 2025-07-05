@@ -190,6 +190,9 @@ export const zhTranslations = {
   category_tools: '工具专题',
   category_top_journals: '顶刊专题',
   category_german: '德国专题',
+
+  // Buy Me a Coffee
+  buy_me_coffee: '请我喝咖啡',
 };
 
 // 中文资源翻译（与data.ts中的实际资源名称匹配）

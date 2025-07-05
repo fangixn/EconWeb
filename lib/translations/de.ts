@@ -188,6 +188,9 @@ export const deTranslations = {
   category_tools: 'Tools-Spezialisierung',
   category_top_journals: 'Top-Zeitschriften',
   category_german: 'Deutschland-Fokus',
+
+  // Buy Me a Coffee
+  buy_me_coffee: 'Einen Kaffee kaufen',
 };
 
 // Deutsche Ressourcenübersetzungen

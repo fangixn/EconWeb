@@ -190,6 +190,9 @@ export const enTranslations = {
   category_tools: 'Tools Specialization',
   category_top_journals: 'Top Journals',
   category_german: 'German Focus',
+
+  // Buy Me a Coffee
+  buy_me_coffee: 'Buy Me a Coffee',
 };
 
 // English resource translations

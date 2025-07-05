@@ -189,6 +189,9 @@ export const jaTranslations = {
   category_tools: 'ツール専門',
   category_top_journals: 'トップジャーナル',
   category_german: 'ドイツフォーカス',
+
+  // Buy Me a Coffee
+  buy_me_coffee: 'コーヒーを買う',
 };
 
 // 日本語リソース翻訳
