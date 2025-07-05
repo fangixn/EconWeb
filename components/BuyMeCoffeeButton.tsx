@@ -21,7 +21,7 @@ export function BuyMeCoffeeButton({ className = '' }: BuyMeCoffeeButtonProps) {
       onClick={handleClick}
       variant="outline"
       size="sm"
-      className={`flex items-center space-x-2 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-white border-yellow-400 hover:border-yellow-500 shadow-md hover:shadow-lg transition-all duration-200 ${className}`}
+      className={`flex items-center space-x-2 bg-gradient-to-r from-stone-600 to-amber-700 hover:from-stone-700 hover:to-amber-800 text-white border-stone-600 hover:border-amber-700 shadow-sm hover:shadow-md transition-all duration-200 ${className}`}
     >
       <Coffee className="w-4 h-4" />
       <span className="text-sm font-medium">
