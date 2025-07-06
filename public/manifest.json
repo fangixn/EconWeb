@@ -2,7 +2,7 @@
   "name": "EconWeb - Economics Resource Navigation",
   "short_name": "EconWeb",
   "description": "最全面的经济学资源导航平台",
-  "start_url": "/",
+  "start_url": "/?utm_source=pwa",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2563eb",
@@ -10,6 +10,22 @@
   "scope": "/",
   "lang": "zh-CN",
   "categories": ["education", "productivity", "business"],
+  "shortcuts": [
+    {
+      "name": "学习专题",
+      "short_name": "学习",
+      "description": "经济学学习资源",
+      "url": "/#learning",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "数据专题", 
+      "short_name": "数据",
+      "description": "经济数据资源",
+      "url": "/#data",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ],
   "icons": [
     {
       "src": "icons/icon-72x72.png",

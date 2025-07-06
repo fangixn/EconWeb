@@ -1,0 +1,27 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景圆圈 -->
+  <circle cx="256" cy="256" r="256" fill="#2563eb"/>
+  
+  <!-- 地球仪图标 -->
+  <g transform="translate(256, 256)">
+    <!-- 外圈 -->
+    <circle cx="0" cy="0" r="180" fill="none" stroke="#ffffff" stroke-width="8"/>
+    
+    <!-- 经线 -->
+    <ellipse cx="0" cy="0" rx="60" ry="180" fill="none" stroke="#ffffff" stroke-width="6"/>
+    <ellipse cx="0" cy="0" rx="120" ry="180" fill="none" stroke="#ffffff" stroke-width="6"/>
+    <ellipse cx="0" cy="0" rx="180" ry="60" fill="none" stroke="#ffffff" stroke-width="6"/>
+    <ellipse cx="0" cy="0" rx="180" ry="120" fill="none" stroke="#ffffff" stroke-width="6"/>
+    
+    <!-- 纬线 -->
+    <line x1="-180" y1="0" x2="180" y2="0" stroke="#ffffff" stroke-width="6"/>
+    <line x1="-120" y1="-90" x2="120" y2="-90" stroke="#ffffff" stroke-width="4"/>
+    <line x1="-120" y1="90" x2="120" y2="90" stroke="#ffffff" stroke-width="4"/>
+    
+    <!-- 中心点 -->
+    <circle cx="0" cy="0" r="8" fill="#ffffff"/>
+    
+    <!-- 文字 E -->
+    <text x="0" y="60" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="48" font-weight="bold">E</text>
+  </g>
+</svg> 

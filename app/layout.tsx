@@ -66,8 +66,11 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="EconWeb" />
         
         {/* Favicon */}
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-192x192.png" />
+        <link rel="mask-icon" href="/favicon.svg" color="#2563eb" />
         
         {/* 字体预加载 */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

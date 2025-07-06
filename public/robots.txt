@@ -1,11 +1,29 @@
 # EconWeb - 允许搜索引擎索引
 # 欢迎搜索引擎爬取我们的经济学资源
 
+# Google 搜索爬虫
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Google AdSense 爬虫 - 确保 AdSense 可以访问所有内容
+User-agent: Mediapartners-Google
+Allow: /
+
+# 其他搜索引擎
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
 
 # 爬取频率限制（避免过于频繁的爬取）
 Crawl-delay: 1
 
 # 网站地图
-Sitemap: https://economicsweb.org/sitemap.xml 
+Sitemap: https://economicsweb.org/sitemap.xml
+
+# 主机信息
+Host: https://economicsweb.org 
